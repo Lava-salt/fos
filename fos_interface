@@ -1,0 +1,1971 @@
+# head (module importing)
+
+from fos_sourcecode import *
+from datetime import datetime
+import calendar # calendar module is actually used for printing calendar through an "exec" function
+from time import sleep
+from webbrowser import open as web
+from webbrowser import open_new_tab
+from random import randint, random, gauss, normalvariate, shuffle
+from os import name, getcwd, chdir, path, mkdir, listdir, remove, rename, system
+from subprocess import run, CalledProcessError, call, Popen, PIPE
+from sys import platform
+print("^^^^^^^^^^^^ Current Working Directory\n")
+print("1 to install modules")
+print("2 to reinstall modules")
+print("3 to pass")
+x = int(input("\n"))
+if x == 1:
+    system("pip install nltk")
+    system("pip install pyenchant")
+elif x == 2:
+    system("pip uninstall nltk")
+    system("pip uninstall pyenchant")
+    system("pip install nltk")
+    system("pip install pyenchant")
+import nltk
+nltk.download('words')
+from nltk.corpus import words
+import enchant
+
+# head (other functions' defining)
+
+notebook = []
+for i in range(200000):
+    notebook.append("Empty")
+todo = []
+for i in range(200000):
+    notebook.append("Empty")
+todo_done = []
+for i in range(200000):
+    notebook.append("Not Done")
+todo_fav = []
+for i in range(200000):
+    notebook.append("Not Favourite")
+c = datetime.now()
+cl = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+fruits = []
+for i in range(200000):
+    fruits.append("This slot is empty.")
+stripguide = {1: "strip", 2: "lstrip", 3: "rstrip"}
+xox = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"]
+rps = ["r", "p", "s"]
+hanoi0 = []
+hanoi1 = [1, 2, 3, 4, 5]
+hanoi2 = []
+hanoi3 = []
+firsttime = True
+bmn = ["Bing", "Google", "Yandex", "DuckDuckGo", "Yahoo!"]
+bm = ["https://www.bing.com/", "https://www.google.com/", "https://ya.ru/", "https://duckduckgo.com/",
+      "https://www.yahoo.com/"]
+url = ["http://www.pizza.net/", "http://www.links.net/re/intro.html", "http://www.yahoo.com/",
+                        "http://whitehouse.gov/", "http://geocities.com/Hollywood/Bungalow/4720/",
+                        "http://www.fogcam.org/", "http://www.ebay.com/aw/welcome.html", "http://www.spacejam.com/",
+                        "http://www.mcdonalds.com/a_food/", "http://www.apple.com/", "http://www.ty.com/",
+                        "http://www.heavensgate.com/", "http://www.pepsi.com/", "http://www.year2000.com/",
+                        "http://www.askjeeves.com/", "http://www.geocities.com/Heartland/Bluffs/4157/hampdance.html",
+                        "http://www.google.com/", "http://www.netflix.com/", "http://zombo.com/",
+                        "http://www.wikipedia.org/wiki/Wikipedia", "http://friendster.com/info/moreinfo.jsp",
+                        "http://www.myspace.com/", "http://www.thefacebook.com/",
+                        "http://www.milliondollarhomepage.com/", "http://www.reddit.com/", "https://www.mcdonalds.com/",
+                        "https://www.nike.com/", "https://www.apple.com/", "https://www.starbucks.com/",
+                        "https://www.amazon.com/", "https://www.pepsi.com/", "https://twitter.com/",
+                        "https://www.snapchat.com/", "https://www.nasa.gov/", "https://www.google.com/",
+                        "https://www.android.com/", "https://open.spotify.com/"]
+kai = ["🟦", "🟩", "🟨", "🟧", "🟫", "⬜", "🟪", "🟥"]
+def bf(code, input_data):
+    memory = []
+    for i in range(256):
+        memory.append(0)
+    pointer = 0
+    code_pointer = 0
+    input_pointer = 0
+    output = []
+    loop_stack = []
+    stack = []
+    while code_pointer < len(code):
+        command = code[code_pointer]
+        if command == '>':
+            pointer += 1
+        elif command == '<':
+            pointer -= 1
+        elif command == '+':
+            memory[pointer] = (memory[pointer] + 1) % 256
+        elif command == '-':
+            memory[pointer] = (memory[pointer] - 1) % 256
+        elif command == '.':
+            output.append(chr(memory[pointer]))
+        elif command == ',':
+            if input_pointer < len(input_data):
+                memory[pointer] = ord(input_data[input_pointer])
+                input_pointer += 1
+            else:
+                memory[pointer] = 0
+        elif command == ';':
+            output.append(memory[pointer])
+        elif command == '#':
+            memory[pointer] = 0
+        elif command == '@':
+            if pointer < len(memory) - 1:
+                memory[pointer + 1] = memory[pointer]
+        elif command == '&':
+            if pointer > 0:
+                memory[pointer], memory[pointer - 1] = memory[pointer - 1], memory[pointer]
+        elif command == '%':
+            memory[pointer] = (memory[pointer] * 2) % 256
+        elif command == '$':
+            memory[pointer] = memory[pointer] // 2
+        elif command == '^':
+            while pointer > 0 and memory[pointer] == 0:
+                pointer -= 1
+        elif command == '~':
+            while pointer < len(memory) - 1 and memory[pointer] != 0:
+                pointer += 1
+        elif command == '(':
+            stack.append(memory[pointer])
+        elif command == ')':
+            if stack:
+                memory[pointer] = stack.pop()
+        elif command == '[':
+            if memory[pointer] == 0:
+                open_loops = 1
+                while open_loops > 0:
+                    code_pointer += 1
+                    if code[code_pointer] == '[':
+                        open_loops += 1
+                    elif code[code_pointer] == ']':
+                        open_loops -= 1
+        elif command == ']':
+            if memory[pointer] != 0:
+                close_loops = 1
+                while close_loops > 0:
+                    code_pointer -= 1
+                    if code[code_pointer] == ']':
+                        close_loops += 1
+                    elif code[code_pointer] == '[':
+                        close_loops -= 1
+        code_pointer += 1
+    for i in output:
+        print(i, end="")
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ".", ",", " ", " ", " ", " ", " ", " ", " ", " "]
+gods_abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ".", ",", "<", ">", "+", "-", "[", "]", " "]
+ohno = words.words()
+# it is called "ohno" because it's so long
+# and like "oh no! the FOS will crash because the list is so long!"
+
+# body (code)
+
+f = open("readme.txt", "r")
+print(f.read())
+f.close()
+while True:
+    print("1 to open apps")
+    print("2 to open ASCII editor")
+    print("3 to open code/OS archives")
+    print("4 to edit text")
+    print("5 to access internet")
+    x = int(input("\n"))
+    if x == 1:
+        print("1 to open apps in local wireless")
+        print("2 to open apps in online")
+        x = int(input("\n"))
+        if x == 1:
+            print("1 to open calculator")
+            print("2 open notebook")
+            print("3 to open to-do")
+            print("4 to open clock")
+            print("5 to open games")
+            print("6 to open chat")
+            print("7 to open FOS Sub-Operating System")
+            print("8 to open code scraps")
+            x = int(input("\n"))
+            if x == 1:
+                print("1 to do addition")
+                print("2 to do subtraction")
+                print("3 to do multiplication")
+                print("4 to do division")
+                print("5 to do modulo")
+                print("6 to do exponentiation")
+                print("7 to do integer division")
+                print("8 to do root")
+                x = int(input("\n"))
+                if x == 1:
+                    operation("+")
+                elif x == 2:
+                    operation("-")
+                elif x == 3:
+                    operation("*")
+                elif x == 4:
+                    operation("/")
+                elif x == 5:
+                    operation("%")
+                elif x == 6:
+                    operation("**")
+                elif x == 7:
+                    operation("//")
+                elif x == 8:
+                    sqrt()
+            elif x == 2:
+                print("200,000-slot memory notebook")
+                print("1 to add new note")
+                print("2 to delete note")
+                print("3 to see note")
+                print("4 to restart notebook")
+                print("5 to view notebook")
+                x = int(input("\n"))
+                if x == 1:
+                    x = int(input("What slot would you like to enter your note? "))
+                    y = input("What's your note? ")
+                    notebook[x] = y
+                elif x == 2:
+                    x = int(input("What slot would you like to delete? "))
+                    notebook[x] = "Empty"
+                elif x == 3:
+                    x = int(input("What slot would you like to see? "))
+                    print(notebook[x])
+                elif x == 4:
+                    x = input(
+                        "Would you really like to clear the entire notebook?\nAll the data will be lost forever.\nAre you sure? (y/n)\n")
+                    if "y" in x.lower():
+                        del notebook
+                        notebook = []
+                        for i in range(200000):
+                            notebook.append("Empty")
+                        print("Notebook cleared")
+                elif x == 5:
+                    for x in range(200000):
+                        if not (notebook[x] == "Empty"):
+                            print(f"{x}. {notebook[x]}")
+            elif x == 3:
+                print("200,000-slot memory to-do list")
+                print("1 to add new task")
+                print("2 to delete task")
+                print("3 to see task")
+                print("4 to restart to-do list")
+                print("5 to view entire list")
+                x = int(input("\n"))
+                if x == 1:
+                    x = int(input("What slot would you like to enter your note? "))
+                    y = input("What's your task? ")
+                    z = input("Is it done? (y/n) ")
+                    a = input("Is it favourite? (y/n) ")
+                    todo[x] = y
+                    if "y" in z.lower():
+                        todo_done[x] = "Done"
+                    else:
+                        todo_done[x] = "Not Done"
+                    if "y" in a.lower():
+                        todo_fav[x] = "Favourite"
+                    else:
+                        todo_fav[x] = "Not Favourite"
+                elif x == 2:
+                    x = int(input("What slot would you like to delete? "))
+                    todo[x] = "Empty"
+                    todo_done[x] = "Not Done"
+                    todo_fav[x] = "Not Favourite"
+                elif x == 3:
+                    x = int(input("What slot would you like to see? "))
+                    print(f"{todo[x]}, {todo_done[x]}, {todo_fav[x]}")
+                elif x == 4:
+                    x = input(
+                        "Would you really like to clear the entire to-do list?\nAll the data will be lost forever.\nAre you sure? (y/n)\n")
+                    if "y" in x.lower():
+                        del notebook
+                        notebook = []
+                        for i in range(200000):
+                            notebook.append("Empty")
+                        print("To-do list cleared")
+                elif x == 5:
+                    for x in range(200000):
+                        if not (todo[x] == "Empty"):
+                            print(f"{x}. {todo[x]}, {todo_done[x]}, {todo_fav[x]}")
+            elif x == 4:
+                print("1 to open date and time")
+                print("2 to open alarm")
+                print("3 to open stopwatch")
+                print("4 to open timer")
+                print("5 to open calendar")
+                x = int(input("\n"))
+                if x == 1:
+                    print(c)
+                elif x == 2:
+                    print("The alarm code is broken.")
+                    x = input("Do you still like to use alarm? (y/n) ")
+                    if "y" in x.lower():
+                        x = input(
+                            f"Please enter the time the alarm will get ignited as\nYYYY-MM-DD HH:MM:SS e.g. {c.strftime("%Y-%m-%d %H:%M:%S")}\n")
+                        y = input(
+                            "Now select the alarm\nFor this, please upload an alarm sound URL from \"https://www.youtube.com/\", \"https://www.twitch.tv/\", or \"https://vine.co/\".\nPlease don't give a URL if you want to use the default sound.\n")
+                        print("Alarm set\nAlarm is off")
+                        while not (c == x):
+                            print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                            sleep(1)
+                        if y == "":
+                            web("https://www.youtube.com/watch?v=F30q6fMGV3s")
+                        else:
+                            web(y)
+                        input("Alarm is on\n")
+                elif x == 3:
+                    x = int(input("Count how many seconds? "))
+                    y = float(
+                        input("Define the time between two time units for this stopwatch session\n(as seconds)\n"))
+                    for i in range(x):
+                        print(i)
+                        sleep(y)
+                elif x == 4:
+                    x = int(input(f"Please enter how many seconds later will the alarm get ignited.\n"))
+                    y = input(
+                        "Now select the alarm\nFor this, please upload an alarm sound URL from \"https://www.youtube.com/\", \"https://www.twitch.tv/\", or \"https://vine.co/\".\nPlease don't give a URL if you want to use the default sound.\n")
+                    z = float(
+                        input("Define the time between two time units for this timer session\n(as seconds)\n"))
+                    print("Alarm set\nAlarm is off")
+                    for i in range(x):
+                        print(f"{x - i} seconds left")
+                        sleep(z)
+                    if y == "":
+                        web("https://www.youtube.com/watch?v=F30q6fMGV3s")
+                    else:
+                        web(y)
+                    input("Alarm is on\n")
+                elif x == 5:
+                    print("1 to open monthly calendar")
+                    print("2 to open yearly calendar")
+                    x = int(input("\n"))
+                    if x == 1:
+                        x = int(input("Enter year: "))
+                        y = int(input("Enter month: "))
+                        z = int(input("Enter calendar day order start day: "))
+                        cl = eval(f"calendar.TextCalendar(calendar.{cl[z]})")
+                        cl.prmonth(x, y)
+                    elif x == 2:
+                        x = int(input("Enter year: "))
+                        y = int(input("Enter calendar day order start day: "))
+                        cl = eval(f"calendar.TextCalendar(calendar.{cl[y]})")
+                        cl.pryear(x)
+            elif x == 5:
+                print("1 to open Tic-Tac-Toe")
+                print("2 to open number guessing")
+                print("3 to open Rock, Paper, Scissors")
+                print("4 to open Word Scramble")
+                print("5 to open Towers of Hanoi")
+                print("6 to open math quiz")
+                print("7 to open wordsearch")
+                print("8 for Conway's Game of Life")
+                print("9 for true randomness")
+                print("10 for 2D terrain generation")
+                print("11 for the future predictor")
+                print("12 to open the Library of Babel")
+                print("13 to communicate with God")
+                print("14 for checking word existance")
+                print("15 for English word list")
+                x = int(input("\n"))
+                if x == 1:
+                    print("1 for human vs human")
+                    print("2 for human vs computer")
+                    x = int(input("\n"))
+                    if x == 1:
+                        del x
+                        get(xox)
+                        print("A is empty")
+                        print("X is x")
+                        print("O is o")
+                        xx(xox)
+                        get(xox)
+                        o(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        o(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        o(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        o(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        print("Match ended")
+                    elif x == 2:
+                        del x
+                        get(xox)
+                        print("A is empty")
+                        print("X is x")
+                        print("O is o")
+                        xx(xox)
+                        get(xox)
+                        ai(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        ai(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        ai(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        ai(xox)
+                        get(xox)
+                        xx(xox)
+                        get(xox)
+                        print("Match ended")
+                elif x == 2:
+                    print("Please enter the number range.")
+                    x = int(input("Minimum Number: "))
+                    y = int(input("Maximum Number: "))
+                    x = randint(x, y)
+                    print("Number selected")
+                    y = ""
+                    z = 1
+                    while y != x:
+                        y = int(input("Guess the number: "))
+                        if y == x:
+                            print(f"You guessed correctly!\nWon in {z} tries")
+                        else:
+                            z += 1
+                            if y < x:
+                                print("The number is bigger.")
+                            else:
+                                print("The number is smaller.")
+                elif x == 3:
+                    print("1 for rock")
+                    print("2 for paper")
+                    print("3 for scissors")
+                    x = int(input("\n"))
+                    ai = randint(1, 3)
+                    if ai == 1:
+                        print("You lose")
+                    elif ai == 2:
+                        print("Draw")
+                    else:
+                        print("You win")
+                elif x == 4:
+                    word = choice(ohno)
+                    wrod = scramble(word)
+                    print(f"Scrambled word: {wrod}")
+                    print("Guess the word!")
+                    y = 0
+                    x = 0
+                    while not x == word:
+                        x = input("Enter guess: ")
+                        if x != word:
+                            y += 1
+                    print(f"True!\nGuessed in {y} tries")
+                elif x == 5:
+                    print("Your goal is to bring all the stones on Tower 1 to Tower 3 IN ORDER.")
+                    print("You can only move the stones at the top of the towers.")
+                    a = 0
+                    while not(hanoi1 == [] and hanoi2 == [] and hanoi3 == [1, 2, 3, 4, 5]):
+                        print(f"Tower 1: {hanoi1}")
+                        print(f"Tower 2: {hanoi2}")
+                        print(f"Tower 3: {hanoi3}")
+                        x = int(input("Select tower: "))
+                        y = int(input("Move that stone to which tower? "))
+                        z = eval(f"hanoi{x}[-1]")
+                        exec(f"del hanoi{x}[-1]")
+                        exec(f"hanoi{y}.append({z})")
+                        a += 1
+                    print(f"You won!\nWon in {a} moves")
+                elif x == 6:
+                    while True:
+                        x = [randint(0, 100), choice(xyz), randint(0, 100), randint(0, 100)]
+                        y = eval(f"{x[0]} {x[1]} {x[2]}")
+                        input(f"Solve {x[0]} {x[1]} {x[2]}\n")
+                        print(f"{x[0]} {x[1]} {x[2]} = {y}")
+                elif x == 7:
+                    x = int(input("Grid size: (number): "))
+                    for i in range(x):
+                        y = ""
+                        for i in range(x):
+                            y = f"{y} {choice(abc)}"
+                        print(y, end = "\n")
+                    print("Good luck finding words here!")
+                elif x == 8:
+                    x = int(input("Grid size: "))
+                    y = int(input("Delay between each frame (seconds): "))
+                    z = input("Emoji mode? (y/n, emoji mode = \"🟩🟦\", else = \"01\"): ")
+                    if "y" in z.lower():
+                        z = True
+                    else:
+                        z = False
+                    life = Life(number=x, x=1, t=y, emoji=z)
+                elif x == 9:
+                    print("1 for random integer")
+                    print("2 for random float value")
+                    print("3 for random value from the statistical distribution")
+                    x = int(input("\n"))
+                    if x == 1:
+                        x = int(input("Minimum Number: "))
+                        y = int(input("Maximum Number: "))
+                        print(randint(x, y))
+                    elif x == 2:
+                        print(random())
+                    elif x == 3:
+                        print("1 for gauss distribution")
+                        print("2 for normal variate distribution")
+                        x = int(input("\n"))
+                        y = int(input("Mean (Mu): "))
+                        z = int(input("Standard Deviation (Sigma): "))
+                        if x == 1:
+                            print(gauss(y, z))
+                        elif x == 2:
+                            print(normalvariate(y, z))
+                elif x == 10:
+                    x = int(input("Grid Size: "))
+                    y = int(input("Water body percentage (%): "))
+                    grid = []
+                    for i in range(x ** 2):
+                        grid.append(0)
+                        if randint(1, 2) == 1:
+                            try:
+                                if randint(1, 3) == 1:
+                                    if randint(0, 100) <= y:
+                                        grid[i] = 0
+                                    else:
+                                        grid[i] = randint(1, 7)
+                                else:
+                                    grid[i] = grid[i - x]
+                            except IndexError:
+                                if randint(1, 3) == 1:
+                                    if randint(1, 3) == 1:
+                                        grid[i] = 0
+                                    else:
+                                        grid[i] = randint(1, 7)
+                        else:
+                            try:
+                                if randint(1, 3) == 1:
+                                    if randint(0, 100) <= y:
+                                        grid[i] = 0
+                                    else:
+                                        grid[i] = randint(1, 7)
+                                else:
+                                    grid[i] = grid[i - 1]
+                            except IndexError:
+                                if randint(1, 3) == 1:
+                                    if randint(1, 3) == 1:
+                                        grid[i] = 0
+                                    else:
+                                        grid[i] = randint(1, 7)
+                    for i in range(x):
+                        for j in grid[i * x : i * x + x]:
+                            print(j, end=" ")
+                        print("")
+                    for i in range(x):
+                        for j in grid[i * x : i * x + x]:
+                            print(kai[j], end = " ")
+                        print("")
+                    print("0/🟦 = Ocean (Kelp, Coral)")
+                    print("1/🟩 = Plains (Oak, Birch, Azalea, Cherry)")
+                    print("2/🟨 = Desert (Cactus, Palm, Oak)")
+                    print("3/🟧 = Savanna (Acacia, Oak, Baobab)")
+                    print("4/🟫 = Taiga (Spruce, Pine, Dark Oak)")
+                    print("5/⬜ = Tundra (Pine, Spruce)")
+                    print("6/🟪 = Jungle (Bamboo, Oak)")
+                    print("7/🟥 = Swamp (Mangrove, Oak)")
+                elif x == 11:
+                    x = int(input("Number of predictions: "))
+                    print("Your future:")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("Your family's future:")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("Your neighbourhood's future:")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("Your city's future:")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("Your country's future:")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("The world's future:")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("Your future II (we ran out of futures):")
+                    for i in range(x):
+                        print(
+                            f"{randint(datetime.now().year, datetime.now().year + 50)}-{randint(1, 12)}-{randint(1, 31)} {randint(0, 24)}:{randint(0, 60)}:{randint(0, 60)}'s prediction: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    input("Also, what shall I predict? ")
+                    print(f"I predict these: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\".")
+                    if randint(1, 2) == 1:
+                        print("If it was a yes/no question, i predict it yes.")
+                    else:
+                        print("If it was a yes/no question, i predict it no.")
+                    print(f"If it was a number question, i predict it {randint(0, 10)}.")
+                    print(f"The word of the day is {ohno[(c.day * c.month * c.year) % len(ohno)]}")
+                elif x == 12:
+                    print("The Library of Babel is a library with books.")
+                    print("But these books are the combination of every possible script ever.")
+                    print("When you open a book, you'll mostly find nonsense script, but you can actually find meaningful words sometimes.")
+                    book = ""
+                    for i in range(randint(5, 30)):
+                        book = f"{book}{choice(alphabet)}"
+                    print(f"We chose the \"{book}\" book.\nBut first, we need to set up the book.")
+                    print("Okay. Now we need to select the pages.")
+                    print("1 for reading only 1 page")
+                    print("2 for reading multiple pages")
+                    print("3 for reading all pages")
+                    z = int(input("\n"))
+                    if z == 1:
+                        z = int(input("Read which page? "))
+                        print(f"Book: {book}, Page {z}")
+                        for i in range(randint(2, 5)):
+                            print("\n    ", end = "")
+                            for j in range(randint(400, 2000)):
+                                print(choice(alphabet), end = "")
+                                if j % 100 == 0 and j != 0:
+                                    print("")
+                        print("")
+                    elif z == 2:
+                        z = int(input("Read from this page: "))
+                        b = int(input("To this page: "))
+                        for k in range(b - z):
+                            print(f"Book: {book}, Page {z + i}")
+                            for i in range(randint(2, 5)):
+                                print("\n    ", end = "")
+                                for j in range(randint(400, 2000)):
+                                    print(choice(alphabet), end="")
+                                if j % 100 == 0 and j != 0:
+                                    print("")
+                        print("")
+                    elif z == 3:
+                        for k in range(400):
+                            print(f"Book: {book}, Page {k + 1}")
+                            for i in range(randint(2, 5)):
+                                print("\n    ", end = "")
+                                for j in range(randint(400, 2000)):
+                                    print(choice(alphabet), end="")
+                                if j % 100 == 0 and j != 0:
+                                        print("")
+                        print("")
+                elif x == 13:
+                    input("Now, the program will print random characters. ")
+                    print("If God wants to communicate with you,")
+                    input("He can manipulate the randomness to print characters he wants. ")
+                    print("You will mostly get nonsense, but if you're the one chosen by god*,")
+                    input("You can sometimes get God's messages. One time, I got \"xpbug\" text which predicts the future. ")
+                    print("It predicts the FUTURE!!!")
+                    print("Because later, a Minecraft event named \"Minecraft Bedrock Edition Eerie Mojang Office Party\" dropped.")
+                    print("Which has a minigame dropped in day 4 for Q&A Department location.")
+                    print("That minigame is \"Bug Squash\" where the goal is to smash at least 15 bugs in the pillars for XP.")
+                    input("My highscore is ~80. BUT THIS PREDICTED THE FUTURE! ")
+                    input("Also if you get nonsense, I will print random words. ")
+                    input("These are chosen by God (as everything else, of course). ")
+                    print("*If you want to communicate with God, you need to be a prophet.")
+                    print("For this, it needs to be a time where almost no one believes God.")
+                    print("And you need to be kind and smart so you can guide others to God and heaven.")
+                    print("The last prophet is Jesus Christ and he will return in the apocalypse,")
+                    print("And some say that it's Muhammad (s.a.w.) as the final for all the world.")
+                    print("Or you need to be kind, smart, and very loyal to God to be the chosen one.")
+                    print("A chosen one is chosen when God needs to handle a task with (about or closely relevant to) humanity.")
+                    print("For example, Terry Davis is chosen for creating God's 3rd Temple as a 32-Bit Ring-0 Only")
+                    input("16-Bit Color source code changeable user interface called TempleOS.\n")
+                    for i in range(100):
+                        for j in range(100):
+                            print(choice(alphabet), end="")
+                        print("")
+                    print(f"God's words: \"{choice(ohno)}\", \"{choice(ohno)}\", \"{choice(ohno)}\"")
+                    print("God's sentences: ", end = "")
+                    print(choice(ohno).capitalize(), end = " ")
+                    for i in range(50):
+                        for j in range(10):
+                            print(choice(ohno), end = " ")
+                        print("")
+                elif x == 14:
+                    lang = input("Language (e.g. \"en_US\"): ")
+                    word = input("Word to Check: ")
+                    if enchant.Dict(lang).check(word):
+                        print("That word exists.")
+                    else:
+                        print("That word doesn't exist.")
+                elif x == 15:
+                    print("Print how many of the word list?")
+                    print("0 for the 1th element")
+                    print("15 for 16th element")
+                    print("-1 for last element")
+                    print("-5 for last 5th element")
+                    print("0 : 5 for the elements from 1st to 6th")
+                    print(f"0 : {len(ohno) - 1} for all e.t.c.")
+                    print(f"(the length is {len(ohno)})")
+                    x = input("")
+                    y = input("Print sorted (y/n)? ")
+                    z = input("Print shuffled (y/n)? ")
+                    kamu = ohno.copy()
+                    if "y" in y.lower():
+                        kamu.sort()
+                    if "y" in z.lower():
+                        shuffle(kamu)
+                    if ":" in x:
+                        for i in kamu[eval(x.split(":")[0]) : eval(x.split(":")[1])]:
+                            print(i)
+                        print(kamu[eval(x.split(":")[0]) : eval(x.split(":")[1])])
+                    else:
+                        for i in kamu[eval(x)]:
+                            print(i)
+                        print(kamu[eval(x)])
+            elif x == 6:
+                user = input("Enter username: ")
+                print("1 to read chat messages")
+                print("2 to send message")
+                print("3 to clear chat")
+                x = int(input("\n"))
+                if x == 1:
+                    f = open("chat.txt", "r")
+                    print(f.read())
+                    f.close()
+                elif x == 2:
+                    f = open("chat.txt", "a")
+                    x = input("Message: ")
+                    f.write(f"<{user}> {x}\n")
+                    f.close()
+                elif x == 3:
+                    x = input("Are you sure? (y/n) ")
+                    if "y" in x.lower():
+                        x = input("Are you really sure? (y/n) ")
+                        if "y" in x.lower():
+                            x = input("Are you really really sure? (y/n) ")
+                            if "y" in x.lower():
+                                x = input("Are you sure as never been before? (y/n) ")
+                                if "y" in x.lower():
+                                    x = input("Are you really sure as never been before? (y/n) ")
+                                    if "y" in x.lower():
+                                        x = input("Are you really really sure as never been before? (y/n) ")
+                                        if "y" in x.lower():
+                                            x = input("Are you sure as really never been before? (y/n) ")
+                                            if "y" in x.lower():
+                                                x = input("Are you really sure as really never been before? (y/n) ")
+                                                if "y" in x.lower():
+                                                    x = input("Are you really really sure as really never been before? (y/n) ")
+                                                    if "y" in x.lower():
+                                                        x = input("Are you sure as really really never been before? (y/n) ")
+                                                        if "y" in x.lower():
+                                                            x = input("Are you really sure as really really never been before? (y/n) ")
+                                                            if "y" in x.lower():
+                                                                x = input("Are you really really sure as really really never been before? (y/n) ")
+                                                                if "y" in x.lower():
+                                                                    x = input("Are you actually sure? (y/n) ")
+                                                                    if "y" in x.lower():
+                                                                        x = input("This is my last warning. (y/n) ")
+                                                                        if "y" in x.lower():
+                                                                            x = input("Ask everyone. (y/n) ")
+                                                                            if "y" in x.lower():
+                                                                                x = input("Ask everyone that's using this chat. (y/n) ")
+                                                                                if "y" in x.lower():
+                                                                                    x = input("Ask literally everyone that's using this chat. (y/n) ")
+                                                                                    if "y" in x.lower():
+                                                                                        x = input("Ask literally everyone that's using this chat for real. (y/n) ")
+                                                                                        if "y" in x.lower():
+                                                                                            x = input("Ask your mother. (y/n) ")
+                                                                                            if "y" in x.lower():
+                                                                                                x = input("Ask your father. (y/n) ")
+                                                                                                if "y" in x.lower():
+                                                                                                    x = input("Ask your grandmother. (y/n) ")
+                                                                                                    if "y" in x.lower():
+                                                                                                        x = input("Ask your wife's boyfriend. (y/n) ")
+                                                                                                        if "y" in x.lower():
+                                                                                                            x = input("There's no turning back. (y/n) ")
+                                                                                                            if "y" in x.lower():
+                                                                                                                x = input("Okay. (y/n) ")
+                                                                                                                if "y" in x.lower():
+                                                                                                                    f = open("chat.txt", "w")
+                                                                                                                    f.write("")
+                                                                                                                    f.close()
+                                                                                                                    print("Chat deleted.")
+            elif x == 7:
+                print("Welcome to FOS Sub-OS!")
+                while True:
+                    print("List of apps:")
+                    print('"1" for word-number edit module')
+                    print('"2" for minecraft (the video game one)')
+                    print('"3" for 200000-slot memory')
+                    print('"4" for random module basics')
+                    print('"5" for a text-based adventure game made by ChatGPT')
+                    print('"6" for calory tracker assistant')
+                    print('"7" for a small grid game')
+                    x = int(input("What to open?  "))
+                    if x == 1:
+                        print('"1" for addition')
+                        print('"2" for subtraction')
+                        print('"3" for multiplication')
+                        print('"4" for division')
+                        print('"5" for modulus')
+                        print('"6" for exponentiation')
+                        print('"7" for floor division')
+                        print('"8" for floor')
+                        print('"9" for ceiling')
+                        print('"10" for rounding')
+                        print('"11" for capitalization')
+                        print('"12" for uppercase')
+                        print('"13" for lowercase')
+                        print('"14" for case swap')
+                        print('"15" for equal')
+                        print('"16" for not equal')
+                        print('"17" for greater than')
+                        print('"18" for lesser than')
+                        print('"19" for greater than or equal')
+                        n = int(input('"20" for lesser than or equal    '))
+                        if n == 1:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x + y)
+                        if n == 2:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x - y)
+                        if n == 3:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x * y)
+                        if n == 4:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x / y)
+                        if n == 5:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x % y)
+                        if n == 6:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x ** y)
+                        if n == 7:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print(x // y)
+                        if n == 8:
+                            x = float(input("Insert number "))
+                            print(x - (x % 1))
+                        if n == 9:
+                            x = float(input("Insert number "))
+                            print((x - (x % 1)) + 1)
+                        if n == 10:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 (to the nearest n number) "))
+                            print(float(int(x / y) * y))
+                        if n == 11:
+                            x = input("Insert word ")
+                            print(x.capitalize())
+                        if n == 12:
+                            x = input("Insert word ")
+                            print(x.upper())
+                        if n == 13:
+                            x = input("Insert word ")
+                            print(x.lower())
+                        if n == 14:
+                            x = input("Insert word ")
+                            print(x.swapcase())
+                        if n == 15:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            if x == y:
+                                print("x = y")
+                            else:
+                                print("x ≠ y")
+                        if n == 16:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            if x == y:
+                                print("x = y")
+                            else:
+                                print("x ≠ y")
+                        if n == 17:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            if x > y:
+                                print("x > y")
+                            else:
+                                print("x < y")
+                        if n == 18:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            if x < y:
+                                print("x < y")
+                            else:
+                                print("x > y")
+                        if n == 19:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            if x >= y:
+                                print("x >= y")
+                            else:
+                                print("x !>= y")
+                        if n == 20:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            if x <= y:
+                                print("x <= y")
+                            else:
+                                print("x !<= y")
+                    if x == 2:
+                        print("MINECRAFT")
+                        print("Text-based python port")
+                        print("There's 30 features.")
+                        print("20 for Crafting,")
+                        print("5 for Adventures.")
+                        print("You can lose but can't win.")
+                        print("Made with more than 100 lines of code")
+                        print("Luck-based game.")
+                        input("Answer to start. ")
+                        pata = 0
+                        sword = 0
+                        pickaxe = 0
+                        shovel = 0
+                        axe = 0
+                        hoe = 0
+                        game = "play"
+                        while game == "play":
+                            if randint(1, 2) == 1:
+                                if randint(1, 5) == 1:
+                                    print("You've found wood!")
+                                    chop = 1
+                                else:
+                                    if randint(1, 4) == 1:
+                                        print("You've found stone!")
+                                        chop = 2
+                                    else:
+                                        if randint(1, 3) == 1:
+                                            print("You've found iron!")
+                                            chop = 3
+                                        else:
+                                            if randint(1, 2) == 1:
+                                                print("You've found diamonds!")
+                                                chop = 4
+                                            else:
+                                                print("You've found netherite!")
+                                                chop = 5
+                                print("What to craft?")
+                                print("Options:")
+                                print("Sword")
+                                print("Pickaxe")
+                                print("Axe")
+                                print("Shovel")
+                                print("Hoe")
+                                tool = input("Please write your answer lowercase. ")
+                                if tool == "sword":
+                                    sword = sword + chop
+                                if tool == "pickaxe":
+                                    pickaxe = pickaxe + chop
+                                if tool == "axe":
+                                    axe = axe + chop
+                                if tool == "shovel":
+                                    shovel = shovel + chop
+                                if tool == "hoe":
+                                    hoe = hoe + chop
+                            else:
+                                if randint(1, 5) == 5:
+                                    decision = input("Mobs have come! Use a sword? (y/n) ")
+                                    if decision == "y":
+                                        sword = sword - 1
+                                    else:
+                                        game = "stop"
+                                else:
+                                    if randint(1, 4) == 4:
+                                        decision = input("You found an ore! Use pickaxe? (y/n) ")
+                                        if decision == "y":
+                                            pickaxe = pickaxe - 1
+                                        else:
+                                            game = "stop"
+                                    else:
+                                        if randint(1, 3) == 3:
+                                            decision = input("You'll chop trees! Use an axe? (y/n) ")
+                                            if decision == "y":
+                                                axe = axe - 1
+                                            else:
+                                                game = "stop"
+                                        else:
+                                            if randint(1, 2) == 2:
+                                                decision = input("You'll dig a hill! Use a shovel? (y/n) ")
+                                                if decision == "y":
+                                                    shovel = shovel - 1  # longest indent
+                                                else:
+                                                    game = "stop"
+                                            else:
+                                                decision = input("You made a farm! Use a hoe? (y/n) ")
+                                                if decision == "y":
+                                                    hoe = hoe - 1
+                                                else:
+                                                    game = "stop"
+                            inventory = input("Show inventory? (y/n) ")
+                            if inventory == "y" and game == "play":
+                                if sword > 0:
+                                    print("Swords:")
+                                    print(sword)
+                                if pickaxe > 0:
+                                    print("Pickaxes:")
+                                    print(pickaxe)
+                                if axe > 0:
+                                    print("Axes:")
+                                    print(axe)
+                                if shovel > 0:
+                                    print("Shovels:")
+                                    print(shovel)
+                                if hoe > 0:
+                                    print("Hoes:")
+                                    print(hoe)
+                            if sword < 0:
+                                game = "stop"
+                            if pickaxe < 0:
+                                game = "stop"
+                            if axe < 0:
+                                game = "stop"
+                            if shovel < 0:
+                                game = "stop"
+                            if hoe < 0:
+                                game = "stop"
+                            pata = pata + 1
+                        print("YOU LOSE!")
+                        print("Score:")
+                        print(pata)
+                    if x == 3:
+                        print("1 to change something in the 200000 slot-memory")
+                        n = int(input("2 to find data in the 200000 slot-memory "))
+                        if n == 1:
+                            x = int(input("Write the slot you want to change in the 200000 slots. "))
+                            y = input("Write the new thing you want it to change. ")
+                            fruits[x] = y
+                        if n == 2:
+                            x = int(
+                                input("Write the slot you want to learn what's inside in the 200000 slots. "))
+                            print(fruits[x])
+                    if x == 4:
+                        print("1 to find a full random number")
+                        print("2 to find a random decimal number from the distribution")
+                        n = int(input("3 to find a random decimal number "))
+                        if n == 1:
+                            x = int(input("Insert number 1 "))
+                            y = int(input("Insert number 2 "))
+                            print(randint(x, y))
+                        if n == 2:
+                            x = float(input("Insert average (mu) "))
+                            y = float(input("Insert standard deviation (sigma) "))
+                            print(gauss(x, y))
+                        if n == 3:
+                            x = float(input("Insert number 1 "))
+                            y = float(input("Insert number 2 "))
+                            print((random() * (y + x)) - x)
+                    if x == 5:
+                        grid_size = 5
+                        grid = [['Empty' for _ in range(grid_size)] for _ in range(grid_size)]
+                        player_position = [0, 0]
+                        inventory = []
+
+                        events = ['Found an item', 'Encountered an enemy', 'Nothing happened']
+                        for i in range(grid_size):
+                            for j in range(grid_size):
+                                grid[i][j] = choice(events)
+
+
+                        def display_grid():
+                            for row in grid:
+                                print(' | '.join(row))
+                            print()
+
+
+                        def display_position():
+                            print(f'Player position: {player_position}')
+                            print(f'Current cell: {grid[player_position[0]][player_position[1]]}')
+                            print()
+
+
+                        def display_inventory():
+                            print(f'Inventory: {inventory}')
+                            print()
+
+
+                        def move_player(direction):
+                            if direction == 'up' and player_position[0] > 0:
+                                player_position[0] -= 1
+                            elif direction == 'down' and player_position[0] < grid_size - 1:
+                                player_position[0] += 1
+                            elif direction == 'left' and player_position[1] > 0:
+                                player_position[1] -= 1
+                            elif direction == 'right' and player_position[1] < grid_size - 1:
+                                player_position[1] += 1
+                            else:
+                                print("Can't move in that direction!")
+                            event = grid[player_position[0]][player_position[1]]
+                            handle_event(event)
+
+
+                        def handle_event(event):
+                            if event == 'Found an item':
+                                item = choice(['Sword', 'Shield', 'Potion'])
+                                inventory.append(item)
+                                print(f'You found a {item}!')
+                            elif event == 'Encountered an enemy':
+                                print('You encountered an enemy! Prepare to fight!')
+                            elif event == 'Nothing happened':
+                                print('Nothing happened here.')
+                            grid[player_position[0]][player_position[1]] = 'Visited'
+
+
+                        def game_loop():
+                            while True:
+                                display_grid()
+                                display_position()
+                                display_inventory()
+                                move = input("Move (up/down/left/right) or 'quit' to exit: ").strip().lower()
+                                if move in ['up', 'down', 'left', 'right']:
+                                    move_player(move)
+                                elif move == 'quit':
+                                    print("Thanks for playing!")
+                                    break
+                                else:
+                                    print("Invalid input, please try again.")
+
+
+                        if __name__ == "__main__":
+                            print("Welcome to the Text-Based Adventure Game!")
+                            game_loop()
+                    if x == 6:
+                        print("Hello!")
+                        print("I'm your diet assistant!")
+                        print("I will make a plan so you will get warned when you eat too much.")
+                        x = input("First enter gender. M/F/N (Male, female, neutral [any gender])    ")
+                        if x.upper() == "M":
+                            kcal = 2500
+                        elif x.upper() == "F":
+                            kcal = 2000
+                        else:
+                            kcal = 2250
+                        print(kcal, " kcal until the limit for today!")
+                        print("When you plan to eat something, just tell me by writing a number.")
+                        print("1 - almond")
+                        print("2 - apple")
+                        print("3 - bagel")
+                        print("4 - banana")
+                        print("5 - beer")
+                        print("6 - big mac")
+                        print("7 - bread")
+                        print("8 - cake")
+                        print("9 - carrot")
+                        print("10 - chicken nugget")
+                        print("11 - chips")
+                        print("12 - coke")
+                        print("13 - donut")
+                        print("14 - egg")
+                        print("15 - m&m")
+                        print("16 - peanut butter cup")
+                        print("17 - pizza")
+                        print("18 - rice")
+                        print("19 - sushi")
+                        print("20 - whopper")
+                        list = [2500 / 325, 2500 / 16, 2500 / 7, 2500 / 19, 2500 / 28, 2500 / 4, 2500 / 13,
+                                2500 / 4,
+                                2500 / 65, 2500 / 37, 2500 / 4, 2500 / 14, 2500 / 7, 2500 / 26, 2500 / 400,
+                                2500 / 18,
+                                2500 / 7, 2500 / 8, 2500 / 48, 2500 / 3]
+                        credit = input('Write "y" if you want to see the acknowledgements. ')
+                        if credit.lower() == "y":
+                            print(
+                                'Thanks for the youtuber "Sambucha" for his video "https://www.youtube.com/shorts/NeN-0AbV3z0" for the kcal information.')
+                            print("Thanks for McDonalds, M&M's, and Burger King for branding.")
+                            print("The branding is illegal because i didn't take any permission.")
+                            print(
+                                "Because of this being a small python program, i think this wouldn't be a very big problem.")
+                            print("Don't sue me, i can change them to hamburger, sweets and bacon burger.")
+                        game = "play"
+                        while game == "play":
+                            for i in range(20):
+                                pref = input(
+                                    'Please write the corresponding number of what you\'ve eaten. (Write "0" if you ate nothing.) Write "esc" if you want to quit. ')
+                                if pref.lower() == "esc":
+                                    print(
+                                        "Before you quit, please let me say that my only duty is to track how many calories you get daily.")
+                                    game = "stop"
+                                elif not (pref == 0):
+                                    kcal = kcal - list[int(pref) - 1]
+                                    if kcal <= 0:
+                                        print("You've eaten too much!")
+                                        print("To punish you, here is an irony:)")
+                                        print(your_diet)
+                                print(kcal, " kcal until the limit for today!")
+                            print("When you plan to eat something, just tell me by writing a number.")
+                            print("1 - almond")
+                            print("2 - apple")
+                            print("3 - bagel")
+                            print("4 - banana")
+                            print("5 - beer")
+                            print("6 - big mac")
+                            print("7 - bread")
+                            print("8 - cake")
+                            print("9 - carrot")
+                            print("10 - chicken nugget")
+                            print("11 - chips")
+                            print("12 - coke")
+                            print("13 - donut")
+                            print("14 - egg")
+                            print("15 - m&m")
+                            print("16 - peanut butter cup")
+                            print("17 - pizza")
+                            print("18 - rice")
+                            print("19 - sushi")
+                            print("20 - whopper")
+                            list = [2500 / 325, 2500 / 16, 2500 / 7, 2500 / 19, 2500 / 28, 2500 / 4, 2500 / 13,
+                                    2500 / 4, 2500 / 65, 2500 / 37, 2500 / 4, 2500 / 14, 2500 / 7, 2500 / 26,
+                                    2500 / 400, 2500 / 18, 2500 / 7, 2500 / 8, 2500 / 48, 2500 / 3]
+                    if x == 7:
+                        grid = []
+                        for i in range(100):
+                            grid.append("▧")
+                        print(
+                            'HOW TO PLAY: This game is a game where there is a 10x10 grid and you spawn on coordinates 1, 1. You can do some commands. They are left, right, up, down, quit, howtoplay, and "symbols". When you write a symbol, the game puts that symbol to your current position. Here are some default symbols to use: ▣◩◪▧◰□♠♣♥♦🌲🌳🌴🪵🪨💎🧱🪙🍄🔑 ')
+
+
+                        def coordinate():
+                            map = 0
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 10
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 20
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 30
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 40
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 50
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 60
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 70
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 80
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+                            map = 90
+                            print(grid[map], grid[map + 1], grid[map + 2], grid[map + 3], grid[map + 4],
+                                  grid[map + 5],
+                                  grid[map + 6], grid[map + 7], grid[map + 8], grid[map + 9])
+
+
+                        t = input(
+                            "1 for matrix notation co-ordinate system (y, x)\n2 for mapping notation co-ordinate system (x, y) ")
+                        game = "play"
+                        lat = 1
+                        long = 1
+                        while game == "play":
+                            coordinate()
+                            if t == "1":
+                                print("Position: ", long, ", ", lat)
+                            elif t == "2":
+                                print("Position: ", lat, ", ", long)
+                            else:
+                                print("INVALID CO-ORDINATES!")
+                                game = "stop"
+                            gr = input("What command do you want? ")
+                            if gr.lower() == "left":
+                                if lat != 1:
+                                    lat = lat - 1
+                            elif gr.lower() == "right":
+                                if lat != 10:
+                                    lat = lat + 1
+                            elif gr.lower() == "up":
+                                if long != 1:
+                                    long = long - 1
+                            elif gr.lower() == "down":
+                                if long != 10:
+                                    long = long + 1
+                            elif gr.lower() == "quit":
+                                game = "stop"
+                            elif gr.lower() == "howtoplay":
+                                print(
+                                    'HOW TO PLAY: This game is a game where there is a 10x10 grid and you spawn on coordinates 1, 1. You can do some commands. They are left, right, up, down, quit, howtoplay, and "symbols". When you write a symbol, the game puts that symbol to your current position. Here are some default symbols to use: ▣◩◪▧◰□♠♣♥♦🌲🌳🌴🪵🪨💎🧱🪙🍄🔑')
+                            elif len(gr) == 1:
+                                grid[(long - 1) * 10 + lat - 1] = gr
+            elif x == 8:
+                print("1 to open budget manager")
+                x = int(input("\n"))
+                if x == 1:
+                    print("Welcome to budget manager!")
+                    print("Here, you can manage your budget.")
+                    print("Using 3 currencies: Knut, Sickle, Galleon")
+                    x = input("First, do you want to record your budget to a file (y/n)? ")
+                    if "y" in x.lower():
+                        x = input("File name: ")
+                        y = input(f"Delete old text in {x} (y/n)? ")
+                        if "y" in x.lower():
+                            f = open(x, "w")
+                            f.write("Budget Manager Data")
+                            f.close()
+                        f = open(x, "a")
+                        file = True
+                    budget = 0
+                    user = input("Username: ")
+                    if file:
+                        f.write(f"Budget of {user}\n")
+                    while True:
+                        if file:
+                            f.write(f"Knuts (Bronze): {budget}\n")
+                            f.write(f"Sickles (Silver): {budget * 29}\n")
+                            f.write(f"Galleons (Gold): {budget * 493}\n")
+                        print("1 to print money")
+                        print("2 to change money")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print(f"Knuts (Bronze): {budget}\n")
+                            print(f"Sickles (Silver): {budget * 29}\n")
+                            print(f"Galleons (Gold): {budget * 493}\n")
+                        elif x == 2:
+                            print("1 to add money")
+                            print("2 to subtract money")
+                            x = int(input("\n"))
+                            if x == 1:
+                                print("1 to add Knuts")
+                                print("2 to add Sickles")
+                                print("3 to add Galleons")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    x = int(input("Add how many Knuts? "))
+                                    if file:
+                                        f.write(f"Added {x} Knuts\n")
+                                    budget += x
+                                elif x == 2:
+                                    x = int(input("Add how many Sickles? "))
+                                    if file:
+                                        f.write(f"Added {x} Sickles\n")
+                                    budget += x * 29
+                                elif x == 3:
+                                    x = int(input("Add how many Galleons? "))
+                                    if file:
+                                        f.write(f"Added {x} Galleons\n")
+                                    budget += x * 493
+                            elif x == 2:
+                                print("1 to subtract Knuts")
+                                print("2 to subtract Sickles")
+                                print("3 to subtract Galleons")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    x = float(input("Subtract how many Knuts? "))
+                                    if file:
+                                        f.write(f"Subtracted {x} Knuts\n")
+                                    budget -= x
+                                elif x == 2:
+                                    x = float(input("Subtract how many Sickles? "))
+                                    if file:
+                                        f.write(f"Subtracted {x} Sickles\n")
+                                    budget -= x * 29
+                                elif x == 3:
+                                    x = float(input("Subtract how many Galleons? "))
+                                    if file:
+                                        f.write(f"Subtracted {x} Galleons\n")
+                                    budget -= x * 493
+        elif x == 2:
+            print("1 to open calculator")
+            print("2 to open gallery")
+            print("3 to open notebook")
+            print("4 to open to-do")
+            print("5 to open paint")
+            print("6 to open puzzle")
+            print("7 to open clock")
+            print("8 to open snake")
+            print("9 to open sudoku")
+            print("10 to open minesweeper")
+            print("11 to open solitaire")
+            x = int(input("\n"))
+            if x == 1:
+                print("1 to open normal calculator")
+                print("2 to open calculator with variety")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://www.calculator.net/")
+                elif x == 2:
+                    web("https://www.desmos.com/")
+            elif x == 2:
+                print("1 to open photo gallery")
+                print("2 to open image gallery")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://www.flickr.com/")
+                elif x == 2:
+                    web("https://freepik.com/")
+            elif x == 3:
+                print("1 to open notebook")
+                print("2 to open notepad")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://onlinenotepad.org/app")
+                elif x == 2:
+                    web("https://onlinenotepad.org/notepad")
+            elif x == 4:
+                web("https://flask.io/")
+            elif x == 5:
+                web("https://jspaint.app/")
+            elif x == 6:
+                print("1 to open jigsaw")
+                print("2 to open tiles")
+                print("3 to open daily puzzles")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://www.jigsawplanet.com/")
+                elif x == 2:
+                    web("https://slidingtiles.com/")
+                elif x == 3:
+                    web("https://trainwrecklabs.com/")
+            elif x == 7:
+                print("1 to open clock")
+                print("2 to open alarm")
+                print("3 to open stopwatch")
+                print("4 to open timer")
+                print("5 to open calendar")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://time.is/")
+                elif x == 2:
+                    web("https://vclock.com/")
+                elif x == 3:
+                    web("https://www.online-stopwatch.com/")
+                elif x == 4:
+                    web("https://www.timeanddate.com/timer/")
+                elif x == 5:
+                    web("https://www.timeanddate.com/calendar/")
+            elif x == 8:
+                print("1 to open general snake")
+                print("2 to open maps snake")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://www.google.com/search?q=snake")
+                elif x == 2:
+                    input("Website Closed")
+                    web("https://snake.googlemaps.com/")
+            elif x == 9:
+                web("https://sudoku.com/")
+            elif x == 10:
+                print("1 to open Google minesweeper")
+                print("2 to open minesweeper")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://www.google.com/search?q=minesweeper")
+                elif x == 2:
+                    web("https://minesweeper.online/")
+            elif x == 11:
+                print("1 to open Google solitaire")
+                print("2 to open solitaire")
+                x = int(input("\n"))
+                if x == 1:
+                    web("https://www.google.com/search?q=solitaire")
+                elif x == 2:
+                    web("https://solitaired.com/")
+        """
+        app list:
+        calculator
+        gallery
+        notebook
+        to-do
+        paint
+        puzzle
+        clock
+        snake
+        sudoku
+        minesweeper
+        solitaire
+        """
+    elif x == 2:
+        print("1 to convert Unicode to character")
+        print("2 to convert character to Unicode")
+        print("3 to list unicode")
+        print("4 to cipher words in Caesar Cipher using ASCII")
+        x = int(input("\n"))
+        if x == 1:
+            x = int(input("Enter Unicode number: "))
+            print(f"Decoded character: {chr(x)}")
+        elif x == 2:
+            x = input("Enter character: ")
+            print(f"Encoded number: {ord(x)}")
+        elif x == 3:
+            print("1 to list unicode with numbers")
+            print("2 to list unicode normally")
+            print("3 to list unicode randomly with numbers")
+            print("4 to list unicode random normally")
+            x = int(input("\n"))
+            y = int(input("List how many unicode? "))
+            if x == 1 or x == 3:
+                z = input("What should be written between the number and Unicode? ")
+            if x == 1:
+                for i in range(y):
+                    print(f"{i}{z}{chr(i)}")
+            elif x == 2:
+                for i in range(y):
+                    print(chr(i), end="")
+            elif x == 3:
+                for i in range(y):
+                    j = randint(0, 55295)
+                    print(f"{j}{z}{chr(j)}")
+            elif x == 4:
+                for i in range(y):
+                    j = randint(0, 55295)
+                    print(chr(j), end="")
+        elif x == 4:
+            x = input(
+                "Please give the type of Caesar cipher you want.\nE.g. for \"Caesar +3\" cipher, write \"+3\".\n")
+            y = input(f"Word to cipher with Caesar {x}: ")
+            list = []
+            for i in range(len(y)):
+                list.append(y[i])
+            for i in range(len(list)):
+                list[i] = eval(f"chr(ord(list[i]) {x})")
+            y = ""
+            for i in list:
+                y = f"{y}{i}"
+            print(y)
+    elif x == 3:
+        print("1 to open Python")
+        print("2 to open Python Documentation")
+        print("3 to open code console")
+        print("4 to get operating system information")
+        print("5 to operate system")
+        print("6 to read FOS readme.txt")
+        print("7 to get syntax list for Python")
+        print("8 to open OS shell")
+        print("9 to use sorting algorithms")
+        x = int(input("\n"))
+        if x == 1:
+            web("https://www.python.org/")
+        elif x == 2:
+            print("1 to open in local wireless")
+            print("2 to open in online")
+            x = int(input("\n"))
+            if x == 1:
+                x = input("What do you want to get help about? ")
+                help(x)
+            elif x == 2:
+                web("https://docs.python.org/")
+        elif x == 3:
+            try:
+                run(["python", "code.py"], check=True)
+            except CalledProcessError as e:
+                print("An error occured.")
+        elif x == 4:
+            print("TUI: Froggy_OS")
+            print(f"OS: {name.title()}")
+            print(f"Platform: {platform.title()}")
+            print("Runned On: Pycharm")
+            print("Runned In: Python 3")
+            print(f"Current Working Directory: {getcwd()}")
+            print(f"User: {getcwd().split("\\")[2]}")
+        elif x == 5:
+            input("Please use this if really necessary.\nDon't edit these if not known. ")
+            print("1 to change the current working directory")
+            print("2 to create new directory")
+            print("3 to list files in a directory")
+            print("4 to delete files in a directory")
+            print("5 to rename a file")
+            print("6 to check if a file exists")
+            print("7 to get size of a file")
+            print("8 to write to a file")
+            print("9 to read a file")
+            print("10 to open a program")
+            print("11 to ping an I.P. address")
+            print("12 to edit source code")
+            x = int(input("\n"))
+            if x == 1:
+                x = input(
+                    "Please say something to change the current working directory.\n(e.g. \"../\".\nThe usual \"os.chdir()\" method.")
+                chdir(x)
+            elif x == 2:
+                x = input("Parent directory: ")
+                y = input("New directory name: ")
+                mkdir(path.join(x, y))
+            elif x == 3:
+                x = input("Directory name: ")
+                for i in listdir(x):
+                    print(i)
+            elif x == 4:
+                x = input("Directory name: ")
+                remove(x)
+            elif x == 5:
+                x = input("File name: ")
+                y = input("Rename to what? ")
+                rename(x, y)
+            elif x == 6:
+                x = input("File name: ")
+                if path.exists(x):
+                    print("This file exists.")
+                else:
+                    print("This file doesn't exist.")
+            elif x == 7:
+                x = input("File name: ")
+                print(f"That file is {path.getsize(x)} bytes.")
+            elif x == 8:
+                print("1 to write entirely to a file")
+                print("2 to append text to a file")
+                x = int(input("\n"))
+                if x == 1:
+                    x = input("File name: ")
+                    f = open(x, "w")
+                elif x == 2:
+                    x = input("File name: ")
+                    f = open(x, "w")
+                y = input("Write what? ")
+                f.write(y)
+                f.close()
+            elif x == 9:
+                x = input("File name: ")
+                f = open(x, "r")
+                print(f.read())
+                f.close()
+            elif x == 10:
+                x = input("Program name: ")
+                call(x)
+            elif x == 11:
+                x = input("I.P. address: ")
+                p = Popen(f"ping {x}", stdout=PIPE)
+                print("Loading...")
+                p.wait()
+                if p.poll():
+                    print("I.P. address passive")
+                else:
+                    print("I.P. address active")
+            elif x == 12:
+                input(
+                    "Changing the source code could be really dangerous.\nPlease don't edit these if not known. ")
+                input("Please use this if really necessary. ")
+                input(
+                    "You can run Python and Bash code here.\nBut the variables, lists, dicts e.t.c. are the ones from the code of the actual OS code.\n")
+                print("1 to run Python code")
+                print("2 to run BASH code")
+                print("3 to run +-<>.,[] Code")
+                x = int(input("\n"))
+                if x == 1:
+                    print("1 to execute Python code")
+                    print("2 to evaluate Python code")
+                    x = int(input("\n"))
+                    if x == 1:
+                        shell()
+                        x = input(">>> ")
+                        exec(x)
+                    elif x == 2:
+                        shell()
+                        x = input(">>> ")
+                        print(eval(x))
+                elif x == 2:
+                    shell()
+                    x = input(">>> ")
+                    system(x)
+                elif x == 3:
+                    shell()
+                    x = input("Code: ")
+                    y = input("Input Data: ")
+                    bf(x, y)
+        elif x == 6:
+            f = open("readme.txt", "r")
+            print(f.read())
+            f.close()
+        elif x == 7:
+            print("1 to import and get syntax list of a normal Python module")
+            print("2 to import and get syntax list of a normal Pip library Bash module")
+            print("3 to uninstall and get syntax list of a normal Pip library Bash module")
+            x = int(input("\n"))
+            if x == 1:
+                x = input("Get syntax list of which module? ")
+                m = __import__(x)
+                print(dir(m))
+            elif x == 2:
+                x = input("Get syntax list of which module? ")
+                system(f"pip install {x}")
+                print(dir(x))
+            elif x == 3:
+                x = input("Get syntax list of which module? ")
+                system(f"pip install {x}")
+                print(dir(x))
+                system(f"pip uninstall {x}")
+        elif x == 8:
+            print("1 to open Bash (Standard Linux) shell")
+            print("2 to open general Python shell")
+            print("3 to open gPs for evaluation")
+            print("4 to open +-<>.,[] shell")
+            x = int(input("\n"))
+            if x == 1:
+                shell()
+                system(input(">>> "))
+        elif x == 9:
+            list = eval(input("Enter list to sort as a Python list (e.g. \"[1, 2, 3]\"): "))
+            print(list, type(list))
+            args = []
+            agam = list.copy()
+            agam.sort()
+            print("1 for Stalin Sort (for int, float)")
+            print("2 for Sleep Sort (for int)")
+            print("3 for Bogo Sort (for int, float, str, bool)")
+            print("4 for Bozo Sort (for int, float)")
+            print("5 for Quantum Bogo Sort (for int, float, str, bool)")
+            print("6 for Schrodinger's Sort (for int, float, str, bool)")
+            print("7 for Intelligent Design Sort (for int, float, str, bool)")
+            print("8 for Miracle Sort (for int, float, str, bool)")
+            print("9 for Quick Sort (for int, float, str, bool)")
+            x = int(input("\n"))
+            if x == 1:
+                print(list)
+                print(args)
+                for i in range(len(list)):
+                    try:
+                        if list[i] >= list[i - 1]:
+                            args.append(i)
+                        print(args)
+                    except IndexError:
+                        print(args)
+                print(args)
+            elif x == 2:
+                print(list)
+                print(args)
+                x = 0
+                while not(args == agam):
+                    for i in agam:
+                        if i == x:
+                            args.append(x)
+                            print(args)
+                    sleep(1)
+                    x += 1
+                print(args)
+            elif x == 3:
+                print(list)
+                while not(list == agam):
+                    shuffle(list)
+                    print(list)
+            elif x == 4:
+                print(list)
+                while not(list == args):
+                    x = randint(0, len(list) - 1)
+                    y = randint(0, len(list) - 1)
+                    if x > y and list[x] < list[y]:
+                        a = list[x]
+                        b = list[y]
+                        list[x] = b
+                        list[y] = a
+                        print(list)
+                    if x > y and list[x] < list[y]:
+                        a = list[x]
+                        b = list[y]
+                        list[x] = b
+                        list[y] = a
+                        print(list)
+                print(list)
+            elif x == 5:
+                print(list)
+                args = list.copy()
+                while not(args == agam):
+                    args.shuffle()
+                    print(args)
+            elif x == 6:
+                print(f"½ chance to be {list}")
+                print(f"½ chance to be {agam}")
+                print(f"List is unknown")
+            elif x == 7:
+                print(f"1/(n!) chance for list ({list}) to be sorted")
+            elif x == 8:
+                print("Eventually, a miracle will happen and the list will be sorted.")
+                print(list)
+            elif x == 9:
+                print(agam)
+    elif x == 4:
+        print("1 to manage cases")
+        print("2 to strip letters")
+        print("3 to learn length")
+        print("4 to manage words in words")
+        print("5 to change letters")
+        print("6 to find letters/numbers")
+        x = int(input("\n"))
+        if x == 1:
+            x = input("Enter text: ")
+            print(f"Uppercase text: {edit(x, "upper")}")
+            print(f"Lowercase text: {edit(x, "lower")}")
+            print(f"Cases Swapped text: {edit(x, "swapcase")}")
+            print(f"Capitalized text: {edit(x, "capitalize")}")
+            print(f"Titled text: {edit(x, "title")}")
+        elif x == 2:
+            print("1 to strip from all sides")
+            print("2 to strip from left")
+            print("3 to strip from right")
+            x = int(input("\n"))
+            y = input("Enter word: ")
+            z = input("Enter what will be stripped: ")
+            print(f"y.{dict[x]}(z)")
+        elif x == 3:
+            x = input("Enter word:")
+            print(f"Length: {len(x)}")
+        elif x == 4:
+            print("1 to check if a word is in a word")
+            print("2 to count the number of a word in a word")
+            print("3 to locate a letter in a word")
+            x = int(input("\n"))
+            if x == 1:
+                x = input("The word you're searching for: ")
+                y = input("The word you're searching that word in: ")
+                if x in y:
+                    print("There's that word in that word.")
+                else:
+                    print("There isn't that word in that word.")
+            elif x == 2:
+                x = input("The word you're counting: ")
+                y = input("The word you're counting that word in: ")
+                print(f"There's {y.count(x)} words in that word.")
+            elif x == 3:
+                x = input("The letter you're locating: ")
+                y = input("The word you're counting that word in: ")
+                print(f"The letter's position in that word is the {y.index(x)}. letter.")
+        elif x == 5:
+            x = input("Enter word to change letter in: ")
+            y = int(input("Which letter of the word will you change? "))
+            z = input("Change to what?")
+            list = []
+            for i in range(len(x)):
+                list.append(x[i])
+            list[y] = z
+            p = ""
+            for i in x:
+                p = f"{p}{i}"
+            print(f"New word:\n{p}")
+        elif x == 6:
+            x = input("Enter word: ")
+            if x.isalnum():
+                print("That word has both letters and numbers.")
+            elif x.isalpha():
+                print("That word has letters.")
+            elif x.isnumeric():
+                print("That word has numbers.")
+            if x.isalnum() or x.isalpha():
+                if x.isupper():
+                    print("That word is uppercase.")
+                elif x.islower():
+                    print("That word is lowercase.")
+    elif x == 5:
+        if firsttime:
+            input(
+                "To access internet, please make sure that you have a computer (preferably Windows) that hasn't ended support. ")
+            input("And connect to a WiFi network. ")
+            input(
+                "Finally, make sure that you have Microsoft Edge or Internet Explorer (or Google Chrome) and make it your default browser. ")
+            input("Also, make your default search engine Microsoft Bing (or Google!). ")
+            firsttime = False
+        else:
+            print("1 to open a website")
+            print("2 to open bookmarks")
+            print("3 to open featured websites")
+            x = int(input("\n"))
+            if x == 1:
+                print("1 to search something")
+                print("2 to open a website")
+                print("3 to open new tab")
+                x = int(input("\n"))
+                if x == 1:
+                    print("1 to search on Microsoft Bing")
+                    print("2 to search on Google!")
+                    print("3 to search on Yandex")
+                    print("4 to search on DuckDuckGo")
+                    print("5 to search on Yahoo!")
+                    print("6 to search on YouTube")
+                    print("7 to search on Twitch")
+                    print("8 to search on Vine")
+                    x = int(input("\n"))
+                    if x == 1:
+                        x = input("What to search? ")
+                        web(f"https://www.bing.com/search?q={x}")
+                    elif x == 2:
+                        x = input("What to search? ")
+                        web(f"https://www.google.com/search?q={x}")
+                    elif x == 3:
+                        x = input("What to search? ")
+                        web(f"https://yandex.com/search/?text={x}")
+                    elif x == 4:
+                        x = input("What to search? ")
+                        web(f"https://duckduckgo.com/?t=h_&q={x}")
+                    elif x == 5:
+                        x = input("What to search? ")
+                        web(f"https://search.yahoo.com/search?p={x}")
+                    elif x == 6:
+                        x = input("What to search? ")
+                        web(f"https://youtube.com/results?search_query={x}")
+                    elif x == 7:
+                        x = input("What to search? ")
+                        web(f"https://www.twitch.tv/search?term={x}")
+                    elif x == 8:
+                        x = input("What to search? ")
+                        web(f"https://vine.co/search?q={x}")
+                elif x == 2:
+                    print("1 to enter URL")
+                    print("2 to enter its name (when you forgot the URL)")
+                    x = int(input("\n"))
+                    if x == 1:
+                        x = input("URL: ")
+                        web(x)
+                    elif x == 2:
+                        x = input("Name (e.g. \"python\"): ")
+                        input("We will now try to find a website with that name.\n")
+                        y = input("Open suspicious websites (y/n)? ")
+                        x = x.lower()
+                        web(f"https://www.{x}.com")
+                        web(f"https://www.{x}.org")
+                        web(f"https://www.{x}.gov")
+                        web(f"https://www.{x}.net")
+                        web(f"https://www.{x}.edu")
+                        web(f"https://www.{x}.co.uk")
+                        web(f"https://www.{x}.ru")
+                        if "y" in y.lower():
+                            web(f"https://www.{x}.io")
+                            web(f"https://www.{x}.xyz")
+                            web(f"https://www.{x}.fun")
+                            web(f"https://www.{x}.website")
+                            web(f"https://www.{x}.tv")
+                elif x == 3:
+                    x = input("URL: ")
+                    open_new_tab(x)
+            elif x == 2:
+                print("1 to open bookmark websites")
+                print("2 to edit bookmarks")
+                print("3 to list bookmarks")
+                x = int(input("\n"))
+                if x == 1:
+                    for i in range(len(bmn)):
+                        print(f"{i + 1} to open {bmn[i]}")
+                    x = int(input("\n"))
+                    print(f"Opening {bm[x - 1]}")
+                    web(bm[x - 1])
+                elif x == 2:
+                    print("1 to edit bookmark names")
+                    print("2 to edit bookmark URL's")
+                    x = int(input("\n"))
+                    if x == 1:
+                        for i in range(len(bmn)):
+                            print(f"{i} to edit {bmn[i]}")
+                            x = int(input("\n"))
+                        y = int(input("New bookmark name: "))
+                        bmn[x] = y
+                    elif x == 2:
+                        for i in range(len(bm)):
+                            print(f"{i} to edit {bm[i]}")
+                        x = int(input("\n"))
+                        y = int(input("New bookmark URL: "))
+                        bm[x] = y
+                elif x == 3:
+                    for i in range(len(bmn)):
+                        print(f"{i}. {bmn[i]} ({bm[i]})")
+            elif x == 3:
+                for i in url:
+                    print(i)
