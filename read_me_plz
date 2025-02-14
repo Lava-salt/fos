@@ -6,6 +6,7 @@ First, get a computer (preferably Windows NT), one that can access internet, and
 Then, access a WiFi. Then, open Microsoft Edge or Microsoft Internet Explorer (or Google Chrome) and access internet.
 Go to the URL "https://www.jetbrains.com/pycharm/download/" and install PyCharm.
 Make a new project named "Froggy_OS".
+Go to "https://github.com/Lava-salt/fos.git/" and access FOS files.
 Make a file named "readme.txt" and paste this readme.txt text there.
 Make a Python file named "fos_sourcecode.py" and paste the text in the "fos_sourcecode" file.
 Make a Python file named "fos_interface.py" and paste the text in the "fos_interface" file.
