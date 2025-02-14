@@ -20,4 +20,6 @@ Welcome to Froggy OS, a Text-Based User Interface for Python
 In case a softlock or an error happens, please rerun the "fos_interface.py" script.
 Please do not do any ACE (Arbitrary Code Execution) in the FOS.
 Or do for fun, I guess (:/)-I--<
+WARNING: FOS GETS UPDATES ALL THE TIME! IF YOU WANT YOUR FOS TO STAY UPDATED, REDOWNLOAD FILES WHEN THE
+FOS VERSION WHEN OPENED INTERFACE DOESN'T MATCH THE FOS VERSION IN GITHUB! PREFERABLY REDOWNLOAD EACH MONTH!
 */
