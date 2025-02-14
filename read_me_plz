@@ -1,0 +1,22 @@
+/*
+Welcome to Froggy OS readme.txt
+
+This is a guide to how to install Froggy OS to your computer.
+First, get a computer (preferably Windows NT), one that can access internet, and hasn't ended support.
+Then, access a WiFi. Then, open Microsoft Edge or Microsoft Internet Explorer (or Google Chrome) and access internet.
+Go to the URL "https://www.jetbrains.com/pycharm/download/" and install PyCharm.
+Make a new project named "Froggy_OS".
+Make a file named "readme.txt" and paste this readme.txt text there.
+Make a Python file named "fos_sourcecode.py" and paste the text in the "fos_sourcecode" file.
+Make a Python file named "fos_interface.py" and paste the text in the "fos_interface" file.
+Make a Python file named "code.py" and paste the text in the "code" file.
+Make an HTML file named "index.html" and paste the text in the "fos_web" file.
+Make an empty file named "chat.txt".
+Make "test.py", "file.txt" files for debug.
+Go to "fos_interface.py".
+Change the "main" text on the top right to "Current File".
+Then, run "fos_interface.py" by clicking on the green triangle on the top right.
+Welcome to Froggy OS, a Text-Based User Interface for Python
+In case a softlock or an error happens, please rerun the "fos_interface.py" script.
+Please do not do any ACE (Arbitrary Code Execution) in the FOS.
+*/
