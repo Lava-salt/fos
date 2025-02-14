@@ -1,3 +1,5 @@
+print("Current Version: FOS 1.2.0, last major update: 1.1.0")
+
 # head (module importing)
 
 from fos_sourcecode import *
