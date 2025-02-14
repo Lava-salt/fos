@@ -81,6 +81,7 @@
                 Bugs: </br>
                 1. XOX Doesn't work </br>
                 2. Alarm is corrupt </br>
+                3. Incorrect shell date </br>
                 Future Additions: </br>
                 1. Budget Manager </br>
                 2. Logic Evaluator </br>
@@ -95,6 +96,7 @@
                 Bugs: </br>
                 1. XOX Doesn't work </br>
                 2. Alarm is corrupt </br>
+                3. Incorrect shell date </br>
                 Future Additions: </br>
                 1. Budget Manager </br>
                 2. Logic Evaluator </br>
@@ -110,6 +112,7 @@
                 3. Alarm is fixed </br>
                 Bugs: </br>
                 1. XOX Doesn't work </br>
+                2. Incorrect shell date </br>
                 Future Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
             </p>
@@ -123,15 +126,17 @@
                 Additions: </br>
                 1. XOX P-vs-CPU Mode Fixed </br>
                 Bugs: </br>
+                1. Incorrect shell date </br>
                 None </br>
                 Future Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
             </p>
-            <h2>FOS 1.6.0</h2>
+            <h2>FOS 1.6.5</h2>
             <p>
                 Game Update Part 2 </br>
                 Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
+                2. Incorrect shell date fixed </br>
                 Bugs: </br>
                 None </br>
                 Future Additions: </br>
