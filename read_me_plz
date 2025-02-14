@@ -19,4 +19,5 @@ Then, run "fos_interface.py" by clicking on the green triangle on the top right.
 Welcome to Froggy OS, a Text-Based User Interface for Python
 In case a softlock or an error happens, please rerun the "fos_interface.py" script.
 Please do not do any ACE (Arbitrary Code Execution) in the FOS.
+Or do for fun, I guess (:/)-I--<
 */
