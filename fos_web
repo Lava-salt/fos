@@ -87,6 +87,7 @@
                 2. Logic Evaluator </br>
                 3. Yahtzee (Yacht Dice) </br>
                 4. Can Run Anything </br>
+                5. Roulette </br>
             </p>
             <h2>FOS 1.1.0</h2>
             <p>
@@ -101,6 +102,7 @@
                 1. Budget Manager </br>
                 2. Logic Evaluator </br>
                 3. Yahtzee (Yacht Dice) </br>
+                4. Roulette </br>
             </p>
             <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.4.5</h2>
@@ -115,6 +117,7 @@
                 2. Incorrect shell date </br>
                 Future Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
+                2. Roulette </br>
             </p>
             <h3>Working on it</h3>
             <p>
@@ -125,6 +128,7 @@
                 Game Update Part 1 </br>
                 Additions: </br>
                 1. XOX P-vs-CPU Mode Fixed </br>
+                2. Roulette </br>
                 Bugs: </br>
                 1. Incorrect shell date </br>
                 None </br>
