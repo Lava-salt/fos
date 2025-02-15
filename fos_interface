@@ -156,6 +156,7 @@ gods_abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"
 ohno = words.words()
 # it is called "ohno" because it's so long
 # and like "oh no! the FOS will crash because the list is so long!"
+binary = 0
 
 # body (code)
 
@@ -1306,6 +1307,7 @@ while True:
                                 grid[(long - 1) * 10 + lat - 1] = gr
             elif x == 8:
                 print("1 to open budget manager")
+                print("2 to open logic evaluator")
                 x = int(input("\n"))
                 if x == 1:
                     print("Welcome to budget manager!")
@@ -1381,6 +1383,41 @@ while True:
                                     if file:
                                         f.write(f"Subtracted {x} Galleons\n")
                                     budget -= x * 493
+                elif x == 2:
+                    print("1 to evaluate Python logic")
+                    print("2 to evaluate Boolean logic")
+                    print("3 to evaluate decimal logic")
+                    print("4 to evaluate binary logic")
+                    print("5 to evaluate BASH logic")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("Enter a Python data and it'll give the answer.")
+                        print("E.g. write \"5 + 5\" and the program will print \"10\".")
+                        x = input("Enter data: ")
+                        print(eval(x))
+                    elif x == 2:
+                        print("Enter a Python data and it'll give the Bool value.")
+                        print("E.g. write \"5+5 == 10\" and the program will print \"True\".")
+                        x = input("Enter data: ")
+                        if type(eval(x)) == bool:
+                            print(eval(x))
+                        else:
+                            print("Unknown")
+                    elif x == 3:
+                        print("Enter a Python decimal operation and it'll give the answer.")
+                        print("E.g. write \"5 + 5\" and the program will print \"10\".")
+                        x = input("Enter data: ")
+                        print(float(eval(x)))
+                    elif x == 4:
+                        print("Enter a Python decimal operation and it'll give the binary value.")
+                        print("E.g. write \"5 + 5\" and the program will print \"1010\".")
+                        x = int(input("Enter data: "))
+                        print(bin(x)[2:])
+                    elif x == 5:
+                        print("Enter a BASH data and it'll give the answer.")
+                        print("E.g. write \"$((5 + 5))\" and the program will print \"10\".")
+                        x = input("Enter data: ")
+                        system(f"echo {x}")
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
