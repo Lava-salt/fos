@@ -1,4 +1,6 @@
+print("^^^^^^^^^^^^ Current Working Directory\n")
 print("Current Version: FOS 1.2.0, last major update: 1.1.0")
+print("Froggy OS, TUI made by Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 
 # head (module importing)
 
@@ -12,7 +14,6 @@ from random import randint, random, gauss, normalvariate, shuffle
 from os import name, getcwd, chdir, path, mkdir, listdir, remove, rename, system
 from subprocess import run, CalledProcessError, call, Popen, PIPE
 from sys import platform
-print("^^^^^^^^^^^^ Current Working Directory\n")
 print("1 to install modules")
 print("2 to reinstall modules")
 print("3 to pass")
