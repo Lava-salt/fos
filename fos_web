@@ -82,12 +82,6 @@
                 1. XOX Doesn't work </br>
                 2. Alarm is corrupt </br>
                 3. Incorrect shell date </br>
-                Future Additions: </br>
-                1. Budget Manager </br>
-                2. Logic Evaluator </br>
-                3. Yahtzee (Yacht Dice) </br>
-                4. Can Run Anything </br>
-                5. Roulette </br>
             </p>
             <h2>FOS 1.1.0</h2>
             <p>
@@ -103,6 +97,7 @@
                 2. Logic Evaluator </br>
                 3. Yahtzee (Yacht Dice) </br>
                 4. Roulette </br>
+                5. Changing infinite loops to loops that you can quit </br>
             </p>
             <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.4.5</h2>
@@ -118,6 +113,7 @@
                 Future Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
                 2. Roulette </br>
+                3. Changing infinite loops to loops that you can quit </br>
             </p>
             <h3>Working on it</h3>
             <p>
@@ -134,6 +130,7 @@
                 None </br>
                 Future Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
+                2. Changing infinite loops to loops that you can quit </br>
             </p>
             <h2>FOS 1.6.5</h2>
             <p>
@@ -141,6 +138,16 @@
                 Additions: </br>
                 1. Yahtzee (Yacht Dice) </br>
                 2. Incorrect shell date fixed </br>
+                Bugs: </br>
+                None </br>
+                Future Additions: </br>
+                1. Changing infinite loops to loops that you can quit </br>
+            </p>
+            <h2>FOS 1.7.0</h2>
+            <p>
+                Enhanced Interface Update </br>
+                Additions: </br>
+                1. Changing infinite loops to loops that you can quit (so now, you won't need to rerun FOS every time [except some code shells, they'll remain infinite.].) </br>
                 Bugs: </br>
                 None </br>
                 Future Additions: </br>
