@@ -99,6 +99,7 @@
                 4. Roulette </br>
                 5. Changing infinite loops to loops that you can quit </br>
                 6. The Zen of Python </br>
+                7. Number (and Word) Bingo </br>
             </p>
             <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.4.5</h2>
@@ -116,6 +117,7 @@
                 2. Roulette </br>
                 3. Changing infinite loops to loops that you can quit </br>
                 4. The Zen of Python </br>
+                5. Number (and Word) Bingo </br>
             </p>
             <h3>Working on it</h3>
             <p>
@@ -134,6 +136,7 @@
                 1. Yahtzee (Yacht Dice) </br>
                 2. Changing infinite loops to loops that you can quit </br>
                 3. The Zen of Python </br>
+                4. Number (and Word) Bingo </br>
             </p>
             <h2>FOS 1.6.5</h2>
             <p>
@@ -146,6 +149,7 @@
                 Future Additions: </br>
                 1. Changing infinite loops to loops that you can qui
                 2. The Zen of Python </br>
+                3. Number (and Word) Bingo </br>
             </p>
             <h2>FOS 1.7.0</h2>
             <p>
@@ -153,6 +157,17 @@
                 Additions: </br>
                 1. Changing infinite loops to loops that you can quit (so now, you won't need to rerun FOS every time [except some code shells, they'll remain infinite.].) </br>
                 2. The Zen of Python </br>
+                Bugs: </br>
+                None </br>
+                Future Additions: </br>
+                1. Number (and Word) Bingo </br>
+            </p>
+            </p>
+            <h2>FOS 1.9.0</h2>
+            <p>
+                Bingo Update </br>
+                Additions: </br>
+                1. Number (and Word) Bingo </br>
                 Bugs: </br>
                 None </br>
                 Future Additions: </br>
