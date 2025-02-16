@@ -41,17 +41,22 @@ def xx(xox):
     x = int(input("Where to place x? (1/9) "))
     if xox[x - 1] != "A":
         print("Invalid position")
-        o(xox)
+        xx(xox)
     else:
         xox[x - 1] = "X"
 def ai(xox):
     print("O (computer) to move")
-    xoxa = []
-    for i in range(len(xox)):
-        if xox[i] == "A":
-            xoxa.append(i)
-    x = choice(xoxa)
-    xox[x] = "O"
+    x = randint(1, 9)
+    if xox[x - 1] != "A":
+        aipatch(xox)
+    else:
+        xox[x - 1] = "O"
+def aipatch(xox):
+    x = randint(1, 9)
+    if xox[x - 1] != "A":
+        aipatch(xox)
+    else:
+        xox[x - 1] = "O"
 def scramble(x):
     list = []
     for i in range(len(x)):
