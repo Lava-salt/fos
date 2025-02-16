@@ -92,16 +92,7 @@
                 1. XOX Doesn't work </br>
                 2. Alarm is corrupt </br>
                 3. Incorrect shell date </br>
-                Future Additions: </br>
-                1. Budget Manager </br>
-                2. Logic Evaluator </br>
-                3. Yahtzee (Yacht Dice) </br>
-                4. Roulette </br>
-                5. Changing infinite loops to loops that you can quit </br>
-                6. The Zen of Python </br>
-                7. Number (and Word) Bingo </br>
             </p>
-            <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.4.5</h2>
             <p>
                 Code Scrap Update </br>
@@ -121,10 +112,7 @@
                 4. The Zen of Python </br>
                 5. Number (and Word) Bingo </br>
             </p>
-            <h3>Working on it</h3>
-            <p>
-                Currently done: 1, 2, 3, 4 Not done: 5
-            </p>
+            <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.5.0</h2>
             <p>
                 Game Update Part 1 </br>
@@ -140,6 +128,10 @@
                 2. Changing infinite loops to loops that you can quit </br>
                 3. The Zen of Python </br>
                 4. Number (and Word) Bingo </br>
+            </p>
+            <h3>Working on it</h3>
+            <p>
+                Currently done: None Not done: 1, 2, 3, 4, 5
             </p>
             <h2>FOS 1.6.5</h2>
             <p>
