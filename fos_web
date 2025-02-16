@@ -109,6 +109,8 @@
                 1. Budget Manager </br>
                 2. Logic Evaluator </br>
                 3. Alarm is fixed </br>
+                4. Changed "can run anything" a bit </br>
+                5. Some music scraps for online code scraps </br>
                 Bugs: </br>
                 1. XOX Doesn't work </br>
                 2. Incorrect shell date </br>
@@ -121,7 +123,7 @@
             </p>
             <h3>Working on it</h3>
             <p>
-                Currently done: Additions: 1, 2 Bugs: None
+                Currently done: 1, 2, 3, 4 Not done: 5
             </p>
             <h2>FOS 1.5.0</h2>
             <p>
@@ -129,6 +131,7 @@
                 Additions: </br>
                 1. XOX P-vs-CPU Mode Fixed </br>
                 2. Roulette </br>
+                3. Removed the brands from the calory tracker in FOS-SubOS </br>
                 Bugs: </br>
                 1. Incorrect shell date </br>
                 None </br>
