@@ -333,7 +333,7 @@ elif x == 3:
     if x == 1:
         input("You can run enhanced +-<>.,[] programs, like running AppleSoft BASIC in Apple II. ")
         input("Write normal syntax, but start with a number that's the line number of the code line. ")
-        input("For example, like \"10 ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.\".\nThere's also some extra functions. ")
+        input("For example, like \"10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++.-------------------.--.++++++++++++++++++.-.---------------.-.--------------------------------------------------------------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-.------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.---.+++++.---------.---------------------------------------------------------------------.+++++++++++++++++.-.\".\nThere's also some extra functions. ")
         input(
             "\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
         input("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
@@ -347,7 +347,7 @@ elif x == 3:
                 tul = kur[i]
                 pul = tul.split()
                 kur[i] = int(pul[0])
-            code.append(input("> "))
+            code.append(input("\n> "))
             pul = code[-1].split()
             if pul[0].isnumeric():
                 try:
@@ -407,8 +407,8 @@ elif x == 3:
         g.close()
 elif x == 4:
     del x, code, pointer
-    print("First, enter the compiling language.")
-    input("E.g. write \"perl -e\" to run Perl code. ")
+    print("First, enter the compiling language as a Python list.")
+    input("E.g. write \"[\"perl\", \"-e\"]\" to run Perl code. ")
     print("BASH -> \"bash\"")
     print("ZSH -> \"zsh\"")
     print("Fish -> \"fish\"")
@@ -429,21 +429,17 @@ elif x == 4:
     print("Assembly (NASM) -> \"nasm\"")
     print("COBOL -> \"cobc -x\"")
     input("R -> \"Rscript\" ")
-    print("List (Common Lisp) -> \"sbcl\", \"clisp\"")
+    print("Lisp (Common Lisp) -> \"sbcl\", \"clisp\"")
     print("Scheme -> \"racket\"")
     input("Prolog -> \"swipl\" ")
     print("PostgreSQL -> \"psql\"")
     print("MySQL -> \"mysql\"")
     input("SQLite -> \"sqlite3\" ")
     input("Write the langs' list between \"quotation marks\", and all between [square braces] separated by, commas (like Python lists). ")
-    input("E.g. write \"[\"perl\", \"-e\"] to make program write inline Perl -e code. ")
-    abcacacahahahacacacababafsbkcabca = input("Enter code lang: ")
-    print("Now write the code.")
-    print("E.g. write \"file.txt\" to run that file.")
-    print("Also don't use these variables: \"abcacacahahahacacacababafsbkcabca\", \"abcacacahahahacacacababafsbkcabcagg\" and \"abcacacahahahacacacababafsbkcabcagghjafk\".")
-    abcacacahahahacacacababafsbkcabcagg = input("Enter code: ")
-    abcacacahahahacacacababafsbkcabcagghjafk = []
-    for i in eval(abcacacahahahacacacababafsbkcabca):
-        abcacacahahahacacacababafsbkcabcagghjafk.append(i)
-    abcacacahahahacacacababafsbkcabcagghjafk.append(abcacacahahahacacacababafsbkcabcagg)
-    run(abcacacahahahacacacababafsbkcabcagghjafk)
+    input("E.g. write \"[\"perl\", \"-e\"]\" to make program write inline Perl -e code. ")
+    input("Use \"[\"perl\", \"-c\"]\" this \"-c\" syntax to make the program run a code instead of a file. ")
+    input("Then, give the file name to run, e.g. \"[\"python\", \"-c\", \"print('hello')\"]\"")
+    abcacacahahahacacacababafsbkcabca = input("Enter code: ")
+    print("Also don't use this variable: \"abcacacahahahacacacababafsbkcabca\".")
+    run(eval(abcacacahahahacacacababafsbkcabca))
+
