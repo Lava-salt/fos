@@ -113,7 +113,7 @@
                 5. Number (and Word) Bingo </br>
             </p>
             <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
-            <h2>FOS 1.5.0</h2>
+            <h2>FOS 1.6.5</h2>
             <p>
                 Game Update Part 1 </br>
                 Additions: </br>
@@ -131,9 +131,9 @@
             </p>
             <h3>Working on it</h3>
             <p>
-                Currently done: None Not done: 1, 2, 3, 4, 5
+                Currently done: 1 Not done: 2, 3, 4, 5
             </p>
-            <h2>FOS 1.6.5</h2>
+            <h2>FOS 1.8.0</h2>
             <p>
                 Game Update Part 2 </br>
                 Additions: </br>
@@ -146,7 +146,7 @@
                 2. The Zen of Python </br>
                 3. Number (and Word) Bingo </br>
             </p>
-            <h2>FOS 1.7.0</h2>
+            <h2>FOS 1.9.5</h2>
             <p>
                 Enhanced Interface Update </br>
                 Additions: </br>
@@ -158,11 +158,12 @@
                 1. Number (and Word) Bingo </br>
             </p>
             </p>
-            <h2>FOS 1.9.0</h2>
+            <h2>FOS 1.11.5</h2>
             <p>
-                Bingo Update </br>
+                More Code Scraps Update </br>
                 Additions: </br>
                 1. Number (and Word) Bingo </br>
+                2. Data Bank </br>
                 Bugs: </br>
                 None </br>
                 Future Additions: </br>
