@@ -371,10 +371,10 @@ while True:
                     x = int(input("\n"))
                     if x == 1:
                         del x
-                        get(xox)
                         print("A is empty")
                         print("X is x")
                         print("O is o")
+                        get(xox)
                         xx(xox)
                         get(xox)
                         o(xox)
@@ -396,10 +396,10 @@ while True:
                         print("Match ended")
                     elif x == 2:
                         del x
-                        get(xox)
                         print("A is empty")
                         print("X is x")
                         print("O is o")
+                        get(xox)
                         xx(xox)
                         get(xox)
                         ai(xox)
