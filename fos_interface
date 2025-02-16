@@ -294,16 +294,17 @@ while True:
                 if x == 1:
                     print(c)
                 elif x == 2:
-                    print("The alarm code is broken.")
+                    print("The alarm code is a bit broken.")
                     x = input("Do you still like to use alarm? (y/n) ")
                     if "y" in x.lower():
+                        print(f"Current time is {datetime.now()}")
                         x = input(
-                            f"Please enter the time the alarm will get ignited as\nYYYY-MM-DD HH:MM:SS e.g. {c.strftime("%Y-%m-%d %H:%M:%S")}\n")
+                            f"Please enter the time the alarm will get ignited as\nYYYY-MM-DD HH:MM e.g. {f"{datetime.now().year}-{datetime.now().month}-{datetime.now().day} {datetime.now().hour}:{datetime.now().minute}"}\n")
                         y = input(
                             "Now select the alarm\nFor this, please upload an alarm sound URL from \"https://www.youtube.com/\", \"https://www.twitch.tv/\", or \"https://vine.co/\".\nPlease don't give a URL if you want to use the default sound.\n")
                         print("Alarm set\nAlarm is off")
-                        while not (c == x):
-                            print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                        while not (f"{datetime.now().year}-{datetime.now().month}-{datetime.now().day} {datetime.now().hour}:{datetime.now().minute}" == x):
+                            print(f"{datetime.now().year}-{datetime.now().month}-{datetime.now().day} {datetime.now().hour}:{datetime.now().minute}\n(second is {datetime.now().second}.{datetime.now().microsecond})")
                             sleep(1)
                         if y == "":
                             web("https://www.youtube.com/watch?v=F30q6fMGV3s")
@@ -608,7 +609,7 @@ while True:
                     else:
                         print("If it was a yes/no question, i predict it no.")
                     print(f"If it was a number question, i predict it {randint(0, 10)}.")
-                    print(f"The word of the day is {ohno[(c.day * c.month * c.year) % len(ohno)]}")
+                    print(f"The word of the day is {ohno[(datetime.now().day * datetime.now().month * datetime.now().year) % len(ohno)]}")
                 elif x == 12:
                     print("The Library of Babel is a library with books.")
                     print("But these books are the combination of every possible script ever.")
@@ -1430,6 +1431,7 @@ while True:
             print("9 to open sudoku")
             print("10 to open minesweeper")
             print("11 to open solitaire")
+            print("12 to open code scraps")
             x = int(input("\n"))
             if x == 1:
                 print("1 to open normal calculator")
@@ -1514,6 +1516,41 @@ while True:
                     web("https://www.google.com/search?q=solitaire")
                 elif x == 2:
                     web("https://solitaired.com/")
+            elif x == 12:
+                print("1 to open jukebox")
+                print("2 to open piano")
+                print("3 to open budget manager")
+                print("4 to open logic evaluator")
+                print("5 to open vocabulary")
+                print("6 to open roulette")
+                x = int(input("\n"))
+                if x == 1:
+                    print("1 to open music")
+                    print("2 to open jukebox")
+                    print("3 to open music editor")
+                    x = int(input("\n"))
+                    if x == 1:
+                        web("https://open.spotify.com/")
+                    elif x == 2:
+                        web("https://jukebox.today/")
+                    elif x == 3:
+                        print("1 for normal editor")
+                        print("2 for cartoony editor")
+                        x = int(input("\n"))
+                        if x == 1:
+                            web("https://audiomass.co/")
+                        elif x == 2:
+                            web("https://danielx.net/composer/")
+                elif x == 2:
+                    web("https://www.musicca.com/piano")
+                elif x == 3:
+                    web("https://moneysmart.gov.au/budgeting/budget-planner")
+                elif x == 4:
+                    web("https://logic.ly/demo/")
+                elif x == 5:
+                    web("https://www.vocabulary.com/")
+                elif x ==6:
+                    web("https://www.247games.com/roulette/")
         """
         app list:
         calculator
