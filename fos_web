@@ -111,12 +111,6 @@
                 Bugs: </br>
                 1. XOX Doesn't work </br>
                 2. Incorrect shell date </br>
-                Future Additions: </br>
-                1. Yahtzee (Yacht Dice) </br>
-                2. Roulette </br>
-                3. Changing infinite loops to loops that you can quit </br>
-                4. The Zen of Python </br>
-                5. Number (and Word) Bingo </br>
             </p>
             <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.6.5</h2>
@@ -129,11 +123,6 @@
                 Bugs: </br>
                 1. Incorrect shell date </br>
                 None </br>
-                Future Additions: </br>
-                1. Yahtzee (Yacht Dice) </br>
-                2. Changing infinite loops to loops that you can quit </br>
-                3. The Zen of Python </br>
-                4. Number (and Word) Bingo </br>
             </p>
             <h3>Working on it</h3>
             <p>
@@ -147,10 +136,6 @@
                 2. Incorrect shell date fixed </br>
                 Bugs: </br>
                 None </br>
-                Future Additions: </br>
-                1. Changing infinite loops to loops that you can qui
-                2. The Zen of Python </br>
-                3. Number (and Word) Bingo </br>
             </p>
             <h2>FOS 1.9.5</h2>
             <p>
@@ -160,8 +145,6 @@
                 2. The Zen of Python </br>
                 Bugs: </br>
                 None </br>
-                Future Additions: </br>
-                1. Number (and Word) Bingo </br>
             </p>
             </p>
             <h2>FOS 1.11.5</h2>
@@ -170,15 +153,14 @@
                 Additions: </br>
                 1. Number (and Word) Bingo </br>
                 2. Data Bank </br>
+                3. Weather Simulator </br>
                 Bugs: </br>
-                None </br>
-                Future Additions: </br>
                 None </br>
             </p>
         </aside>
         <footer>
             <p>
-                For more information, contact my email or my Scratch Account (will be published later). </br>
+                For more information, contact my <a href="https://github.com/Lava-salt/">GitHub account</a>. </br>
                 Contact me with a better way using <a href="https://github.com/Lava-salt/fos/discussions/1">my GitHub discussion</a>. </br>
             </p>
         </footer>
