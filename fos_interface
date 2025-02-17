@@ -1,6 +1,6 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
 print("Current Version: FOS 1.2.0, last major update: 1.1.0")
-print("Froggy OS, TUI made by Can Koyuncu, nickname: Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
+print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/1\"")
 
 # head (module importing)
@@ -46,7 +46,6 @@ for i in range(200000):
 todo_fav = []
 for i in range(200000):
     notebook.append("Not Favourite")
-c = datetime.now()
 cl = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
 fruits = []
 for i in range(200000):
@@ -1309,6 +1308,7 @@ while True:
             elif x == 8:
                 print("1 to open budget manager")
                 print("2 to open logic evaluator")
+                print("3 to open roulette")
                 x = int(input("\n"))
                 if x == 1:
                     print("Welcome to budget manager!")
@@ -1419,6 +1419,106 @@ while True:
                         print("E.g. write \"$((5 + 5))\" and the program will print \"10\".")
                         x = input("Enter data: ")
                         system(f"echo {x}")
+                elif x == 3:
+                    print("Welcome to the roulette!")
+                    while True:
+                        print("1 to open rules")
+                        print("2 to get tactics")
+                        print("3 to get number betting and prize cheastsheet")
+                        print("4 to play")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("In roulette, you bet an amount of numbers,\nand win money if the numbers were selected in a random number selection.")
+                            print("There's 37 numbers from 0 to 36.\nTo increase your chances to win, look at some tactics!")
+                        elif x == 2:
+                            print("Martingale: If you lose, double the bet's number.")
+                            print("Fibonacci: Bet the Fibonacci number sequence in order.")
+                            print("D'Alembert: Bet 1 number higher if lost, and 1 number lower if won.")
+                        elif x == 3:
+                            print("Options of numbers to bet for: Prize:")
+                            print("1 (Straight Up)                36 times how much got bet to roulette")
+                            print("2 (Split)                      18 times how much got bet to roulette")
+                            print("3 (Street)                     12 times how much got bet to roulette")
+                            print("4 (Corner)                     9 times how much got bet to roulette")
+                            print("6 (Six Line)                   6 times how much got bet to roulette")
+                            print("12 (Dozen)                     3 times how much got bet to roulette")
+                            print("18 (Even Money Bet)            2 times how much got bet to roulette")
+                        elif x == 4:
+                            money = float(input("Enter your budget: "))
+                            bet = float(input("Bet how much money for the roulette? "))
+                            money -= bet
+                            print(f"Budget: ${money}")
+                            print("1 to play")
+                            print("2 or else to quit")
+                            x = int(input("\n"))
+                            if x == 1:
+                                print("1 to bet straight up")
+                                print("2 to bet split")
+                                print("3 to bet street")
+                                print("4 to bet corner")
+                                print("5 to bet six lane")
+                                print("6 to bet dozen")
+                                print("7 to bet even money bet")
+                                x = int(input("\n"))
+                                input("Bet which numbers? ")
+                                if x == 1:
+                                    if randint(1, 37) <= 1:
+                                        print(f"You won!\n${bet * 36} added")
+                                        budget += bet * 36
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                                elif x == 2:
+                                    if randint(1, 37) <= 2:
+                                        print(f"You won!\n${bet * 18} added")
+                                        budget += bet * 2
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                                elif x == 3:
+                                    if randint(1, 37) <= 3:
+                                        print(f"You won!\n${bet * 12} added")
+                                        budget += bet * 12
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                                elif x == 4:
+                                    if randint(1, 37) <= 4:
+                                        print(f"You won!\n${bet * 9} added")
+                                        budget += bet * 9
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                                elif x == 5:
+                                    if randint(1, 37) <= 6:
+                                        print(f"You won!\n${bet * 6} added")
+                                        budget += bet * 6
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                                elif x == 5:
+                                    if randint(1, 37) <= 12:
+                                        print(f"You won!\n${bet * 3} added")
+                                        budget += bet * 3
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                                elif x == 1:
+                                    if randint(1, 37) <= 18:
+                                        print(f"You won!\n${bet * 2} added")
+                                        budget += bet * 2
+                                        print(f"Budget: ${money}")
+                                    else:
+                                        print("You lost!")
+                                        print(f"Budget: ${money}")
+                            else:
+                                break
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
