@@ -156,6 +156,9 @@ ohno = words.words()
 # it is called "ohno" because it's so long
 # and like "oh no! the FOS will crash because the list is so long!"
 binary = 0
+names = ['Alexander', 'Alexei', 'Anatolyevich', 'Andrei', 'Andreyevich', 'Boris', 'Borisovich', 'Dmitriy', 'Dmitry', 'Fyodorovich', 'Georgy', 'Grigoriy', 'Igor', 'Ilyich', 'Joseph', 'Konstantin', 'Lavrentiy', 'Leonid', 'Lev', 'Maximilianovich', 'Mikhail', 'Mikhaylovich', 'Nikita', 'Nikolai', 'Nikolayevich', 'Pavlovich', 'Sergeyevich', 'Stepanovich', 'Ustinovich', 'Viassarionovich', 'Viktor', 'Viktorovich', 'Vladimir', 'Vladimirovich', 'Vyacheslav', 'Yevseyevich', 'Yuri']
+shuffle(names)
+fruits = "🍎🍐🍊🍌🍋"
 
 # body (code)
 
@@ -163,14 +166,14 @@ f = open("readme.txt", "r")
 print(f.read())
 f.close()
 while True:
-    print("1 to open apps")
+    print("1 to open APPS")
     print("2 to open ASCII editor")
     print("3 to open code/OS archives")
     print("4 to edit text")
     print("5 to access internet")
     x = int(input("\n"))
     if x == 1:
-        print("1 to open apps in local wireless")
+        print("1 to open apps in LOCAL WIRELESS")
         print("2 to open apps in online")
         x = int(input("\n"))
         if x == 1:
@@ -181,7 +184,7 @@ while True:
             print("5 to open games")
             print("6 to open chat")
             print("7 to open FOS Sub-Operating System")
-            print("8 to open code scraps")
+            print("8 to open CODE SCRAPS")
             x = int(input("\n"))
             if x == 1:
                 print("1 to do addition")
@@ -291,7 +294,7 @@ while True:
                 print("5 to open calendar")
                 x = int(input("\n"))
                 if x == 1:
-                    print(c)
+                    print(datetime.now())
                 elif x == 2:
                     print("The alarm code is a bit broken.")
                     x = input("Do you still like to use alarm? (y/n) ")
@@ -1175,11 +1178,6 @@ while True:
                         if credit.lower() == "y":
                             print(
                                 'Thanks for the youtuber "Sambucha" for his video "https://www.youtube.com/shorts/NeN-0AbV3z0" for the kcal information.')
-                            print("Thanks for McDonalds, M&M's, and Burger King for branding.")
-                            print("The branding is illegal because i didn't take any permission.")
-                            print(
-                                "Because of this being a small python program, i think this wouldn't be a very big problem.")
-                            print("Don't sue me, i can change them to hamburger, sweets and bacon burger.")
                         game = "play"
                         while game == "play":
                             for i in range(20):
@@ -1202,7 +1200,7 @@ while True:
                             print("3 - bagel")
                             print("4 - banana")
                             print("5 - beer")
-                            print("6 - big mac")
+                            print("6 - hamburger")
                             print("7 - bread")
                             print("8 - cake")
                             print("9 - carrot")
@@ -1211,12 +1209,12 @@ while True:
                             print("12 - coke")
                             print("13 - donut")
                             print("14 - egg")
-                            print("15 - m&m")
+                            print("15 - sweets")
                             print("16 - peanut butter cup")
                             print("17 - pizza")
                             print("18 - rice")
                             print("19 - sushi")
-                            print("20 - whopper")
+                            print("20 - bacon burger")
                             list = [2500 / 325, 2500 / 16, 2500 / 7, 2500 / 19, 2500 / 28, 2500 / 4, 2500 / 13,
                                     2500 / 4, 2500 / 65, 2500 / 37, 2500 / 4, 2500 / 14, 2500 / 7, 2500 / 26,
                                     2500 / 400, 2500 / 18, 2500 / 7, 2500 / 8, 2500 / 48, 2500 / 3]
@@ -1308,7 +1306,7 @@ while True:
             elif x == 8:
                 print("1 to open budget manager")
                 print("2 to open logic evaluator")
-                print("3 to open roulette")
+                print("3 to open CASINO MINIGAMES")
                 x = int(input("\n"))
                 if x == 1:
                     print("Welcome to budget manager!")
@@ -1420,105 +1418,274 @@ while True:
                         x = input("Enter data: ")
                         system(f"echo {x}")
                 elif x == 3:
-                    print("Welcome to the roulette!")
-                    while True:
-                        print("1 to open rules")
-                        print("2 to get tactics")
-                        print("3 to get number betting and prize cheastsheet")
-                        print("4 to play")
-                        x = int(input("\n"))
-                        if x == 1:
-                            print("In roulette, you bet an amount of numbers,\nand win money if the numbers were selected in a random number selection.")
-                            print("There's 37 numbers from 0 to 36.\nTo increase your chances to win, look at some tactics!")
-                        elif x == 2:
-                            print("Martingale: If you lose, double the bet's number.")
-                            print("Fibonacci: Bet the Fibonacci number sequence in order.")
-                            print("D'Alembert: Bet 1 number higher if lost, and 1 number lower if won.")
-                        elif x == 3:
-                            print("Options of numbers to bet for: Prize:")
-                            print("1 (Straight Up)                36 times how much got bet to roulette")
-                            print("2 (Split)                      18 times how much got bet to roulette")
-                            print("3 (Street)                     12 times how much got bet to roulette")
-                            print("4 (Corner)                     9 times how much got bet to roulette")
-                            print("6 (Six Line)                   6 times how much got bet to roulette")
-                            print("12 (Dozen)                     3 times how much got bet to roulette")
-                            print("18 (Even Money Bet)            2 times how much got bet to roulette")
-                        elif x == 4:
-                            money = float(input("Enter your budget: "))
-                            bet = float(input("Bet how much money for the roulette? "))
-                            money -= bet
-                            print(f"Budget: ${money}")
-                            print("1 to play")
-                            print("2 or else to quit")
+                    print("1 to open lottery")
+                    print("2 to open ROULETTE")
+                    print("3 to open slots")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("Welcome to the roulette!")
+                        while True:
+                            print("1 to open rules")
+                            print("4 to play")
                             x = int(input("\n"))
                             if x == 1:
-                                print("1 to bet straight up")
-                                print("2 to bet split")
-                                print("3 to bet street")
-                                print("4 to bet corner")
-                                print("5 to bet six lane")
-                                print("6 to bet dozen")
-                                print("7 to bet even money bet")
+                                print("In lottery, you get a ticket and it has numbers.\nIn the television, the winning numbers get announced.")
+                                print("You get money according to your numbers.\nYou can simulate winning numbers and how much money you win.")
+                            elif x == 2:
+                                money = float(input("Enter your budget: "))
+                                moneyold = money
+                                money -= bet
+                                print(f"Budget: ${money}")
+                                print("1 to simulate winning numbers")
+                                print("2 to simulate money")
+                                print("3 or else to quit")
                                 x = int(input("\n"))
-                                input("Bet which numbers? ")
                                 if x == 1:
-                                    if randint(1, 37) <= 1:
-                                        print(f"You won!\n${bet * 36} added")
-                                        budget += bet * 36
-                                        print(f"Budget: ${money}")
-                                    else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
+                                    print(f"Your ticket's numbers: {randint(0, 99)} {randint(0, 99)} {randint(0, 99)} {randint(0, 99)} {randint(0, 99)}")
+                                    print(f"Winning numbers:       {randint(0, 99)} {randint(0, 99)} {randint(0, 99)} {randint(0, 99)} {randint(0, 99)}")
                                 elif x == 2:
-                                    if randint(1, 37) <= 2:
-                                        print(f"You won!\n${bet * 18} added")
-                                        budget += bet * 2
-                                        print(f"Budget: ${money}")
+                                    print("Ticket bought for $10.")
+                                    money -= 10
+                                    list1 = [1]
+                                    list2 = [1, 2]
+                                    list3 = [1, 2, 3, 4]
+                                    list4 = [1, 2, 3, 4, 5, 6, 7, 8]
+                                    if randint(1, 100) in list1:
+                                        x = 200
+                                    elif randint(1, 100 - 1) in list2:
+                                        x = 100
+                                    elif randint(1, 100 - 1 - 2) in list3:
+                                        x = 50
+                                    elif randint(1, 100 - 1 - 2 - 4) in list4:
+                                        x = 10
                                     else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
+                                        x = 0
+                                    print(f"You won ${x} from the ticket.")
+                                    money += x
+                                else:
+                                    break
+                        if money < 0:
+                            print(
+                                "You've exited the casino. While gambling, your budget has gone negative, but you kept gambling.")
+                            print("You got beaten up by the casino members. You don't feel well.")
+                            print("You lost. Ending #5: Bankruptcy")
+                            print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                        if money == 0:
+                            print("You've exited the casino. While gambling, you've lost all your money.")
+                            print("You are now poor. Good luck giving even the smallest tax.")
+                            print("You lost. Ending #4: Bankruptcy")
+                            print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                        if money < moneyold:
+                            print("You've exited the casino. While gambling, you've lost some money.")
+                            print(
+                                "You are now poorer than start. Quit gambling please, but at least, you can live fine.")
+                            print("You lost. Ending #3: Poor")
+                            print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                        if money == moneyold:
+                            print("You've exited the casino. While gambling, your money stayed the same.")
+                            print(
+                                "Nothing changed. I don't know if this is a win or loss, but at least you didn't lose money.")
+                            print("You won. Ending #2: Nothing")
+                            print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                        if money > moneyold:
+                            print("You've exited the casino. While gambling, you've won some money.")
+                            print(
+                                "You are now rich a bit. Will you continue? Know that winning by gambling is stealing, effort exploiting and a sin.")
+                            print("You lost. Ending #1: Rich (the Sinner's Way)")
+                            print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                    elif x == 2:
+                        print("1 to play European roulette")
+                        print("2 to play RUSSIAN ROULETTE")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("Welcome to the roulette!")
+                            while True:
+                                print("1 to open rules")
+                                print("2 to get tactics")
+                                print("3 to get number betting and prize cheastsheet")
+                                print("4 to play")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    print("In roulette, you bet an amount of numbers,\nand win money if the numbers were selected in a random number selection.")
+                                    print("There's 37 numbers from 0 to 36.\nTo increase your chances to win, look at some tactics!")
+                                elif x == 2:
+                                    print("Martingale: If you lose, double the bet's number.")
+                                    print("Fibonacci: Bet the Fibonacci number sequence in order.")
+                                    print("D'Alembert: Bet 1 number higher if lost, and 1 number lower if won.")
                                 elif x == 3:
-                                    if randint(1, 37) <= 3:
-                                        print(f"You won!\n${bet * 12} added")
-                                        budget += bet * 12
-                                        print(f"Budget: ${money}")
-                                    else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
+                                    print("Options of numbers to bet for: Prize:")
+                                    print("1 (Straight Up)                36 times how much got bet to roulette")
+                                    print("2 (Split)                      18 times how much got bet to roulette")
+                                    print("3 (Street)                     12 times how much got bet to roulette")
+                                    print("4 (Corner)                     9 times how much got bet to roulette")
+                                    print("6 (Six Line)                   6 times how much got bet to roulette")
+                                    print("12 (Dozen)                     3 times how much got bet to roulette")
+                                    print("18 (Even Money Bet)            2 times how much got bet to roulette")
                                 elif x == 4:
-                                    if randint(1, 37) <= 4:
-                                        print(f"You won!\n${bet * 9} added")
-                                        budget += bet * 9
-                                        print(f"Budget: ${money}")
+                                    money = float(input("Enter your budget: "))
+                                    moneyold = money
+                                    bet = float(input("Bet how much money for the roulette? "))
+                                    money -= bet
+                                    print(f"Budget: ${money}")
+                                    print("1 to play")
+                                    print("2 or else to quit")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        print("1 to bet straight up")
+                                        print("2 to bet split")
+                                        print("3 to bet street")
+                                        print("4 to bet corner")
+                                        print("5 to bet six lane")
+                                        print("6 to bet dozen")
+                                        print("7 to bet even money bet")
+                                        x = int(input("\n"))
+                                        input("Bet which numbers? ")
+                                        if x == 1:
+                                            if randint(1, 37) <= 1:
+                                                print(f"You won!\n${bet * 36} added")
+                                                budget += bet * 36
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
+                                        elif x == 2:
+                                            if randint(1, 37) <= 2:
+                                                print(f"You won!\n${bet * 18} added")
+                                                budget += bet * 2
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
+                                        elif x == 3:
+                                            if randint(1, 37) <= 3:
+                                                print(f"You won!\n${bet * 12} added")
+                                                budget += bet * 12
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
+                                        elif x == 4:
+                                            if randint(1, 37) <= 4:
+                                                print(f"You won!\n${bet * 9} added")
+                                                budget += bet * 9
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
+                                        elif x == 5:
+                                            if randint(1, 37) <= 6:
+                                                print(f"You won!\n${bet * 6} added")
+                                                budget += bet * 6
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
+                                        elif x == 5:
+                                            if randint(1, 37) <= 12:
+                                                print(f"You won!\n${bet * 3} added")
+                                                budget += bet * 3
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
+                                        elif x == 1:
+                                            if randint(1, 37) <= 18:
+                                                print(f"You won!\n${bet * 2} added")
+                                                budget += bet * 2
+                                                print(f"Budget: ${money}")
+                                            else:
+                                                print("You lost!")
+                                                print(f"Budget: ${money}")
                                     else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
-                                elif x == 5:
-                                    if randint(1, 37) <= 6:
-                                        print(f"You won!\n${bet * 6} added")
-                                        budget += bet * 6
-                                        print(f"Budget: ${money}")
+                                        break
+                            if money < 0:
+                                print("You've exited the casino. While gambling, your budget has gone negative, but you kept gambling.")
+                                print("You got beaten up by the casino members. You don't feel well.")
+                                print("You lost. Ending #5: Bankruptcy")
+                                print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                            if money == 0:
+                                print("You've exited the casino. While gambling, you've lost all your money.")
+                                print("You are now poor. Good luck giving even the smallest tax.")
+                                print("You lost. Ending #4: Bankruptcy")
+                                print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                            if money < moneyold:
+                                print("You've exited the casino. While gambling, you've lost some money.")
+                                print("You are now poorer than start. Quit gambling please, but at least, you can live fine.")
+                                print("You lost. Ending #3: Poor")
+                                print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                            if money == moneyold:
+                                print("You've exited the casino. While gambling, your money stayed the same.")
+                                print("Nothing changed. I don't know if this is a win or loss, but at least you didn't lose money.")
+                                print("You won. Ending #2: Nothing")
+                                print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                            if money > moneyold:
+                                print("You've exited the casino. While gambling, you've won some money.")
+                                print("You are now rich a bit. Will you continue? Know that winning by gambling is stealing, effort exploiting and a sin.")
+                                print("You lost. Ending #1: Rich (the Sinner's Way)")
+                                print(f"Budget in the start: ${moneyold} Budget now: ${money}")
+                        elif x == 2:
+                            print("Welcome to the RUSSIAN ROULETTE!")
+                            while True:
+                                print("1 to open rules")
+                                print("2 to PLAY")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    print("In RUSSIAN roulette, someone inserts a bullet to a gun.\nThen, he spins the bullet wheel, now we don't know at which shot the bullet will ignite.")
+                                    print("Everyone shots the gun at himself in order.\nThere are 6 places the bullet could be placed. The bullet could ignite in tour 1 to 6.")
+                                    print("The thing is anyone playing has the chance to die.")
+                                elif x == 2:
+                                    print("1 to PLAY")
+                                    print("2 or else to quit")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        names = ['Alexander', 'Alexei', 'Anatolyevich', 'Andrei', 'Andreyevich',
+                                                 'Boris', 'Borisovich', 'Dmitriy', 'Dmitry', 'Fyodorovich', 'Georgy',
+                                                 'Grigoriy', 'Igor', 'Ilyich', 'Joseph', 'Konstantin', 'Lavrentiy',
+                                                 'Leonid', 'Lev', 'Maximilianovich', 'Mikhail', 'Mikhaylovich',
+                                                 'Nikita', 'Nikolai', 'Nikolayevich', 'Pavlovich', 'Sergeyevich',
+                                                 'Stepanovich', 'Ustinovich', 'Viassarionovich', 'Viktor',
+                                                 'Viktorovich', 'Vladimir', 'Vladimirovich', 'Vyacheslav',
+                                                 'Yevseyevich', 'Yuri']
+                                        shuffle(names)
+                                        list = []
+                                        username = input("Your name: ")
+                                        for i in range(randint(1, 6)):
+                                            list.append(names.pop())
+                                        list.append(username)
+                                        shuffle(list)
+                                        x = randint(1, 5)
+                                        print(f"Players: {list}")
+                                        for i in range(x):
+                                            print(f"Round {i + 1}/6")
+                                            print(f"{list[i]} will now shoot")
+                                            print("The bullet didn't ignited!")
+                                        print(f"Round {x + 1}/6")
+                                        print(f"{list[x]} will now shoot")
+                                        print("The bullet ignited!")
+                                        print("", end = "")
                                     else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
-                                elif x == 5:
-                                    if randint(1, 37) <= 12:
-                                        print(f"You won!\n${bet * 3} added")
-                                        budget += bet * 3
-                                        print(f"Budget: ${money}")
-                                    else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
-                                elif x == 1:
-                                    if randint(1, 37) <= 18:
-                                        print(f"You won!\n${bet * 2} added")
-                                        budget += bet * 2
-                                        print(f"Budget: ${money}")
-                                    else:
-                                        print("You lost!")
-                                        print(f"Budget: ${money}")
-                            else:
-                                break
+                                        break
+                        elif x == 3:
+                            while True:
+                                print("1 to open rules")
+                                print("2 to play")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    print("In slots, you pull a lever. 3 slots will spin.\nIf the slots match, you win.")
+                                elif x == 2:
+                                    print("1 to play")
+                                    print("2 or else to quit")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        print("Lever pulling...")
+                                        list = ""
+                                        for i in range(3):
+                                            list = f"{list}{fruits[randint(0, 4)]}"
+                                        print(f"Slot results: {list}")
+                                        if list[0] == list[1] and list[1] == list[2]:
+                                            print("You won!")
+                                        else:
+                                            print("You lose!")
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
@@ -1670,6 +1837,7 @@ while True:
         print("2 to convert character to Unicode")
         print("3 to list unicode")
         print("4 to cipher words in Caesar Cipher using ASCII")
+        print("5 to open Unicode index list")
         x = int(input("\n"))
         if x == 1:
             x = int(input("Enter Unicode number: "))
@@ -1713,6 +1881,47 @@ while True:
             for i in list:
                 y = f"{y}{i}"
             print(y)
+        elif x == 5:
+            print("Common ASCII")
+            print("0-31   Unknown ASCII codes")
+            print("32     Whitespace")
+            print("33-47  Casual Symbols")
+            print("48-57  Integers")
+            print("58-64  Uncommon Symbols")
+            print("65-90  Uppercase Latin Letters")
+            print("91-96  Rare Symbols")
+            print("97-122 Lowercase Latin Letters")
+            print("Uncommon ASCII")
+            print("123-126 Rarer Symbols")
+            print("127-160 Unknown ASCII")
+            print("161-191 Random Symbols")
+            print("192-696 Foreign Latin Letters")
+            print("697-885 Quotation")
+            print("Rare ASCII")
+            print("886-13620 Random Foreign Letters and Symbols")
+            print("ASCII Far Lands")
+            print("13621-20153 Chinese Letters Vol. 1")
+            print("20154-20176 Japanese Letters")
+            print("20177-23454 Random East Asian Letters")
+            print("23455-40959 Chinese Letters Vol. 2")
+            print("ASCII Farther Lands")
+            print("40960-43647 Random Letters")
+            print("43648-44031 Patch of Unknown ASCII")
+            print("44032-55203 Chinese Letters Vol. 3")
+            print("ASCII Farthest Lands")
+            print("55204-55215 More Unknown ASCII")
+            print("55216-55242 Alphabet of Random Lines")
+            print("55243-55291 Lowercase AoRL")
+            print("The End of ASCII")
+            print("55292-55294 Some Unknown Symbols")
+            print("55295       The Last ASCII character")
+            print("ASCII Further Lands")
+            print("55296-??? The Undiscovered")
+            print("Traceback (most recent call last):")
+            print('File "main.py", line 1, in <module>"')
+            print("UnicodeEncodeError: 'utf-8' codec can't encode character '\\ud800' in position 0: surrogates not allowed")
+            print("** Process exited - Return Code: 1 **")
+            print("Press Enter to exit terminal and discover the undiscovered")
     elif x == 3:
         print("1 to open Python")
         print("2 to open Python Documentation")
