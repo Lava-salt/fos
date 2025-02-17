@@ -113,22 +113,19 @@
                 1. XOX Doesn't work </br>
                 2. Incorrect shell date </br>
             </p>
-            <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.6.5</h2>
             <p>
                 Game Update Part 1 </br>
                 Additions: </br>
                 1. XOX P-vs-CPU Mode Fixed </br>
-                2. Roulette </br>
-                3. Removed the brands from the calory tracker in FOS-SubOS </br>
+                2. Roulette and casino minigames </br>
+                3. Unicode index list </br>
+                4. Removed the brands from the calory tracker in FOS-SubOS </br>
                 Bugs: </br>
                 1. Incorrect shell date </br>
                 None </br>
             </p>
-            <h3>Working on it</h3>
-            <p>
-                Currently done: 1 Not done: 2, 3, 4, 5
-            </p>
+            <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.8.0</h2>
             <p>
                 Game Update Part 2 </br>
