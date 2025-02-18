@@ -1,8 +1,7 @@
 # head (module importing that is necessary to define functions for module)
 
 from time import sleep
-from random import randint, shuffle, choice
-from datetime import datetime
+from random import randint, shuffle
 from sys import platform
 
 # body (function defining for module)
@@ -160,4 +159,4 @@ class Life:
             self.x += 1
             print("\n\n\n\n")
 def shell():
-    print(f'Python 3.8.5 (default, {datetime.now()}) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits" or "license" for more information.')
+    print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits" or "license" for more information.')
