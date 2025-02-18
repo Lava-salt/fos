@@ -1,7 +1,6 @@
 # head (module importing)
 
 from os import system, getcwd
-from datetime import datetime
 from sys import platform
 from subprocess import run
 from random import randint
@@ -439,7 +438,7 @@ elif x == 4:
     input("E.g. write \"[\"perl\", \"-e\"]\" to make program write inline Perl -e code. ")
     input("Use \"[\"perl\", \"-c\"]\" this \"-c\" syntax to make the program run a code instead of a file. ")
     input("Then, give the file name to run, e.g. \"[\"python\", \"-c\", \"print('hello')\"]\"")
+    input("So, basically text you need to enter to the \"subprocess.run()\" command.")
     abcacacahahahacacacababafsbkcabca = input("Enter code: ")
     print("Also don't use this variable: \"abcacacahahahacacacababafsbkcabca\".")
     run(eval(abcacacahahahacacacababafsbkcabca))
-
