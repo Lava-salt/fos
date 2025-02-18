@@ -1,5 +1,5 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
-print("Current Version: FOS 1.9.0, last major update: 1.9.0")
+print("Current Version: FOS 1.2.0, last major update: 1.1.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/1\"")
 
@@ -1307,6 +1307,7 @@ while True:
                 print("1 to open budget manager")
                 print("2 to open logic evaluator")
                 print("3 to open CASINO MINIGAMES")
+                print("4 to open Yacht Dice (Yahtzee)")
                 x = int(input("\n"))
                 if x == 1:
                     print("Welcome to budget manager!")
@@ -1686,6 +1687,273 @@ while True:
                                             print("You won!")
                                         else:
                                             print("You lose!")
+                elif x == 4:
+                    while True:
+                        print("1 to open rules")
+                        print("2 to see cheatsheet")
+                        print("3 to play")
+                        if x == 1:
+                            print("In Yacht Dice, you roll 5 dices.\nYou can keep and reroll dices up to 3 tours.")
+                            print("Then, you select a point type where you get points according to your dices.")
+                            print("You (and opponent) will play 12 tours, and get points.\nThe player with the most points win.")
+                            print("Look at the cheatsheet to see the point types.")
+                        elif x == 2:
+                            print("UPPER SECTION")
+                            print("Aces-Sum of all 1's")
+                            print("Deuces-Sum of all 2's")
+                            print("Threes-Sum of all 3's")
+                            print("Fours-Sum of all 4's")
+                            print("Fives-Sum of all 5's")
+                            print("Sixes-Sum of all 6's")
+                            print("LOWER SECTION")
+                            print("3 of a kind-Total of all dices if there's 3 of same number")
+                            print("4 of a kind-Total of all dices if there's 4 of same number")
+                            print("Full house-50 if there's 3, and 2 of a kind")
+                            print("Yahtzee-25 if there's 5 of same number")
+                            print("Small straight-30 if sequence of 4")
+                            print("Large straight-40 if sequence of 5")
+                            print("Chance-Sum of all dice")
+                        elif x == 3:
+                            print("1 to play")
+                            print("2 or else to quit")
+                            x = int(input("\n"))
+                            if x == 1:
+                                p1 = 0
+                                p2 = 0
+                                for i in range(12):
+                                    print(f"Tour {i + 1}/12")
+                                    print("Player 1's Turn")
+                                    dices = []
+                                    for i in range(5):
+                                        dices.append(randint(1, 6))
+                                    print(f"2 Turns Left\nDices Rolled: {dices}")
+                                    x = input("Reroll some dices? (y/n) ")
+                                    if "y" in x.lower():
+                                        y = input("Keep which ones?\nE.g. write \"0, 1, 3\" to reroll 1st, 2nd and 4th dices.\nWrite integers separated by commas to reroll them.\n")
+                                        list = f"[{y}]"
+                                        for i in list:
+                                            dices[i] = randint(1, 6)
+                                        print(f"1 Turns Left\nDices Rolled: {dices}")
+                                        x = input("Reroll some dices? (y/n) ")
+                                        if "y" in x.lower():
+                                            y = input(
+                                                "Keep which ones?\nE.g. write \"0, 1, 3\" to reroll 1st, 2nd and 4th dices.\nWrite integers separated by commas to reroll them.\n")
+                                            list = f"[{y}]"
+                                            for i in list:
+                                                dices[i] = randint(1, 6)
+                                            print(f"0 Turns Left\nDices Rolled: {dices}")
+                                    print("Now select point type.")
+                                    print("1 for upper section")
+                                    print("2 for lower section")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        x = int(input("Write an integer 1-6 for aces-sixes. "))
+                                        num = 0
+                                        for i in dices:
+                                            if i == x:
+                                                num += x
+                                        p1 += num
+                                        print(f"{num} points added.")
+                                    elif x == 2:
+                                        print("1 for 3 of a kind")
+                                        print("2 for 4 of a kind")
+                                        print("3 for full house")
+                                        print("4 for yahtzee")
+                                        print("5 for small straight")
+                                        print("6 for large straight")
+                                        print("7 for chance")
+                                        x = int(input("\n"))
+                                        if x == 1:
+                                            ofakind3 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 3:
+                                                    ofakind3 = True
+                                            if ofakind3:
+                                                p1 += sum(dices)
+                                                print(f"{sum(dices)} points added.")
+                                            else:
+                                                p1 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 2:
+                                            ofakind4 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 4:
+                                                    ofakind4 = True
+                                            if ofakind4:
+                                                p1 += sum(dices)
+                                                print(f"{sum(dices)} points added.")
+                                            else:
+                                                p1 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 3:
+                                            ofakind3 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 3:
+                                                    ofakind3 = True
+                                                    gai = dices[i]
+                                            if ofakind3:
+                                                while gai in dices:
+                                                    for i in dices:
+                                                        try:
+                                                            if dices[i] == gai:
+                                                                del dices[i]
+                                                        except IndexError:
+                                                            pass
+                                            ofakind2 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 2:
+                                                    ofakind2 = True
+                                                    gai = dices[i]
+                                            if ofakind2 and ofakind3:
+                                                p1 += 50
+                                                print(f"{50} points added.")
+                                            else:
+                                                p1 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 4:
+                                            if dices[1] == dices[2] and dices[2] == dices[3] and dices[3] == dices[4] and dices[4] == dices[5]:
+                                                p1 += 25
+                                                print(f"{25} points added.")
+                                            else:
+                                                p1 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 5:
+                                            dices.sort()
+                                            if [1, 2, 3, 4] in dices or [2, 3, 4, 5] in dices or [3, 4, 5, 6] in dices:
+                                                p1 += 30
+                                                print(f"{30} points added.")
+                                            else:
+                                                p1 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 6:
+                                            dices.sort()
+                                            if [1, 2, 3, 4, 5] in dices or [2, 3, 4, 5, 6] in dices:
+                                                p1 += 40
+                                                print(f"{40} points added.")
+                                            else:
+                                                p1 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 7:
+                                            p1 += sum(dices)
+                                            print(f"{sum(dices)} added.")
+                                    print("Player 2's Turn")
+                                    dices = []
+                                    for i in range(5):
+                                        dices.append(randint(1, 6))
+                                    print(f"2 Turns Left\nDices Rolled: {dices}")
+                                    x = input("Reroll some dices? (y/n) ")
+                                    if "y" in x.lower():
+                                        y = input(
+                                            "Keep which ones?\nE.g. write \"0, 1, 3\" to reroll 1st, 2nd and 4th dices.\nWrite integers separated by commas to reroll them.\n")
+                                        list = f"[{y}]"
+                                        for i in list:
+                                            dices[i] = randint(1, 6)
+                                        print(f"1 Turns Left\nDices Rolled: {dices}")
+                                        x = input("Reroll some dices? (y/n) ")
+                                        if "y" in x.lower():
+                                            y = input(
+                                                "Keep which ones?\nE.g. write \"0, 1, 3\" to reroll 1st, 2nd and 4th dices.\nWrite integers separated by commas to reroll them.\n")
+                                            list = f"[{y}]"
+                                            for i in list:
+                                                dices[i] = randint(1, 6)
+                                            print(f"0 Turns Left\nDices Rolled: {dices}")
+                                    print("Now select point type.")
+                                    print("1 for upper section")
+                                    print("2 for lower section")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        x = int(input("Write an integer 1-6 for aces-sixes. "))
+                                        num = 0
+                                        for i in dices:
+                                            if i == x:
+                                                num += x
+                                        p2 += num
+                                        print(f"{num} points added.")
+                                    elif x == 2:
+                                        print("1 for 3 of a kind")
+                                        print("2 for 4 of a kind")
+                                        print("3 for full house")
+                                        print("4 for yahtzee")
+                                        print("5 for small straight")
+                                        print("6 for large straight")
+                                        print("7 for chance")
+                                        x = int(input("\n"))
+                                        if x == 1:
+                                            ofakind3 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 3:
+                                                    ofakind3 = True
+                                            if ofakind3:
+                                                p2 += sum(dices)
+                                                print(f"{sum(dices)} points added.")
+                                            else:
+                                                p2 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 2:
+                                            ofakind4 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 4:
+                                                    ofakind4 = True
+                                            if ofakind4:
+                                                p2 += sum(dices)
+                                                print(f"{sum(dices)} points added.")
+                                            else:
+                                                p2 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 3:
+                                            ofakind3 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 3:
+                                                    ofakind3 = True
+                                                    gai = dices[i]
+                                            if ofakind3:
+                                                while gai in dices:
+                                                    for i in dices:
+                                                        try:
+                                                            if dices[i] == gai:
+                                                                del dices[i]
+                                                        except IndexError:
+                                                            pass
+                                            ofakind2 = False
+                                            for i in range(len(dices)):
+                                                if dices.count(dices[i]) >= 2:
+                                                    ofakind2 = True
+                                                    gai = dices[i]
+                                            if ofakind2 and ofakind3:
+                                                p2 += 50
+                                                print(f"{50} points added.")
+                                            else:
+                                                p2 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 4:
+                                            if dices[1] == dices[2] and dices[2] == dices[3] and dices[3] == dices[
+                                                4] and dices[4] == dices[5]:
+                                                p2 += 25
+                                                print(f"{25} points added.")
+                                            else:
+                                                p2 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 5:
+                                            dices.sort()
+                                            if [1, 2, 3, 4] in dices or [2, 3, 4, 5] in dices or [3, 4, 5, 6] in dices:
+                                                p2 += 30
+                                                print(f"{30} points added.")
+                                            else:
+                                                p2 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 6:
+                                            dices.sort()
+                                            if [1, 2, 3, 4, 5] in dices or [2, 3, 4, 5, 6] in dices:
+                                                p2 += 40
+                                                print(f"{40} points added.")
+                                            else:
+                                                p2 += 0
+                                                print(f"{0} points added.")
+                                        elif x == 7:
+                                            p2 += sum(dices)
+                                            print(f"{sum(dices)} added.")
+                            else:
+                                break
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
