@@ -1,7 +1,9 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
 print("Current Version: FOS 1.2.0, last major update: 1.1.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
-print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/1\"")
+print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
+print("GitHub User List of Fame in Making of FOS:")
+print("@Lava-salt (Administrator)")
 
 # head (module importing)
 
@@ -11,22 +13,27 @@ import calendar # calendar module is actually used for printing calendar through
 from time import sleep
 from webbrowser import open as web
 from webbrowser import open_new_tab
-from random import randint, random, gauss, normalvariate, shuffle
+from random import randint, random, gauss, normalvariate, shuffle, choice
 from os import name, getcwd, chdir, path, mkdir, listdir, remove, rename, system
 from subprocess import run, CalledProcessError, call, Popen, PIPE
 from sys import platform
-print("1 to install modules")
-print("2 to reinstall modules")
-print("3 to pass")
-x = int(input("\n"))
-if x == 1:
-    system("pip install nltk")
-    system("pip install pyenchant")
-elif x == 2:
-    system("pip uninstall nltk")
-    system("pip uninstall pyenchant")
-    system("pip install nltk")
-    system("pip install pyenchant")
+print("Before entering, please manage modules.")
+while True:
+    print("1 to install modules")
+    print("2 to reinstall modules")
+    print("3 to pass")
+    x = int(input("\n"))
+    if x == 1:
+        system("pip install nltk")
+        system("pip install pyenchant")
+    elif x == 2:
+        system("pip uninstall nltk")
+        system("pip uninstall pyenchant")
+        system("pip install nltk")
+        system("pip install pyenchant")
+    elif x == 3:
+        print("Module importing process finished.")
+        break
 import nltk
 nltk.download('words')
 from nltk.corpus import words
@@ -479,7 +486,8 @@ while True:
                         a += 1
                     print(f"You won!\nWon in {a} moves")
                 elif x == 6:
-                    while True:
+                    x = int(input("How many questios? "))
+                    for i in range(x):
                         x = [randint(0, 100), choice(xyz), randint(0, 100), randint(0, 100)]
                         y = eval(f"{x[0]} {x[1]} {x[2]}")
                         input(f"Solve {x[0]} {x[1]} {x[2]}\n")
@@ -793,6 +801,9 @@ while True:
             elif x == 7:
                 print("Welcome to FOS Sub-OS!")
                 while True:
+                    x = input("Exit FOS Sub-OS? (y/n) ")
+                    if "y" in x.lower():
+                        break
                     print("List of apps:")
                     print('"1" for word-number edit module')
                     print('"2" for minecraft (the video game one)')
@@ -1334,6 +1345,7 @@ while True:
                             f.write(f"Galleons (Gold): {budget * 493}\n")
                         print("1 to print money")
                         print("2 to change money")
+                        print("3 to quit")
                         x = int(input("\n"))
                         if x == 1:
                             print(f"Knuts (Bronze): {budget}\n")
@@ -1383,6 +1395,8 @@ while True:
                                     if file:
                                         f.write(f"Subtracted {x} Galleons\n")
                                     budget -= x * 493
+                        elif x == 3:
+                            break
                 elif x == 2:
                     print("1 to evaluate Python logic")
                     print("2 to evaluate Boolean logic")
@@ -2200,6 +2214,7 @@ while True:
         print("7 to get syntax list for Python")
         print("8 to open OS shell")
         print("9 to use sorting algorithms")
+        print("10 to open the Zen of Python")
         x = int(input("\n"))
         if x == 1:
             web("https://www.python.org/")
@@ -2208,8 +2223,356 @@ while True:
             print("2 to open in online")
             x = int(input("\n"))
             if x == 1:
-                x = input("What do you want to get help about? ")
-                help(x)
+                print("1 to manually get documentation")
+                print("2 to get documentation-based Python tutorial")
+                print("3 to open documentation shell")
+                x = int(input("\n"))
+                if x == 1:
+                    x = input(">>> ")
+                    help(x)
+                elif x == 2:
+                    print("Vol. I - Data Types")
+                    print("Vol. II - Standard Input-Output")
+                    print("Vol. III - Statements")
+                    print("Vol. IV - Defining")
+                    print("Vol. V - Modules")
+                    print("Vol. VI - Pip Modules and BASH")
+                    print("Vol. VII - Python Standard Library")
+                    print("Vol. VIII - The Zen of Python")
+                    print("Vol. IX - Code Execution")
+                    print("Vol. X - File Handling")
+                    x = int(input())
+                    if x == 1:
+                        print("Vol. I - Normal Data Types")
+                        print("Vol. II - Plural Data Types")
+                        x = int(input())
+                        if x == 1:
+                            print("Vol. I - Strings")
+                            print("Vol. II - Numbers")
+                            print("Vol. III - Boolean Values")
+                            x = int(input())
+                            if x == 1:
+                                help("str")
+                            elif x == 2:
+                                print("Vol. I - Integers")
+                                print("Vol. II - Float Values")
+                                print("Vol. III - Arithmetic")
+                                x = int(input())
+                                if x == 1:
+                                    help("int")
+                                elif x == 2:
+                                    help("float")
+                                elif x == 3:
+                                    print("Vol. I - Addition")
+                                    print("Vol. II - Subtraction")
+                                    print("Vol. III - Multiplication")
+                                    print("Vol. IV - Division")
+                                    print("Vol. V - Modulo")
+                                    print("Vol. VI - Exponentation")
+                                    print("Vol. VII - Remainderless Division")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("+")
+                                    elif x == 2:
+                                        help("-")
+                                    elif x == 3:
+                                        help("*")
+                                    elif x == 4:
+                                        help("/")
+                                    elif x == 5:
+                                        help("%")
+                                    elif x == 6:
+                                        help("**")
+                                    elif x == 7:
+                                        help("//")
+                            elif x == 3:
+                                help("bool")
+                        elif x == 2:
+                            print("Vol. I - Lists")
+                            print("Vol. II - Tuples")
+                            print("Vol. III - Dictionaries")
+                            x = int(input())
+                            if x == 1:
+                                help("list")
+                            elif x == 2:
+                                help("tuple")
+                            elif x == 3:
+                                help("dict")
+                    if x == 2:
+                        print("Vol. I - Input")
+                        print("Vol. II - Output")
+                        x = int(input())
+                        if x == 1:
+                            help("input")
+                        elif x == 2:
+                            help("print")
+                    elif x == 3:
+                        print("Vol. I - Boolean Logic Statements")
+                        print("Vol. II - While Statements")
+                        print("Vol. III - Repeat Statements")
+                        x = int(input())
+                        if x == 1:
+                            print("Vol. I - If-Then")
+                            print("Vol. II - If-Else")
+                            print("Vol. III - If-Else-If")
+                            x = int(input())
+                            if x == 1:
+                                help("if")
+                            elif x == 2:
+                                help("else")
+                            elif x == 3:
+                                help("elif")
+                        elif x == 2:
+                            help("while")
+                        elif x == 3:
+                            print("Vol. I - For Syntax")
+                            print("Vol. II - In Syntax")
+                            print("Vol. III - Range Syntax")
+                            x = int(input())
+                            if x == 1:
+                                help("for")
+                            elif x == 2:
+                                help("in")
+                            elif x == 3:
+                                help("range")
+                    elif x == 4:
+                        print("Vol. I - Defining Functions")
+                        print("Vol. II - Defining Classes and Polymorphism")
+                        x = int(input())
+                        if x == 1:
+                            help("def")
+                        elif x == 2:
+                            help("class")
+                    if x == 5:
+                        print("Vol. I - Module Importing")
+                        print("Vol. II - Module Function List")
+                        print("Vol. III - Basic Modules")
+                        x = int(input())
+                        if x == 1:
+                            print("Vol. I - Importing Normally")
+                            print("Vol. II - \"From\" Statement")
+                            x = int(input())
+                            if x == 1:
+                                help("import")
+                            elif x == 2:
+                                help("from")
+                        elif x == 2:
+                            help("dir")
+                        elif x == 3:
+                            print("Vol. I - Operating System")
+                            print("Vol. II - Date and Time")
+                            print("Vol. III - Calendar")
+                            print("Vol. IV - Sub-Process")
+                            print("Vol. V - Web Browser")
+                            x = int(input())
+                            if x == 1:
+                                print("Vol. I - Main")
+                                print("Vol. II - Name")
+                                x = int(input())
+                                if x == 1:
+                                    help("os")
+                                elif x == 2:
+                                    help("os.name")
+                            elif x == 2:
+                                print("Vol. I - Main")
+                                print("Vol. II - Date")
+                                x = int(input())
+                                if x == 1:
+                                    help("datetime")
+                                elif x == 2:
+                                    help("datetime.datetime.name")
+                            elif x == 3:
+                                print("Vol. I - Main")
+                                print("Vol. II - Calendar Defining")
+                                print("Vol. III - Calendar Writing")
+                                x = int(input())
+                                if x == 1:
+                                    help("calendar")
+                                elif x == 2:
+                                    help("calendar.TextCalendar")
+                                elif x == 3:
+                                    print("Vol. I - Monthly Calendar")
+                                    print("Vol. II - Yearly Calendar")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("calendar.TextCalendar.prmonth")
+                                    elif x == 2:
+                                        help("calendar.TextCalendar.pryear")
+                            elif x == 4:
+                                print("Vol. I - Main")
+                                print("Vol. II - File Opening")
+                                print("Vol. III - I.P. Address Pinging")
+                                x = int(input())
+                                if x == 1:
+                                    help("subprocess")
+                                elif x == 2:
+                                    help("subprocess.call")
+                                elif x == 3:
+                                    print("Vol. I - Pinging")
+                                    print("Vol. II - Waiting")
+                                    print("Vol. III - Polling")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("subprocess.Popen")
+                                    elif x == 2:
+                                        help("subprocess.Popen.wait")
+                                    elif x == 3:
+                                        help("subprocess.Popen.poll")
+                            elif x == 5:
+                                print("Vol. I - Main")
+                                print("Vol. II - URL Opening")
+                                x = int(input())
+                                if x == 1:
+                                    help("webbrowser")
+                                elif x == 2:
+                                    help("webbrowser.open")
+                            elif x == 6:
+                                print("Vol. I - Main")
+                                print("Vol. II - Random Decimal")
+                                print("Vol. III - Random Integer")
+                                print("Vol. IV - Random Element from List")
+                                print("Vol. V - Random Data from Normal Distribution")
+                                x = int(input())
+                                if x == 1:
+                                    help("random")
+                                elif x == 2:
+                                    help("random.random")
+                                elif x == 3:
+                                    help("random.randint")
+                                elif x == 4:
+                                    help("random.choice")
+                                elif x == 5:
+                                    print("Vol. I - Gauss Distribution")
+                                    print("Vol. II - Normal Variate")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("random.gauss")
+                                    elif x == 2:
+                                        help("random.normalvariate")
+                elif x == 6:
+                    print("Vol. I - BASH")
+                    print("Vol. II - Pip Module Installing")
+                    print("Vol. III - Pip Modules")
+                    x = int(input())
+                    if x == 1:
+                        help("os.system")
+                    elif x == 2:
+                        help("pip")
+                    elif x == 3:
+                        print("Vol. I - Requests")
+                        print("Vol. II - Rich")
+                        print("Vol. III - Tqdm")
+                        print("Vol. IV - Numpy")
+                        print("Vol. V - Matplotlib")
+                        print("Vol. VI - Shutil")
+                        print("Vol. VII - Hashlib")
+                        print("Vol. VIII - Textual")
+                        print("Vol. IX - Urwid")
+                        x = int(input())
+                        if x == 1:
+                            help("requests")
+                        elif x == 2:
+                            help("rich")
+                        elif x == 3:
+                            help("statements")
+                        elif x == 4:
+                            help("numpy")
+                        elif x == 5:
+                            help("matplotlib")
+                        elif x == 6:
+                            help("shutil")
+                        elif x == 7:
+                            help("hashlib")
+                        elif x == 8:
+                            help("textual")
+                        elif x == 9:
+                            help("urwid")
+                    elif x == 7:
+                        print("Vol. I - Documentation Access")
+                        print("Vol. II - Syntax")
+                        x = int(input())
+                        if x == 1:
+                            help()
+                        elif x == 2:
+                            print("Vol. I - Lists of Syntaxes")
+                            print("Vol. II - Summaries of Syntaxes")
+                            x = int(input())
+                            if x == 1:
+                                print("Vol. I - Modules")
+                                print("Vol. II - Key Words")
+                                print("Vol. III - Symbols")
+                                print("Vol. IV - Topics")
+                                x = int(input())
+                                if x == 1:
+                                    help("modules")
+                                elif x == 2:
+                                    help("keywords")
+                                elif x == 3:
+                                    help("symbols")
+                                elif x == 4:
+                                    help("topics")
+                            elif x == 2:
+                                print("Vol. I - Modules")
+                                print("Vol. II - Key Words")
+                                print("Vol. III - Symbols")
+                                print("Vol. IV - Topics")
+                                x = int(input())
+                                if x == 1:
+                                    help("modules spam")
+                                elif x == 2:
+                                    help("keywords spam")
+                                elif x == 3:
+                                    help("symbols spam")
+                                elif x == 4:
+                                    help("topics spam")
+                    elif x == 8:
+                        help("this")
+                    elif x == 9:
+                        print("Vol. I - Python")
+                        print("Vol. II - BASH")
+                        print("Vol. III - Any code")
+                        x = int(input())
+                        if x == 1:
+                            print("Vol. I - Python Execution")
+                            print("Vol. II - Python Evaluation")
+                            x = int(input())
+                            if x == 1:
+                                help("exec")
+                            elif x == 2:
+                                help("eval")
+                        elif x == 2:
+                            help("os.system")
+                        elif x == 3:
+                            help("subprocess.run")
+                    elif x == 10:
+                        print("Vol. I - Opening Files")
+                        print("Vol. II - File Opening Statement")
+                        x = int(input())
+                        if x == 1:
+                            help("open")
+                        elif x == 2:
+                            help("with")
+                elif x == 3:
+                    print("1 to open normal shell")
+                    print("2 to open cool shell")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("1 to open shell that doesn't recognize empty commands as unique syntax")
+                        print("2 to open shell with opposite of option 1")
+                        x = int(input("\n"))
+                        if x == 1:
+                            while True:
+                                x = input(">>> ")
+                                help(x)
+                        elif x == 2:
+                            while True:
+                                x = input(">>> ")
+                                if x == "":
+                                    help()
+                                else:
+                                    help(x)
+                    elif x == 2:
+                        help()
             elif x == 2:
                 web("https://docs.python.org/")
         elif x == 3:
@@ -2222,7 +2585,7 @@ while True:
             print(f"OS: {name.title()}")
             print(f"Platform: {platform.title()}")
             print("Runned On: Pycharm")
-            print("Runned In: Python 3")
+            print("Runned In: Python 3.8.5")
             print(f"Current Working Directory: {getcwd()}")
             print(f"User: {getcwd().split("\\")[2]}")
         elif x == 5:
@@ -2439,6 +2802,8 @@ while True:
                 print(list)
             elif x == 9:
                 print(agam)
+        elif x == 10:
+            import this
     elif x == 4:
         print("1 to manage cases")
         print("2 to strip letters")
