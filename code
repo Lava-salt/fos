@@ -95,6 +95,7 @@ print("1 to run Python code")
 print("2 to run BASH code")
 print("3 to run +-<>.,[] code")
 print("4 to run any code")
+print("5 to open documentation shell")
 x = int(input("\n"))
 if x == 1:
     print("1 to execute Python code")
@@ -183,10 +184,11 @@ if x == 1:
                             for i in code:
                                 print(i)
                         elif code[-1] == "save":
-                            print(code)
                             del code[-1]
+                            print(code)
                         elif code[-1] == "load":
-                            code = eval(input("Enter save code: "))
+                            del code[-1]
+                            code = eval(input("Save code >>> "))
                         else:
                             exec(code[-1])
                             del code[-1]
@@ -240,7 +242,7 @@ elif x == 2:
     print("3 to execute from files")
     x = int(input("\n"))
     if x == 1:
-        input("You can run enhanced BASH programs, like running AppleSoft BASIC in Apple II. ")
+        input("You can run enhanced BASH programs, like running AppleSoft BASIC in Apple ][. ")
         input("Write normal syntax, but start with a number that's the line number of the code line. ")
         input("For example, like \"10 echo \"executed on line 10\"\". There's also some extra functions. ")
         input("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
@@ -296,12 +298,13 @@ elif x == 2:
                     for i in code:
                         print(i)
                 elif code[-1] == "save":
-                    print(code)
                     del code[-1]
+                    print(code)
                 elif code[-1] == "load":
-                    code = eval(input("Enter save code: "))
+                    del code[-1]
+                    code = eval(input("Save code >>> "))
                 else:
-                    system(code[-1])
+                    exec(code[-1])
                     del code[-1]
     elif x == 2:
         print("1 to execute normally")
@@ -330,7 +333,7 @@ elif x == 3:
     print("3 to execute from files")
     x = int(input("\n"))
     if x == 1:
-        input("You can run enhanced +-<>.,[] programs, like running AppleSoft BASIC in Apple II. ")
+        input("You can run enhanced +-<>.,[] programs, like running AppleSoft BASIC in Apple ][. ")
         input("Write normal syntax, but start with a number that's the line number of the code line. ")
         input("For example, like \"10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++.-------------------.--.++++++++++++++++++.-.---------------.-.--------------------------------------------------------------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-.------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.---.+++++.---------.---------------------------------------------------------------------.+++++++++++++++++.-.\".\nThere's also some extra functions. ")
         input(
@@ -368,10 +371,10 @@ elif x == 3:
                 except NameError:
                     print("", end="")
                 if code[-1] == "run":
-                    shell()
                     del code[-1]
                     pointer = 0
                     pagot = int(input("Run how many lines? "))
+                    shell()
                     while pointer < pagot:
                         pointer += 1
                         for i in code:
@@ -379,18 +382,19 @@ elif x == 3:
                             del gawk[0]
                             gawk = " ".join(gawk)
                             if eval(i.split()[0]) == pointer:
-                                bf(gawk, input("input data: "))
+                                bf(gawk, input("Input data >>> "))
                 elif code[-1] == "listcode":
                     del code[-1]
                     for i in code:
                         print(i)
                 elif code[-1] == "save":
-                    print(code)
                     del code[-1]
+                    print(code)
                 elif code[-1] == "load":
-                    code = eval(input("Enter save code: "))
+                    del code[-1]
+                    code = eval(input("Save code >>> "))
                 else:
-                    bf(code[-1], input("input data: "))
+                    exec(code[-1])
                     del code[-1]
     elif x == 2:
         del x, code, pointer
@@ -439,6 +443,29 @@ elif x == 4:
     input("Use \"[\"perl\", \"-c\"]\" this \"-c\" syntax to make the program run a code instead of a file. ")
     input("Then, give the file name to run, e.g. \"[\"python\", \"-c\", \"print('hello')\"]\"")
     input("So, basically text you need to enter to the \"subprocess.run()\" command.")
-    abcacacahahahacacacababafsbkcabca = input("Enter code: ")
-    print("Also don't use this variable: \"abcacacahahahacacacababafsbkcabca\".")
-    run(eval(abcacacahahahacacacababafsbkcabca))
+    x = input("Get more information about subprocess.run() command? (y/n) ")
+    if "y" in x.lower():
+        help("subprocess.run")
+    del x
+    run(eval(input("Enter code: ")))
+elif x == 5:
+    print("1 to open normal shell")
+    print("2 to open cool shell")
+    x = int(input("\n"))
+    if x == 1:
+        print("1 to open shell that doesn't recognize empty commands as unique syntax")
+        print("2 to open shell with opposite of option 1")
+        x = int(input("\n"))
+        if x == 1:
+            while True:
+                x = input(">>> ")
+                help(x)
+        elif x == 2:
+            while True:
+                x = input(">>> ")
+                if x == "":
+                    help()
+                else:
+                    help(x)
+    elif x == 2:
+        help()
