@@ -21,7 +21,7 @@ print("Before entering, please manage modules.")
 while True:
     print("1 to install modules")
     print("2 to reinstall modules")
-    print("3 to pass")
+    print("3 to finish")
     x = int(input("\n"))
     if x == 1:
         system("pip install nltk")
