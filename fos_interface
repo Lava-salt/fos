@@ -1,5 +1,5 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
-print("Current Version: FOS 1.17.0")
+print("Current Version: FOS 1.22.5")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -8,15 +8,16 @@ print("@Lava-salt (Administrator)")
 # head (module importing)
 
 from fos_sourcecode import *
-from datetime import datetime
+from datetime import datetime, MAXYEAR, MINYEAR, UTC, __all__
 import calendar # calendar module is actually used for printing calendar through an "exec" function
-from time import sleep
+from time import sleep, altzone, daylight, timezone, tzname
 from webbrowser import open as web
 from webbrowser import open_new_tab
 from random import randint, random, gauss, normalvariate, shuffle, choice
-from os import name, getcwd, chdir, path, mkdir, listdir, remove, rename, system
-from subprocess import run, CalledProcessError, call, Popen, PIPE
-from sys import platform
+from os import getcwd, chdir, mkdir, listdir, remove, rename, system, EX_OK, F_OK, O_APPEND, O_BINARY, O_CREAT, O_EXCL, O_NOINHERIT, O_RANDOM, O_RDONLY, O_RDWR, O_SEQUENTIAL, O_SHORT_LIVED, O_TEMPORARY, O_TEXT, O_TRUNC, O_WRONLY, P_DETACH, P_NOWAIT, P_NOWAITO, P_OVERLAY, P_WAIT, R_OK, SEEK_CUR, SEEK_END, SEEK_SET, TMP_MAX, W_OK, X_OK, __all__, altsep, curdir, defpath, devnull, environ, extsep, linesep, name, pardir, pathsep, sep, supports_bytes_environ
+from os import path as pathos
+from sys import __stderr__, __stdin__, __stdout__, api_version, argv, base_exec_prefix, base_prefix, builtin_module_names, byteorder, copyright, dllhandle, dont_write_bytecode, exec_prefix, executable, flags, float_info, float_repr_style, hash_info, hexversion, implementation, int_info, maxsize, maxunicode, meta_path, modules, orig_argv, path, path_hooks, path_importer_cache, platform, platlibdir, prefix, pycache_prefix, stderr, stdin, stdlib_module_names, stdout, thread_info, version, version_info, warnoptions, winver
+from subprocess import run, CalledProcessError, call, Popen, PIPE, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS, __all__
 print("Before entering, please manage modules.")
 while True:
     print("1 to install modules")
@@ -196,6 +197,10 @@ binary = 0
 names = ['Alexander', 'Alexei', 'Anatolyevich', 'Andrei', 'Andreyevich', 'Boris', 'Borisovich', 'Dmitriy', 'Dmitry', 'Fyodorovich', 'Georgy', 'Grigoriy', 'Igor', 'Ilyich', 'Joseph', 'Konstantin', 'Lavrentiy', 'Leonid', 'Lev', 'Maximilianovich', 'Mikhail', 'Mikhaylovich', 'Nikita', 'Nikolai', 'Nikolayevich', 'Pavlovich', 'Sergeyevich', 'Stepanovich', 'Ustinovich', 'Viassarionovich', 'Viktor', 'Viktorovich', 'Vladimir', 'Vladimirovich', 'Vyacheslav', 'Yevseyevich', 'Yuri']
 shuffle(names)
 food = "🍎🍐🍊🍌🍋"
+weather = ["☀ Sunny", "☁️ Cloudy", "🌧️ Rainy", "❄️ Snowy", "⚡ Thunderstorm"]
+selectedw = choice(weather)
+temp = int(gauss(14, 14))
+xoxguide = {"A" : "⬜", "X" : "❌", "O" : "⭕"}
 
 # body (code)
 
@@ -516,7 +521,7 @@ while True:
                         a += 1
                     print(f"You won!\nWon in {a} moves")
                 elif x == 6:
-                    x = int(input("How many questios? "))
+                    x = int(input("How many questions? "))
                     for i in range(x):
                         x = [randint(0, 100), choice(xyz), randint(0, 100), randint(0, 100)]
                         y = eval(f"{x[0]} {x[1]} {x[2]}")
@@ -1349,6 +1354,7 @@ while True:
                 print("2 to open logic evaluator")
                 print("3 to open CASINO MINIGAMES")
                 print("4 to open Yacht Dice (Yahtzee)")
+                print("5 to open utilities")
                 x = int(input("\n"))
                 if x == 1:
                     print("Welcome to budget manager!")
@@ -1998,6 +2004,176 @@ while True:
                                             print(f"{sum(dices)} added.")
                             else:
                                 break
+                elif x == 5:
+                    print("1 to open bingo")
+                    print("2 to open data bank")
+                    print("3 to open weather simulator")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("1 to open word bingo")
+                        print("2 to open number bingo")
+                        x = int(input("\n"))
+                        if x == 1:
+                            for i in range(5):
+                                for i in range(5):
+                                    print(choice(ohno), end = "  ")
+                                print("\n")
+                        elif x == 2:
+                            for i in range(5):
+                                for i in range(5):
+                                    print(randint(0, 99), end = "   ")
+                                print("\n")
+                    elif x == 2:
+                        print("1 to open Operating System data")
+                        print("2 to open System data")
+                        print("3 to open Sub-Process data")
+                        print("4 to open Date and Time data")
+                        print("5 to open Time data")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print(f"Ex Ok: {EX_OK}")
+                            print(f"F Ok: {F_OK}")
+                            print(f"O Append: {O_APPEND}")
+                            print(f"O Binary: {O_BINARY}")
+                            print(f"O Creat: {O_CREAT}")
+                            print(f"O Excl: {O_EXCL}")
+                            print(f"O Noinherit: {O_NOINHERIT}")
+                            print(f"O Random: {O_RANDOM}")
+                            print(f"O Rdonly: {O_RDONLY}")
+                            print(f"O Rdwr: {O_RDWR}")
+                            print(f"O Sequential: {O_SEQUENTIAL}")
+                            print(f"O Short Lived: {O_SHORT_LIVED}")
+                            print(f"O Temporary: {O_TEMPORARY}")
+                            print(f"O Text: {O_TEXT}")
+                            print(f"O Trunc: {O_TRUNC}")
+                            print(f"O Wronly: {O_WRONLY}")
+                            print(f"P Detach: {P_DETACH}")
+                            print(f"P Nowait: {P_NOWAIT}")
+                            print(f"P Nowaito: {P_NOWAITO}")
+                            print(f"P Overlay: {P_OVERLAY}")
+                            print(f"P Wait: {P_WAIT}")
+                            print(f"R Ok: {R_OK}")
+                            print(f"Seek Cur: {SEEK_CUR}")
+                            print(f"Seek End: {SEEK_END}")
+                            print(f"Seek Set: {SEEK_SET}")
+                            print(f"Tmp Max: {TMP_MAX}")
+                            print(f"W Ok: {W_OK}")
+                            print(f"X Ok: {X_OK}")
+                            print(f"All: {__all__}")
+                            print(f"Altsep: {altsep}")
+                            print(f"Curdir: {curdir}")
+                            print(f"Defpath: {defpath}")
+                            print(f"Devnull: {devnull}")
+                            print(f"Environ: {environ}")
+                            print(f"Extsep: {extsep}")
+                            print(f"Linesep: {linesep}")
+                            print(f"Name: {name}")
+                            print(f"Pardir: {pardir}")
+                            print(f"Pathsep: {pathsep}")
+                            print(f"Sep: {sep}")
+                            print(f"Supports Bytes Environ: {supports_bytes_environ}")
+                        elif x == 2:
+                            print(f"Stderr: {__stderr__}")
+                            print(f"Stdin: {__stdin__}")
+                            print(f"Stdout: {__stdout__}")
+                            print(f"API Version: {api_version}")
+                            print(f"Argv: {argv}")
+                            print(f"Base Exec Prefix: {base_exec_prefix}")
+                            print(f"Base Prefix: {base_prefix}")
+                            print(f"Builtin Module Names: {builtin_module_names}")
+                            print(f"Byteorder: {byteorder}")
+                            print(f"Copyright: {copyright}")
+                            print(f"DLL Handle: {dllhandle}")
+                            print(f"Dont Write Bytecode: {dont_write_bytecode}")
+                            print(f"Exec Prefix: {exec_prefix}")
+                            print(f"Executable: {executable}")
+                            print(f"Flags: {flags}")
+                            print(f"Float Info: {float_info}")
+                            print(f"Float Repr Style: {float_repr_style}")
+                            print(f"Hash Info: {hash_info}")
+                            print(f"Hex Version: {hexversion}")
+                            print(f"Implementation: {implementation}")
+                            print(f"Int Info: {int_info}")
+                            print(f"Maxsize: {maxsize}")
+                            print(f"Maxunicode: {maxunicode}")
+                            print(f"Meta Path: {meta_path}")
+                            print(f"Modules: {modules}")
+                            print(f"Orig Argv: {orig_argv}")
+                            print(f"Path: {path}")
+                            print(f"Path Hooks: {path_hooks}")
+                            print(f"Path Importer Cache: {path_importer_cache}")
+                            print(f"Platform: {platform}")
+                            print(f"Platlibdir: {platlibdir}")
+                            print(f"Prefix: {prefix}")
+                            print(f"Pycache Prefix: {pycache_prefix}")
+                            print(f"Stderr: {stderr}")
+                            print(f"Stdin: {stdin}")
+                            print(f"Stdlib Module Names: {stdlib_module_names}")
+                            print(f"Stdout: {stdout}")
+                            print(f"Thread Info: {thread_info}")
+                            print(f"Version: {version}")
+                            print(f"Version Info: {version_info}")
+                            print(f"Warnoptions: {warnoptions}")
+                            print(f"Winver: {winver}")
+                        elif x == 3:
+                            print(f"Above Normal Priority Class: {ABOVE_NORMAL_PRIORITY_CLASS}")
+                            print(f"Below Normal Priority Class: {BELOW_NORMAL_PRIORITY_CLASS}")
+                            print(f"Create Breakaway From Job: {CREATE_BREAKAWAY_FROM_JOB}")
+                            print(f"Create Default Error Mode: {CREATE_DEFAULT_ERROR_MODE}")
+                            print(f"Create New Console: {CREATE_NEW_CONSOLE}")
+                            print(f"Create New Process Group: {CREATE_NEW_PROCESS_GROUP}")
+                            print(f"Create No Window: {CREATE_NO_WINDOW}")
+                            print(f"Detached Process: {DETACHED_PROCESS}")
+                            print(f"Devnull: {DEVNULL}")
+                            print(f"High Priority Class: {HIGH_PRIORITY_CLASS}")
+                            print(f"Idle Priority Class: {IDLE_PRIORITY_CLASS}")
+                            print(f"Normal Priority Class: {NORMAL_PRIORITY_CLASS}")
+                            print(f"Pipe: {PIPE}")
+                            print(f"Realtime Priority Class: {REALTIME_PRIORITY_CLASS}")
+                            print(f"All: {__all__}")
+                        elif x == 4:
+                            print(f"Now: {datetime.now()}")
+                            print(f"Max Year: {MAXYEAR}")
+                            print(f"Min Year: {MINYEAR}")
+                            print(f"UTC: {UTC}")
+                            print(f"All: {__all__}")
+                        elif x == 5:
+                            print(f"Altzone: {altzone}")
+                            print(f"Daylight: {daylight}")
+                            print(f"Timezone: {timezone}")
+                            print(f"Tzname: {tzname}")
+                    elif x == 3:
+                        x = int(input("How many entries? "))
+                        print("Day 1")
+                        print(f"Weather: {selectedw}")
+                        print(f"Temprature: {temp}")
+                        for i in range(x - 1):
+                            if randint(1, 2) == 1:
+                                selectedw = choice(weather)
+                            temp = temp + randint(-2, 2)
+                            print(f"Day {i + 2}")
+                            print(f"Weather: {selectedw}")
+                            print(f"Temprature: {temp} °C")
+                    elif x == 4:
+                        print("1 to add word")
+                        print("2 to remove word")
+                        print("3 to manually change")
+                        x = int(input("\n"))
+                        if x == 1:
+                            x = input("Add which word? ")
+                            if x in ohno:
+                                print("Word already included.")
+                            else:
+                                ohno.append(x)
+                        elif x == 2:
+                            x = input("Remove which word? ")
+                            if x in ohno:
+                                del ohno[ohno.index(x)]
+                            else:
+                                print("Word already removed.")
+                        elif x == 3:
+                            x = input("Please enter what will the text now look like as a Python list data type:\n")
+                            ohno = x
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
@@ -2849,7 +3025,7 @@ while True:
             elif x == 2:
                 x = input("Parent directory: ")
                 y = input("New directory name: ")
-                mkdir(path.join(x, y))
+                mkdir(pathos.join(x, y))
             elif x == 3:
                 x = input("Directory name: ")
                 for i in listdir(x):
@@ -2863,13 +3039,13 @@ while True:
                 rename(x, y)
             elif x == 6:
                 x = input("File name: ")
-                if path.exists(x):
+                if pathos.exists(x):
                     print("This file exists.")
                 else:
                     print("This file doesn't exist.")
             elif x == 7:
                 x = input("File name: ")
-                print(f"That file is {path.getsize(x)} bytes.")
+                print(f"That file is {pathos.getsize(x)} bytes.")
             elif x == 8:
                 print("1 to write entirely to a file")
                 print("2 to append text to a file")
