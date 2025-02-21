@@ -3,6 +3,7 @@
 from time import sleep
 from random import randint, shuffle
 from sys import platform
+xoxguide = {"A" : "⬜", "X" : "❌", "O" : "⭕"}
 
 # body (function defining for module)
 
@@ -24,9 +25,9 @@ def edit(str, edit):
     txt = str
     return eval(f"{txt}.{edit}()")
 def get(xox):
-    print(xox[0], xox[1], xox[2])
-    print(xox[3], xox[4], xox[5])
-    print(xox[6], xox[7], xox[8])
+    print(xox[0], xox[1], xox[2], "   ", xoxguide[xox[0]], xoxguide[xox[1]], xoxguide[xox[2]])
+    print(xox[3], xox[4], xox[5], "   ", xoxguide[xox[3]], xoxguide[xox[4]], xoxguide[xox[5]])
+    print(xox[6], xox[7], xox[8], "   ", xoxguide[xox[6]], xoxguide[xox[7]], xoxguide[xox[8]])
 def o(xox):
     print("O to move")
     x = int(input("Where to place o? (1/9) "))
