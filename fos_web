@@ -20,7 +20,7 @@
                 While contacting my email, please write "FOS Fan Fully" keyword so the email bot will understand that this email is sent </br>
                 because of FOS Installation request. </br>
                 If you're a stranger, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. </br>
-                Go <a href="https://github.com/Lava-salt/fos/discussions/1">here</a>to contact me safely.
+                Go <a href="https://github.com/Lava-salt/fos/discussions/1">here</a> to contact me safely.
             </p>
         </nav>
         <article>
@@ -132,9 +132,8 @@
                 1. Yahtzee (Yacht Dice) </br>
                 2. Incorrect shell date fixed </br>
                 Bugs: </br>
-                None </br>
+                AppleSoft BASIC-like Python environment can't save/load </br>
             </p>
-            <h1 style="color:darkslateblue">Future Updates (Planned)</h1>
             <h2>FOS 1.11.5</h2>
             <p>
                 Enhanced Interface Update </br>
@@ -143,10 +142,24 @@
                 2. The Zen of Python </br>
                 3. Python tutorial with documentation </br>
                 4. Python Documentation Shell </br>
+                5. Some documentation for the "running anything" app on code.py </br>
+                6. Fixed AppleSoft BASIC-like Python environment save/load bug </br>
                 Bugs: </br>
                 None </br>
             </p>
-            <h2>FOS 1.15.0</h2>
+            <h2>FOS 1.17.0</h2>
+            <p>
+                Enhanced Interface Update Sub-Patch </br>
+                Additions: </br>
+                1. Some Python-syntax symbols and topics added to documentation-based tutorial </br>
+                2. Install and uninstalling modules/PIP packages </br>
+                3. Printing text </br>
+                4. Added "himil" shell to module settings </br>
+                Bugs: </br>
+                None </br>
+            </p>
+            <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
+            <h2>FOS 1.19.5</h2>
             <p>
                 More Code Scraps Update </br>
                 Additions: </br>
@@ -162,6 +175,10 @@
             <p>
                 For more information, contact my <a href="https://github.com/Lava-salt/">GitHub account</a>. </br>
                 Contact me with a better way using <a href="https://github.com/Lava-salt/fos/discussions/1">my GitHub discussion</a>. </br>
+            </p>
+            <h2 style="color:dodgerblue">GitHub User List of Fame in Making of FOS:</h2>
+            <p>
+            @Lava-salt (Administrator) </br>
             </p>
         </footer>
     </div>
