@@ -1,5 +1,5 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
-print("Current Version: FOS 1.11.5")
+print("Current Version: FOS 1.17.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -22,22 +22,52 @@ while True:
     print("1 to install modules")
     print("2 to reinstall modules")
     print("3 to finish")
-    x = int(input("\n"))
-    if x == 1:
-        system("pip install nltk")
-        system("pip install pyenchant")
-    elif x == 2:
-        system("pip uninstall nltk")
-        system("pip uninstall pyenchant")
-        system("pip install nltk")
-        system("pip install pyenchant")
-    elif x == 3:
-        print("Module importing process finished.")
-        break
+    x = input("\n")
+    if x == "himil":
+        print("Welcome to Himil!")
+        print("Now, a Python shell will open.")
+        print("It closes after 5 executions.")
+        print("You can extend the closing time by 5 with \"extend\".")
+        print("Ready, Mrs. Cow Pepper?")
+        tmmlptealpaitafnfal = 5
+        while not(tmmlptealpaitafnfal <= 0):
+            tmmlptealpaitafnfal2 = input(f"Remaining: {tmmlptealpaitafnfal}\n>>> ")
+            if tmmlptealpaitafnfal2 == "extend":
+                tmmlptealpaitafnfal += 5
+            else:
+                exec(tmmlptealpaitafnfal2)
+            tmmlptealpaitafnfal -= 1
+        print("Now, Flea Rat, a BASH shell with same logic will open.\nGood l(i)ck!")
+        tmmlptealpaitafnfal = 5
+        while not (tmmlptealpaitafnfal <= 0):
+            tmmlptealpaitafnfal2 = input(f"Remaining: {tmmlptealpaitafnfal}\n>>> ")
+            if tmmlptealpaitafnfal2 == "extend":
+                tmmlptealpaitafnfal += 5
+            else:
+                system(tmmlptealpaitafnfal2)
+            tmmlptealpaitafnfal -= 1
+        print("Himil turned to Himilis.")
+        print("Mom's Whale Hand compiled successfully.")
+    else:
+        x = int(x)
+        if x == 1:
+            system("pip install nltk")
+            system("pip install pyenchant")
+        elif x == 2:
+            system("pip uninstall nltk")
+            system("pip uninstall pyenchant")
+            system("pip install nltk")
+            system("pip install pyenchant")
+        elif x == 3:
+            print("Now some files will be compulsorily installed.")
+            print("Please wait until said elseway.")
+            break
 import nltk
 nltk.download('words')
 from nltk.corpus import words
 import enchant
+print("Module importing process finished.")
+input("Now, you can press \"enter\" and boot up.\n")
 
 # head (other functions' defining)
 
@@ -165,7 +195,7 @@ ohno = words.words()
 binary = 0
 names = ['Alexander', 'Alexei', 'Anatolyevich', 'Andrei', 'Andreyevich', 'Boris', 'Borisovich', 'Dmitriy', 'Dmitry', 'Fyodorovich', 'Georgy', 'Grigoriy', 'Igor', 'Ilyich', 'Joseph', 'Konstantin', 'Lavrentiy', 'Leonid', 'Lev', 'Maximilianovich', 'Mikhail', 'Mikhaylovich', 'Nikita', 'Nikolai', 'Nikolayevich', 'Pavlovich', 'Sergeyevich', 'Stepanovich', 'Ustinovich', 'Viassarionovich', 'Viktor', 'Viktorovich', 'Vladimir', 'Vladimirovich', 'Vyacheslav', 'Yevseyevich', 'Yuri']
 shuffle(names)
-fruits = "🍎🍐🍊🍌🍋"
+food = "🍎🍐🍊🍌🍋"
 
 # body (code)
 
@@ -666,18 +696,18 @@ while True:
                                         print("")
                         print("")
                 elif x == 13:
-                    input("Now, the program will print random characters. ")
+                    print("Now, the program will print random characters. ")
                     print("If God wants to communicate with you,")
-                    input("He can manipulate the randomness to print characters he wants. ")
+                    print("He can manipulate the randomness to print characters he wants. ")
                     print("You will mostly get nonsense, but if you're the one chosen by god*,")
-                    input("You can sometimes get God's messages. One time, I got \"xpbug\" text which predicts the future. ")
+                    print("You can sometimes get God's messages. One time, I got \"xpbug\" text which predicts the future. ")
                     print("It predicts the FUTURE!!!")
                     print("Because later, a Minecraft event named \"Minecraft Bedrock Edition Eerie Mojang Office Party\" dropped.")
                     print("Which has a minigame dropped in day 4 for Q&A Department location.")
                     print("That minigame is \"Bug Squash\" where the goal is to smash at least 15 bugs in the pillars for XP.")
-                    input("My highscore is ~80. BUT THIS PREDICTED THE FUTURE! ")
-                    input("Also if you get nonsense, I will print random words. ")
-                    input("These are chosen by God (as everything else, of course). ")
+                    print("My highscore is ~80. BUT THIS PREDICTED THE FUTURE! ")
+                    print("Also if you get nonsense, I will print random words. ")
+                    print("These are chosen by God (as everything else, of course). ")
                     print("*If you want to communicate with God, you need to be a prophet.")
                     print("For this, it needs to be a time where almost no one believes God.")
                     print("And you need to be kind and smart so you can guide others to God and heaven.")
@@ -1188,7 +1218,7 @@ while True:
                         credit = input('Write "y" if you want to see the acknowledgements. ')
                         if credit.lower() == "y":
                             print(
-                                'Thanks for the youtuber "Sambucha" for his video "https://www.youtube.com/shorts/NeN-0AbV3z0" for the kcal information.')
+                                'Thanks for the YouTube user "Sambucha" for his video "https://www.youtube.com/shorts/NeN-0AbV3z0" for the kcal information.')
                         game = "play"
                         while game == "play":
                             for i in range(20):
@@ -1695,7 +1725,7 @@ while True:
                                         print("Lever pulling...")
                                         list = ""
                                         for i in range(3):
-                                            list = f"{list}{fruits[randint(0, 4)]}"
+                                            list = f"{list}{food[randint(0, 4)]}"
                                         print(f"Slot results: {list}")
                                         if list[0] == list[1] and list[1] == list[2]:
                                             print("You won!")
@@ -2215,6 +2245,8 @@ while True:
         print("8 to open OS shell")
         print("9 to use sorting algorithms")
         print("10 to open the Zen of Python")
+        print("11 to print text")
+        print("12 to manage modules")
         x = int(input("\n"))
         if x == 1:
             web("https://www.python.org/")
@@ -2236,7 +2268,7 @@ while True:
                     print("Vol. III - Statements")
                     print("Vol. IV - Defining")
                     print("Vol. V - Modules")
-                    print("Vol. VI - Pip Modules and BASH")
+                    print("Vol. VI - Pip Packages and BASH")
                     print("Vol. VII - Python Standard Library")
                     print("Vol. VIII - The Zen of Python")
                     print("Vol. IX - Code Execution")
@@ -2250,18 +2282,44 @@ while True:
                             print("Vol. I - Strings")
                             print("Vol. II - Numbers")
                             print("Vol. III - Boolean Values")
+                            print("Vol. IV - Topic")
                             x = int(input())
                             if x == 1:
-                                help("str")
+                                print("Vol. I - Data Type")
+                                print("Vol. II - Topic")
+                                x = int(input())
+                                if x == 1:
+                                    help("str")
+                                elif x == 2:
+                                    print("Vol. I - Main")
+                                    print("Vol. II - Methods")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("STRINGS")
+                                    elif x == 2:
+                                        help("STRINGMETHODS")
                             elif x == 2:
                                 print("Vol. I - Integers")
                                 print("Vol. II - Float Values")
                                 print("Vol. III - Arithmetic")
+                                print("Vol. IV - Topic")
                                 x = int(input())
                                 if x == 1:
-                                    help("int")
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Topic")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("int")
+                                    elif x == 2:
+                                        help("INTEGER")
                                 elif x == 2:
-                                    help("float")
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Topic")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("float")
+                                    elif x == 2:
+                                        help("FLOAT")
                                 elif x == 3:
                                     print("Vol. I - Addition")
                                     print("Vol. II - Subtraction")
@@ -2286,18 +2344,157 @@ while True:
                                     elif x == 7:
                                         help("//")
                             elif x == 3:
-                                help("bool")
+                                print("Vol. I - Data Type")
+                                print("Vol. II - Boolean Logic Operators")
+                                print("Vol. III - Boolean Logic Values")
+                                x = int(input())
+                                if x == 1:
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Topic")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("bool")
+                                    elif x == 2:
+                                        help("BOOLEAN")
+                                elif x == 2:
+                                    print("Vol. I - Logic Symbols")
+                                    print("Vol. II - Logical Operators")
+                                    x = int(input())
+                                    if x == 1:
+                                        print("Vol. I - Equal to")
+                                        print("Vol. II - Greater than")
+                                        print("Vol. III - Less than")
+                                        x = int(input())
+                                        if x == 1:
+                                            print("Vol. I - Equal to")
+                                            print("Vol. II - Not Equal to")
+                                            x = int(input())
+                                            if x == 1:
+                                                help("==")
+                                            elif x == 2:
+                                                help("!=")
+                                        elif x == 2:
+                                            print("Vol. I - Greater than")
+                                            print("Vol. II - Greater than or Equal to")
+                                            x = int(input())
+                                            if x == 1:
+                                                help(">")
+                                            elif x == 2:
+                                                help(">=")
+                                        elif x == 3:
+                                            print("Vol. I - Less than")
+                                            print("Vol. II - Less than or Equal to")
+                                            x = int(input())
+                                            if x == 1:
+                                                help("<")
+                                            elif x == 2:
+                                                help("<=")
+                                    elif x == 2:
+                                        print("Vol. I - And (Both needs to be true)")
+                                        print("Vol. II - Or (One needs to be true)")
+                                        print("Vol. III - Not (Opposite of given statement)")
+                                        x = int(input())
+                                        if x == 1:
+                                            help("and")
+                                        elif x == 2:
+                                            help("or")
+                                        elif x == 3:
+                                            help("not")
+                                elif x == 3:
+                                    print("Vol. 1 - 1 (True)")
+                                    print("Vol. 2 - 0 (False)")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("True")
+                                    elif x == 2:
+                                        help("False")
+                            elif x == 4:
+                                print("Vol. I - Data Types")
+                                print("Vol. II - Type Objects")
+                                x = int(input())
+                                if x == 1:
+                                    help("TYPES")
+                                elif x == 2:
+                                    help("TYPEOBJECTS")
                         elif x == 2:
                             print("Vol. I - Lists")
                             print("Vol. II - Tuples")
                             print("Vol. III - Dictionaries")
                             x = int(input())
                             if x == 1:
-                                help("list")
+                                print("Vol. I - Data Type")
+                                print("Vol. II - Brackets")
+                                x = int(input())
+                                if x == 1:
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Topic")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("list")
+                                    elif x == 2:
+                                        print("Vol. I - Lists")
+                                        print("Vol. II - List Literals")
+                                        x = int(input())
+                                        if x == 1:
+                                            help("LISTS")
+                                        elif x == 2:
+                                            help("LISTLITERALS")
+                                elif x == 2:
+                                    print("Vol. I - Opening Bracket ([)")
+                                    print("Vol. II - Closing Bracket (])")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("[")
+                                    elif x == 2:
+                                        help("]")
                             elif x == 2:
-                                help("tuple")
+                                print("Vol. I - Data Type")
+                                print("Vol. II - Brackets")
+                                x = int(input())
+                                if x == 1:
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Brackets")
+                                    x = int(input())
+                                    if x == 1:
+                                        print("Vol. I - Data Type")
+                                        print("Vol. II - Topic")
+                                        x = int(input())
+                                        if x == 1:
+                                            help("tuple")
+                                        elif x == 2:
+                                            print("Vol. I - Tuples")
+                                            print("Vol. II - Tuple Literals")
+                                            x = int(input())
+                                            if x == 1:
+                                                help("TUPLES")
+                                            elif x == 2:
+                                                help("TUPLELITERALS")
+                                elif x == 2:
+                                    print("Vol. I - Opening Bracket (()")
+                                    print("Vol. II - Closing Bracket ())")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("(")
+                                    elif x == 2:
+                                        help(")")
                             elif x == 3:
-                                help("dict")
+                                print("Vol. I - Data Type")
+                                print("Vol. II - Brackets")
+                                x = int(input())
+                                if x == 1:
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Topic")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("dict")
+                                    elif x == 2:
+                                        print("Vol. I - Dictionaries")
+                                        print("Vol. II - Dictionary Literals")
+                                        x = int(input())
+                                        if x == 1:
+                                            help("DICTIONARIES")
+                                        elif x == 2:
+                                            help("DICTIONARYLITERALS")
                     if x == 2:
                         print("Vol. I - Input")
                         print("Vol. II - Output")
@@ -2310,6 +2507,7 @@ while True:
                         print("Vol. I - Boolean Logic Statements")
                         print("Vol. II - While Statements")
                         print("Vol. III - Repeat Statements")
+                        print("Vol. IV - Topic")
                         x = int(input())
                         if x == 1:
                             print("Vol. I - If-Then")
@@ -2335,14 +2533,50 @@ while True:
                                 help("in")
                             elif x == 3:
                                 help("range")
+                        elif x == 4:
+                            help("LOOPING")
                     elif x == 4:
-                        print("Vol. I - Defining Functions")
-                        print("Vol. II - Defining Classes and Polymorphism")
+                        print("Vol. I - Functions")
+                        print("Vol. II - Classes and Polymorphism")
                         x = int(input())
                         if x == 1:
-                            help("def")
+                            print("Vol. I - Defining")
+                            print("Vol. II - Brackets")
+                            x = int(input())
+                            if x == 1:
+                                print("Vol. I - Data Type")
+                                print("Vol. II - Brackets")
+                                x = int(input())
+                                if x == 1:
+                                    print("Vol. I - Data Type")
+                                    print("Vol. II - Topic")
+                                    x = int(input())
+                                    if x == 1:
+                                        help("list")
+                                    elif x == 2:
+                                        print("Vol. I - Defining")
+                                        print("Vol. II - Topic")
+                                        x = int(input())
+                                        if x == 1:
+                                            help("def")
+                                        elif x == 2:
+                                            help("FUNCTIONS")
+                            elif x == 2:
+                                print("Vol. I - Opening Bracket (()")
+                                print("Vol. II - Closing Bracket ())")
+                                x = int(input())
+                                if x == 1:
+                                    help("(")
+                                elif x == 2:
+                                    help(")")
                         elif x == 2:
-                            help("class")
+                            print("Vol. I - Defining")
+                            print("Vol. II - Topic")
+                            x = int(input())
+                            if x == 1:
+                                help("class")
+                            elif x == 2:
+                                help("CLASSES")
                     if x == 5:
                         print("Vol. I - Module Importing")
                         print("Vol. II - Module Function List")
@@ -2351,11 +2585,14 @@ while True:
                         if x == 1:
                             print("Vol. I - Importing Normally")
                             print("Vol. II - \"From\" Statement")
+                            print("Vol. III -  Topic")
                             x = int(input())
                             if x == 1:
                                 help("import")
                             elif x == 2:
                                 help("from")
+                            elif x == 3:
+                                help("IMPORTING")
                         elif x == 2:
                             help("dir")
                         elif x == 3:
@@ -2449,44 +2686,47 @@ while True:
                                         help("random.gauss")
                                     elif x == 2:
                                         help("random.normalvariate")
-                elif x == 6:
-                    print("Vol. I - BASH")
-                    print("Vol. II - Pip Module Installing")
-                    print("Vol. III - Pip Modules")
-                    x = int(input())
-                    if x == 1:
-                        help("os.system")
-                    elif x == 2:
-                        help("pip")
-                    elif x == 3:
-                        print("Vol. I - Requests")
-                        print("Vol. II - Rich")
-                        print("Vol. III - Tqdm")
-                        print("Vol. IV - Numpy")
-                        print("Vol. V - Matplotlib")
-                        print("Vol. VI - Shutil")
-                        print("Vol. VII - Hashlib")
-                        print("Vol. VIII - Textual")
-                        print("Vol. IX - Urwid")
+                    elif x == 6:
+                        print("Vol. I - BASH")
+                        print("Vol. II - Pip Package Installing")
+                        print("Vol. III - Pip Package")
+                        print("Vol. IV - Pip Package Topic")
                         x = int(input())
                         if x == 1:
-                            help("requests")
+                            help("os.system")
                         elif x == 2:
-                            help("rich")
+                            help("pip")
                         elif x == 3:
-                            help("statements")
+                            print("Vol. I - Requests")
+                            print("Vol. II - Rich")
+                            print("Vol. III - Tqdm")
+                            print("Vol. IV - Numpy")
+                            print("Vol. V - Matplotlib")
+                            print("Vol. VI - Shutil")
+                            print("Vol. VII - Hashlib")
+                            print("Vol. VIII - Textual")
+                            print("Vol. IX - Urwid")
+                            x = int(input())
+                            if x == 1:
+                                help("requests")
+                            elif x == 2:
+                                help("rich")
+                            elif x == 3:
+                                help("statements")
+                            elif x == 4:
+                                help("numpy")
+                            elif x == 5:
+                                help("matplotlib")
+                            elif x == 6:
+                                help("shutil")
+                            elif x == 7:
+                                help("hashlib")
+                            elif x == 8:
+                                help("textual")
+                            elif x == 9:
+                                help("urwid")
                         elif x == 4:
-                            help("numpy")
-                        elif x == 5:
-                            help("matplotlib")
-                        elif x == 6:
-                            help("shutil")
-                        elif x == 7:
-                            help("hashlib")
-                        elif x == 8:
-                            help("textual")
-                        elif x == 9:
-                            help("urwid")
+                            help("PACKAGES")
                     elif x == 7:
                         print("Vol. I - Documentation Access")
                         print("Vol. II - Syntax")
@@ -2589,7 +2829,6 @@ while True:
             print(f"Current Working Directory: {getcwd()}")
             print(f"User: {getcwd().split("\\")[2]}")
         elif x == 5:
-            input("Please use this if really necessary.\nDon't edit these if not known. ")
             print("1 to change the current working directory")
             print("2 to create new directory")
             print("3 to list files in a directory")
@@ -2662,11 +2901,7 @@ while True:
                 else:
                     print("I.P. address active")
             elif x == 12:
-                input(
-                    "Changing the source code could be really dangerous.\nPlease don't edit these if not known. ")
-                input("Please use this if really necessary. ")
-                input(
-                    "You can run Python and Bash code here.\nBut the variables, lists, dicts e.t.c. are the ones from the code of the actual OS code.\n")
+                input("You can run Python and Bash code here.\nBut the variables, lists, dicts e.t.c. are the ones from the code of the actual OS code.\n")
                 print("1 to run Python code")
                 print("2 to run BASH code")
                 print("3 to run +-<>.,[] Code")
@@ -2804,6 +3039,58 @@ while True:
                 print(agam)
         elif x == 10:
             import this
+        elif x == 11:
+            print("1 to select text to print manually")
+            print("2 to select text to print from files")
+            x = int(input("\n"))
+            if x == 1:
+                x = input("Enter text: ")
+            elif x == 2:
+                x = input("Enter text's file: ")
+                x = open(x, "r")
+                x = x.read()
+            y = float(input("Time between each printing (as seconds): "))
+            letter = 0
+            nw = []
+            while not (nw == x):
+                try:
+                    nw.append(" ")
+                    while not (nw[-1] == x[letter]):
+                        nw[-1] = chr(ord(nw[-1]) + 1)
+                        for i in nw:
+                            print(i, end="")
+                        print("")
+                        sleep(y)
+                    letter += 1
+                except IndexError:
+                    nw = x
+        elif x == 12:
+            print("1 to manage Python modules")
+            print("2 to manage Pip packages")
+            x = int(input("\n"))
+            if x == 1:
+                print("1 to import a Python module with \"import ...\"")
+                print("2 to import a Python module with \"from ... import ...\"")
+                x = int(input("\n"))
+                if x == 1:
+                    n1 = input("Import which module? (import OOO as ooo) ")
+                    n2 = input("Import module as what name? (import ooo as OOO) ")
+                    exec(f"import {n1} as {n2}")
+                elif x == 2:
+                    n1 = input("Import which module? (from OOO import ooo as ooo) ")
+                    n2 = input("Import which functions from the module? (from ooo import OOO as ooo) ")
+                    n3 = input("Import module as what name? (from ooo import ooo as OOO) ")
+                    exec(f"from {n1} import {n2} as {n3}")
+            elif x == 3:
+                print("1 to install Pip package")
+                print("2 to uninstall Pip package")
+                x = int(input("\n"))
+                if x == 1:
+                    n1 = input("Install which Pip package? (pip install OOO) ")
+                    system(f"pip install {n1}")
+                elif x == 1:
+                    n1 = input("Uninstall which Pip package? (pip uninstall OOO) ")
+                    system(f"pip uninstall {n1}")
     elif x == 4:
         print("1 to manage cases")
         print("2 to strip letters")
@@ -2877,12 +3164,12 @@ while True:
                     print("That word is lowercase.")
     elif x == 5:
         if firsttime:
-            input(
+            print(
                 "To access internet, please make sure that you have a computer (preferably Windows) that hasn't ended support. ")
-            input("And connect to a WiFi network. ")
-            input(
+            print("And connect to a WiFi network. ")
+            print(
                 "Finally, make sure that you have Microsoft Edge or Internet Explorer (or Google Chrome) and make it your default browser. ")
-            input("Also, make your default search engine Microsoft Bing (or Google!). ")
+            print("Also, make your default search engine Microsoft Bing (or Google!). ")
             firsttime = False
         else:
             print("1 to open a website")
