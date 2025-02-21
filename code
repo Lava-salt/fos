@@ -118,6 +118,7 @@ if x == 1:
                 print("For example, \"10 x = 0 20 print(x) 30 x += 1 40 goto 2\" code counts forever. ")
                 print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
                 print("Use the \"bf(code, input_data)\" function to execute +-<>.,[] code. ")
+                print("Use \"new\" syntax to clean your code.")
                 print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
                 print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
                 print("Sorry but these are highly necessary for the code to run. ")
@@ -189,6 +190,9 @@ if x == 1:
                         elif code[-1] == "load":
                             del code[-1]
                             code = eval(input("Save code >>> "))
+                        elif code[-1] == "new":
+                            del code[-1]
+                            code = []
                         else:
                             exec(code[-1])
                             del code[-1]
@@ -247,6 +251,7 @@ elif x == 2:
         print("For example, like \"10 echo \"executed on line 10\"\". There's also some extra functions. ")
         print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
         print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
+        print("Use \"new\" syntax to clean your code.")
         print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
         input("Sorry but these are highly necessary for the code to run. ")
         shell()
@@ -303,6 +308,9 @@ elif x == 2:
                 elif code[-1] == "load":
                     del code[-1]
                     code = eval(input("Save code >>> "))
+                elif code[-1] == "new":
+                    del code[-1]
+                    code = []
                 else:
                     exec(code[-1])
                     del code[-1]
@@ -339,6 +347,7 @@ elif x == 3:
         print(
             "\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
         input("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
+        print("Use \"new\" syntax to clean your code.")
         shell()
         del x
         while True:
@@ -393,6 +402,9 @@ elif x == 3:
                 elif code[-1] == "load":
                     del code[-1]
                     code = eval(input("Save code >>> "))
+                elif code[-1] == "new":
+                    del code[-1]
+                    code = []
                 else:
                     exec(code[-1])
                     del code[-1]
