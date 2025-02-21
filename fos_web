@@ -76,7 +76,7 @@
                 <li>And can store data on files </li>
                 <li>With this logic, has a local chat </li>
                 <li>Finally, it can run Python and BASH code on an AppleSoft BASIC (Apple ][)-like environment, </li>
-                <li>With a save code system! Even supports BASIC commands: "list" (as "listcode), "goto", "run" </li>
+                <li>With a save code system! Even supports BASIC commands: "list" (as "listcode), "goto", "run", "new" </li>
                 <li>Also, can be used for communicating with literal God (As a joke)! </li>
             </ul>
         </article>
@@ -159,14 +159,16 @@
                 None </br>
             </p>
             <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
-            <h2>FOS 1.19.5</h2>
+            <h2>FOS 1.22.5</h2>
             <p>
-                More Code Scraps Update </br>
+                Utility Update </br>
                 Additions: </br>
                 1. Number (and Word) Bingo </br>
                 2. Data Bank </br>
                 3. Weather Simulator </br>
-                4. Emoji compatability for some ASCII-based apps </br>
+                4. Emoji compatability for XOX </br>
+                5. Being able to change wordlist </br>
+                6. New command to AppleSoft BASIC-like Python environment: "new" </br>
                 Bugs: </br>
                 None </br>
             </p>
