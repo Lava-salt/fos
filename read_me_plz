@@ -3,7 +3,7 @@ Welcome to Froggy OS readme.txt
 This is a guide to how to install Froggy OS to your computer.
 First, get a computer (preferably Windows NT), one that can access internet, and hasn't ended support.
 Then, access a WiFi. Then, open Microsoft Edge or Microsoft Internet Explorer (or Google Chrome) and access internet.
-Go to the URL "https://www.jetbrains.com/pycharm/download/" and install PyCharm.
+Go to the URL "https://www.jetbrains.com/pycharm/download/" and install the JetBrains IDE PyCharm.
 Make a new project named "Froggy_OS".
 Go to "https://github.com/Lava-salt/fos.git/" and access FOS files.
 Make a file named "readme.txt" and paste this readme.txt text there.
