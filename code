@@ -312,7 +312,7 @@ elif x == 2:
                     del code[-1]
                     code = []
                 else:
-                    exec(code[-1])
+                    system(code[-1])
                     del code[-1]
     elif x == 2:
         print("1 to execute normally")
@@ -406,7 +406,7 @@ elif x == 3:
                     del code[-1]
                     code = []
                 else:
-                    exec(code[-1])
+                    bf(code[-1], input("Input data >>> "))
                     del code[-1]
     elif x == 2:
         del x, code, pointer
