@@ -18,7 +18,7 @@
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. </br>
                 To download FOS, please contact my email address only known by my parents. </br>
                 While contacting my email, please write "FOS Fan Fully" keyword so the email bot will understand that this email is sent </br>
-                because of FOS Installation request. </br>
+                because of FOS Installation request. The current FOS version is 1.26.0 </br>
                 If you're a stranger, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. </br>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/1">here</a> to contact me safely.
             </p>
@@ -27,10 +27,10 @@
             <h2 style="color:red">What to Have when Installing FOS</h2>
             <p>
                 1. Computer (Linux or Win11) </br>
-                2. Pycharm Application </br>
+                2. JetBrains IDE Pycharm Installed </br>
                 3. Internet Connection </br>
             </p>
-            <h2 style="color:red">Download Guide (public) (For my parents)</h2>
+            <h2 style="color:red">Download Guide (public)</h2>
             <p>
                 1. Go to "https://github.com/Lava-salt/fos/edit/main/read_me_plz". </br>
                 2. Do everything the "read_me_plz" txt file says. </br>
@@ -171,18 +171,26 @@
                 Bugs: </br>
                 Code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment </br>
             </p>
-            <h2>FOS 1.25.0</h2>
+            <h2>FOS 1.26.0</h2>
             <p>
                 Random Stuff Update </br>
                 Additions: </br>
                 1. Some basic apps added </br>
                 2. Clock with random words </br>
                 3. Fixed the code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment </br>
+                4. Added the option to run Python code that's in a file in AppleSoft BASIC-like Python environment from files </br>
                 Bugs: </br>
                 None </br>
             </p>
             <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
-            <h2>None</h2>
+            <h2>FOS 1.27.0</h2>
+            <p>
+                Random Stuff Update </br>
+                Additions: </br>
+                1. Added the option to run BASH and +-<>.,[] code that's in a file in AppleSoft BASIC-like BASH and +-<>.,[] environment from files </br>
+                Bugs: </br>
+                None </br>
+            </p>
         </aside>
         <footer>
             <p>
