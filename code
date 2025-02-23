@@ -109,6 +109,7 @@ if x == 1:
         if x == 1:
             print("1 to get information")
             print("2 to really execute")
+            print("3 to execute from files")
             x = int(input("\n"))
             if x == 1:
                 print("You can run enhanced Python programs, like running AppleSoft BASIC in Apple ][. ")
@@ -167,6 +168,129 @@ if x == 1:
                             del tul
                         except NameError:
                             print("", end = "")
+                        if code[-1] == "run":
+                            del code[-1]
+                            pointer = 0
+                            pagot = int(input("Run how many lines? "))
+                            shell()
+                            while pointer < pagot:
+                                pointer += 1
+                                for i in code:
+                                    gawk = i.split()
+                                    del gawk[0]
+                                    gawk = " ".join(gawk)
+                                    if eval(i.split()[0]) == pointer:
+                                        exec(gawk)
+                        elif code[-1] == "listcode":
+                            del code[-1]
+                            for i in code:
+                                print(i)
+                        elif code[-1] == "save":
+                            del code[-1]
+                            print(code)
+                        elif code[-1] == "load":
+                            del code[-1]
+                            code = eval(input("Save code >>> "))
+                        elif code[-1] == "new":
+                            del code[-1]
+                            code = []
+                        else:
+                            exec(code[-1])
+                            del code[-1]
+            elif x == 3:
+                print("Please go to the \"really execute\" option and get a save code of your project.")
+                x = input("And copy it, then paste it to a file. Are you ready? (y/n) ")
+                if "y" in x.lower():
+                    del x
+                    kur = []
+                    for i in code:
+                        kur.append(i)
+                    for i in range(len(kur)):
+                        tul = kur[i]
+                        pul = tul.split()
+                        kur[i] = int(pul[0])
+                    code.append("load")
+                    pul = code[-1].split()
+                    if pul[0].isnumeric():
+                        try:
+                            del pul
+                        except NameError:
+                            print("", end="")
+                        try:
+                            del tul
+                        except NameError:
+                            print("", end="")
+                        print("", end="")
+                    else:
+                        try:
+                            del pul
+                        except NameError:
+                            print("", end="")
+                        try:
+                            del tul
+                        except NameError:
+                            print("", end="")
+                        if code[-1] == "run":
+                            del code[-1]
+                            pointer = 0
+                            pagot = int(input("Run how many lines? "))
+                            shell()
+                            while pointer < pagot:
+                                pointer += 1
+                                for i in code:
+                                    gawk = i.split()
+                                    del gawk[0]
+                                    gawk = " ".join(gawk)
+                                    if eval(i.split()[0]) == pointer:
+                                        exec(gawk)
+                        elif code[-1] == "listcode":
+                            del code[-1]
+                            for i in code:
+                                print(i)
+                        elif code[-1] == "save":
+                            del code[-1]
+                            print(code)
+                        elif code[-1] == "load":
+                            del code[-1]
+                            f = open(input("Save code's file >>> "), "r")
+                            p = f.read()
+                            code = eval(p)
+                            f.close()
+                        elif code[-1] == "new":
+                            del code[-1]
+                            code = []
+                        else:
+                            exec(code[-1])
+                            del code[-1]
+                    del f, p
+                    kur = []
+                    for i in code:
+                        kur.append(i)
+                    for i in range(len(kur)):
+                        tul = kur[i]
+                        pul = tul.split()
+                        kur[i] = int(pul[0])
+                    code.append("run")
+                    pul = code[-1].split()
+                    if pul[0].isnumeric():
+                        try:
+                            del pul
+                        except NameError:
+                            print("", end="")
+                        try:
+                            del tul
+                        except NameError:
+                            print("", end="")
+                        print("", end="")
+                    else:
+                        try:
+                            del pul
+                        except NameError:
+                            print("", end="")
+                        try:
+                            del tul
+                        except NameError:
+                            print("", end="")
                         if code[-1] == "run":
                             del code[-1]
                             pointer = 0
