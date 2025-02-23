@@ -158,7 +158,6 @@
                 Bugs: </br>
                 None </br>
             </p>
-            <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
             <h2>FOS 1.22.5</h2>
             <p>
                 Utility Update </br>
@@ -170,8 +169,20 @@
                 5. Being able to change wordlist </br>
                 6. New command to AppleSoft BASIC-like Python environment: "new" </br>
                 Bugs: </br>
+                Code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment </br>
+            </p>
+            <h2>FOS 1.25.0</h2>
+            <p>
+                Random Stuff Update </br>
+                Additions: </br>
+                1. Some basic apps added </br>
+                2. Clock with random words </br>
+                3. Fixed the code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment </br>
+                Bugs: </br>
                 None </br>
             </p>
+            <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
+            <h2>None</h2>
         </aside>
         <footer>
             <p>
