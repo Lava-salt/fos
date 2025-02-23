@@ -1,5 +1,5 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
-print("Current Version: FOS 1.25.0")
+print("Current Version: FOS 1.26.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -17,7 +17,8 @@ from random import randint, random, gauss, normalvariate, shuffle, choice
 from os import getcwd, chdir, mkdir, listdir, remove, rename, system, EX_OK, F_OK, O_APPEND, O_BINARY, O_CREAT, O_EXCL, O_NOINHERIT, O_RANDOM, O_RDONLY, O_RDWR, O_SEQUENTIAL, O_SHORT_LIVED, O_TEMPORARY, O_TEXT, O_TRUNC, O_WRONLY, P_DETACH, P_NOWAIT, P_NOWAITO, P_OVERLAY, P_WAIT, R_OK, SEEK_CUR, SEEK_END, SEEK_SET, TMP_MAX, W_OK, X_OK, __all__, altsep, curdir, defpath, devnull, environ, extsep, linesep, name, pardir, pathsep, sep, supports_bytes_environ
 from os import path as pathos
 from sys import __stderr__, __stdin__, __stdout__, api_version, argv, base_exec_prefix, base_prefix, builtin_module_names, byteorder, copyright, dllhandle, dont_write_bytecode, exec_prefix, executable, flags, float_info, float_repr_style, hash_info, hexversion, implementation, int_info, maxsize, maxunicode, meta_path, modules, orig_argv, path, path_hooks, path_importer_cache, platform, platlibdir, prefix, pycache_prefix, stderr, stdin, stdlib_module_names, stdout, thread_info, version, version_info, warnoptions, winver
-from subprocess import run, CalledProcessError, call, Popen, PIPE, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS, __all__
+from subprocess import run, CalledProcessError, call, Popen, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS, __all__
+from subprocess import PIPE as SPPIPE
 print("Before entering, please manage modules.")
 while True:
     print("1 to install modules")
@@ -3074,13 +3075,13 @@ while True:
             try:
                 run(["python", "code.py"], check=True)
             except CalledProcessError as e:
-                print("An error occured.")
+                print("The code shell was manually closed due to an unexpected error.")
         elif x == 4:
             print("TUI: Froggy_OS")
             print(f"OS: {name.title()}")
             print(f"Platform: {platform.title()}")
-            print("Runned On: Pycharm")
-            print("Runned In: Python 3.8.5")
+            print("Ran On: Pycharm")
+            print("Ran In: Python 3.8.5")
             print(f"Current Working Directory: {getcwd()}")
             print(f"User: {getcwd().split("\\")[2]}")
         elif x == 5:
@@ -3148,7 +3149,7 @@ while True:
                 call(x)
             elif x == 11:
                 x = input("I.P. address: ")
-                p = Popen(f"ping {x}", stdout=PIPE)
+                p = Popen(f"ping {x}", stdout=SPPIPE)
                 print("Loading...")
                 p.wait()
                 if p.poll():
