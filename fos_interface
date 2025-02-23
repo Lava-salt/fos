@@ -1,5 +1,5 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
-print("Current Version: FOS 1.22.5")
+print("Current Version: FOS 1.25.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -336,7 +336,15 @@ while True:
                 print("5 to open calendar")
                 x = int(input("\n"))
                 if x == 1:
-                    print(datetime.now())
+                    print("1 to open normal time")
+                    print("2 to open clock with words")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print(datetime.now())
+                    elif x == 2:
+                        while True:
+                            print(datetime.now(), ohno[(datetime.now().year * datetime.now().month * datetime.now().day * datetime.now().hour * datetime.now().minute * datetime.now().second) % len(ohno)])
+                            sleep(1)
                 elif x == 2:
                     print("The alarm code is a bit broken.")
                     x = input("Do you still like to use alarm? (y/n) ")
@@ -2008,6 +2016,8 @@ while True:
                     print("1 to open bingo")
                     print("2 to open data bank")
                     print("3 to open weather simulator")
+                    print("4 to change the wordlist (used in word scramble e.t.c.)")
+                    print("5 to open basic programs")
                     x = int(input("\n"))
                     if x == 1:
                         print("1 to open word bingo")
@@ -2174,6 +2184,75 @@ while True:
                         elif x == 3:
                             x = input("Please enter what will the text now look like as a Python list data type:\n")
                             ohno = x
+                    elif x == 5:
+                        print("1 to open Hello World")
+                        print("2 to open cat")
+                        print("3 to open looping counter")
+                        print("4 to open truth machine")
+                        print("5 to open XKCD Random Number")
+                        print("6 to open Quine")
+                        print("7 to find prime numbers")
+                        print("8 to print the fibonacci sequence")
+                        print("9 to print powers of 2")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("Hello, World!")
+                        elif x == 2:
+                            x = input("Enter text: ")
+                            print(x)
+                        elif x == 3:
+                            x = 0
+                            y = int(input("Print how many times? "))
+                            for i in range(y):
+                                print(x)
+                                x += 1
+                        elif x == 4:
+                            x = int(input("Enter number: "))
+                            if x == 1:
+                                while True:
+                                    print(x)
+                            elif x == 0:
+                                print(x)
+                        elif x == 5:
+                            print(4) # chosen by a fair roll
+                        elif x == 6:
+                            s = 's = {!r}\nprint(s.format(s))'
+                            print(s.format(s))
+                        elif x == 7:
+                            x = 2
+                            y = int(input("Print how many times? "))
+                            print(0)
+                            print(1)
+                            for i in range(y - 2):
+                                prime = True
+                                print(x, end="")
+                                for i in range(2, int(x ** 0.5) + 1):
+                                    if x % i == 0:
+                                        prime = False
+                                        break
+                                if prime:
+                                    print(" prime")
+                                else:
+                                    print("")
+                                x += 1
+                        elif x == 8:
+                            y = int(input("Print how many times? "))
+                            fib1 = 0
+                            fib2 = 1
+                            print(0)
+                            print(1)
+                            for i in range(y - 2):
+                                fib3 = fib1
+                                fib4 = fib2
+                                print(fib1 + fib2)
+                                fib1 = fib4
+                                fib2 = fib3 + fib4
+                        elif x == 9:
+                            x = int(input("Print how many times? "))
+                            pow = 1
+                            for i in range(x):
+                                print(pow)
+                                pow *= 2
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
