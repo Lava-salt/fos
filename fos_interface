@@ -8,17 +8,18 @@ print("@Lava-salt (Administrator)")
 # head (module importing)
 
 from fos_sourcecode import *
-from datetime import datetime, MAXYEAR, MINYEAR, UTC, __all__
+from datetime import datetime, MAXYEAR, MINYEAR, UTC
 import calendar # calendar module is actually used for printing calendar through an "exec" function
 from time import sleep, altzone, daylight, timezone, tzname
 from webbrowser import open as web
 from webbrowser import open_new_tab
 from random import randint, random, gauss, normalvariate, shuffle, choice
-from os import getcwd, chdir, mkdir, listdir, remove, rename, system, EX_OK, F_OK, O_APPEND, O_BINARY, O_CREAT, O_EXCL, O_NOINHERIT, O_RANDOM, O_RDONLY, O_RDWR, O_SEQUENTIAL, O_SHORT_LIVED, O_TEMPORARY, O_TEXT, O_TRUNC, O_WRONLY, P_DETACH, P_NOWAIT, P_NOWAITO, P_OVERLAY, P_WAIT, R_OK, SEEK_CUR, SEEK_END, SEEK_SET, TMP_MAX, W_OK, X_OK, __all__, altsep, curdir, defpath, devnull, environ, extsep, linesep, name, pardir, pathsep, sep, supports_bytes_environ
+from os import getcwd, chdir, mkdir, listdir, remove, rename, system, EX_OK, F_OK, O_APPEND, O_BINARY, O_CREAT, O_EXCL, O_NOINHERIT, O_RANDOM, O_RDONLY, O_RDWR, O_SEQUENTIAL, O_SHORT_LIVED, O_TEMPORARY, O_TEXT, O_TRUNC, O_WRONLY, P_DETACH, P_NOWAIT, P_NOWAITO, P_OVERLAY, P_WAIT, R_OK, SEEK_CUR, SEEK_END, SEEK_SET, TMP_MAX, W_OK, X_OK, altsep, curdir, defpath, devnull, environ, extsep, linesep, name, pardir, pathsep, sep, supports_bytes_environ
 from os import path as pathos
 from sys import __stderr__, __stdin__, __stdout__, api_version, argv, base_exec_prefix, base_prefix, builtin_module_names, byteorder, copyright, dllhandle, dont_write_bytecode, exec_prefix, executable, flags, float_info, float_repr_style, hash_info, hexversion, implementation, int_info, maxsize, maxunicode, meta_path, modules, orig_argv, path, path_hooks, path_importer_cache, platform, platlibdir, prefix, pycache_prefix, stderr, stdin, stdlib_module_names, stdout, thread_info, version, version_info, warnoptions, winver
-from subprocess import run, CalledProcessError, call, Popen, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS, __all__
+from subprocess import run, CalledProcessError, call, Popen, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS
 from subprocess import PIPE as SPPIPE
+from codecs import encode
 print("Before entering, please manage modules.")
 while True:
     print("1 to install modules")
@@ -115,80 +116,6 @@ url = ["http://www.pizza.net/", "http://www.links.net/re/intro.html", "http://ww
                         "https://www.snapchat.com/", "https://www.nasa.gov/", "https://www.google.com/",
                         "https://www.android.com/", "https://open.spotify.com/"]
 kai = ["🟦", "🟩", "🟨", "🟧", "🟫", "⬜", "🟪", "🟥"]
-def bf(code, input_data):
-    memory = []
-    for i in range(256):
-        memory.append(0)
-    pointer = 0
-    code_pointer = 0
-    input_pointer = 0
-    output = []
-    loop_stack = []
-    stack = []
-    while code_pointer < len(code):
-        command = code[code_pointer]
-        if command == '>':
-            pointer += 1
-        elif command == '<':
-            pointer -= 1
-        elif command == '+':
-            memory[pointer] = (memory[pointer] + 1) % 256
-        elif command == '-':
-            memory[pointer] = (memory[pointer] - 1) % 256
-        elif command == '.':
-            output.append(chr(memory[pointer]))
-        elif command == ',':
-            if input_pointer < len(input_data):
-                memory[pointer] = ord(input_data[input_pointer])
-                input_pointer += 1
-            else:
-                memory[pointer] = 0
-        elif command == ';':
-            output.append(memory[pointer])
-        elif command == '#':
-            memory[pointer] = 0
-        elif command == '@':
-            if pointer < len(memory) - 1:
-                memory[pointer + 1] = memory[pointer]
-        elif command == '&':
-            if pointer > 0:
-                memory[pointer], memory[pointer - 1] = memory[pointer - 1], memory[pointer]
-        elif command == '%':
-            memory[pointer] = (memory[pointer] * 2) % 256
-        elif command == '$':
-            memory[pointer] = memory[pointer] // 2
-        elif command == '^':
-            while pointer > 0 and memory[pointer] == 0:
-                pointer -= 1
-        elif command == '~':
-            while pointer < len(memory) - 1 and memory[pointer] != 0:
-                pointer += 1
-        elif command == '(':
-            stack.append(memory[pointer])
-        elif command == ')':
-            if stack:
-                memory[pointer] = stack.pop()
-        elif command == '[':
-            if memory[pointer] == 0:
-                open_loops = 1
-                while open_loops > 0:
-                    code_pointer += 1
-                    if code[code_pointer] == '[':
-                        open_loops += 1
-                    elif code[code_pointer] == ']':
-                        open_loops -= 1
-        elif command == ']':
-            if memory[pointer] != 0:
-                close_loops = 1
-                while close_loops > 0:
-                    code_pointer -= 1
-                    if code[code_pointer] == ']':
-                        close_loops += 1
-                    elif code[code_pointer] == '[':
-                        close_loops -= 1
-        code_pointer += 1
-    for i in output:
-        print(i, end="")
 alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ".", ",", " ", " ", " ", " ", " ", " ", " ", " "]
 gods_abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ".", ",", "<", ">", "+", "-", "[", "]", " "]
 ohno = words.words()
@@ -2070,7 +1997,6 @@ while True:
                             print(f"Tmp Max: {TMP_MAX}")
                             print(f"W Ok: {W_OK}")
                             print(f"X Ok: {X_OK}")
-                            print(f"All: {__all__}")
                             print(f"Altsep: {altsep}")
                             print(f"Curdir: {curdir}")
                             print(f"Defpath: {defpath}")
@@ -2141,13 +2067,11 @@ while True:
                             print(f"Normal Priority Class: {NORMAL_PRIORITY_CLASS}")
                             print(f"Pipe: {PIPE}")
                             print(f"Realtime Priority Class: {REALTIME_PRIORITY_CLASS}")
-                            print(f"All: {__all__}")
                         elif x == 4:
                             print(f"Now: {datetime.now()}")
                             print(f"Max Year: {MAXYEAR}")
                             print(f"Min Year: {MINYEAR}")
                             print(f"UTC: {UTC}")
-                            print(f"All: {__all__}")
                         elif x == 5:
                             print(f"Altzone: {altzone}")
                             print(f"Daylight: {daylight}")
@@ -2195,6 +2119,8 @@ while True:
                         print("7 to find prime numbers")
                         print("8 to print the fibonacci sequence")
                         print("9 to print powers of 2")
+                        print("10 to open FizzBuzz")
+                        print("11 to open 99 Bottles of Beer")
                         x = int(input("\n"))
                         if x == 1:
                             print("Hello, World!")
@@ -2254,6 +2180,23 @@ while True:
                             for i in range(x):
                                 print(pow)
                                 pow *= 2
+                        elif x == 10:
+                            x = int(input("Print how many times? "))
+                            for i in range(x):
+                                if i % 3 == 0 and i % 5 == 0:
+                                    print(f"FizzBuzz ({i})")
+                                elif i % 3 == 0:
+                                    print(f"Fizz ({i})")
+                                elif i % 5:
+                                    print(f"Buzz ({i})")
+                                else:
+                                    print(i)
+                        elif x == 11:
+                            for i in range(99, 0, -1):
+                                print(f"{i} bottles of beer on the wall!")
+                                print(f"{i} bottles of beer!")
+                                print("Take one down, pass it around")
+                                print(f"{i - 1} bottles of beer on the wall!")
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
@@ -2404,7 +2347,7 @@ while True:
         print("1 to convert Unicode to character")
         print("2 to convert character to Unicode")
         print("3 to list unicode")
-        print("4 to cipher words in Caesar Cipher using ASCII")
+        print("4 to cipher words")
         print("5 to open Unicode index list")
         x = int(input("\n"))
         if x == 1:
@@ -2437,18 +2380,30 @@ while True:
                     j = randint(0, 55295)
                     print(chr(j), end="")
         elif x == 4:
-            x = input(
-                "Please give the type of Caesar cipher you want.\nE.g. for \"Caesar +3\" cipher, write \"+3\".\n")
-            y = input(f"Word to cipher with Caesar {x}: ")
-            list = []
-            for i in range(len(y)):
-                list.append(y[i])
-            for i in range(len(list)):
-                list[i] = eval(f"chr(ord(list[i]) {x})")
-            y = ""
-            for i in list:
-                y = f"{y}{i}"
-            print(y)
+            print("1 to cipher words in Caesar Cipher using ASCII")
+            print("2 to cipher words in any type")
+            x = int(input("\n"))
+            if x == 1:
+                x = input(
+                    "Please give the type of Caesar cipher you want.\nE.g. for \"Caesar +3\" cipher, write \"+3\".\n")
+                y = input(f"Word to cipher with Caesar {x}: ")
+                list = []
+                for i in range(len(y)):
+                    list.append(y[i])
+                for i in range(len(list)):
+                    list[i] = eval(f"chr(ord(list[i]) {x})")
+                y = ""
+                for i in list:
+                    y = f"{y}{i}"
+                print(y)
+            elif x == 2:
+                print("Enter the cipher type. (e.g. \"rot_13\" for Rot13 cipher, basically \"codecs.encode(obj, encoding)\" function.")
+                x = input("Get information about that function? (y/n) ")
+                if "y" in x.lower():
+                    help("codecs.encode")
+                x = input("Cipher type: ")
+                y = input("Word to cipher: ")
+                encode(y, x)
         elif x == 5:
             print("Common ASCII")
             print("0-31   Unknown ASCII codes")
@@ -2485,11 +2440,6 @@ while True:
             print("55295       The Last ASCII character")
             print("ASCII Further Lands")
             print("55296-??? The Undiscovered")
-            print("Traceback (most recent call last):")
-            print('File "main.py", line 1, in <module>"')
-            print("UnicodeEncodeError: 'utf-8' codec can't encode character '\\ud800' in position 0: surrogates not allowed")
-            print("** Process exited - Return Code: 1 **")
-            print("Press Enter to exit terminal and discover the undiscovered")
     elif x == 3:
         print("1 to open Python")
         print("2 to open Python Documentation")
@@ -2503,6 +2453,7 @@ while True:
         print("10 to open the Zen of Python")
         print("11 to print text")
         print("12 to manage modules")
+        print("13 to open programming hall of fame")
         x = int(input("\n"))
         if x == 1:
             web("https://www.python.org/")
@@ -3347,6 +3298,41 @@ while True:
                 elif x == 1:
                     n1 = input("Uninstall which Pip package? (pip uninstall OOO) ")
                     system(f"pip uninstall {n1}")
+        elif x == 13:
+            print("1. George Bool")
+            print("Created Boolean logic (0 and 1, False and True, off and on e.t.c.), the basics for computer.")
+            print("2. Countess Ada Lovelace")
+            print("Math enthusiast, also created the first basic programming language, and close friend of Charles Babbage.")
+            print("3. Charles Babbage")
+            print("Mathematician and philosopher, made a concept of a digital computer that can be programmed.")
+            print("4. Monty Python")
+            print("A BBC-show's main character titled \"Monty Python's Flying Circus\" that Guido van Rossum likes.")
+            print("5. Guido van Rossum")
+            print("Dutch (as said on the Zen of Python) programmer that made Python programming language that got inspired from MPFC.")
+            print("6. Tim Peters")
+            print("Python programmer that improved the language, and wrote the Zen of Python that teached how to write \"pythonic\" code.")
+            print("7. Urban Müller")
+            print("Programmer who created the smallest programming language that I call +-<>.,[] as a successor to FALSE.")
+            print("8. David Morgan-Mar")
+            print("Biggest esoteric programming language developer that made esolangs like image-based Piet, recipe-based Chef, random time-based Whenever and OOP-based ZOMBIE.")
+            print("9. Markus Persson")
+            print("Game developer who made games like 0x10c, RubyDung, the Legend of the Chambered and Cave Game which got given to Mojang as Minecraft.")
+            print("10. Mojang Studios Team")
+            print("A game studio that made games like Minecraft, Cobalt, Caller's Bane (Scrolls) that include Nathan Adams, Jens Bergensten, Agnes Larsson e.t.c..")
+            print("11. Shigeru Miyamoto")
+            print("1980's console game developer working on Nintendo that made small games like Super Mario Bros., the Legend of Zelda and Devil World.")
+            print("12. Bill Gates")
+            print("Leader of MicroSoft, knewn mainly by building Windows OS, and video games made for XBox game console system.")
+            print("13. Steve Jobs")
+            print("Founder of Apple Computer Inc. which made computers like Apple ][, also programming languages like Objective-C and Swift.")
+            print("14. Terry Davis")
+            print("Schizophrenic prophet that's chosen by god to make his 3rd temple as a ring-0 operating system, TempleOS (LoseThos).")
+            print("15. Alan Turing")
+            print("Created the Turing Machine, a machine that can calculate anything that can be simulated with a programming language with 8 characters: \"+-<>.,[]\"")
+            print("16. John von Neumann")
+            print("Made a cellular automata with 29 states for cells, much more complicated than Conway's Game of Life which is also the predecessor of CGL.")
+            print("17. John Conway")
+            print("Made a Turing-complete cellular automata on a 2D grid with only 3 rules and 2 states that's so simple, that it's complicated and called \"Conway's Game of Life\".")
     elif x == 4:
         print("1 to manage cases")
         print("2 to strip letters")
