@@ -4,6 +4,7 @@ from os import system, getcwd
 from sys import platform
 from subprocess import run
 from random import randint
+from codecs import encode
 
 # head (other variables' defining)
 
@@ -89,6 +90,139 @@ def bf(code, input_data):
         print(i, end="")
 def shell():
     print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits" or "license" for more information.')
+def hq(y):
+    list = []
+    for i in range(len(y)):
+        list.append(y[i])
+    num = 0
+    list1 = 0
+    stack = []
+    for x in list:
+        if x == "C":
+            print(input())
+        elif x == "H":
+            print("Hello, World!")
+        elif x == "I":
+            hq(input())
+        elif x == "Q":
+            print(y)
+        elif x == "R":
+            print(encode(input(), "rot_13"))
+        elif x == "S":
+            l1 = []
+            for i in range(randint(1, 10)):
+                l1.append(input())
+            l1.sort()
+            print(l1)
+        elif x == "9":
+            for i in range(99, 0, -1):
+                print(f"{i} bottles of beer on the wall!")
+                print(f"{i} bottles of beer!")
+                print("Take one down, pass it around")
+                print(f"{i - 1} bottles of beer on the wall!")
+        elif x == "+":
+            num += 1
+            print(num)
+        elif x == "-":
+            try:
+                if list[list1 - 1] == "F":
+                    print(None.split(" "))
+                else:
+                    num -= 1
+                    print(num)
+            except IndexError:
+                num -= 1
+                print(num)
+        elif x == "*":
+            num *= 2
+            print(num)
+        elif x == "/":
+            num /= 3
+            print(num)
+        elif x == "%":
+            num %= 2
+            print(num)
+        elif x == "x":
+            num **= 2
+            print(num)
+        elif x == "X":
+            num **= 3
+            print(num)
+        elif x == "&":
+            num //= 3
+            print(num)
+        elif x == "F":
+            for i in range(101):
+                if i % 3 == 0 and i % 5 == 0:
+                    print(f"FizzBuzz ({i})")
+                elif i % 3 == 0:
+                    print(f"Fizz ({i})")
+                elif i % 5:
+                    print(f"Buzz ({i})")
+                else:
+                    print(i)
+        elif x == "$":
+            stack.append(num)
+        elif x == "#":
+            p = stack[-1]
+            del stack[-1]
+            print(p, end = "")
+        elif x == "^":
+            p = stack[-1]
+            del stack[-1]
+            print(chr(p), end = "")
+        elif x == "=":
+            print()
+        elif x == "/":
+            num = int(input())
+        elif x == "\\":
+            num = ord(input())
+        elif x == "P":
+            stack.append(input())
+        elif x == ">":
+            p = stack[-1]
+            del stack[-1]
+            exec(p)
+        elif x == "<":
+            p = stack[-1]
+            del stack[-1]
+            print(eval(p))
+        elif x == "½":
+            p = stack[-1]
+            del stack[-1]
+            system(p)
+        elif x == "@":
+            hq(y[list1 + 1 : len(y)])
+        elif x == "€":
+            for i in range(2):
+                hq(y[list1 + 1 : len(y)])
+        elif x == "é":
+            while True:
+                hq(y[list1 + 1 : len(y)])
+        elif x == "2":
+            t = [2, 3]
+            for i in t:
+                for j in t:
+                    print(f"{i} x {j} = {i * j}")
+            for i in t:
+                for j in t:
+                    for k in t:
+                        print(f"{i} x {j} x {k} = {i * j * k}")
+            for i in t:
+                for j in t:
+                    for k in t:
+                        for l in t:
+                            print(f"{i} x {j} x {k} x {l} = {i * j * k * l}")
+            for i in t:
+                for j in t:
+                    for k in t:
+                        for l in t:
+                            for m in t:
+                                print(f"{i} x {j} x {k} x {l} x {m} = {i * j * k * l * m}")
+        elif x == "G":
+            print("Hello World, I'm Gay!")
+    list1 += 1
+
 # body (code)
 
 print("1 to run Python code")
@@ -96,6 +230,7 @@ print("2 to run BASH code")
 print("3 to run +-<>.,[] code")
 print("4 to run any code")
 print("5 to open documentation shell")
+print("6 to open HQ9+ interpreter")
 x = int(input("\n"))
 if x == 1:
     print("1 to execute Python code")
@@ -105,6 +240,7 @@ if x == 1:
         print("1 to run enhanced version")
         print("2 to execute single-line commands")
         print("3 to execute from files")
+        print("4 to open debugger")
         x = int(input("\n"))
         if x == 1:
             print("1 to get information")
@@ -119,6 +255,7 @@ if x == 1:
                 print("For example, \"10 x = 0 20 print(x) 30 x += 1 40 goto 2\" code counts forever. ")
                 print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
                 print("Use the \"bf(code, input_data)\" function to execute +-<>.,[] code. ")
+                print("Use the \"hq(code)\" function to execute HQ9+ code (but with 31 commands!)")
                 print("Use \"new\" syntax to clean your code.")
                 print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
                 print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
@@ -345,11 +482,64 @@ if x == 1:
             f = open(input("File name: "), "r")
             exec(f.read())
             f.close()
-        elif x == 3:
-            del x, code, pointer
-            f = open(input("File name: "), "r")
-            system(f.read())
-            f.close()
+        elif x == 4:
+            del code, pointer
+            print("1 to debug manually")
+            print("2 to debug from files")
+            x = int(input("\n"))
+            if x == 1:
+                print("1 to debug 1 line of code")
+                print("2 to debug multiple lines")
+                x = int(input("\n"))
+                if x == 1:
+                    x = input("Enter Python code.\n")
+                    try:
+                        exec(x)
+                        print("Code execution successful: Return code 0")
+                    except Exception as e:
+                        print("Code execution failed: Return code 1")
+                        print("Exception (error) type: ")
+                        print(e)
+                elif x == 2:
+                    x = input("Enter Python code's file.\n")
+                    f = open(x, "r")
+                    x = f.read()
+                    f.close()
+                    try:
+                        exec(x)
+                        print("Code execution successful: Return code 0")
+                    except Exception as e:
+                        print("Code execution failed: Return code 1")
+                        print("Exception (error) type: ")
+                        print(e)
+            elif x == 2:
+                print("1 to debug 1 line of code")
+                print("2 to debug multiple lines")
+                x = int(input("\n"))
+                if x == 1:
+                    x = input("Enter Python codes as a Python list.\n")
+                    x = eval(x)
+                    try:
+                        for i in x:
+                            exec(i)
+                        print("Code execution successful: Exit code 0")
+                    except Exception as e:
+                        print("Code execution failed: Exit code 1")
+                        print("Exception (error) type: ")
+                        print(e)
+                elif x == 2:
+                    x = input("Enter Python codes as a Python list's file.\n")
+                    f = open(x, "r")
+                    x = eval(f.read())
+                    f.close()
+                    try:
+                        for i in x:
+                            exec(i)
+                        print("Code execution successful: Exit code 0")
+                    except Exception as e:
+                        print("Code execution failed: Exit code 1")
+                        print("Exception (error) type: ")
+                        print(e)
     elif x == 2:
         print("1 to evaluate single-line commands")
         print("2 to evaluate from files")
@@ -370,74 +560,201 @@ elif x == 2:
     print("3 to execute from files")
     x = int(input("\n"))
     if x == 1:
-        print("You can run enhanced BASH programs, like running AppleSoft BASIC in Apple ][. ")
-        print("Write normal syntax, but start with a number that's the line number of the code line. ")
-        print("For example, like \"10 echo \"executed on line 10\"\". There's also some extra functions. ")
-        print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
-        print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
-        print("Use \"new\" syntax to clean your code.")
-        print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
-        input("Sorry but these are highly necessary for the code to run. ")
-        shell()
-        del x
-        while True:
-            kur = []
-            for i in code:
-                kur.append(i)
-            for i in range(len(kur)):
-                tul = kur[i]
-                pul = tul.split()
-                kur[i] = int(pul[0])
-            code.append(input("> "))
-            pul = code[-1].split()
-            if pul[0].isnumeric():
-                try:
-                    del pul
-                except NameError:
+        print("1 to really execute")
+        print("2 to execute from files")
+        x = int(input("\n"))
+        if x == 1:
+            print("You can run enhanced BASH programs, like running AppleSoft BASIC in Apple ][. ")
+            print("Write normal syntax, but start with a number that's the line number of the code line. ")
+            print("For example, like \"10 echo \"executed on line 10\"\". There's also some extra functions. ")
+            print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
+            print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
+            print("Use \"new\" syntax to clean your code.")
+            print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
+            input("Sorry but these are highly necessary for the code to run. ")
+            shell()
+            del x
+            while True:
+                kur = []
+                for i in code:
+                    kur.append(i)
+                for i in range(len(kur)):
+                    tul = kur[i]
+                    pul = tul.split()
+                    kur[i] = int(pul[0])
+                code.append(input("> "))
+                pul = code[-1].split()
+                if pul[0].isnumeric():
+                    try:
+                        del pul
+                    except NameError:
+                        print("", end="")
+                    try:
+                        del tul
+                    except NameError:
+                        print("", end="")
                     print("", end="")
-                try:
-                    del tul
-                except NameError:
-                    print("", end="")
-                print("", end="")
-            else:
-                try:
-                    del pul
-                except NameError:
-                    print("", end="")
-                try:
-                    del tul
-                except NameError:
-                    print("", end="")
-                if code[-1] == "run":
-                    del code[-1]
-                    pointer = 0
-                    pagot = int(input("Run how many lines? "))
-                    shell()
-                    while pointer < pagot:
-                        pointer += 1
-                        for i in code:
-                            gawk = i.split()
-                            del gawk[0]
-                            gawk = " ".join(gawk)
-                            if eval(i.split()[0]) == pointer:
-                                system(gawk)
-                elif code[-1] == "listcode":
-                    del code[-1]
-                    for i in code:
-                        print(i)
-                elif code[-1] == "save":
-                    del code[-1]
-                    print(code)
-                elif code[-1] == "load":
-                    del code[-1]
-                    code = eval(input("Save code >>> "))
-                elif code[-1] == "new":
-                    del code[-1]
-                    code = []
                 else:
-                    system(code[-1])
-                    del code[-1]
+                    try:
+                        del pul
+                    except NameError:
+                        print("", end="")
+                    try:
+                        del tul
+                    except NameError:
+                        print("", end="")
+                    if code[-1] == "run":
+                        del code[-1]
+                        pointer = 0
+                        pagot = int(input("Run how many lines? "))
+                        shell()
+                        while pointer < pagot:
+                            pointer += 1
+                            for i in code:
+                                gawk = i.split()
+                                del gawk[0]
+                                gawk = " ".join(gawk)
+                                if eval(i.split()[0]) == pointer:
+                                    system(gawk)
+                    elif code[-1] == "listcode":
+                        del code[-1]
+                        for i in code:
+                            print(i)
+                    elif code[-1] == "save":
+                        del code[-1]
+                        print(code)
+                    elif code[-1] == "load":
+                        del code[-1]
+                        code = eval(input("Save code >>> "))
+                    elif code[-1] == "new":
+                        del code[-1]
+                        code = []
+                    else:
+                        system(code[-1])
+                        del code[-1]
+        elif x == 2:
+            print("Please go to the \"really execute\" option and get a save code of your project.")
+            x = input("And copy it, then paste it to a file. Are you ready? (y/n) ")
+            if "y" in x.lower():
+                del x
+                kur = []
+                for i in code:
+                    kur.append(i)
+                for i in range(len(kur)):
+                    tul = kur[i]
+                    pul = tul.split()
+                    kur[i] = int(pul[0])
+                code.append("load")
+                pul = code[-1].split()
+                if pul[0].isnumeric():
+                    try:
+                        del pul
+                    except NameError:
+                        print("", end="")
+                    try:
+                        del tul
+                    except NameError:
+                        print("", end="")
+                    print("", end="")
+                else:
+                    try:
+                        del pul
+                    except NameError:
+                        print("", end="")
+                    try:
+                        del tul
+                    except NameError:
+                        print("", end="")
+                    if code[-1] == "run":
+                        del code[-1]
+                        pointer = 0
+                        pagot = int(input("Run how many lines? "))
+                        shell()
+                        while pointer < pagot:
+                            pointer += 1
+                            for i in code:
+                                gawk = i.split()
+                                del gawk[0]
+                                gawk = " ".join(gawk)
+                                if eval(i.split()[0]) == pointer:
+                                    system(gawk)
+                    elif code[-1] == "listcode":
+                        del code[-1]
+                        for i in code:
+                            print(i)
+                    elif code[-1] == "save":
+                        del code[-1]
+                        print(code)
+                    elif code[-1] == "load":
+                        del code[-1]
+                        f = open(input("Save code's file >>> "), "r")
+                        p = f.read()
+                        code = eval(p)
+                        f.close()
+                    elif code[-1] == "new":
+                        del code[-1]
+                        code = []
+                    else:
+                        system(code[-1])
+                        del code[-1]
+                del f, p
+                kur = []
+                for i in code:
+                    kur.append(i)
+                for i in range(len(kur)):
+                    tul = kur[i]
+                    pul = tul.split()
+                    kur[i] = int(pul[0])
+                code.append("run")
+                pul = code[-1].split()
+                if pul[0].isnumeric():
+                    try:
+                        del pul
+                    except NameError:
+                        print("", end="")
+                    try:
+                        del tul
+                    except NameError:
+                        print("", end="")
+                    print("", end="")
+                else:
+                    try:
+                        del pul
+                    except NameError:
+                        print("", end="")
+                    try:
+                        del tul
+                    except NameError:
+                        print("", end="")
+                    if code[-1] == "run":
+                        del code[-1]
+                        pointer = 0
+                        pagot = int(input("Run how many lines? "))
+                        shell()
+                        while pointer < pagot:
+                            pointer += 1
+                            for i in code:
+                                gawk = i.split()
+                                del gawk[0]
+                                gawk = " ".join(gawk)
+                                if eval(i.split()[0]) == pointer:
+                                    system(gawk)
+                    elif code[-1] == "listcode":
+                        del code[-1]
+                        for i in code:
+                            print(i)
+                    elif code[-1] == "save":
+                        del code[-1]
+                        print(code)
+                    elif code[-1] == "load":
+                        del code[-1]
+                        code = eval(input("Save code >>> "))
+                    elif code[-1] == "new":
+                        del code[-1]
+                        code = []
+                    else:
+                        system(code[-1])
+                        del code[-1]
     elif x == 2:
         print("1 to execute normally")
         print("2 to execute coolly")
@@ -578,7 +895,7 @@ elif x == 4:
     print("E.g. write \"[\"perl\", \"-e\"]\" to make program write inline Perl -e code. ")
     print("Use \"[\"perl\", \"-c\"]\" this \"-c\" syntax to make the program run a code instead of a file. ")
     print("Then, give the file name to run, e.g. \"[\"python\", \"-c\", \"print('hello')\"]\"")
-    input("So, basically text you need to enter to the \"subprocess.run()\" command.")
+    input("So, basically text you need to enter to the \"subprocess.run()\" command. ")
     x = input("Get more information about subprocess.run() command? (y/n) ")
     if "y" in x.lower():
         help("subprocess.run")
@@ -605,3 +922,53 @@ elif x == 5:
                     help(x)
     elif x == 2:
         help()
+elif x == 6:
+    print("Modified HQ9+ Syntax for this IDE:")
+    print("C Copies input to output.")
+    print("H Prints \"Hello, world!\"")
+    print("I Interprets input as program source.")
+    print("Q Prints the program source code.")
+    print("R Encrypts input with ROT-13.")
+    print("S Sorts input lines randomly given from 1 to 10.")
+    print("9 Prints the lyrics to \"99 Bottles of Beer on the Wall.\"")
+    print("+ Increments the accumulator.")
+    print("- Decrements the accumulator.")
+    print("* Doubles the accumulator.")
+    print("/ Divides the accumulator by 3.")
+    print("% Modulos the accumulator by n%2.")
+    print("x Redefines the accumulator to its square.")
+    print("X Redefines the accumulator to its cube.")
+    print("& The / operation but int instead of float")
+    print("F Prints FizzBuzz up to 100.")
+    print("- Deferences a null pointer if preceded by an F.")
+    print("$ Add the accumulator to the stack")
+    print("# Pop a value from the stack and print as float")
+    print("^ Pop a value from the stack and print its ASCII value")
+    print("= Print new line (\\n in C++)")
+    print("/ Get input from user and turn accumulator to it")
+    print("P Get input from user and add string to stack")
+    print("> Pop a value from the stack execute it in Python")
+    print("< Pop a value from the stack evaluate it in Python")
+    print("½ Pop a value from the stack and execute it in Python")
+    print("\\ Get input from user and turn accumulator to its Unicode value")
+    print("@ Repeat code after this 2 times.")
+    print("€ Repeat code after this 3 times.")
+    print("é Repeat code after this infinitely.")
+    print("2 Prints 2 and 3 timetable (used for looping and multiplying/dividing in HQ9+)")
+    print("G LGBTQ+ approved HQ9+ H")
+    while True:
+        x = input(">>> ")
+        hq(x)
+
+"""
+language list:
+english
+sanskrit
+basque
+tagalog
+classical nahuatl
+georgian
+kwakiutl
+volapuk
+latin
+"""
