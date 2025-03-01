@@ -9,10 +9,10 @@
 <body>
     <div id="container">
         <header>
-            <h1 style="color:darkblue">Welcome to FOS Web!</h1>
+            <h1 style="color:darkblue; text-align:center;">Welcome to FOS Web!</h1>
         </header>
         <nav>
-            <p>
+            <p style="text-align:center">
                 FOS Web is the website for FOS. </br>
                 FOS, also known as Froggy OS is a TUI made in Python. </br>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. </br>
@@ -20,7 +20,7 @@
                 While contacting my email, please write "FOS Fan Fully" keyword so the email bot will understand that this email is sent </br>
                 because of FOS Installation request. The current FOS version is 1.26.0 </br>
                 If you're a stranger, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. </br>
-                Go <a href="https://github.com/Lava-salt/fos/discussions/1">here</a> to contact me safely.
+                Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
         <article>
@@ -182,14 +182,21 @@
                 Bugs: </br>
                 None </br>
             </p>
-            <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
-            <h2>FOS 1.27.0</h2>
+            <h2>FOS 1.30.0</h2>
             <p>
-                Random Stuff Update </br>
+                Code Stuff Update </br>
                 Additions: </br>
-                1. Added the option to run BASH and +-<>.,[] code that's in a file in AppleSoft BASIC-like BASH and +-<>.,[] environment from files </br>
+                1. Added the option to run BASH code that's in a file in AppleSoft BASIC-like BASH environment from files </br>
+                2. Programming list of fame </br>
+                3. Enhanced HQ9+ compiler (because why not) </br>
+                4. Word encoding and ciphering engine using Codecs </br>
                 Bugs: </br>
                 None </br>
+            </p>
+            <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
+            <h2>None!</h2>
+            <p>
+                If you want new updates, just write your ideas to <a href="https://github.com/Lava-salt/fos/discussions/">this website</a>!
             </p>
         </aside>
         <footer>
