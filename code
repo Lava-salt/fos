@@ -122,34 +122,27 @@ def hq(y):
                 print(f"{i - 1} bottles of beer on the wall!")
         elif x == "+":
             num += 1
-            print(num)
         elif x == "-":
             try:
                 if list[list1 - 1] == "F":
                     print(None.split(" "))
                 else:
                     num -= 1
-                    print(num)
             except IndexError:
                 num -= 1
-                print(num)
         elif x == "*":
             num *= 2
-            print(num)
         elif x == "/":
             num /= 3
-            print(num)
         elif x == "%":
             num %= 2
-            print(num)
         elif x == "x":
             num **= 2
-            print(num)
         elif x == "X":
             num **= 3
-            print(num)
         elif x == "&":
             num //= 3
+        elif x == "A":
             print(num)
         elif x == "F":
             for i in range(101):
@@ -157,7 +150,7 @@ def hq(y):
                     print(f"FizzBuzz ({i})")
                 elif i % 3 == 0:
                     print(f"Fizz ({i})")
-                elif i % 5:
+                elif i % 5 == 0:
                     print(f"Buzz ({i})")
                 else:
                     print(i)
@@ -199,6 +192,8 @@ def hq(y):
         elif x == "é":
             while True:
                 hq(y[list1 + 1 : len(y)])
+        elif x == "0":
+            num = bin(num)
         elif x == "2":
             t = [2, 3]
             for i in t:
@@ -221,6 +216,10 @@ def hq(y):
                                 print(f"{i} x {j} x {k} x {l} x {m} = {i * j * k * l * m}")
         elif x == "G":
             print("Hello World, I'm Gay!")
+        elif x == ":":
+            stack.append(chr(num))
+        elif x == ";":
+            stack[-1] = stack[-1] + chr(num)
     list1 += 1
 
 # body (code)
@@ -230,7 +229,7 @@ print("2 to run BASH code")
 print("3 to run +-<>.,[] code")
 print("4 to run any code")
 print("5 to open documentation shell")
-print("6 to open HQ9+ interpreter")
+print("6 to open esoteric programming languages")
 x = int(input("\n"))
 if x == 1:
     print("1 to execute Python code")
@@ -258,6 +257,8 @@ if x == 1:
                 print("Use the \"hq(code)\" function to execute HQ9+ code (but with 31 commands!)")
                 print("Use \"new\" syntax to clean your code.")
                 print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
+                print("You can execute files. For example, writing \"python3 file.txt\" will execute \"file.txt\" in Python 3.")
+                print("You can also do other things like \"python3 -c print(\"hi\")\" to print \"hi\".")
                 print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
                 print("Sorry but these are highly necessary for the code to run. ")
                 input("Example program: ")
@@ -332,7 +333,10 @@ if x == 1:
                             del code[-1]
                             code = []
                         else:
-                            exec(code[-1])
+                            try:
+                                run(code[-1].split(" "))
+                            except Exception:
+                                exec(code[-1])
                             del code[-1]
             elif x == 3:
                 print("Please go to the \"really execute\" option and get a save code of your project.")
@@ -548,7 +552,7 @@ if x == 1:
             del x, code, pointer
             shell()
             while True:
-                print(eval(input(">>> ")))
+                print(eval(input("$")))
         elif x == 2:
             del x, code, pointer
             f = open(input("File name: "), "r")
@@ -570,6 +574,9 @@ elif x == 2:
             print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
             print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
             print("Use \"new\" syntax to clean your code.")
+            print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
+            print("You can execute files. For example, writing \"python3 file.txt\" will execute \"file.txt\" in Python 3.")
+            print("You can also do other things like \"python3 -c print(\"hi\")\" to print \"hi\".")
             print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
             input("Sorry but these are highly necessary for the code to run. ")
             shell()
@@ -582,7 +589,7 @@ elif x == 2:
                     tul = kur[i]
                     pul = tul.split()
                     kur[i] = int(pul[0])
-                code.append(input("> "))
+                code.append(input("$ "))
                 pul = code[-1].split()
                 if pul[0].isnumeric():
                     try:
@@ -630,7 +637,10 @@ elif x == 2:
                         del code[-1]
                         code = []
                     else:
-                        system(code[-1])
+                        try:
+                            run(code[-1].split(" "))
+                        except Exception:
+                            system(code[-1])
                         del code[-1]
         elif x == 2:
             print("Please go to the \"really execute\" option and get a save code of your project.")
@@ -923,43 +933,78 @@ elif x == 5:
     elif x == 2:
         help()
 elif x == 6:
-    print("Modified HQ9+ Syntax for this IDE:")
-    print("C Copies input to output.")
-    print("H Prints \"Hello, world!\"")
-    print("I Interprets input as program source.")
-    print("Q Prints the program source code.")
-    print("R Encrypts input with ROT-13.")
-    print("S Sorts input lines randomly given from 1 to 10.")
-    print("9 Prints the lyrics to \"99 Bottles of Beer on the Wall.\"")
-    print("+ Increments the accumulator.")
-    print("- Decrements the accumulator.")
-    print("* Doubles the accumulator.")
-    print("/ Divides the accumulator by 3.")
-    print("% Modulos the accumulator by n%2.")
-    print("x Redefines the accumulator to its square.")
-    print("X Redefines the accumulator to its cube.")
-    print("& The / operation but int instead of float")
-    print("F Prints FizzBuzz up to 100.")
-    print("- Deferences a null pointer if preceded by an F.")
-    print("$ Add the accumulator to the stack")
-    print("# Pop a value from the stack and print as float")
-    print("^ Pop a value from the stack and print its ASCII value")
-    print("= Print new line (\\n in C++)")
-    print("/ Get input from user and turn accumulator to it")
-    print("P Get input from user and add string to stack")
-    print("> Pop a value from the stack execute it in Python")
-    print("< Pop a value from the stack evaluate it in Python")
-    print("½ Pop a value from the stack and execute it in Python")
-    print("\\ Get input from user and turn accumulator to its Unicode value")
-    print("@ Repeat code after this 2 times.")
-    print("€ Repeat code after this 3 times.")
-    print("é Repeat code after this infinitely.")
-    print("2 Prints 2 and 3 timetable (used for looping and multiplying/dividing in HQ9+)")
-    print("G LGBTQ+ approved HQ9+ H")
-    while True:
-        x = input(">>> ")
-        hq(x)
-
+    print("1 to open +-<>.,[]")
+    print("2 to open HQ9+")
+    x = int(input("\n"))
+    if x == 1:
+        print("+-<>.,[] Syntax for this IDE:")
+        print("""
++ Increment the value of the current cell
+- Decrement the value of the current cell
+> Move pointer to the right
+< Move pointer to the left
+. Print the Unicode character of the current cell
+, Take user input (store in the current cell)
+[ Jump past matching } if the current cell is 0
+] Jump back to matching { if the current cell is not 0
+; Print the raw value of the current cell (instead of Unicode)
+# Set the current cell to zero
+@ Duplicate the value of the current cell to the next cell
+& Swap the current cell with the previous cell
+% Multiply the current cell by 2
+$ Divide the current cell by 2 (integer division)
+^ Move the pointer to the first nonzero cell
+~ Move the pointer to the last nonzero cell
+( Push the current cell’s value onto a stack
+) Pop the last value from the stack into the current cell
+        """)
+        while True:
+            x = input("code >>>     ")
+            y = input("input data > ")
+            bf(x, y)
+    elif x == 2:
+        print("HQ9+ Syntax for this IDE:")
+        print(r"""
+C Copies input to output.
+H Prints "Hello, world!"
+I Interprets input as program source.
+Q Prints the program source code.
+R Encrypts input with ROT-13.
+S Sorts input lines randomly given from 1 to 10.
+9 Prints the lyrics to "99 Bottles of Beer on the Wall."
++ Increments the accumulator.
+- Decrements the accumulator.
+* Doubles the accumulator.
+/ Divides the accumulator by 3.
+% Modulos the accumulator by n%2.
+x Redefines the accumulator to its square.
+X Redefines the accumulator to its cube.
+& The / operation but int instead of float
+A Print the accumulator
+F Prints FizzBuzz up to 100.
+- Deferences a null pointer if preceded by an F.
+$ Push the accumulator to the stack
+# Pop a value from the stack and print it
+^ Pop a value from the stack and print its ASCII value
+= Print new line (\n in C++)
+/ Get input from user and turn accumulator to it
+P Get input from user and push string to stack
+> Pop a value from the stack execute it in Python
+< Pop a value from the stack evaluate it in Python
+½ Pop a value from the stack and execute it in BASH
+\ Get input from user and turn accumulator to its Unicode value
+@ Repeat code after this 2 times.
+€ Repeat code after this 3 times.
+é Repeat code after this infinitely.
+0 Turns accumulator to binary
+2 Prints 2 and 3 timetable (used for looping and multiplying/dividing in HQ9+)
+G LGBTQ+ approved HQ9+ H
+: Push accumulator's Unicode value to stack
+; Append accumulator's Unicode value to stack's top value
+        """)
+        while True:
+            x = input(">>> ")
+            hq(x)
 """
 language list:
 english
