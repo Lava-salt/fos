@@ -13,53 +13,53 @@
         </header>
         <nav>
             <p style="text-align:center">
-                FOS Web is the website for FOS. </br>
-                FOS, also known as Froggy OS is a TUI made in Python. </br>
-                The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. </br>
-                To download FOS, please contact my email address only known by my parents. </br>
-                While contacting my email, please write "FOS Fan Fully" keyword so the email bot will understand that this email is sent </br>
-                because of FOS Installation request. The current FOS version is 1.26.0 </br>
-                If you're a stranger, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. </br>
+                FOS Web is the website for FOS. <br/>
+                FOS, also known as Froggy OS is a TUI made in Python. <br/>
+                The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
+                To download FOS, please contact my email address only known by my parents. <br/>
+                While contacting my email, please write "FOS Fan Fully" keyword so the email bot will understand that this email is sent <br/>
+                because of FOS Installation request. The current FOS version is 1.37.0 <br/>
+                If you're a stranger, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
         <article>
             <h2 style="color:red">What to Have when Installing FOS</h2>
             <p>
-                1. Computer (Linux or Win11) </br>
-                2. JetBrains IDE Pycharm Installed </br>
-                3. Internet Connection </br>
+                1. Computer (Linux or Win11) <br/>
+                2. JetBrains IDE Pycharm Installed <br/>
+                3. Internet Connection <br/>
             </p>
             <h2 style="color:red">Download Guide (public)</h2>
             <p>
-                1. Go to "https://github.com/Lava-salt/fos/edit/main/read_me_plz". </br>
-                2. Do everything the "read_me_plz" txt file says. </br>
+                1. Go to "https://github.com/Lava-salt/fos/edit/main/read_me_plz". <br/>
+                2. Do everything the "read_me_plz" txt file says. <br/>
             </p>
             <h2 style="color:red">Download Options (For my parents)</h2>
             <p>
-                1. Full download (download entire FOS Pycharm code) </br>
-                2. Readme download (download the readme.txt for Pycharm) </br>
-                3. Txt Download - RECOMMENDED (download FOS codes as .txt files) </br>
+                1. Full download (download entire FOS Pycharm code) <br/>
+                2. Readme download (download the readme.txt for Pycharm) <br/>
+                3. Txt Download - RECOMMENDED (download FOS codes as .txt files) <br/>
             </p>
             <h2 style="color:green">1. Full Download Guide (for my parents)</h2>
             <p>
-                1. Import all the files to desktop </br>
-                2. Put all files to a folder e.g. "FOS_code" </br>
-                3. Go to folder and open "fos_interface.py" </br>
-                4. Change the "main" on top to "Current File" </br>
-                5. Run Current File </br>
+                1. Import all the files to desktop <br/>
+                2. Put all files to a folder e.g. "FOS_code" <br/>
+                3. Go to folder and open "fos_interface.py" <br/>
+                4. Change the "main" on top to "Current File" <br/>
+                5. Run Current File <br/>
             </p>
             <h2 style="color:green">2. Readme Download Guide (for my parents)</h2>
             <p>
-                1. Do everything readme.txt says </br>
+                1. Do everything readme.txt says <br/>
             </p>
             <h2 style="color:green">3. Txt Download Guide (for my parents)</h2>
             <p>
-                1. Import all the .txt files to desktop </br>
-                2. Make a new Pycharm project called "fos" </br>
-                3. Print all the text according to their name </br> e.g. make a new file "fos_interface.py" and put the "fos_interface(py).txt" to there </br> or put the "readme(txt).txt" file to "readme.txt" file in the "fos" project. </br>
-                4. Change the "main" on top to "Current File" </br>
-                5. Run Current File </br>
+                1. Import all the .txt files to desktop <br/>
+                2. Make a new Pycharm project called "fos" <br/>
+                3. Print all the text according to their name <br/> e.g. make a new file "fos_interface.py" and put the "fos_interface(py).txt" to there <br/> or put the "readme(txt).txt" file to "readme.txt" file in the "fos" project. <br/>
+                4. Change the "main" on top to "Current File" <br/>
+                5. Run Current File <br/>
             </p>
             <h2 style="color:red">Why FOS?</h2>
             <ul>
@@ -68,10 +68,10 @@
                 <li>Easy to access and practical </li>
                 <li>5 apps branched to smaller apps with a lot of sub-apps </li>
                 <li>10+ ASCII-based games to play with some having emoji compatability </li>
-                <li>Can run Python, BASH and +-<>.,[] code shell </li>
+                <li>Can run Python, BASH, HQ9+ and Brainf**k code shell </li>
                 <li>Has some hacks made using arbitrary code execution </li>
                 <li>Also, supports some types of A.C.E. </li>
-                <li>Can run "rm -rf" code in BASH </li>
+                <li>Can run "$sudo rm -rf /* --no-preserve-root" code in BASH </li>
                 <li>Can store data in a temporary 200,000 slot memory, </li>
                 <li>And can store data on files </li>
                 <li>With this logic, has a local chat </li>
@@ -82,116 +82,129 @@
         </article>
         <aside>
             <h1 style="color:darkslateblue">Updates</h1>
-            <p>
             <h2>FOS 1.0.0</h2>
-                Main Release </br>
-                Bugs: </br>
-                1. XOX Doesn't work </br>
-                2. Alarm is corrupt </br>
-                3. Incorrect shell date </br>
+            <p>
+                Main Release <br/>
+                Bugs: <br/>
+                1. XOX Doesn't work <br/>
+                2. Alarm is corrupt <br/>
+                3. Incorrect shell date <br/>
             </p>
             <h2>FOS 1.1.0</h2>
             <p>
-                Code Update </br>
-                Additions: </br>
-                1. Can Run Anything </br>
-                Bugs: </br>
-                1. XOX Doesn't work </br>
-                2. Alarm is corrupt </br>
-                3. Incorrect shell date </br>
+                Code Update <br/>
+                Additions: <br/>
+                1. Can Run Anything <br/>
+                Bugs: <br/>
+                1. XOX Doesn't work <br/>
+                2. Alarm is corrupt <br/>
+                3. Incorrect shell date <br/>
             </p>
             <h2>FOS 1.3.5</h2>
             <p>
-                Code Scrap Update </br>
-                Additions: </br>
-                1. Budget Manager </br>
-                2. Logic Evaluator </br>
-                3. Alarm is fixed </br>
-                4. Changed "can run anything" a bit </br>
-                5. Some music scraps for online code scraps </br>
-                Bugs: </br>
-                1. XOX Doesn't work </br>
-                2. Incorrect shell date </br>
+                Code Scrap Update <br/>
+                Additions: <br/>
+                1. Budget Manager <br/>
+                2. Logic Evaluator <br/>
+                3. Alarm is fixed <br/>
+                4. Changed "can run anything" a bit <br/>
+                5. Some music scraps for online code scraps <br/>
+                Bugs: <br/>
+                1. XOX Doesn't work <br/>
+                2. Incorrect shell date <br/>
             </p>
             <h2>FOS 1.6.5</h2>
             <p>
-                Game Update Part 1 </br>
-                Additions: </br>
-                1. XOX P-vs-CPU Mode Fixed </br>
-                2. Roulette and casino minigames </br>
-                3. Unicode index list </br>
-                4. Removed the brands from the calory tracker in FOS-SubOS </br>
-                Bugs: </br>
-                1. Incorrect shell date </br>
-                None </br>
+                Game Update Part 1 <br/>
+                Additions: <br/>
+                1. XOX P-vs-CPU Mode Fixed <br/>
+                2. Roulette and casino minigames <br/>
+                3. Unicode index list <br/>
+                4. Removed the brands from the calory tracker in FOS-SubOS <br/>
+                Bugs: <br/>
+                1. Incorrect shell date <br/>
+                None <br/>
             </p>
             <h2>FOS 1.8.0</h2>
             <p>
-                Game Update Part 2 </br>
-                Additions: </br>
-                1. Yahtzee (Yacht Dice) </br>
-                2. Incorrect shell date fixed </br>
-                Bugs: </br>
-                AppleSoft BASIC-like Python environment can't save/load </br>
+                Game Update Part 2 <br/>
+                Additions: <br/>
+                1. Yahtzee (Yacht Dice) <br/>
+                2. Incorrect shell date fixed <br/>
+                Bugs: <br/>
+                AppleSoft BASIC-like Python environment can't save/load <br/>
             </p>
             <h2>FOS 1.11.5</h2>
             <p>
-                Enhanced Interface Update </br>
-                Additions: </br>
-                1. Changing infinite loops to loops that you can quit (so now, you won't need to rerun FOS every time [except some code shells, they'll remain infinite.].) </br>
-                2. The Zen of Python </br>
-                3. Python tutorial with documentation </br>
-                4. Python Documentation Shell </br>
-                5. Some documentation for the "running anything" app on code.py </br>
-                6. Fixed AppleSoft BASIC-like Python environment save/load bug </br>
-                Bugs: </br>
-                None </br>
+                Enhanced Interface Update <br/>
+                Additions: <br/>
+                1. Changing infinite loops to loops that you can quit (so now, you won't need to rerun FOS every time [except some code shells, they'll remain infinite.].) <br/>
+                2. The Zen of Python <br/>
+                3. Python tutorial with documentation <br/>
+                4. Python Documentation Shell <br/>
+                5. Some documentation for the "running anything" app on code.py <br/>
+                6. Fixed AppleSoft BASIC-like Python environment save/load bug <br/>
+                Bugs: <br/>
+                None <br/>
             </p>
             <h2>FOS 1.17.0</h2>
             <p>
-                Enhanced Interface Update Sub-Patch </br>
-                Additions: </br>
-                1. Some Python-syntax symbols and topics added to documentation-based tutorial </br>
-                2. Install and uninstalling modules/PIP packages </br>
-                3. Printing text </br>
-                4. Added "himil" shell to module settings </br>
-                Bugs: </br>
-                None </br>
+                Enhanced Interface Update Sub-Patch <br/>
+                Additions: <br/>
+                1. Some Python-syntax symbols and topics added to documentation-based tutorial <br/>
+                2. Install and uninstalling modules/PIP packages <br/>
+                3. Printing text <br/>
+                4. Added "himil" shell to module settings <br/>
+                Bugs: <br/>
+                None <br/>
             </p>
             <h2>FOS 1.22.5</h2>
             <p>
-                Utility Update </br>
-                Additions: </br>
-                1. Number (and Word) Bingo </br>
-                2. Data Bank </br>
-                3. Weather Simulator </br>
-                4. Emoji compatability for XOX </br>
-                5. Being able to change wordlist </br>
-                6. New command to AppleSoft BASIC-like Python environment: "new" </br>
-                Bugs: </br>
-                Code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment </br>
+                Utility Update <br/>
+                Additions: <br/>
+                1. Number (and Word) Bingo <br/>
+                2. Data Bank <br/>
+                3. Weather Simulator <br/>
+                4. Emoji compatability for XOX <br/>
+                5. Being able to change wordlist <br/>
+                6. New command to AppleSoft BASIC-like Python environment: "new" <br/>
+                Bugs: <br/>
+                Code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment <br/>
             </p>
             <h2>FOS 1.26.0</h2>
             <p>
-                Random Stuff Update </br>
-                Additions: </br>
-                1. Some basic apps added </br>
-                2. Clock with random words </br>
-                3. Fixed the code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment </br>
-                4. Added the option to run Python code that's in a file in AppleSoft BASIC-like Python environment from files </br>
-                Bugs: </br>
-                None </br>
+                Random Stuff Update <br/>
+                Additions: <br/>
+                1. Some basic apps added <br/>
+                2. Clock with random words <br/>
+                3. Fixed the code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment <br/>
+                4. Added the option to run Python code that's in a file in AppleSoft BASIC-like Python environment from files <br/>
+                Bugs: <br/>
+                None <br/>
             </p>
             <h2>FOS 1.30.0</h2>
             <p>
-                Code Stuff Update </br>
-                Additions: </br>
-                1. Added the option to run BASH code that's in a file in AppleSoft BASIC-like BASH environment from files </br>
-                2. Programming list of fame </br>
-                3. Enhanced HQ9+ compiler (because why not) </br>
-                4. Word encoding and ciphering engine using Codecs </br>
-                Bugs: </br>
-                None </br>
+                Code Stuff Update <br/>
+                Additions: <br/>
+                1. Added the option to run BASH code that's in a file in AppleSoft BASIC-like BASH environment from files <br/>
+                2. Programming list of fame <br/>
+                3. Enhanced HQ9+ compiler (because why not) <br/>
+                4. Word encoding and ciphering engine using Codecs <br/>
+                Bugs: <br/>
+                None <br/>
+            </p>
+            <h2>FOS 1.37.0</h2>
+            <p>
+                More Code Stuff Update <br/>
+                Additions: <br/>
+                1. More functions to HQ9+ IDE <br/>
+                2. Infinite writing space (good for ASCII art) <br/>
+                3. Cool file interpreting way added to AppleSoft BASIC-like Python and BASH environment <br/>
+                4. Logic Gate Simulator <br/>
+                5. Dixit game and coordinate generator <br/>
+                6. Stock Market Simulator <br/>
+                Bugs: <br/>
+                None <br/>
             </p>
             <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
             <h2>None!</h2>
@@ -201,12 +214,12 @@
         </aside>
         <footer>
             <p>
-                For more information, contact my <a href="https://github.com/Lava-salt/">GitHub account</a>. </br>
-                Contact me with a better way using <a href="https://github.com/Lava-salt/fos/discussions/1">my GitHub discussion</a>. </br>
+                For more information, contact my <a href="https://github.com/Lava-salt/">GitHub account</a>. <br/>
+                Contact me with a better way using <a href="https://github.com/Lava-salt/fos/discussions/1">my GitHub discussion</a>. <br/>
             </p>
             <h2 style="color:dodgerblue">GitHub User List of Fame in Making of FOS:</h2>
             <p>
-            @Lava-salt (Administrator) </br>
+            @Lava-salt (Administrator) <br/>
             </p>
         </footer>
     </div>
