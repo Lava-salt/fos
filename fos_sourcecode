@@ -161,3 +161,77 @@ class Life:
             print("\n\n\n\n")
 def shell():
     print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits" or "license" for more information.')
+def bf(code, input_data):
+    memory = []
+    for i in range(256):
+        memory.append(0)
+    pointer = 0
+    code_pointer = 0
+    input_pointer = 0
+    output = []
+    loop_stack = []
+    stack = []
+    while code_pointer < len(code):
+        command = code[code_pointer]
+        if command == '>':
+            pointer += 1
+        elif command == '<':
+            pointer -= 1
+        elif command == '+':
+            memory[pointer] = (memory[pointer] + 1) % 256
+        elif command == '-':
+            memory[pointer] = (memory[pointer] - 1) % 256
+        elif command == '.':
+            output.append(chr(memory[pointer]))
+        elif command == ',':
+            if input_pointer < len(input_data):
+                memory[pointer] = ord(input_data[input_pointer])
+                input_pointer += 1
+            else:
+                memory[pointer] = 0
+        elif command == ';':
+            output.append(memory[pointer])
+        elif command == '#':
+            memory[pointer] = 0
+        elif command == '@':
+            if pointer < len(memory) - 1:
+                memory[pointer + 1] = memory[pointer]
+        elif command == '&':
+            if pointer > 0:
+                memory[pointer], memory[pointer - 1] = memory[pointer - 1], memory[pointer]
+        elif command == '%':
+            memory[pointer] = (memory[pointer] * 2) % 256
+        elif command == '$':
+            memory[pointer] = memory[pointer] // 2
+        elif command == '^':
+            while pointer > 0 and memory[pointer] == 0:
+                pointer -= 1
+        elif command == '~':
+            while pointer < len(memory) - 1 and memory[pointer] != 0:
+                pointer += 1
+        elif command == '(':
+            stack.append(memory[pointer])
+        elif command == ')':
+            if stack:
+                memory[pointer] = stack.pop()
+        elif command == '[':
+            if memory[pointer] == 0:
+                open_loops = 1
+                while open_loops > 0:
+                    code_pointer += 1
+                    if code[code_pointer] == '[':
+                        open_loops += 1
+                    elif code[code_pointer] == ']':
+                        open_loops -= 1
+        elif command == ']':
+            if memory[pointer] != 0:
+                close_loops = 1
+                while close_loops > 0:
+                    code_pointer -= 1
+                    if code[code_pointer] == ']':
+                        close_loops += 1
+                    elif code[code_pointer] == '[':
+                        close_loops -= 1
+        code_pointer += 1
+    for i in output:
+        print(i, end="")
