@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <title>FOS-TUI Web</title>
     <link rel="icon" type="image/png" href="https://neal.fun">
+    <style>
+        body {
+            background-image: url("https://t3.ftcdn.net/jpg/05/15/29/74/360_F_515297408_GRDBJY7xu6b5di37wldGRrJ2Y2Coyzp7.jpg");
+            font-family: "Lucida Console";
+        }
+    </style>
 </head>
 <body>
     <div id="container">
@@ -30,42 +36,17 @@
                 2. JetBrains IDE Pycharm Installed <br/>
                 3. Internet Connection <br/>
             </p>
-            <h2 style="color:red">Download Guide (public)</h2>
+            <h2 style="color:red">Download Guide</h2>
             <p>
                 1. Go to "https://github.com/Lava-salt/fos/edit/main/read_me_plz". <br/>
-                2. Do everything the "read_me_plz" txt file says. <br/>
-            </p>
-            <h2 style="color:red">Download Options (For my parents)</h2>
-            <p>
-                1. Full download (download entire FOS Pycharm code) <br/>
-                2. Readme download (download the readme.txt for Pycharm) <br/>
-                3. Txt Download - RECOMMENDED (download FOS codes as .txt files) <br/>
-            </p>
-            <h2 style="color:green">1. Full Download Guide (for my parents)</h2>
-            <p>
-                1. Import all the files to desktop <br/>
-                2. Put all files to a folder e.g. "FOS_code" <br/>
-                3. Go to folder and open "fos_interface.py" <br/>
-                4. Change the "main" on top to "Current File" <br/>
-                5. Run Current File <br/>
-            </p>
-            <h2 style="color:green">2. Readme Download Guide (for my parents)</h2>
-            <p>
-                1. Do everything readme.txt says <br/>
-            </p>
-            <h2 style="color:green">3. Txt Download Guide (for my parents)</h2>
-            <p>
-                1. Import all the .txt files to desktop <br/>
-                2. Make a new Pycharm project called "fos" <br/>
-                3. Print all the text according to their name <br/> e.g. make a new file "fos_interface.py" and put the "fos_interface(py).txt" to there <br/> or put the "readme(txt).txt" file to "readme.txt" file in the "fos" project. <br/>
-                4. Change the "main" on top to "Current File" <br/>
-                5. Run Current File <br/>
+                2. Do everything the "read_me_plz" text file says. <br/>
             </p>
             <h2 style="color:red">Why FOS?</h2>
             <ul>
                 <li>Fully Turing complete </li>
                 <li>A simple TUI-OS for Python ran on PyCharm </li>
                 <li>Easy to access and practical </li>
+                <li>Can teach Python </li>
                 <li>5 apps branched to smaller apps with a lot of sub-apps </li>
                 <li>10+ ASCII-based games to play with some having emoji compatability </li>
                 <li>Can run Python, BASH, HQ9+ and Brainf**k code shell </li>
@@ -221,6 +202,8 @@
             <p>
             @Lava-salt (Administrator) <br/>
             </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c3/20220730085403%21Python-logo-notext.svg/120px-Python-logo-notext.svg.png" alt="Python">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/324px-Gnu-bash-logo.svg.png?20161123002239" alt="Bourne Again Shell">
         </footer>
     </div>
 </body>
