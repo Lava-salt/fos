@@ -247,10 +247,10 @@
             <h2>Calculator</h2>
             <button onclick="s1()"> Addition (+) </button>
             <button onclick="s1()"> Subtraction (-) </button>
-            <button onclick="s1()"> Multiplication (x) </button>
-            <button onclick="s1()"> Division (/) </button>
-            <button onclick="s1()"> Modulo (%) </button>
-            <button onclick="s1()"> Exponentation (^) </button>
+            <button onclick="s3()"> Multiplication (x) </button>
+            <button onclick="s4()"> Division (/) </button>
+            <button onclick="s5()"> Modulo (%) </button>
+            <button onclick="s6()"> Exponentation (^) </button>
             <button> <a href="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif()"> P = NP (?) </a> </button>
         </footer>
     </div>
