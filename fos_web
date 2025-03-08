@@ -10,22 +10,26 @@
             background-image: url("https://t3.ftcdn.net/jpg/05/15/29/74/360_F_515297408_GRDBJY7xu6b5di37wldGRrJ2Y2Coyzp7.jpg");
             font-family: "Lucida Console";
         }
+        .p1 {
+            font-family: "Lucida Handwriting";
+        }
+        .p2 {
+            font-family: "Helvetica";
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <header>
-            <h1 style="color:darkblue; text-align:center;">Welcome to FOS Web!</h1>
+            <h1 style="color:darkblue; text-align:center;" class="p1">Welcome to FOS Web!</h1>
         </header>
         <nav>
-            <p style="text-align:center">
+            <p style="text-align:center" class="p1">
                 FOS Web is the website for FOS. <br/>
                 FOS, also known as Froggy OS is a TUI made in Python. <br/>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
-                To download FOS, please contact my email address only known by my parents. <br/>
-                While contacting my email, please write "FOS Fan Fully" keyword so the email bot will understand that this email is sent <br/>
-                because of FOS Installation request. The current FOS version is 1.37.0 <br/>
-                If you're a stranger, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
+                To download FOS, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
+                The current FOS version is 1.37.0 <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
@@ -33,8 +37,8 @@
             <h2 style="color:red">What to Have when Installing FOS</h2>
             <p>
                 1. Computer (Linux or Win11) <br/>
-                2. JetBrains IDE Pycharm Installed <br/>
-                3. Internet Connection <br/>
+                2. JetBrains IDE Pycharm Installed (or Visual Studio Code) <br/>
+                3. Internet and Wi-Fi Connection <br/>
             </p>
             <h2 style="color:red">Download Guide</h2>
             <p>
@@ -187,8 +191,6 @@
                 Bugs: <br/>
                 None <br/>
             </p>
-            <h1 style="color:darkslateblue">Future Update(s) (Planned)</h1>
-            <h2>None!</h2>
             <p>
                 If you want new updates, just write your ideas to <a href="https://github.com/Lava-salt/fos/discussions/">this website</a>!
             </p>
@@ -199,11 +201,57 @@
                 Contact me with a better way using <a href="https://github.com/Lava-salt/fos/discussions/1">my GitHub discussion</a>. <br/>
             </p>
             <h2 style="color:dodgerblue">GitHub User List of Fame in Making of FOS:</h2>
-            <p>
+            <p class = "p2">
             @Lava-salt (Administrator) <br/>
             </p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c3/20220730085403%21Python-logo-notext.svg/120px-Python-logo-notext.svg.png" alt="Python">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/324px-Gnu-bash-logo.svg.png?20161123002239" alt="Bourne Again Shell">
+            <script>
+            function s1() {
+              let x, y;
+              x = parseInt(prompt("Number 1: "));
+              y = parseInt(prompt("Number 2: "));
+              alert(x + y);
+            }
+            function s2() {
+              let x, y;
+              x = parseInt(prompt("Number 1: "));
+              y = parseInt(prompt("Number 2: "));
+              alert(x - y);
+            }
+            function s3() {
+              let x, y;
+              x = parseInt(prompt("Number 1: "));
+              y = parseInt(prompt("Number 2: "));
+              alert(x * y);
+            }
+            function s4() {
+              let x, y;
+              x = parseInt(prompt("Number 1: "));
+              y = parseInt(prompt("Number 2: "));
+              alert(x / y);
+            }
+            function s5() {
+              let x, y;
+              x = parseInt(prompt("Number 1: "));
+              y = parseInt(prompt("Number 2: "));
+              alert(x % y);
+            }
+            function s6() {
+              let x, y;
+              x = parseInt(prompt("Number 1: "));
+              y = parseInt(prompt("Number 2: "));
+              alert(x ** y);
+            }
+            </script>
+            <h2>Calculator</h2>
+            <button onclick="s1()"> Addition (+) </button>
+            <button onclick="s1()"> Subtraction (-) </button>
+            <button onclick="s1()"> Multiplication (x) </button>
+            <button onclick="s1()"> Division (/) </button>
+            <button onclick="s1()"> Modulo (%) </button>
+            <button onclick="s1()"> Exponentation (^) </button>
+            <button> <a href="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif()"> P = NP (?) </a> </button>
         </footer>
     </div>
 </body>
