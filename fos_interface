@@ -1,5 +1,5 @@
 print("^^^^^^^^^^^^ Current Working Directory\n")
-print("Current Version: FOS 1.30.0")
+print("Current Version: FOS 1.37.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -129,6 +129,8 @@ weather = ["☀ Sunny", "☁️ Cloudy", "🌧️ Rainy", "❄️ Snowy", "⚡ T
 selectedw = choice(weather)
 temp = int(gauss(14, 14))
 xoxguide = {"A" : "⬜", "X" : "❌", "O" : "⭕"}
+ns = ["N", "S"]
+we = ["W", "E"]
 
 # body (code)
 
@@ -342,8 +344,11 @@ while True:
                 print("11 for the future predictor")
                 print("12 to open the Library of Babel")
                 print("13 to communicate with God")
-                print("14 for checking word existance")
+                print("14 for checking word existence")
                 print("15 for English word list")
+                print("16 to open dixit")
+                print("17 to open coordinate generator")
+                print("18 for more games")
                 x = int(input("\n"))
                 if x == 1:
                     print("1 for human vs human")
@@ -701,6 +706,128 @@ while True:
                         for i in kamu[eval(x)]:
                             print(i)
                         print(kamu[eval(x)])
+                elif x == 16:
+                    print("Welcome to dixit")
+                    while True:
+                        print("1 to open rules")
+                        print("2 to play")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("In dixit, people create a story about given words.")
+                            print("The person with the best story wins.")
+                            print("That's it.")
+                        elif x == 2:
+                            print("1 to play")
+                            print("2 to exit")
+                            x = int(input("\n"))
+                            if x == 1:
+                                x = int(input("How many players? "))
+                                y = int(input("How many words to include in story? "))
+                                stories = []
+                                for i in range(1, x + 1):
+                                    print(f"Player {i}'s turn")
+                                    print(f"Year: {randint(datetime.now().year - 500, datetime.now().year + 100)}")
+                                    print(f"Place: {randint(0, 60)}° {randint(1, 59)}' {randint(1, 59)}'' {choice(ns)} {randint(0, 60)}° {randint(1, 59)}' {randint(1, 59)}'' {choice(we)}")
+                                    print("Words: ", end = "")
+                                    for i in range(y - 1):
+                                        print(f"\"{choice(ohno)}\", ", end=" ")
+                                    print(f"\"{choice(ohno)}\"")
+                                    stories.append(input("Submit Story: "))
+                                for i in range(len(stories)):
+                                    print(f"Player {i + 1}'s story:")
+                                    print(stories[i])
+                                input("Winner: ")
+                                break
+                            elif x == 2:
+                                break
+                elif x == 17:
+                    x = int(input("How many coordinates? "))
+                    for i in range(x):
+                        print(f"{randint(0, 60)}° {randint(1, 59)}' {randint(1, 59)}'' {choice(ns)} {randint(0, 60)}° {randint(1, 59)}' {randint(1, 59)}'' {choice(we)}")
+                elif x == 18:
+                    print("1 to simulate stock market")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("Companies have stocks.")
+                        print("Investors can buy shares that's a part of the stock.")
+                        print("A share is like a part of the company that you own.")
+                        print("The share gets valuable as the company becomes more valuable,")
+                        print("But sometimes, the value goes down.")
+                        print("Buy shares when the company's value is low,")
+                        print("To sell it when the value goes up to earn more money,")
+                        print("Because the value of the share goes up.")
+                        print("This is stock market investing logic shortly.")
+                        name = input("The investor's name: ")
+                        name = name.title()
+                        budget = int(input("His budget: "))
+                        list = []
+                        value = []
+                        stocks = []
+                        for i in range(5):
+                            list.append(f"{choice(ohno).title()} ({choice(ohno).title()} Company)")
+                            value.append(randint(1, 100))
+                            stocks.append(0)
+                        print(f"Current Companies and Stocks at {name}'s Employment")
+                        for i in range(5):
+                            if stocks[i] == 1:
+                                print(f"Stocks of {list[i]}: {value[i]} (You Have 1 Share)")
+                            else:
+                                print(f"Stocks of {list[i]}: {value[i]} (You Have {stocks[i]} Shares)")
+                        print(f"{name} has ${budget}.")
+                        day = 0
+                        quit = False
+                        while not(quit):
+                            day += 1
+                            for i in range(5):
+                                value[i] += randint(-5, 5)
+                            print(f"Day #{day}: Current Companies and Stocks")
+                            for i in range(5):
+                                if stocks[i] == 1:
+                                    print(f"Stocks of {list[i]}: {value[i]} (You Have 1 Share)")
+                                else:
+                                    print(f"Stocks of {list[i]}: {value[i]} (You Have {stocks[i]} Shares)")
+                            print(f"{name} has ${budget}.")
+                            while True:
+                                print("1 to buy shares")
+                                print("2 to sell shares")
+                                print("3 to go to next day")
+                                print("4 to quit")
+                                print("5 to see data")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    for i in range(5):
+                                        print(f"{i} to buy shares from {list[i]} (Costs ${value[i]})")
+                                    x = int(input("\n"))
+                                    if value[x] <= budget:
+                                        budget -= value[x]
+                                        stocks[x] += 1
+                                        print(f"1 Share bought from {list[x]} (Costs ${value[x]})")
+                                    else:
+                                        print("Insufficient Budget!")
+                                        print(f"Needed: ${value[x]}, Has: ${budget}")
+                                elif x == 2:
+                                    for i in range(5):
+                                        print(f"{i} to sell shares from {list[i]} (Costs ${value[i]})")
+                                    x = int(input("\n"))
+                                    if 0 < stocks[x]:
+                                        budget += value[x]
+                                        stocks[x] -= 1
+                                        print(f"1 Share sold from {list[x]} (Costs ${value[x]})")
+                                    else:
+                                        print("Insufficient Budget!")
+                                        print(f"Needed: 1 share, Has: 0 shares")
+                                elif x == 3:
+                                    break
+                                elif x == 4:
+                                    quit = True
+                                elif x == 5:
+                                    print(f"Day #{day}: Current Companies and Stocks")
+                                    for i in range(5):
+                                        if stocks[i] == 1:
+                                            print(f"Stocks of {list[i]}: {value[i]} (You Have 1 Share)")
+                                        else:
+                                            print(f"Stocks of {list[i]}: {value[i]} (You Have {stocks[i]} Shares)")
+                                    print(f"{name} has ${budget}.")
             elif x == 6:
                 user = input("Enter username: ")
                 print("1 to read chat messages")
@@ -1375,6 +1502,7 @@ while True:
                     print("3 to evaluate decimal logic")
                     print("4 to evaluate binary logic")
                     print("5 to evaluate BASH logic")
+                    print("6 to open logic gate simulator")
                     x = int(input("\n"))
                     if x == 1:
                         print("Enter a Python data and it'll give the answer.")
@@ -1404,6 +1532,90 @@ while True:
                         print("E.g. write \"$((5 + 5))\" and the program will print \"10\".")
                         x = input("Enter data: ")
                         system(f"echo {x}")
+                    elif x == 6:
+                        print("Welcome to the Logic Gate Simulator!")
+                        print("First, select the number of buttons:")
+                        print("1 to use 1 buttons")
+                        print("2 to use 2 buttons")
+                        print("3 to open logic gate cheatsheet")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("1 button connects to 1 lightbulb.")
+                            print("Both can be True and False.")
+                            print("Enter the logic gate between button 1 and bulb to gate 1 from: WIRE, NOT to gate 1")
+                            print("Enter the button's bool value to button 1.")
+                            g1 = input("Gate 1: ")
+                            b1 = bool(input("Button 1: "))
+                            g1 = g1.lower()
+                            if g1 == "wire":
+                                pass
+                            elif g1 == "not":
+                                b1 = not(b1)
+                            print(f"Bulb is {b1}")
+                        elif x == 2:
+                            print("2 buttons connects to 1 lightbulb.")
+                            print("Both can be True and False.")
+                            print("Enter the logic gate between button 1 and bulb to gate 3 from: WIRE, NOT to gate 1")
+                            print("Enter the logic gate between button 2 and bulb to gate 3 from: WIRE, NOT to gate 2")
+                            print("Enter the logic gate on button 1 and 2's wires' connection point from: OR, XOR, NOR, XNOR, NXOR, AND, XAND, NAND, XNAND, NXAND, NORXONDORGORGONAX to gate 3")
+                            print("Enter the logic gate between gate 3 to bulb from: WIRE, NOT to gate 4")
+                            print("Enter the button's bool value to button 1.")
+                            g1 = input("Gate 1: ")
+                            g2 = input("Gate 2: ")
+                            g3 = input("Gate 3: ")
+                            g4 = input("Gate 4: ")
+                            b1 = bool(input("Button 1: "))
+                            b2 = bool(input("Button 2: "))
+                            g1 = g1.lower()
+                            g2 = g2.lower()
+                            g3 = g3.lower()
+                            g4 = g4.lower()
+                            if g1 == "wire":
+                                pass
+                            elif g1 == "not":
+                                b1 = not(b1)
+                            if g2 == "wire":
+                                pass
+                            elif g2 == "not":
+                                b2 = not(b2)
+                            if g3 == "or":
+                                b1 = b1 or b2
+                            elif g3 == "xor" or g3 == "xnand" or g3 == "nxand" or g3 == "norxondorgorgonax":
+                                if (b1 or b2) and (b1 and b2):
+                                    b1 = False
+                                else:
+                                    b1 = b1 or b2
+                            elif g3 == "nor":
+                                b1 = not(b1 or b2)
+                            elif g3 == "xnor" or g3 == "nxor" or g3 == "xand":
+                                if (b1 or b2) and (b1 and b2):
+                                    b1 = True
+                                else:
+                                    b1 = not(b1 or b2)
+                            elif g3 == "nand":
+                                b1 = not(b1 and b2)
+                            if g4 == "wire":
+                                pass
+                            elif g4 == "not":
+                                b1 = not(b1)
+                            print(f"Bulb is {b1}")
+                        elif x == 3:
+                            print("Singular Button Logic Gates")
+                            print("WIRE - 0 = 0, 1 = 1")
+                            print("NOT - 0 = 1, 1 = 0")
+                            print("Plural Button Logic Gates")
+                            print("OR - 00 = 0, 10 = 1, 01 = 1, 11 = 1")
+                            print("XOR - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
+                            print("NOR - 00 = 1, 10 = 0, 01 = 0, 11 = 0")
+                            print("XNOR - 00 = 1, 10 = 0, 01 = 0, 11 = 1")
+                            print("NXOR - 00 = 1, 10 = 0, 01 = 0, 11 = 1")
+                            print("XNOR - 00 = 1, 10 = 0, 01 = 0, 11 = 1")
+                            print("AND - 00 = 0, 10 = 0, 01 = 0, 11 = 1")
+                            print("XAND - 00 = 1, 10 = 0, 01 = 0, 11 = 1")
+                            print("NAND - 00 = 1, 10 = 1, 01 = 1, 11 = 0")
+                            print("XNAND - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
+                            print("NXAND - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
+                            print("NORXONDORGORGONAX - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
                 elif x == 3:
                     print("1 to open lottery")
                     print("2 to open ROULETTE")
@@ -2187,7 +2399,7 @@ while True:
                                     print(f"FizzBuzz ({i})")
                                 elif i % 3 == 0:
                                     print(f"Fizz ({i})")
-                                elif i % 5:
+                                elif i % 5 == 0:
                                     print(f"Buzz ({i})")
                                 else:
                                     print(i)
@@ -2454,6 +2666,7 @@ while True:
         print("11 to print text")
         print("12 to manage modules")
         print("13 to open programming hall of fame")
+        print("14 to open infinite writing space")
         x = int(input("\n"))
         if x == 1:
             web("https://www.python.org/")
@@ -3333,6 +3546,9 @@ while True:
             print("Made a cellular automata with 29 states for cells, much more complicated than Conway's Game of Life which is also the predecessor of CGL.")
             print("17. John Conway")
             print("Made a Turing-complete cellular automata on a 2D grid with only 3 rules and 2 states that's so simple, that it's complicated and called \"Conway's Game of Life\".")
+        elif x == 14:
+            while True:
+                input()
     elif x == 4:
         print("1 to manage cases")
         print("2 to strip letters")
@@ -3357,7 +3573,7 @@ while True:
             z = input("Enter what will be stripped: ")
             print(f"y.{dict[x]}(z)")
         elif x == 3:
-            x = input("Enter word:")
+            x = input("Enter word: ")
             print(f"Length: {len(x)}")
         elif x == 4:
             print("1 to check if a word is in a word")
