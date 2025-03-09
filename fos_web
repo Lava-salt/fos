@@ -39,10 +39,11 @@
                 1. Computer (Linux or Win11) <br/>
                 2. JetBrains IDE Pycharm Installed (or Visual Studio Code) <br/>
                 3. Internet and Wi-Fi Connection <br/>
+                4. Emoji Compatability of Computer <br/>
             </p>
             <h2 style="color:red">Download Guide</h2>
             <p>
-                1. Go to "https://github.com/Lava-salt/fos/edit/main/read_me_plz". <br/>
+                1. Go to "<a href="https://github.com/Lava-salt/fos/edit/main/read_me_plz">https://github.com/Lava-salt/fos/edit/main/read_me_plz</a>". <br/>
                 2. Do everything the "read_me_plz" text file says. <br/>
             </p>
             <h2 style="color:red">Why FOS?</h2>
@@ -117,7 +118,7 @@
                 1. Yahtzee (Yacht Dice) <br/>
                 2. Incorrect shell date fixed <br/>
                 Bugs: <br/>
-                AppleSoft BASIC-like Python environment can't save/load <br/>
+                1. AppleSoft BASIC-like Python environment can't save/load <br/>
             </p>
             <h2>FOS 1.11.5</h2>
             <p>
@@ -154,7 +155,7 @@
                 5. Being able to change wordlist <br/>
                 6. New command to AppleSoft BASIC-like Python environment: "new" <br/>
                 Bugs: <br/>
-                Code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment <br/>
+                1. Code execution bug in AppleSoft BASIC-like BASH and +-<>.,[] environment <br/>
             </p>
             <h2>FOS 1.26.0</h2>
             <p>
@@ -188,6 +189,19 @@
                 4. Logic Gate Simulator <br/>
                 5. Dixit game and coordinate generator <br/>
                 6. Stock Market Simulator <br/>
+                Bugs: <br/>
+                1. Dixit not working <br/>
+                2. Code shell closes when error occurs <br/>
+            </p>
+            <h2>FOS 1.41.0</h2>
+            <p>
+                Communist Update <br/>
+                Additions: <br/>
+                1. USSR Simulator <br/>
+                2. Dixit Fixed <br/>
+                3. Now, FOS will open a Python shell before opening <br/>
+                4. Code shell now won't close when error occurs <br/>
+                5. Small data analysis program <br/>
                 Bugs: <br/>
                 None <br/>
             </p>
@@ -246,7 +260,7 @@
             </script>
             <h2>Calculator</h2>
             <button onclick="s1()"> Addition (+) </button>
-            <button onclick="s1()"> Subtraction (-) </button>
+            <button onclick="s2()"> Subtraction (-) </button>
             <button onclick="s3()"> Multiplication (x) </button>
             <button onclick="s4()"> Division (/) </button>
             <button onclick="s5()"> Modulo (%) </button>
