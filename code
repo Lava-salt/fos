@@ -318,7 +318,11 @@ if x == 1:
                                     del gawk[0]
                                     gawk = " ".join(gawk)
                                     if eval(i.split()[0]) == pointer:
-                                        exec(gawk)
+                                        try:
+                                            exec(gawk)
+                                        except Exception as e:
+                                            if e != None:
+                                                print(e)
                         elif code[-1] == "listcode":
                             del code[-1]
                             for i in code:
@@ -336,7 +340,11 @@ if x == 1:
                             try:
                                 run(code[-1].split(" "))
                             except Exception:
-                                exec(code[-1])
+                                try:
+                                    exec(code[-1])
+                                except Exception as e:
+                                    if e != None:
+                                        print(e)
                             del code[-1]
             elif x == 3:
                 print("Please go to the \"really execute\" option and get a save code of your project.")
@@ -383,7 +391,11 @@ if x == 1:
                                     del gawk[0]
                                     gawk = " ".join(gawk)
                                     if eval(i.split()[0]) == pointer:
-                                        exec(gawk)
+                                        try:
+                                            exec(gawk)
+                                        except Exception as e:
+                                            if e != None:
+                                                print(e)
                         elif code[-1] == "listcode":
                             del code[-1]
                             for i in code:
@@ -401,7 +413,11 @@ if x == 1:
                             del code[-1]
                             code = []
                         else:
-                            exec(code[-1])
+                            try:
+                                exec(gawk)
+                            except Exception as e:
+                                if e != None:
+                                    print(e)
                             del code[-1]
                     del f, p
                     kur = []
@@ -444,7 +460,11 @@ if x == 1:
                                     del gawk[0]
                                     gawk = " ".join(gawk)
                                     if eval(i.split()[0]) == pointer:
-                                        exec(gawk)
+                                        try:
+                                            exec(gawk)
+                                        except Exception as e:
+                                            if e != None:
+                                                print(e)
                         elif code[-1] == "listcode":
                             del code[-1]
                             for i in code:
@@ -459,7 +479,11 @@ if x == 1:
                             del code[-1]
                             code = []
                         else:
-                            exec(code[-1])
+                            try:
+                                exec(code[-1])
+                            except Exception as e:
+                                if e != None:
+                                    print(e)
                             del code[-1]
         elif x == 2:
             print("1 to execute normally")
@@ -469,7 +493,11 @@ if x == 1:
                 del x, code, pointer
                 shell()
                 while True:
-                    exec(input(">>> "))
+                    try:
+                        exec(input(">>> "))
+                    except Exception as e:
+                        if e != None:
+                            print(e)
             elif x == 2:
                 del x, code, pointer
                 print(getcwd)
@@ -480,11 +508,19 @@ if x == 1:
                 print(f"Python 3.8.5 (tags/v3.8.5, Jul 20 2020, 23:11:29) [MSC v.1941 64 bit (AMD64)] on {platform}")
                 shell()
                 while True:
-                    exec(input(">>> "))
+                    try:
+                        exec(input(">>> "))
+                    except Exception as e:
+                        if e != None:
+                            print(e)
         elif x == 3:
             del x, code, pointer
             f = open(input("File name: "), "r")
-            exec(f.read())
+            try:
+                exec(f.read())
+            except Exception as e:
+                if e != None:
+                    print(e)
             f.close()
         elif x == 4:
             del code, pointer
@@ -552,11 +588,19 @@ if x == 1:
             del x, code, pointer
             shell()
             while True:
-                print(eval(input("$")))
+                try:
+                    print(eval(input(">>> ")))
+                except Exception as e:
+                    if e != None:
+                        print(e)
         elif x == 2:
             del x, code, pointer
             f = open(input("File name: "), "r")
-            print(eval(f.read()))
+            try:
+                print(evak(f.read()))
+            except Exception as e:
+                if e != None:
+                    print(e)
             f.close()
 elif x == 2:
     print("1 to run enhanced version")
@@ -622,7 +666,11 @@ elif x == 2:
                                 del gawk[0]
                                 gawk = " ".join(gawk)
                                 if eval(i.split()[0]) == pointer:
-                                    system(gawk)
+                                    try:
+                                        system(gawk)
+                                    except Exception as e:
+                                        if e != None:
+                                            print(e)
                     elif code[-1] == "listcode":
                         del code[-1]
                         for i in code:
@@ -640,7 +688,11 @@ elif x == 2:
                         try:
                             run(code[-1].split(" "))
                         except Exception:
-                            system(code[-1])
+                            try:
+                                system(code[-1])
+                            except Exception as e:
+                                if e != None:
+                                    print(e)
                         del code[-1]
         elif x == 2:
             print("Please go to the \"really execute\" option and get a save code of your project.")
@@ -687,7 +739,11 @@ elif x == 2:
                                 del gawk[0]
                                 gawk = " ".join(gawk)
                                 if eval(i.split()[0]) == pointer:
-                                    system(gawk)
+                                    try:
+                                        system(gawk)
+                                    except Exception as e:
+                                        if e != None:
+                                            print(e)
                     elif code[-1] == "listcode":
                         del code[-1]
                         for i in code:
@@ -705,7 +761,14 @@ elif x == 2:
                         del code[-1]
                         code = []
                     else:
-                        system(code[-1])
+                        try:
+                            run(code[-1].split(" "))
+                        except Exception:
+                            try:
+                                system(code[-1])
+                            except Exception as e:
+                                if e != None:
+                                    print(e)
                         del code[-1]
                 del f, p
                 kur = []
@@ -748,7 +811,11 @@ elif x == 2:
                                 del gawk[0]
                                 gawk = " ".join(gawk)
                                 if eval(i.split()[0]) == pointer:
-                                    system(gawk)
+                                    try:
+                                        system(gawk)
+                                    except Exception as e:
+                                        if e != None:
+                                            print(e)
                     elif code[-1] == "listcode":
                         del code[-1]
                         for i in code:
@@ -763,7 +830,14 @@ elif x == 2:
                         del code[-1]
                         code = []
                     else:
-                        system(code[-1])
+                        try:
+                            run(code[-1].split(" "))
+                        except Exception:
+                            try:
+                                system(code[-1])
+                            except Exception as e:
+                                if e != None:
+                                    print(e)
                         del code[-1]
     elif x == 2:
         print("1 to execute normally")
@@ -773,14 +847,22 @@ elif x == 2:
             del x, code, pointer
             shell()
             while True:
-                system(input(">>> "))
+                try:
+                    system(input("$ "))
+                except Exception as e:
+                    if e != None:
+                        print(e)
         elif x == 2:
             del x, code, pointer
             print("Windows PowerShell")
             print("Copyright (C) Microsoft Corporation. All rights reserved.\n")
             print("Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows\n")
             while True:
-                system(input(f"(.venv) PS {getcwd}> "))
+                try:
+                    system(input(f"(.venv) PS {getcwd}> "))
+                except Exception as e:
+                    if e != None:
+                        print(e)
     elif x == 3:
         del x, code, pointer
         f = open(input("File name: "), "r")
@@ -795,8 +877,7 @@ elif x == 3:
         print("You can run enhanced +-<>.,[] programs, like running AppleSoft BASIC in Apple ][. ")
         print("Write normal syntax, but start with a number that's the line number of the code line. ")
         print("For example, like \"10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++.-------------------.--.++++++++++++++++++.-.---------------.-.--------------------------------------------------------------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-.------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.---.+++++.---------.---------------------------------------------------------------------.+++++++++++++++++.-.\".\nThere's also some extra functions. ")
-        print(
-            "\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
+        print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
         input("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
         print("Use \"new\" syntax to clean your code.")
         shell()
