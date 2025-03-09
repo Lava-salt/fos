@@ -1,4 +1,26 @@
-print("^^^^^^^^^^^^ Current Working Directory\n")
+from sys import platform
+from subprocess import run
+print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits", or "license" for more information.\nType "fos" or "" to boot up Froggy OS.\nType "readme" to see guide fos Froggy OS.')
+while True:
+    xxxxxyyyyyzzzzz = input(">>> ")
+    if xxxxxyyyyyzzzzz == "" or xxxxxyyyyyzzzzz == "fos":
+        break
+    elif xxxxxyyyyyzzzzz == "readme":
+        f = open("readme.txt", "r")
+        print(f.read())
+        f.close()
+    else:
+        try:
+            run(xxxxxyyyyyzzzzz.split(" "))
+        except Exception:
+            try:
+                print(eval(xxxxxyyyyyzzzzz))
+            except Exception:
+                try:
+                    exec(xxxxxyyyyyzzzzz)
+                except Exception as e:
+                    if e != None:
+                        print(e)
 print("Current Version: FOS 1.37.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
@@ -131,12 +153,12 @@ temp = int(gauss(14, 14))
 xoxguide = {"A" : "⬜", "X" : "❌", "O" : "⭕"}
 ns = ["N", "S"]
 we = ["W", "E"]
+marks = [".", "?", "!", "!?"]
+people = ["A child", "A son", "A daughter", "A boy", "A girl", "A teen", "An adult", "A man", "A father", "A woman", "A mother", "An elder", "A grandfather", "A grandmother", "A comrade"]
+sins = ["is being too sexual", "is over-eating", "is arrogant", "is lazy", "is too angry", "is greedy", "is jealous", "is defending Capitalism", "is defending Fascism", "is a Bourgeois", "is critisizing the government", "is stealing", "is critisizing"]
 
 # body (code)
 
-f = open("readme.txt", "r")
-print(f.read())
-f.close()
 while True:
     print("1 to open APPS")
     print("2 to open ASCII editor")
@@ -746,6 +768,7 @@ while True:
                         print(f"{randint(0, 60)}° {randint(1, 59)}' {randint(1, 59)}'' {choice(ns)} {randint(0, 60)}° {randint(1, 59)}' {randint(1, 59)}'' {choice(we)}")
                 elif x == 18:
                     print("1 to simulate stock market")
+                    print("2 to open USSR simulator")
                     x = int(input("\n"))
                     if x == 1:
                         print("Companies have stocks.")
@@ -820,6 +843,7 @@ while True:
                                     break
                                 elif x == 4:
                                     quit = True
+                                    break
                                 elif x == 5:
                                     print(f"Day #{day}: Current Companies and Stocks")
                                     for i in range(5):
@@ -828,6 +852,192 @@ while True:
                                         else:
                                             print(f"Stocks of {list[i]}: {value[i]} (You Have {stocks[i]} Shares)")
                                     print(f"{name} has ${budget}.")
+                    elif x == 2:
+                        yr = randint(1945, 1978)
+                        print(f"It's the year {yr}.")
+                        print("You have been assigned as the General Secretary of the Communist Party of the Union of Soviet Socialist Republics.")
+                        print("You are entering the government building of Moskva, and you have paperwork to sign.")
+                        print("**************************************************")
+                        name = input("New General Secretary of the Communist Party\n--Union of Soviet Socialist Republics--\nName: ")
+                        surname = input("Surname: ")
+                        input("Ideology: ")
+                        input("Birth Date: ")
+                        input("Nationality (other than USSR): ")
+                        input("Gender: ")
+                        input("Father Name: ")
+                        input("Mother Name: ")
+                        print(f"This duty will be finished on {yr + 3}\nIf not elected in the next General Secretary elections.")
+                        print("--Soviet Union and Warsaw Pact Communist Party--")
+                        print("Signature: Vladimir Ilich Ulyanov")
+                        print("Signature: Iosif Vissarionovich Stalin")
+                        input("Signature: ")
+                        print("**************************************************")
+                        ps = 165000
+                        ph = 1500
+                        pg = 1000
+                        pc = 200000
+                        pf = 120000
+                        pk = 12500000
+                        pop = 0
+                        area = 22402200
+                        gdp = 9000
+                        data = random()
+                        while True:
+                            ppl = pop + (ps + ph + pg + pc + pf + pk) * (data + 13)
+                            peopl = int(ppl)
+                            print("1 to speak with comrades")
+                            print("2 to hold court")
+                            print("3 to trade with nations")
+                            print("4 to manage structures")
+                            print("5 to invade")
+                            print("6 to see data")
+                            print("7 to exit")
+                            x = int(input("\n"))
+                            if x == 1:
+                                print("1 to speak with Soviet comrades")
+                                print("2 to speak with NATO comrades")
+                                print("3 to speak with other comrades")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    print("1 to speak with Vladimir Lenin")
+                                    print("2 to speak with Joseph Stalin")
+                                    print("3 to speak with Nikita Khrushchev")
+                                    print("4 to speak with Mao Zedong")
+                                    x = input("\n")
+                                elif x == 2:
+                                    print("1 to speak with Franklin D. Roosevelt")
+                                    print("2 to speak with Winston Churchill")
+                                    print("3 to speak with Charles de Gaulle")
+                                    print("4 to speak with İsmet İnönü")
+                                    x = input("\n")
+                                elif x == 3:
+                                    print("1 to speak with Adolf Hitler")
+                                    print("2 to speak with Benito Mussolini")
+                                    print("3 to speak with Hirohito")
+                                    x = input("\n")
+                                input("You: ")
+                                list = []
+                                for i in range(randint(5, 10)):
+                                    list.append(choice(ohno))
+                                input(f"Him: {" ".join(list).capitalize()}{choice(marks)}")
+                            elif x == 2:
+                                print(f"{choice(people)} {choice(sins)}!\n")
+                                print("1 to forgive")
+                                print("2 to punish")
+                                print("3 to really punish")
+                                print("4 to send to gulag")
+                                x = int(input("\n"))
+                                if x == 2:
+                                    pop -= 0.25
+                                elif x == 3:
+                                    pop -= 0.5
+                                elif x == 4:
+                                    pop -= 0.75
+                            elif x == 3:
+                                x = randint(1, 100)
+                                if randint(1, 2) == 1:
+                                    gdp -= x
+                                    print(f"GDP per capita decreased by ${x}!")
+                                else:
+                                    gdp += x
+                                    print(f"GDP per capita increased by ${x}!")
+                            elif x == 4:
+                                print("1 to build")
+                                print("2 to demolish")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    print("1 to build schools")
+                                    print("2 to build hospitals")
+                                    print("3 to build gulags")
+                                    print("4 to build factories")
+                                    print("5 to build farms")
+                                    print("6 to build housing")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        y = "s"
+                                    elif x == 2:
+                                        y = "h"
+                                    elif x == 3:
+                                        y = "g"
+                                    elif x == 4:
+                                        y = "c"
+                                    elif x == 5:
+                                        y = "f"
+                                    elif x == 6:
+                                        y = "k"
+                                    x = int(input("Build how many? "))
+                                    exec(f"p{y} += x")
+                                elif x == 2:
+                                    print("1 to demolish schools")
+                                    print("2 to demolish hospitals")
+                                    print("3 to demolish gulags")
+                                    print("4 to demolish factories")
+                                    print("5 to demolish farms")
+                                    print("6 to demolish housing")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        y = "s"
+                                    elif x == 2:
+                                        y = "h"
+                                    elif x == 3:
+                                        y = "g"
+                                    elif x == 4:
+                                        y = "c"
+                                    elif x == 5:
+                                        y = "f"
+                                    elif x == 6:
+                                        y = "k"
+                                    x = int(input("Demolish how many? "))
+                                    exec(f"p{y} -= x")
+                            elif x == 5:
+                                if randint(1, 2) == 1:
+                                    print("Invasion successful!")
+                                    x = randint(0, 2000)
+                                    pop -= x
+                                    print(f"{x} soldiers are dead")
+                                    x = randint(1, 2000000)
+                                    pop += x
+                                    print(f"{x} enemies captured")
+                                    x = randint(10, 1000)
+                                    area += x
+                                    print(f"{x} km^2 area conquered")
+                                else:
+                                    print("Invasion successful!")
+                                    x = randint(0, 2000)
+                                    pop -= x
+                                    print(f"{x} soldiers are dead")
+                                    x = randint(1, 2000000)
+                                    pop -= x
+                                    print(f"{x} citizens captured")
+                                    x = randint(10, 1000)
+                                    area -= x
+                                    print(f"{x} km^2 area lost")
+                            elif x == 6:
+                                print(f"Population: {peopl}")
+                                print(f"Area: {area} km^2")
+                                print(f"GDP Per Capita: ${gdp}")
+                                print("Structures:")
+                                print(f"Schools: {ps}")
+                                print(f"Hospitals: {ph}")
+                                print(f"Gulags: {pg}")
+                                print(f"Factories: {pc}")
+                                print(f"Farms: {pf}")
+                                print(f"Khrushchevkas and Stalinkas: {pk}")
+                            elif x == 7:
+                                break
+                    elif x == 3:
+                        list = eval(input("Please provide the list as a Python list: "))
+                        print(f"Biggest: {max(list)}")
+                        print(f"Smallest: {min(list)}")
+                        print(f"Sum: {sum(list)}\n")
+                        list.reverse()
+                        print(f"Reversed List: {list}")
+                        list.sort()
+                        print(f"Alphabetized List: {list}")
+                        list.reverse()
+                        print(f"Omegapsied (Reverse Alphabetized) List: {list}")
+                        shuffle(list)
+                        print(f"Shuffled List: {list}")
             elif x == 6:
                 user = input("Enter username: ")
                 print("1 to read chat messages")
@@ -1408,8 +1618,7 @@ while True:
                             elif gr.lower() == "quit":
                                 game = "stop"
                             elif gr.lower() == "howtoplay":
-                                print(
-                                    'HOW TO PLAY: This game is a game where there is a 10x10 grid and you spawn on coordinates 1, 1. You can do some commands. They are left, right, up, down, quit, howtoplay, and "symbols". When you write a symbol, the game puts that symbol to your current position. Here are some default symbols to use: ▣◩◪▧◰□♠♣♥♦🌲🌳🌴🪵🪨💎🧱🪙🍄🔑')
+                                print('HOW TO PLAY: This game is a game where there is a 10x10 grid and you spawn on coordinates 1, 1. You can do some commands. They are left, right, up, down, quit, howtoplay, and "symbols". When you write a symbol, the game puts that symbol to your current position. Here are some default symbols to use: ▣◩◪▧◰□♠♣♥♦🌲🌳🌴🪵🪨💎🧱🪙🍄🔑')
                             elif len(gr) == 1:
                                 grid[(long - 1) * 10 + lat - 1] = gr
             elif x == 8:
@@ -3332,16 +3541,25 @@ while True:
                     x = int(input("\n"))
                     if x == 1:
                         shell()
-                        x = input(">>> ")
-                        exec(x)
+                        try:
+                            exec(">>> ")
+                        except Exception as e:
+                            if e != None:
+                                print(e)
                     elif x == 2:
                         shell()
-                        x = input(">>> ")
-                        print(eval(x))
+                        try:
+                            print(eval(input(">>> ")))
+                        except Exception as e:
+                            if e != None:
+                                print(e)
                 elif x == 2:
                     shell()
-                    x = input(">>> ")
-                    system(x)
+                    try:
+                        system(">>> ")
+                    except Exception as e:
+                        if e != None:
+                            print(e)
                 elif x == 3:
                     shell()
                     x = input("Code: ")
@@ -3376,8 +3594,14 @@ while True:
             print("4 to open +-<>.,[] shell")
             x = int(input("\n"))
             if x == 1:
-                shell()
-                system(input(">>> "))
+                x = int(input("Run how many commands? "))
+                for i in range(x):
+                    shell()
+                    try:
+                        system("$")
+                    except Exception as e:
+                        if e != None:
+                            print(e)
         elif x == 9:
             list = eval(input("Enter list to sort as a Python list (e.g. \"[1, 2, 3]\"): "))
             print(list, type(list))
