@@ -21,7 +21,7 @@ while True:
                 except Exception as e:
                     if e != None:
                         print(e)
-print("Current Version: FOS 1.37.0")
+print("Current Version: FOS 1.43.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -1030,6 +1030,10 @@ while True:
                         print(f"Biggest: {max(list)}")
                         print(f"Smallest: {min(list)}")
                         print(f"Sum: {sum(list)}\n")
+                        print(f"Length: {len(list)}")
+                        print(f"Mean: {sum(list) / len(list)}")
+                        print(f"Median: {list[int(sum(list) / 2)]}")
+                        print(f"Range: {max(list) - min(list)}")
                         list.reverse()
                         print(f"Reversed List: {list}")
                         list.sort()
@@ -1766,7 +1770,7 @@ while True:
                             print("Both can be True and False.")
                             print("Enter the logic gate between button 1 and bulb to gate 3 from: WIRE, NOT to gate 1")
                             print("Enter the logic gate between button 2 and bulb to gate 3 from: WIRE, NOT to gate 2")
-                            print("Enter the logic gate on button 1 and 2's wires' connection point from: OR, XOR, NOR, XNOR, NXOR, AND, XAND, NAND, XNAND, NXAND, NORXONDORGORGONAX to gate 3")
+                            print("Enter the logic gate on button 1 and 2's wires' connection point from: OR, XOR, NOR, XNOR, NXOR, AND, XAND, NAND, XNAND, NXAND, IMPLY, XIMPLY, NIMPLY, XNIMPLY, NXIMPLY to gate 3")
                             print("Enter the logic gate between gate 3 to bulb from: WIRE, NOT to gate 4")
                             print("Enter the button's bool value to button 1.")
                             g1 = input("Gate 1: ")
@@ -1803,6 +1807,30 @@ while True:
                                     b1 = not(b1 or b2)
                             elif g3 == "nand":
                                 b1 = not(b1 and b2)
+                            elif g3 == "imply":
+                                if b1 and not(b2):
+                                    b1 = False
+                                else:
+                                    b1 = True
+                            elif g3 == "ximply":
+                                if b1 and not(b2):
+                                    b1 = False
+                                elif b1 and b2:
+                                    b1 = False
+                                else:
+                                    b1 = True
+                            elif g3 == "nimply":
+                                if b1 and not(b2):
+                                    b1 = True
+                                else:
+                                    b1 = False
+                            elif g3 == "xnimply" or g3 == "nximply":
+                                if b1 and not(b2):
+                                    b1 = False
+                                elif b1 and b2:
+                                    b1 = False
+                                else:
+                                    b1 = True
                             if g4 == "wire":
                                 pass
                             elif g4 == "not":
