@@ -29,7 +29,7 @@
                 FOS, also known as Froggy OS is a TUI made in Python. <br/>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
                 To download FOS, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
-                The current FOS version is 1.37.0 <br/>
+                The current FOS version is 1.43.0 <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
@@ -202,6 +202,15 @@
                 3. Now, FOS will open a Python shell before opening <br/>
                 4. Code shell now won't close when error occurs <br/>
                 5. Small data analysis program <br/>
+                Bugs: <br/>
+                None <br/>
+            </p>
+            <h2>FOS 1.43.0</h2>
+            <p>
+                Technical Update <br/>
+                Additions: <br/>
+                1. New gates to logic gate simulator <br/>
+                2. New functions added to data analysis program <br/>
                 Bugs: <br/>
                 None <br/>
             </p>
