@@ -1,5 +1,5 @@
+
 <!-- This is the HTML file for the website of FOS. -->
-<!-- Run this file at "https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_hello" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,7 @@
                 FOS, also known as Froggy OS is a TUI made in Python. <br/>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
                 To download FOS, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
-                The current FOS version is 1.43.0 <br/>
+                The current FOS version is 1.50.5 <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
@@ -55,14 +55,13 @@
                 <li>Can teach Python </li>
                 <li>5 apps branched to smaller apps with a lot of sub-apps </li>
                 <li>10+ ASCII-based games to play with some having emoji compatability </li>
-                <li>Can run Python, BASH, HQ9+ and Brainf**k code shell </li>
+                <li>Can run Python, Batch, HQ9+ and Brainf**k code shell </li>
                 <li>Has some hacks made using arbitrary code execution </li>
                 <li>Also, supports some types of A.C.E. </li>
-                <li>Can run "$sudo rm -rf /* --no-preserve-root" code in BASH </li>
                 <li>Can store data in a temporary 200,000 slot memory, </li>
                 <li>And can store data on files </li>
                 <li>With this logic, has a local chat </li>
-                <li>Finally, it can run Python and BASH code on an AppleSoft BASIC (Apple ][)-like environment, </li>
+                <li>Finally, it can run Python and Batch code on an AppleSoft BASIC (Apple ][)-like environment, </li>
                 <li>With a save code system! Even supports BASIC commands: "list" (as "listcode), "goto", "run", "new" </li>
                 <li>Also, can be used for communicating with literal God (As a joke)! </li>
             </ul>
@@ -204,16 +203,35 @@
                 4. Code shell now won't close when error occurs <br/>
                 5. Small data analysis program <br/>
                 Bugs: <br/>
-                None <br/>
+                1. Data analysis program doesn't display <br/>
+                2. No Python shell in the "OS Shell" part <br/>
+                3. Os.system() executes Batch but written BASH <br/>
+                4. "Modules spam" documentation implemented incorrectly <br/>
             </p>
-            <h2>FOS 1.43.0</h2>
+            <h2>FOS 1.45.0</h2>
             <p>
-                Technical Update <br/>
+                Mathematical Update <br/>
                 Additions: <br/>
                 1. New gates to logic gate simulator <br/>
                 2. New functions added to data analysis program <br/>
+                3. Math-based game collection <br/>
+                4. Data analysis program now displays <br/>
+                5. Conway's Game of Life closed for maintenance <br/>
                 Bugs: <br/>
-                None <br/>
+                1. Conway's Game of Life closed for maintenance <br/>
+            </p>
+            <h2>FOS 1.50.5</h2>
+            <p>
+                Mathematical Update <br/>
+                Additions: <br/>
+                1. Updated the Python shell added in 1.41.0 <br/>
+                2. Added Python shell to the "OS Shell" part <br/>
+                3. Renamed BASH to Batch <br/>
+                4. Batch documentation and its docs shell <br/>
+                5. Ability to search in Python libraries <br/>
+                6. Removed incorrect "modules spam" documentation <br/>
+                Bugs: <br/>
+                1. Conway's Game of Life closed for maintenance <br/>
             </p>
             <p>
                 If you want new updates, just write your ideas to <a href="https://github.com/Lava-salt/fos/discussions/">this website</a>!
@@ -228,45 +246,45 @@
             <p class = "p2">
             @Lava-salt (Administrator) <br/>
             </p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c3/20220730085403%21Python-logo-notext.svg/120px-Python-logo-notext.svg.png" alt="Python">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/324px-Gnu-bash-logo.svg.png?20161123002239" alt="Bourne Again Shell">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c3/20220730085403%21Python-logo-notext.svg/120px-Python-logo-notext.svg.png" alt="Python 3 Programming Language">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/324px-Gnu-bash-logo.svg.png?20161123002239" alt="Bourne Again Shell, the Main Shell Language for Unix Terminals">
             <script>
-            function s1() {
-              let x, y;
-              x = parseInt(prompt("Number 1: "));
-              y = parseInt(prompt("Number 2: "));
-              alert(x + y);
-            }
-            function s2() {
-              let x, y;
-              x = parseInt(prompt("Number 1: "));
-              y = parseInt(prompt("Number 2: "));
-              alert(x - y);
-            }
-            function s3() {
-              let x, y;
-              x = parseInt(prompt("Number 1: "));
-              y = parseInt(prompt("Number 2: "));
-              alert(x * y);
-            }
-            function s4() {
-              let x, y;
-              x = parseInt(prompt("Number 1: "));
-              y = parseInt(prompt("Number 2: "));
-              alert(x / y);
-            }
-            function s5() {
-              let x, y;
-              x = parseInt(prompt("Number 1: "));
-              y = parseInt(prompt("Number 2: "));
-              alert(x % y);
-            }
-            function s6() {
-              let x, y;
-              x = parseInt(prompt("Number 1: "));
-              y = parseInt(prompt("Number 2: "));
-              alert(x ** y);
-            }
+                function s1() {
+                  let x, y;
+                  x = parseInt(prompt("Number 1: "));
+                  y = parseInt(prompt("Number 2: "));
+                  alert(x + y);
+                }
+                function s2() {
+                  let x, y;
+                  x = parseInt(prompt("Number 1: "));
+                  y = parseInt(prompt("Number 2: "));
+                  alert(x - y);
+                }
+                function s3() {
+                  let x, y;
+                  x = parseInt(prompt("Number 1: "));
+                  y = parseInt(prompt("Number 2: "));
+                  alert(x * y);
+                }
+                function s4() {
+                  let x, y;
+                  x = parseInt(prompt("Number 1: "));
+                  y = parseInt(prompt("Number 2: "));
+                  alert(x / y);
+                }
+                function s5() {
+                  let x, y;
+                  x = parseInt(prompt("Number 1: "));
+                  y = parseInt(prompt("Number 2: "));
+                  alert(x % y);
+                }
+                function s6() {
+                  let x, y;
+                  x = parseInt(prompt("Number 1: "));
+                  y = parseInt(prompt("Number 2: "));
+                  alert(x ** y);
+                }
             </script>
             <h2>Calculator</h2>
             <button onclick="s1()"> Addition (+) </button>
