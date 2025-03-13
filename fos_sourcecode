@@ -235,3 +235,9 @@ def bf(code, input_data):
         code_pointer += 1
     for i in output:
         print(i, end="")
+def factor(x):
+    factor = []
+    for i in range(1, x + 1):
+        if x % i == 0:
+            factor.append(i)
+    return factor
