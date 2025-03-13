@@ -3034,8 +3034,15 @@ while True:
                 print("4 to search in Python libraries")
                 x = int(input("\n"))
                 if x == 1:
-                    x = input(">>> ")
-                    help(x)
+                    print("1 to open Python documentation")
+                    print("2 to open Batch documentation")
+                    x = int(input("\n"))
+                    if x == 1:
+                        x = input(">>> ")
+                        help(x)
+                    elif x == 2:
+                        x = input(">>> ")
+                        system(f"help {x}")
                 elif x == 2:
                     print("Vol. I - Data Types")
                     print("Vol. II - Standard Input-Output")
@@ -3553,26 +3560,30 @@ while True:
                         elif x == 2:
                             help("with")
                 elif x == 3:
-                    print("1 to open normal shell")
-                    print("2 to open cool shell")
+                    print("1 to open Python shell")
+                    print("2 to open Batch shell")
                     x = int(input("\n"))
                     if x == 1:
-                        print("1 to open shell that doesn't recognize empty commands as unique syntax")
-                        print("2 to open shell with opposite of option 1")
+                        print("1 to open normal shell")
+                        print("2 to open cool shell")
                         x = int(input("\n"))
                         if x == 1:
-                            while True:
-                                x = input(">>> ")
-                                help(x)
-                        elif x == 2:
-                            while True:
-                                x = input(">>> ")
-                                if x == "":
-                                    help()
-                                else:
+                            print("1 to open shell that doesn't recognize empty commands as unique syntax")
+                            print("2 to open shell with opposite of option 1")
+                            x = int(input("\n"))
+                            if x == 1:
+                                while True:
+                                    x = input(">>> ")
                                     help(x)
-                    elif x == 2:
-                        help()
+                            elif x == 2:
+                                while True:
+                                    x = input(">>> ")
+                                    if x == "":
+                                        help()
+                                    else:
+                                        help(x)
+                        elif x == 2:
+                            help()
                 elif x == 4:
                     print("1 to search in modules")
                     print("2 to search in keywords")
