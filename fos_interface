@@ -1,5 +1,7 @@
+help()
 from sys import platform
 from subprocess import run
+from os import system
 print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits", or "license" for more information.\nType "fos" or "" to boot up Froggy OS.\nType "readme" to see guide fos Froggy OS.')
 while True:
     xxxxxyyyyyzzzzz = input(">>> ")
@@ -19,9 +21,8 @@ while True:
                 try:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
-                    if e != None:
-                        print(e)
-print("Current Version: FOS 1.43.0")
+                    system(xxxxxyyyyyzzzzz)
+print("Current Version: FOS 1.50.5")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -36,10 +37,10 @@ from time import sleep, altzone, daylight, timezone, tzname
 from webbrowser import open as web
 from webbrowser import open_new_tab
 from random import randint, random, gauss, normalvariate, shuffle, choice
-from os import getcwd, chdir, mkdir, listdir, remove, rename, system, EX_OK, F_OK, O_APPEND, O_BINARY, O_CREAT, O_EXCL, O_NOINHERIT, O_RANDOM, O_RDONLY, O_RDWR, O_SEQUENTIAL, O_SHORT_LIVED, O_TEMPORARY, O_TEXT, O_TRUNC, O_WRONLY, P_DETACH, P_NOWAIT, P_NOWAITO, P_OVERLAY, P_WAIT, R_OK, SEEK_CUR, SEEK_END, SEEK_SET, TMP_MAX, W_OK, X_OK, altsep, curdir, defpath, devnull, environ, extsep, linesep, name, pardir, pathsep, sep, supports_bytes_environ
+from os import getcwd, chdir, mkdir, listdir, remove, rename, EX_OK, F_OK, O_APPEND, O_BINARY, O_CREAT, O_EXCL, O_NOINHERIT, O_RANDOM, O_RDONLY, O_RDWR, O_SEQUENTIAL, O_SHORT_LIVED, O_TEMPORARY, O_TEXT, O_TRUNC, O_WRONLY, P_DETACH, P_NOWAIT, P_NOWAITO, P_OVERLAY, P_WAIT, R_OK, SEEK_CUR, SEEK_END, SEEK_SET, TMP_MAX, W_OK, X_OK, altsep, curdir, defpath, devnull, environ, extsep, linesep, name, pardir, pathsep, sep, supports_bytes_environ
 from os import path as pathos
-from sys import __stderr__, __stdin__, __stdout__, api_version, argv, base_exec_prefix, base_prefix, builtin_module_names, byteorder, copyright, dllhandle, dont_write_bytecode, exec_prefix, executable, flags, float_info, float_repr_style, hash_info, hexversion, implementation, int_info, maxsize, maxunicode, meta_path, modules, orig_argv, path, path_hooks, path_importer_cache, platform, platlibdir, prefix, pycache_prefix, stderr, stdin, stdlib_module_names, stdout, thread_info, version, version_info, warnoptions, winver
-from subprocess import run, CalledProcessError, call, Popen, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS
+from sys import __stderr__, __stdin__, __stdout__, api_version, argv, base_exec_prefix, base_prefix, builtin_module_names, byteorder, copyright, dllhandle, dont_write_bytecode, exec_prefix, executable, flags, float_info, float_repr_style, hash_info, hexversion, implementation, int_info, maxsize, maxunicode, meta_path, modules, orig_argv, path, path_hooks, path_importer_cache, platlibdir, prefix, pycache_prefix, stderr, stdin, stdlib_module_names, stdout, thread_info, version, version_info, warnoptions, winver
+from subprocess import CalledProcessError, call, Popen, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS
 from subprocess import PIPE as SPPIPE
 from codecs import encode
 print("Before entering, please manage modules.")
@@ -62,7 +63,7 @@ while True:
             else:
                 exec(tmmlptealpaitafnfal2)
             tmmlptealpaitafnfal -= 1
-        print("Now, Flea Rat, a BASH shell with same logic will open.\nGood l(i)ck!")
+        print("Now, Flea Rat, a Batch shell with same logic will open.\nGood l(i)ck!")
         tmmlptealpaitafnfal = 5
         while not (tmmlptealpaitafnfal <= 0):
             tmmlptealpaitafnfal2 = input(f"Remaining: {tmmlptealpaitafnfal}\n>>> ")
@@ -156,6 +157,8 @@ we = ["W", "E"]
 marks = [".", "?", "!", "!?"]
 people = ["A child", "A son", "A daughter", "A boy", "A girl", "A teen", "An adult", "A man", "A father", "A woman", "A mother", "An elder", "A grandfather", "A grandmother", "A comrade"]
 sins = ["is being too sexual", "is over-eating", "is arrogant", "is lazy", "is too angry", "is greedy", "is jealous", "is defending Capitalism", "is defending Fascism", "is a Bourgeois", "is critisizing the government", "is stealing", "is critisizing"]
+tf = [True, False]
+drd = ["Nun", "Gimel", "He", "Shin"]
 
 # body (code)
 
@@ -499,6 +502,8 @@ while True:
                         print(y, end = "\n")
                     print("Good luck finding words here!")
                 elif x == 8:
+                    print("Sorry, but Conway's Game of Life is closed for maintenance.")
+                    quit()
                     x = int(input("Grid size: "))
                     y = int(input("Delay between each frame (seconds): "))
                     z = input("Emoji mode? (y/n, emoji mode = \"🟩🟦\", else = \"01\"): ")
@@ -769,6 +774,8 @@ while True:
                 elif x == 18:
                     print("1 to simulate stock market")
                     print("2 to open USSR simulator")
+                    print("3 to open data analysis program")
+                    print("4 to open math-based games engine")
                     x = int(input("\n"))
                     if x == 1:
                         print("Companies have stocks.")
@@ -1026,22 +1033,118 @@ while True:
                             elif x == 7:
                                 break
                     elif x == 3:
-                        list = eval(input("Please provide the list as a Python list: "))
-                        print(f"Biggest: {max(list)}")
-                        print(f"Smallest: {min(list)}")
-                        print(f"Sum: {sum(list)}\n")
-                        print(f"Length: {len(list)}")
-                        print(f"Mean: {sum(list) / len(list)}")
-                        print(f"Median: {list[int(sum(list) / 2)]}")
-                        print(f"Range: {max(list) - min(list)}")
-                        list.reverse()
-                        print(f"Reversed List: {list}")
-                        list.sort()
-                        print(f"Alphabetized List: {list}")
-                        list.reverse()
-                        print(f"Omegapsied (Reverse Alphabetized) List: {list}")
-                        shuffle(list)
-                        print(f"Shuffled List: {list}")
+                        print("1 to extract data from a list")
+                        print("2 to open function machine")
+                        print("3 to create number patterns")
+                        x = int(input("\n"))
+                        if x == 1:
+                            list = eval(input("Please provide the list as a Python list: "))
+                            print(f"Biggest: {max(list)}")
+                            print(f"Smallest: {min(list)}")
+                            print(f"Sum: {sum(list)}")
+                            print(f"Length: {len(list)}")
+                            print(f"Mean: {sum(list) / len(list)}")
+                            print(f"Median: {list[int(len(list) / 2)]}")
+                            print(f"Range: {max(list) - min(list)}\n")
+                            print(f"Normal List: {list}")
+                            list.reverse()
+                            print(f"Reversed List: {list}")
+                            list.sort()
+                            print(f"Alphabetized List: {list}")
+                            list.reverse()
+                            print(f"Omegapsied (Reverse Alphabetized) List: {list}")
+                            shuffle(list)
+                            print(f"Shuffled List: {list}")
+                        elif x == 2:
+                            print("For a function machine, you enter an equation.")
+                            print("E.g. the list \"[1, 2, 3]\" will be \"[4, 5, 6]\" in the \"n+3\" function machine.")
+                            list = eval(input("Please provide the list as a Python list: "))
+                            func = input("The function: ")
+                            nlist = []
+                            for n in list:
+                                nlist.append(eval(func))
+                            for i in nlist:
+                                print(i)
+                            print(nlist)
+                        elif x == 3:
+                            print("1 to create pattern with position to term rule")
+                            print("2 to create pattern with term to term rule")
+                            x = int(input("\n"))
+                            if x == 1:
+                                pttr = input("Enter position to term rule: (e.g. \"n*2\" for something like \"[2, 4, 6...]\" ")
+                                x = int(input("How many numbers for the pattern? "))
+                                list = []
+                                for n in range(1, x + 1):
+                                    list.append(eval(pttr))
+                                for i in list:
+                                    print(i)
+                                print(list)
+                            elif x == 2:
+                                tttr = input("Enter position to term rule: (e.g. \"n+2\" for something like \"[0, 2, 4, 6...]\" ")
+                                n = int(input("First term: "))
+                                x = int(input("How many numbers for the pattern? "))
+                                list = []
+                                for i in range(x):
+                                    list.append(n)
+                                    n = eval(tttr)
+                                for i in list:
+                                    print(i)
+                                print(list)
+                    elif x == 4:
+                        print("1 to roll a dice")
+                        print("2 to toss a coin")
+                        print("3 to spin spinner")
+                        print("4 to spin a dreidel")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("Select dice size from 4, 6, 8, 10, 12, 20")
+                            die = int(input())
+                            pts = 0
+                            while True:
+                                print(f"{pts} Points")
+                                print("1 to resize dice")
+                                print("2 to roll dice")
+                                print("3 to add points")
+                                print("4 to resign")
+                                x = int(input())
+                                if x == 1:
+                                    print("Select dice size from 4, 6, 8, 10, 12, 20")
+                                    die = int(input())
+                                elif x == 2:
+                                    size = randint(1, die)
+                                    print(f"Number {size} rolled")
+                                    pts += size
+                                elif x == 3:
+                                    x = int(input("Add how many points? "))
+                                    pts += x
+                                elif x == 4:
+                                    x = input("Are you sure to resign? (y/n) ")
+                                    if "y" in x.lower():
+                                        break
+                        elif x == 2:
+                            x = int(input("Flip a coin how many times? "))
+                            for i in range(x):
+                                if randint(1, 2) == 1:
+                                    print("Heads")
+                                else:
+                                    print("Tails")
+                        elif x == 3:
+                            print("1 to spin number wheel")
+                            print("2 to spin fidget spinner")
+                            x = int(input("\n"))
+                            if x == 1:
+                                x = int(input("Number of numbers on the wheel: "))
+                                y = int(input("Flip a coin how many times? "))
+                                for i in range(x):
+                                    print(randint(1, x))
+                            elif x == 2:
+                                x = int(input("Flip a coin how many times? "))
+                                for i in range(x):
+                                    print(randint(1, 3))
+                        elif x == 4:
+                            x = int(input("Spin the dreidel how many times? "))
+                            for i in range(x):
+                                print(choice(drd))
             elif x == 6:
                 user = input("Enter username: ")
                 print("1 to read chat messages")
@@ -1714,7 +1817,7 @@ while True:
                     print("2 to evaluate Boolean logic")
                     print("3 to evaluate decimal logic")
                     print("4 to evaluate binary logic")
-                    print("5 to evaluate BASH logic")
+                    print("5 to evaluate Batch logic")
                     print("6 to open logic gate simulator")
                     x = int(input("\n"))
                     if x == 1:
@@ -1741,7 +1844,7 @@ while True:
                         x = int(input("Enter data: "))
                         print(bin(x)[2:])
                     elif x == 5:
-                        print("Enter a BASH data and it'll give the answer.")
+                        print("Enter a Batch data and it'll give the answer.")
                         print("E.g. write \"$((5 + 5))\" and the program will print \"10\".")
                         x = input("Enter data: ")
                         system(f"echo {x}")
@@ -1755,7 +1858,7 @@ while True:
                         if x == 1:
                             print("1 button connects to 1 lightbulb.")
                             print("Both can be True and False.")
-                            print("Enter the logic gate between button 1 and bulb to gate 1 from: WIRE, NOT to gate 1")
+                            print("Enter the logic gate between button 1 and bulb to gate 1 from: WIRE, NOT, RAND to gate 1")
                             print("Enter the button's bool value to button 1.")
                             g1 = input("Gate 1: ")
                             b1 = bool(input("Button 1: "))
@@ -1764,14 +1867,16 @@ while True:
                                 pass
                             elif g1 == "not":
                                 b1 = not(b1)
+                            elif g4 == "rand":
+                                b1 = choice(tf)
                             print(f"Bulb is {b1}")
                         elif x == 2:
                             print("2 buttons connects to 1 lightbulb.")
                             print("Both can be True and False.")
-                            print("Enter the logic gate between button 1 and bulb to gate 3 from: WIRE, NOT to gate 1")
-                            print("Enter the logic gate between button 2 and bulb to gate 3 from: WIRE, NOT to gate 2")
+                            print("Enter the logic gate between button 1 and bulb to gate 3 from: WIRE, NOT, RAND to gate 1")
+                            print("Enter the logic gate between button 2 and bulb to gate 3 from: WIRE, NOT, RAND to gate 2")
                             print("Enter the logic gate on button 1 and 2's wires' connection point from: OR, XOR, NOR, XNOR, NXOR, AND, XAND, NAND, XNAND, NXAND, IMPLY, XIMPLY, NIMPLY, XNIMPLY, NXIMPLY to gate 3")
-                            print("Enter the logic gate between gate 3 to bulb from: WIRE, NOT to gate 4")
+                            print("Enter the logic gate between gate 3 to bulb from: WIRE, NOT, RAND to gate 4")
                             print("Enter the button's bool value to button 1.")
                             g1 = input("Gate 1: ")
                             g2 = input("Gate 2: ")
@@ -1787,10 +1892,14 @@ while True:
                                 pass
                             elif g1 == "not":
                                 b1 = not(b1)
+                            elif g4 == "rand":
+                                b1 = choice(tf)
                             if g2 == "wire":
                                 pass
                             elif g2 == "not":
                                 b2 = not(b2)
+                            elif g4 == "rand":
+                                b1 = choice(tf)
                             if g3 == "or":
                                 b1 = b1 or b2
                             elif g3 == "xor" or g3 == "xnand" or g3 == "nxand" or g3 == "norxondorgorgonax":
@@ -1835,11 +1944,14 @@ while True:
                                 pass
                             elif g4 == "not":
                                 b1 = not(b1)
+                            elif g4 == "rand":
+                                b1 = choice(tf)
                             print(f"Bulb is {b1}")
                         elif x == 3:
                             print("Singular Button Logic Gates")
                             print("WIRE - 0 = 0, 1 = 1")
                             print("NOT - 0 = 1, 1 = 0")
+                            print("RAND - 0, 1 = random.choice([True, False])")
                             print("Plural Button Logic Gates")
                             print("OR - 00 = 0, 10 = 1, 01 = 1, 11 = 1")
                             print("XOR - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
@@ -1852,7 +1964,11 @@ while True:
                             print("NAND - 00 = 1, 10 = 1, 01 = 1, 11 = 0")
                             print("XNAND - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
                             print("NXAND - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
-                            print("NORXONDORGORGONAX - 00 = 0, 10 = 1, 01 = 1, 11 = 0")
+                            print("IMPLY - 00 = 1, 10 = 0, 01 = 1, 11 = 1")
+                            print("XIMPLY - 00 = 1, 10 = 0, 01 = 1, 11 = 0")
+                            print("NIMPLY - 00 = 0, 10 = 1, 01 = 0, 11 = 0")
+                            print("XNIMPLY - 00 = 0, 10 = 1, 01 = 0, 11 = 1")
+                            print("XNIMPLY - 00 = 0, 10 = 1, 01 = 0, 11 = 1")
                 elif x == 3:
                     print("1 to open lottery")
                     print("2 to open ROULETTE")
@@ -2915,6 +3031,7 @@ while True:
                 print("1 to manually get documentation")
                 print("2 to get documentation-based Python tutorial")
                 print("3 to open documentation shell")
+                print("4 to search in Python libraries")
                 x = int(input("\n"))
                 if x == 1:
                     x = input(">>> ")
@@ -2925,7 +3042,7 @@ while True:
                     print("Vol. III - Statements")
                     print("Vol. IV - Defining")
                     print("Vol. V - Modules")
-                    print("Vol. VI - Pip Packages and BASH")
+                    print("Vol. VI - Pip Packages and Batch")
                     print("Vol. VII - Python Standard Library")
                     print("Vol. VIII - The Zen of Python")
                     print("Vol. IX - Code Execution")
@@ -2984,7 +3101,7 @@ while True:
                                     print("Vol. IV - Division")
                                     print("Vol. V - Modulo")
                                     print("Vol. VI - Exponentation")
-                                    print("Vol. VII - Remainderless Division")
+                                    print("Vol. VII - Floor Division")
                                     x = int(input())
                                     if x == 1:
                                         help("+")
@@ -3344,13 +3461,26 @@ while True:
                                     elif x == 2:
                                         help("random.normalvariate")
                     elif x == 6:
-                        print("Vol. I - BASH")
+                        print("Vol. I - Batch")
                         print("Vol. II - Pip Package Installing")
                         print("Vol. III - Pip Package")
                         print("Vol. IV - Pip Package Topic")
                         x = int(input())
                         if x == 1:
-                            help("os.system")
+                            print("Vol. I - Execution")
+                            print("Vol. II - Documentation")
+                            x = int(input())
+                            if x == 1:
+                                help("os.system")
+                            elif x == 2:
+                                print("Vol. I - Command List")
+                                print("Vol. II - Specific Commands")
+                                x = int(input())
+                                if x == 1:
+                                    system("help")
+                                elif x == 2:
+                                    x = int(input("Command: "))
+                                    system(f"help {x}")
                         elif x == 2:
                             help("pip")
                         elif x == 3:
@@ -3391,42 +3521,15 @@ while True:
                         if x == 1:
                             help()
                         elif x == 2:
-                            print("Vol. I - Lists of Syntaxes")
-                            print("Vol. II - Summaries of Syntaxes")
-                            x = int(input())
-                            if x == 1:
-                                print("Vol. I - Modules")
-                                print("Vol. II - Key Words")
-                                print("Vol. III - Symbols")
-                                print("Vol. IV - Topics")
-                                x = int(input())
-                                if x == 1:
-                                    help("modules")
-                                elif x == 2:
-                                    help("keywords")
-                                elif x == 3:
-                                    help("symbols")
-                                elif x == 4:
-                                    help("topics")
-                            elif x == 2:
-                                print("Vol. I - Modules")
-                                print("Vol. II - Key Words")
-                                print("Vol. III - Symbols")
-                                print("Vol. IV - Topics")
-                                x = int(input())
-                                if x == 1:
-                                    help("modules spam")
-                                elif x == 2:
-                                    help("keywords spam")
-                                elif x == 3:
-                                    help("symbols spam")
-                                elif x == 4:
-                                    help("topics spam")
+                            print("Vol. I - Modules")
+                            print("Vol. II - Key Words")
+                            print("Vol. III - Symbols")
+                            print("Vol. IV - Topics")
                     elif x == 8:
                         help("this")
                     elif x == 9:
                         print("Vol. I - Python")
-                        print("Vol. II - BASH")
+                        print("Vol. II - Batch")
                         print("Vol. III - Any code")
                         x = int(input())
                         if x == 1:
@@ -3470,6 +3573,21 @@ while True:
                                     help(x)
                     elif x == 2:
                         help()
+                elif x == 4:
+                    print("1 to search in modules")
+                    print("2 to search in keywords")
+                    print("3 to search in symbols")
+                    print("4 to search in topics")
+                    x = int(input("\n"))
+                    word = input("Word to search: ")
+                    if x == 1:
+                        help(f"modules {word}")
+                    elif x == 2:
+                        help(f"keywords {word}")
+                    elif x == 2:
+                        help(f"symbols {word}")
+                    elif x == 2:
+                        help(f"topics {word}")
             elif x == 2:
                 web("https://docs.python.org/")
         elif x == 3:
@@ -3558,10 +3676,9 @@ while True:
                 else:
                     print("I.P. address active")
             elif x == 12:
-                input("You can run Python and Bash code here.\nBut the variables, lists, dicts e.t.c. are the ones from the code of the actual OS code.\n")
+                input("You can run Python and Batch code here.\nBut the variables, lists, dicts e.t.c. are the ones from the code of the actual OS code.\n")
                 print("1 to run Python code")
-                print("2 to run BASH code")
-                print("3 to run +-<>.,[] Code")
+                print("2 to run Batch code")
                 x = int(input("\n"))
                 if x == 1:
                     print("1 to execute Python code")
@@ -3588,19 +3705,14 @@ while True:
                     except Exception as e:
                         if e != None:
                             print(e)
-                elif x == 3:
-                    shell()
-                    x = input("Code: ")
-                    y = input("Input Data: ")
-                    bf(x, y)
         elif x == 6:
             f = open("readme.txt", "r")
             print(f.read())
             f.close()
         elif x == 7:
             print("1 to import and get syntax list of a normal Python module")
-            print("2 to import and get syntax list of a normal Pip library Bash module")
-            print("3 to uninstall and get syntax list of a normal Pip library Bash module")
+            print("2 to import and get syntax list of a normal Pip library Batch module")
+            print("3 to uninstall and get syntax list of a normal Pip library Batch module")
             x = int(input("\n"))
             if x == 1:
                 x = input("Get syntax list of which module? ")
@@ -3616,17 +3728,34 @@ while True:
                 print(dir(x))
                 system(f"pip uninstall {x}")
         elif x == 8:
-            print("1 to open Bash (Standard Linux) shell")
+            print("1 to open Batch (Standard MS PowerShell)")
             print("2 to open general Python shell")
             print("3 to open gPs for evaluation")
-            print("4 to open +-<>.,[] shell")
             x = int(input("\n"))
             if x == 1:
                 x = int(input("Run how many commands? "))
+                shell()
                 for i in range(x):
-                    shell()
                     try:
-                        system("$")
+                        system(input("$ "))
+                    except Exception as e:
+                        if e != None:
+                            print(e)
+            elif x == 2:
+                x = int(input("Run how many commands? "))
+                shell()
+                for i in range(x):
+                    try:
+                        exec(input(">>> "))
+                    except Exception as e:
+                        if e != None:
+                            print(e)
+            elif x == 3:
+                x = int(input("Run how many commands? "))
+                shell()
+                for i in range(x):
+                    try:
+                        print(eval(input(">>> ")))
                     except Exception as e:
                         if e != None:
                             print(e)
@@ -3795,7 +3924,7 @@ while True:
             print("15. Alan Turing")
             print("Created the Turing Machine, a machine that can calculate anything that can be simulated with a programming language with 8 characters: \"+-<>.,[]\"")
             print("16. John von Neumann")
-            print("Made a cellular automata with 29 states for cells, much more complicated than Conway's Game of Life which is also the predecessor of CGL.")
+            print("Made a cellular automata with 29 states for cells, much more complicated than Conway's Game of Life which is also the predecessor of it.")
             print("17. John Conway")
             print("Made a Turing-complete cellular automata on a 2D grid with only 3 rules and 2 states that's so simple, that it's complicated and called \"Conway's Game of Life\".")
         elif x == 14:
