@@ -225,7 +225,7 @@ def hq(y):
 # body (code)
 
 print("1 to run Python code")
-print("2 to run BASH code")
+print("2 to run Batch code")
 print("3 to run +-<>.,[] code")
 print("4 to run any code")
 print("5 to open documentation shell")
@@ -234,6 +234,7 @@ x = int(input("\n"))
 if x == 1:
     print("1 to execute Python code")
     print("2 to evaluate Python code")
+    print("3 to open general shell")
     x = int(input("\n"))
     if x == 1:
         print("1 to run enhanced version")
@@ -414,7 +415,7 @@ if x == 1:
                             code = []
                         else:
                             try:
-                                exec(gawk)
+                                exec(code[-1])
                             except Exception as e:
                                 if e != None:
                                     print(e)
@@ -597,11 +598,32 @@ if x == 1:
             del x, code, pointer
             f = open(input("File name: "), "r")
             try:
-                print(evak(f.read()))
+                print(eval(f.read()))
             except Exception as e:
                 if e != None:
                     print(e)
             f.close()
+    elif x == 3:
+        help()
+        while True:
+            xxxxxyyyyyzzzzz = input(">>> ")
+            if xxxxxyyyyyzzzzz == "" or xxxxxyyyyyzzzzz == "fos":
+                break
+            elif xxxxxyyyyyzzzzz == "readme":
+                f = open("readme.txt", "r")
+                print(f.read())
+                f.close()
+            else:
+                try:
+                    run(xxxxxyyyyyzzzzz.split(" "))
+                except Exception:
+                    try:
+                        print(eval(xxxxxyyyyyzzzzz))
+                    except Exception:
+                        try:
+                            exec(xxxxxyyyyyzzzzz)
+                        except Exception as e:
+                            system(xxxxxyyyyyzzzzz)
 elif x == 2:
     print("1 to run enhanced version")
     print("2 to execute single-line commands")
@@ -612,7 +634,7 @@ elif x == 2:
         print("2 to execute from files")
         x = int(input("\n"))
         if x == 1:
-            print("You can run enhanced BASH programs, like running AppleSoft BASIC in Apple ][. ")
+            print("You can run enhanced Batch programs, like running AppleSoft BASIC in Apple ][. ")
             print("Write normal syntax, but start with a number that's the line number of the code line. ")
             print("For example, like \"10 echo \"executed on line 10\"\". There's also some extra functions. ")
             print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
@@ -993,26 +1015,33 @@ elif x == 4:
     del x
     run(eval(input("Enter code: ")))
 elif x == 5:
-    print("1 to open normal shell")
-    print("2 to open cool shell")
-    x = int(input("\n"))
+    print("1 to open Python shell")
+    print("2 to open Batch shell")
     if x == 1:
-        print("1 to open shell that doesn't recognize empty commands as unique syntax")
-        print("2 to open shell with opposite of option 1")
+        print("1 to open normal shell")
+        print("2 to open cool shell")
         x = int(input("\n"))
         if x == 1:
-            while True:
-                x = input(">>> ")
-                help(x)
-        elif x == 2:
-            while True:
-                x = input(">>> ")
-                if x == "":
-                    help()
-                else:
+            print("1 to open shell that doesn't recognize empty commands as unique syntax")
+            print("2 to open shell with opposite of option 1")
+            x = int(input("\n"))
+            if x == 1:
+                while True:
+                    x = input(">>> ")
                     help(x)
+            elif x == 2:
+                while True:
+                    x = input(">>> ")
+                    if x == "":
+                        help()
+                    else:
+                        help(x)
+        elif x == 2:
+            help()
     elif x == 2:
-        help()
+        while True:
+            x = input(">>> ")
+            system(f"help {x}")
 elif x == 6:
     print("1 to open +-<>.,[]")
     print("2 to open HQ9+")
@@ -1072,7 +1101,7 @@ $ Push the accumulator to the stack
 P Get input from user and push string to stack
 > Pop a value from the stack execute it in Python
 < Pop a value from the stack evaluate it in Python
-½ Pop a value from the stack and execute it in BASH
+½ Pop a value from the stack and execute it in Batch
 \ Get input from user and turn accumulator to its Unicode value
 @ Repeat code after this 2 times.
 € Repeat code after this 3 times.
