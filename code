@@ -1017,6 +1017,7 @@ elif x == 4:
 elif x == 5:
     print("1 to open Python shell")
     print("2 to open Batch shell")
+    x = int(input("\n"))
     if x == 1:
         print("1 to open normal shell")
         print("2 to open cool shell")
