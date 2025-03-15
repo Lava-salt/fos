@@ -1,4 +1,3 @@
-
 <!-- This is the HTML file for the website of FOS. -->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +29,7 @@
                 FOS, also known as Froggy OS is a TUI made in Python. <br/>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
                 To download FOS, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
-                The current FOS version is 1.50.5 <br/>
+                The current FOS version is 1.55.5 <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
@@ -232,6 +231,18 @@
                 6. Removed incorrect "modules spam" documentation <br/>
                 Bugs: <br/>
                 1. Conway's Game of Life closed for maintenance <br/>
+            </p>
+            <h2>FOS 1.55.5</h2>
+            <p>
+                Cellular Update <br/>
+                Additions: <br/>
+                1. Added universe simulator <br/>
+                2. Made Conway's Game of Life 3D <br/>
+                3. Utility to search words like a search engine <br/>
+                4. Computer can gain self-awareness now <br/>
+                5. Added the ability to exit FOS (suicide the OS) <br/>
+                Bugs: <br/>
+                None <br/>
             </p>
             <p>
                 If you want new updates, just write your ideas to <a href="https://github.com/Lava-salt/fos/discussions/">this website</a>!
