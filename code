@@ -879,9 +879,14 @@ elif x == 2:
             print("Windows PowerShell")
             print("Copyright (C) Microsoft Corporation. All rights reserved.\n")
             print("Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows\n")
+            try:
+                system(input(f"(.venv) PS {getcwd}> "))
+            except Exception as e:
+                if e != None:
+                    print(e)
             while True:
                 try:
-                    system(input(f"(.venv) PS {getcwd}> "))
+                    system(input(f"(.venv) PS> "))
                 except Exception as e:
                     if e != None:
                         print(e)
