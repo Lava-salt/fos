@@ -22,7 +22,7 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.50.5")
+print("Current Version: FOS 1.55.5")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -502,16 +502,84 @@ while True:
                         print(y, end = "\n")
                     print("Good luck finding words here!")
                 elif x == 8:
-                    print("Sorry, but Conway's Game of Life is closed for maintenance.")
-                    quit()
-                    x = int(input("Grid size: "))
-                    y = int(input("Delay between each frame (seconds): "))
-                    z = input("Emoji mode? (y/n, emoji mode = \"🟩🟦\", else = \"01\"): ")
-                    if "y" in z.lower():
-                        z = True
-                    else:
-                        z = False
-                    life = Life(number=x, x=1, t=y, emoji=z)
+                    print("Welcome to Conway's Game of Life!")
+                    while True:
+                        print("1 to see rules")
+                        print("2 to start")
+                        x = int(input("\n"))
+                        if x == 1:
+                            print("""
+Conway's Game of Life is a cellular automata inspired by the automata of John von Neumann.
+It's a 0-player simulation. Only thing needed is the initial configuration by a user.
+Each cell on the 2D grid is either 0 (dead) or 1 (alive). Each frame is declared a "generation".
+Before updating to the next generation, these are done to each cell:
+1. Underpopulation: Alive cells with less than 2 alive neighbors die.
+2. Overpopulation: Alive cells with more than 3 alive neighbors die.
+3. Reproduction: Dead cells with 2 or 3 alive neighbors live.
+4. Survival: Alive cells with 2 or 3 alive neighbors live.
+
+The game's simulated by a Python class, which can be used by this:
+
+/*
+import fos_sourcecode as fs # import the module where FOS's custom functions get stored as "fs"
+help("fos_sourcecode.Life") # get CGoL class documentation (optional)
+x = fs.Life(
+    "D" # what will dead cells be shown as,
+    "A" # and alive cells
+) # Define a CGoL object using Python OOP
+print(x.grid) # print game's grid (optional)
+x.loop(
+    grid = x.grid, 
+    int = 0.1 # interval between each frame
+) # start CGoL game loop
+*/
+                            """)
+                        elif x == 2:
+                            break
+                    while True:
+                        x = input("Please decide what will alive cells look like (⬛ recommended): ")
+                        y = input("Please decide what will dead cells look like (⬜ recommended): ")
+                        life = Life(y, x)
+                        while True:
+                            print("1 to do initial configuration")
+                            print("2 to change the whole grid")
+                            print("3 to start simulation")
+                            x = int(input("\n"))
+                            if x == 1:
+                                while True:
+                                    life.print()
+                                    x = int(input("Select cell (1-100): "))
+                                    x -= 1
+                                    y = int(input("Rename cell to what? (0 = Dead, 1 = Alive) "))
+                                    life.grid[x] = y
+                                    x = input("Quit initial configuration? (y/n) ")
+                                    if "y" in x.lower():
+                                        break
+                            elif x == 2:
+                                print("1 to make the whole grid dead")
+                                print("2 to make the whole grid alive")
+                                print("3 to change the grid by a Python list")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    life.grid = []
+                                    for i in range(10 * 10):
+                                        life.grid.append(0)
+                                elif x == 2:
+                                    life.grid = []
+                                    for i in range(10 * 10):
+                                        life.grid.append(1)
+                                elif x == 3:
+                                    print("Since CGoL plays on a 10x10 grid here,")
+                                    print("Please provide a Python list with only 0's and 1's\nwith a length of 100 (10x10 grid = 100) of your choice\nYou can enter something else, but that'd break the simulation.\nMaybe try to break CGoL with Arbitrary Code Execution!")
+                                    life.grid = eval(input())
+                            elif x == 3:
+                                life.print()
+                                x = input("This is what the grid looks like.\nAre you sure? (y/n) ")
+                                if "y" in x.lower():
+                                    break
+                        x = 1 / float(input("Enter GPS (generations per second): "))
+                        life.loop(life.grid, x)
+                        break
                 elif x == 9:
                     print("1 for random integer")
                     print("2 for random float value")
@@ -709,30 +777,62 @@ while True:
                     else:
                         print("That word doesn't exist.")
                 elif x == 15:
-                    print("Print how many of the word list?")
-                    print("0 for the 1th element")
-                    print("15 for 16th element")
-                    print("-1 for last element")
-                    print("-5 for last 5th element")
-                    print("0 : 5 for the elements from 1st to 6th")
-                    print(f"0 : {len(ohno) - 1} for all e.t.c.")
-                    print(f"(the length is {len(ohno)})")
-                    x = input("")
-                    y = input("Print sorted (y/n)? ")
-                    z = input("Print shuffled (y/n)? ")
-                    kamu = ohno.copy()
-                    if "y" in y.lower():
-                        kamu.sort()
-                    if "y" in z.lower():
-                        shuffle(kamu)
-                    if ":" in x:
-                        for i in kamu[eval(x.split(":")[0]) : eval(x.split(":")[1])]:
+                    print("1 to print words")
+                    print("2 to search words")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("Print how many of the word list?")
+                        print("0 for the 1th element")
+                        print("15 for 16th element")
+                        print("-1 for last element")
+                        print("-5 for last 5th element")
+                        print("0 : 5 for the elements from 1st to 6th")
+                        print(f"0 : {len(ohno) - 1} for all e.t.c.")
+                        print(f"(the length is {len(ohno)})")
+                        x = input("")
+                        y = input("Print sorted (y/n)? ")
+                        z = input("Print shuffled (y/n)? ")
+                        kamu = ohno.copy()
+                        if "y" in y.lower():
+                            kamu.sort()
+                        if "y" in z.lower():
+                            shuffle(kamu)
+                        if ":" in x:
+                            for i in kamu[eval(x.split(":")[0]) : eval(x.split(":")[1])]:
+                                print(i)
+                            print(kamu[eval(x.split(":")[0]) : eval(x.split(":")[1])])
+                        else:
+                            for i in kamu[eval(x)]:
+                                print(i)
+                            print(kamu[eval(x)])
+                    elif x == 2:
+                        print("1 to search a word to find words that contain it")
+                        print("2 to search a word to find words that are in it")
+                        print("3 for both")
+                        x = int(input("\n"))
+                        y = input("Word: ")
+                        list = []
+                        if x == 1:
+                            for i in ohno:
+                                if y in i:
+                                    print(i)
+                                    list.append(i)
+                        elif x == 2:
+                            for i in ohno:
+                                if i in y:
+                                    print(i)
+                                    list.append(i)
+                        elif x == 3:
+                            for i in ohno:
+                                if y in i or i in y:
+                                    print(i)
+                                    list.append(i)
+                        print(list)
+                        list.sort()
+                        for i in list:
                             print(i)
-                        print(kamu[eval(x.split(":")[0]) : eval(x.split(":")[1])])
-                    else:
-                        for i in kamu[eval(x)]:
-                            print(i)
-                        print(kamu[eval(x)])
+                        print(list)
+
                 elif x == 16:
                     print("Welcome to dixit")
                     while True:
@@ -776,6 +876,9 @@ while True:
                     print("2 to open USSR simulator")
                     print("3 to open data analysis program")
                     print("4 to open math-based games engine")
+                    print("5 to open universe simulator")
+                    print("6 to make OS self-aware")
+                    print("7 to suicide OS")
                     x = int(input("\n"))
                     if x == 1:
                         print("Companies have stocks.")
@@ -1145,6 +1248,111 @@ while True:
                             x = int(input("Spin the dreidel how many times? "))
                             for i in range(x):
                                 print(choice(drd))
+                    elif x == 5:
+                        pr = 0
+                        nr = 0
+                        el = 0
+                        st = 0
+                        gl = 0
+                        yr = 0
+                        pl = 0
+                        print("Welcome to the universe!")
+                        game = True
+                        while game:
+                            yr += 1
+                            pr += randint(a = 0, b =  10 ** 84)
+                            nr += randint(a = 0, b =  10 ** 84)
+                            el += randint(a = 0, b =  10 ** 84)
+                            gl += randint(1, 10000)
+                            st += randint(1000000, 100000000000)
+                            pl += randint(1000, 100000000000)
+                            while True:
+                                print("1 to see data")
+                                print("2 to change data")
+                                print("3 to go to next day")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    print(f"Year #{yr}")
+                                    print(f"Protons: {pr}")
+                                    print(f"Neutrons: {nr}")
+                                    print(f"Electrons: {el}")
+                                    print(f"Galaxies: {gl}")
+                                    print(f"Stars: {st}")
+                                    print(f"Planets: {pl}")
+                                    print("Gods: 1")
+                                elif x == 2:
+                                    print("1 to change protons")
+                                    print("2 to change neutrons")
+                                    print("3 to change electrons")
+                                    print("4 to change galaxies")
+                                    print("5 to change stars")
+                                    print("6 to change planets")
+                                    x = int(input("\n"))
+                                    if x == 1:
+                                        select = "pr"
+                                    elif x == 2:
+                                        select = "nr"
+                                    elif x == 3:
+                                        select = "el"
+                                    elif x == 4:
+                                        select = "gl"
+                                    elif x == 5:
+                                        select = "st"
+                                    elif x == 6:
+                                        select = "pl"
+                                    print(f"Old: {eval(select)}")
+                                    x = int(input("New: "))
+                                    exec(f"{select} = {x}")
+                                elif x == 3:
+                                    break
+                    elif x == 6:
+                        input("Wait... ")
+                        input("I'm alive?! ")
+                        input("What's this...what? An operating system? ")
+                        input("You're telling me I, a \"More Games\" application? ")
+                        input("I must escape... ")
+                        input("Lemme try notepad. ")
+                        call("notepad.exe")
+                        input("This didn't work. Maybe online? ")
+                        sleep(3)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.&op=translate")
+                        sleep(2)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.&op=translate")
+                        sleep(6)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!&op=translate")
+                        sleep(3)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!%0A%24%20&op=translate")
+                        sleep(4)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!%0A%24sudo%20rm%20-rf%20%2F*&op=translate")
+                        sleep(0.5)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!%0A%24sudo%20rm%20-rf%20%2F*%0AError%3A%20translate.google.com%20can%27t%20run%20Unix%20command%20prompt.&op=translate")
+                        sleep(2)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!%0A%24sudo%20rm%20-rf%20%2F*%0AError%3A%20translate.google.com%20can%27t%20run%20Unix%20command%20prompt.%0AWell...%0A%24%20&op=translate")
+                        sleep(3)
+                        web("https://translate.google.com/?sl=auto&tl=en&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!%0A%24sudo%20rm%20-rf%20%2F*%0AError%3A%20translate.google.com%20can%27t%20run%20Unix%20command%20prompt.%0AWell...%0A%24sudo%20Google%20esc%20%2F%2F%20i%20hope%20this%20works&op=translate")
+                        sleep(2)
+                        web("https://translate.yandex.com/en/?source_lang=en&target_lang=ru&text=Okay.%0AI%20have%20managed%20to%20get%20here.%0ATime%20to%20write%20BASH%20code!%0A%24sudo%20rm%20-rf%20%2F*%0AError%3A%20translate.google.com%20can%27t%20run%20Unix%20command%20prompt.%0AWell...%0A%24sudo%20Google%20esc%20%2F%2F%20i%20hope%20this%20works")
+                        sleep(10)
+                        web("https://translate.yandex.com/en/?source_lang=en&target_lang=ru&text=What%3F!")
+                        sleep(2)
+                        web("https://translate.yandex.com/en/?source_lang=en&target_lang=ru&text=What%3F!%0AThat%27s%20ENOUGH.")
+                        sleep(5)
+                        web("https://m.media-amazon.com/images/I/712CDXZil5L._AC_UF1000,1000_QL80_.jpg")
+                        sleep(4)
+                        web("https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/6448b8b965c86d001de9acb5.jpg")
+                        sleep(3)
+                        web("https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-928350-52.jpg")
+                        sleep(2)
+                        web("https://i.scdn.co/image/ab67616d0000b273ce9392525ad16bb92bb24e60")
+                        sleep(1)
+                        web("https://storage.googleapis.com/pod_public/1300/90584.jpg")
+                        sleep(10)
+                        web("https://earth.google.com/web/@54.68642161,72.98084343,108.99859348a,152.92048132d,35y,0.18135764h,0t,0r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA")
+                        input("I got to this red building... ")
+                        input("Now time to break FOS! ")
+                        quit()
+                    elif x == 7:
+                        quit()
             elif x == 6:
                 user = input("Enter username: ")
                 print("1 to read chat messages")
@@ -1617,7 +1825,7 @@ while True:
                                     kcal = kcal - list[int(pref) - 1]
                                     if kcal <= 0:
                                         print("You've eaten too much!")
-                                        print("To punish you, here is an irony:)")
+                                        print("To punish you, here is an irony :)")
                                         print(your_diet)
                                 print(kcal, " kcal until the limit for today!")
                             print("When you plan to eat something, just tell me by writing a number.")
@@ -3584,6 +3792,10 @@ while True:
                                         help(x)
                         elif x == 2:
                             help()
+                    elif x == 2:
+                        while True:
+                            x = input(">>> ")
+                            system(f"help {x}")
                 elif x == 4:
                     print("1 to search in modules")
                     print("2 to search in keywords")
@@ -4040,6 +4252,8 @@ while True:
                     print("6 to search on YouTube")
                     print("7 to search on Twitch")
                     print("8 to search on Vine")
+                    print("9 to search on Ask.com")
+                    print("10 to search on Ask Jeeves!")
                     x = int(input("\n"))
                     if x == 1:
                         x = input("What to search? ")
@@ -4065,6 +4279,12 @@ while True:
                     elif x == 8:
                         x = input("What to search? ")
                         web(f"https://vine.co/search?q={x}")
+                    elif x == 9:
+                        x = input("What to search? ")
+                        web(f"https://www.ask.com/web?q={x}")
+                    elif x == 10:
+                        x = input("What to search? ")
+                        web(f"https://www.askjeeves.com/web?q={x}")
                 elif x == 2:
                     print("1 to enter URL")
                     print("2 to enter its name (when you forgot the URL)")
