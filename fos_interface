@@ -1,3 +1,6 @@
+# greeting shell
+
+from this import c, d, i, s
 help()
 from sys import platform
 from subprocess import run
@@ -22,7 +25,7 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.55.5")
+print("Current Version: FOS 1.59.5")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -43,6 +46,9 @@ from sys import __stderr__, __stdin__, __stdout__, api_version, argv, base_exec_
 from subprocess import CalledProcessError, call, Popen, ABOVE_NORMAL_PRIORITY_CLASS, BELOW_NORMAL_PRIORITY_CLASS, CREATE_BREAKAWAY_FROM_JOB, CREATE_DEFAULT_ERROR_MODE, CREATE_NEW_CONSOLE, CREATE_NEW_PROCESS_GROUP, CREATE_NO_WINDOW, DETACHED_PROCESS, DEVNULL, HIGH_PRIORITY_CLASS, IDLE_PRIORITY_CLASS, NORMAL_PRIORITY_CLASS, PIPE, REALTIME_PRIORITY_CLASS
 from subprocess import PIPE as SPPIPE
 from codecs import encode
+from math import e, inf, nan, pi, tau
+from matplotlib import __bibtex__, bivar_colormaps, color_sequences, colormaps, defaultParams, multivar_colormaps, rcParams, rcParamsDefault, rcParamsOrig
+from urwid import ACTIVATE, ANY, BLACK, BOTTOM, BOX, BROWN, CENTER, CLIP, CURSOR_DOWN, CURSOR_LEFT, CURSOR_MAX_LEFT, CURSOR_MAX_RIGHT, CURSOR_PAGE_DOWN, CURSOR_PAGE_UP, CURSOR_RIGHT, CURSOR_UP, DARK_BLUE, DARK_CYAN, DARK_GRAY, DARK_GREEN, DARK_MAGENTA, DARK_RED, DEFAULT, ELLIPSIS, FIXED, FLOW, GIVEN, LEFT, LIGHT_BLUE, LIGHT_CYAN, LIGHT_GRAY, LIGHT_GREEN, LIGHT_MAGENTA, LIGHT_RED, MIDDLE, PACK, REDRAW_SCREEN, RELATIVE, RELATIVE_100, RIGHT, SPACE, TOP, UPDATE_PALETTE_ENTRY, VERSION, WEIGHT, WHITE, YELLOW, __annotations__, __version_tuple__, command_map, default_layout, detected_encoding
 print("Before entering, please manage modules.")
 while True:
     print("1 to install modules")
@@ -159,6 +165,9 @@ people = ["A child", "A son", "A daughter", "A boy", "A girl", "A teen", "An adu
 sins = ["is being too sexual", "is over-eating", "is arrogant", "is lazy", "is too angry", "is greedy", "is jealous", "is defending Capitalism", "is defending Fascism", "is a Bourgeois", "is critisizing the government", "is stealing", "is critisizing"]
 tf = [True, False]
 drd = ["Nun", "Gimel", "He", "Shin"]
+docs = ['!=', '"', '"""', '%', '%=', '&', '&=', "'", "'''", '(', ')', '*', '**', '**=', '*=', '+', '+=', ',', '-', '-=', '.', '...', '/', '//', '//=', '/=', ':', ':=', '<', '<<', '<<=', '<=', '<>', '==', '>', '>=', '>>', '>>=', '@', 'False', 'J', 'None', 'PIL', 'True', '[', '\\', ']', '^', '^=', '_', '__', '__builtins__', '__cached__', '__doc__', '__file__', '__hello__', '__loader__', '__name__', '__package__', '__phello__', '__spec__', '_abc', '_aix_support', '_android_support', '_ast', '_asyncio', '_bisect', '_blake2', '_bz2', '_codecs', '_codecs_cn', '_codecs_hk', '_codecs_iso2022', '_codecs_jp', '_codecs_kr', '_codecs_tw', '_collections', '_collections_abc', '_colorize', '_compat_pickle', '_compression', '_contextvars', '_csv', '_ctypes', '_ctypes_test', '_datetime', '_decimal', '_elementtree', '_functools', '_hashlib', '_heapq', '_imp', '_interpchannels', '_interpqueues', '_interpreters', '_io', '_ios_support', '_json', '_locale', '_lsprof', '_lzma', '_markupbase', '_md5', '_multibytecodec', '_multiprocessing', '_opcode', '_opcode_metadata', '_operator', '_osx_support', '_overlapped', '_pickle', '_py_abc', '_pydatetime', '_pydecimal', '_pyio', '_pylong', '_pyrepl', '_queue', '_random', '_sha1', '_sha2', '_sha3', '_signal', '_sitebuiltins', '_socket', '_sqlite3', '_sre', '_ssl', '_stat', '_statistics', '_string', '_strptime', '_struct', '_symtable', '_sysconfig', '_testbuffer', '_testcapi', '_testclinic', '_testclinic_limited', '_testconsole', '_testimportmultiple', '_testinternalcapi', '_testlimitedcapi', '_testmultiphase', '_testsinglephase', '_thread', '_threading_local', '_tkinter', '_tokenize', '_tracemalloc', '_typing', '_uuid', '_virtualenv', '_warnings', '_weakref', '_weakrefset', '_winapi', '_wmi', '_zoneinfo', '`', 'abc', 'and', 'antigravity', 'argparse', 'array', 'as', 'assert', 'ast', 'async', 'asyncio', 'atexit', 'await', 'b"', "b'", 'backend_interagg', 'base64', 'bdb', 'binascii', 'bisect', 'blessings', 'break', 'builtins', 'bz2', 'cProfile', 'calendar', 'certifi', 'charset_normalizer', 'class', 'click', 'cmath', 'cmd', 'code', 'codecs', 'codeop', 'collections', 'colorama', 'colorsys', 'compileall', 'concurrent', 'configparser', 'contextlib', 'contextvars', 'continue', 'contourpy', 'copy', 'copyreg', 'csv', 'ctypes', 'curses', 'cycler', 'dataclasses', 'datalore', 'datetime', 'dateutil', 'dbm', 'decimal', 'def', 'del', 'difflib', 'dis', 'doctest', 'elif', 'else', 'email', 'enchant', 'encodings', 'ensurepip', 'enum', 'errno', 'except', 'exit', 'f"', "f'", 'faulthandler', 'filecmp', 'fileinput', 'finally', 'fnmatch', 'fontTools', 'for', 'fos_interface', 'fos_sourcecode', 'fractions', 'from', 'ftplib', 'functools', 'gc', 'genericpath', 'getopt', 'getpass', 'gettext', 'glob', 'global', 'graphlib', 'gzip', 'hashlib', 'heapq', 'hmac', 'html', 'http', 'idlelib', 'idna', 'if', 'imaplib', 'import', 'importlib', 'in', 'inspect', 'io', 'ipaddress', 'is', 'itertools', 'j', 'joblib', 'json', 'keyword', 'keywords', 'kiwisolver', 'lambda', 'linecache', 'linkify_it', 'locale', 'logging', 'lzma', 'mailbox', 'markdown_it', 'marshal', 'math', 'matplotlib', 'mdit_py_plugins', 'mdurl', 'mimetypes', 'mmap', 'modulefinder', 'modules', 'msvcrt', 'multiprocessing', 'netrc', 'nltk', 'nonlocal', 'not', 'nt', 'ntpath', 'nturl2path', 'numbers', 'numpy', 'opcode', 'operator', 'optparse', 'or', 'os', 'packaging', 'pass', 'pathlib', 'pdb', 'perlin_noise', 'pickle', 'pickletools', 'pip', 'pkgutil', 'platform', 'platformdirs', 'plistlib', 'poplib', 'posixpath', 'pprint', 'profile', 'prompt_toolkit', 'pstats', 'pty', 'py_compile', 'pyclbr', 'pydoc', 'pydoc_data', 'pyexpat', 'pygments', 'pylab', 'pyparsing', 'q', 'queue', 'quit', 'quopri', 'r"', "r'", 'raise', 'random', 're', 'regex', 'reprlib', 'return', 'rich', 'rlcompleter', 'runpy', 'sched', 'secrets', 'select', 'selectors', 'shelve', 'shlex', 'shutil', 'signal', 'site', 'sitecustomize', 'six', 'smtplib', 'socket', 'socketserver', 'sqlite3', 'sre_compile', 'sre_constants', 'sre_parse', 'ssl', 'stat', 'statistics', 'string', 'stringprep', 'struct', 'subprocess', 'symbols', 'symtable', 'sys', 'sysconfig', 'tabnanny', 'tarfile', 'tempfile', 'test', 'textual', 'textwrap', 'this', 'threading', 'time', 'timeit', 'tkinter', 'token', 'tokenize', 'tomllib', 'topics', 'tqdm', 'trace', 'traceback', 'tracemalloc', 'try', 'tty', 'turtle', 'turtledemo', 'types', 'typing', 'typing_extensions', 'u"', "u'", 'uc_micro', 'unicodedata', 'unittest', 'urllib', 'urllib3', 'urwid', 'uuid', 'venv', 'warnings', 'wave', 'wcwidth', 'weakref', 'webbrowser', 'while', 'winreg', 'winsound', 'with', 'wsgiref', 'xml', 'xmlrpc', 'xxsubtype', 'yield', 'zipapp', 'zipfile', 'zipimport', 'zlib', 'zoneinfo', '|', '|=', '~']
+batch = ['assoc', 'attrib', 'break', 'bcdedit', 'cacls', 'call', 'cd', 'chcp', 'chdir', 'chkdsk', 'chkntfs', 'cls', 'cmd', 'color', 'comp', 'compact', 'convert', 'copy', 'date', 'del', 'dir', 'diskpart', 'doskey', 'driverquery', 'echo', 'endlocal', 'erase', 'exit', 'fc', 'find', 'findstr', 'for', 'format', 'fsutil', 'ftype', 'goto', 'gpresult', 'help', 'icacls', 'if', 'label', 'md', 'mkdir', 'mklink', 'mode', 'more', 'move', 'openfiles', 'path', 'pause', 'popd', 'print', 'prompt', 'pushd', 'rd', 'recover', 'rem', 'ren', 'rename', 'replace', 'rmdir', 'robocopy', 'set', 'setlocal', 'sc', 'schtasks', 'shift', 'shutdown', 'sort', 'start', 'subst', 'systeminfo', 'tasklist', 'taskkill', 'time', 'title', 'tree', 'type', 'ver', 'verify', 'vol', 'xcopy', 'wmic', '']
+echo = ['cd', 'chdir', 'dir', 'driverquery', 'gpresult', 'openfiles', 'set', 'systeminfo', 'tasklist', 'tree', 'type', 'help']
 
 # body (code)
 
@@ -2066,12 +2075,12 @@ x.loop(
                         if x == 1:
                             print("1 button connects to 1 lightbulb.")
                             print("Both can be True and False.")
-                            print("Enter the logic gate between button 1 and bulb to gate 1 from: WIRE, NOT, RAND to gate 1")
+                            print("Enter the logic gate between button 1 and bulb to gate 1 from: WIRE, BUFFER, NOT, RAND to gate 1")
                             print("Enter the button's bool value to button 1.")
                             g1 = input("Gate 1: ")
                             b1 = bool(input("Button 1: "))
                             g1 = g1.lower()
-                            if g1 == "wire":
+                            if g1 == "wire" or g1 == "buffer":
                                 pass
                             elif g1 == "not":
                                 b1 = not(b1)
@@ -2081,10 +2090,10 @@ x.loop(
                         elif x == 2:
                             print("2 buttons connects to 1 lightbulb.")
                             print("Both can be True and False.")
-                            print("Enter the logic gate between button 1 and bulb to gate 3 from: WIRE, NOT, RAND to gate 1")
-                            print("Enter the logic gate between button 2 and bulb to gate 3 from: WIRE, NOT, RAND to gate 2")
-                            print("Enter the logic gate on button 1 and 2's wires' connection point from: OR, XOR, NOR, XNOR, NXOR, AND, XAND, NAND, XNAND, NXAND, IMPLY, XIMPLY, NIMPLY, XNIMPLY, NXIMPLY to gate 3")
-                            print("Enter the logic gate between gate 3 to bulb from: WIRE, NOT, RAND to gate 4")
+                            print("Enter the logic gate between button 1 and bulb to gate 3 from: WIRE, BUFFER, NOT, RAND to gate 1")
+                            print("Enter the logic gate between button 2 and bulb to gate 3 from: WIRE, BUFFER, NOT, RAND to gate 2")
+                            print("Enter the logic gate on button 1 and 2's wires' connection point from: OR, XOR, NOR, XNOR, NXOR, AND, XAND, NAND, XNAND, NXAND, IMPLY, XIMPLY, NIMPLY, XNIMPLY, NXIMPLY, RAND to gate 3")
+                            print("Enter the logic gate between gate 3 to bulb from: WIRE, BUFFER, NOT, RAND to gate 4")
                             print("Enter the button's bool value to button 1.")
                             g1 = input("Gate 1: ")
                             g2 = input("Gate 2: ")
@@ -2096,13 +2105,13 @@ x.loop(
                             g2 = g2.lower()
                             g3 = g3.lower()
                             g4 = g4.lower()
-                            if g1 == "wire":
+                            if g1 == "wire" or g1 == "buffer":
                                 pass
                             elif g1 == "not":
                                 b1 = not(b1)
                             elif g4 == "rand":
                                 b1 = choice(tf)
-                            if g2 == "wire":
+                            if g2 == "wire" or g2 == "buffer":
                                 pass
                             elif g2 == "not":
                                 b2 = not(b2)
@@ -2148,7 +2157,9 @@ x.loop(
                                     b1 = False
                                 else:
                                     b1 = True
-                            if g4 == "wire":
+                            elif g3 == "rand":
+                                b1 = choice(tf)
+                            if g4 == "wire" or g4 == "buffer":
                                 pass
                             elif g4 == "not":
                                 b1 = not(b1)
@@ -2158,6 +2169,7 @@ x.loop(
                         elif x == 3:
                             print("Singular Button Logic Gates")
                             print("WIRE - 0 = 0, 1 = 1")
+                            print("BUFFER - 0 = 0, 1 = 1")
                             print("NOT - 0 = 1, 1 = 0")
                             print("RAND - 0, 1 = random.choice([True, False])")
                             print("Plural Button Logic Gates")
@@ -2177,6 +2189,7 @@ x.loop(
                             print("NIMPLY - 00 = 0, 10 = 1, 01 = 0, 11 = 0")
                             print("XNIMPLY - 00 = 0, 10 = 1, 01 = 0, 11 = 1")
                             print("XNIMPLY - 00 = 0, 10 = 1, 01 = 0, 11 = 1")
+                            print("RAND - 00, 10, 01, 11= random.choice([True, False])")
                 elif x == 3:
                     print("1 to open lottery")
                     print("2 to open ROULETTE")
@@ -2740,6 +2753,8 @@ x.loop(
                         print("3 to open Sub-Process data")
                         print("4 to open Date and Time data")
                         print("5 to open Time data")
+                        print("6 to open Math data")
+                        print("7 to open more data")
                         x = int(input("\n"))
                         if x == 1:
                             print(f"Ex Ok: {EX_OK}")
@@ -2850,6 +2865,90 @@ x.loop(
                             print(f"Daylight: {daylight}")
                             print(f"Timezone: {timezone}")
                             print(f"Tzname: {tzname}")
+                        elif x == 6:
+                            print(f"E: {e}")
+                            print(f"Inf: {inf}")
+                            print(f"NaN: {nan}")
+                            print(f"Pi: {pi}")
+                            print(f"Tau: {tau}")
+                        elif x == 7:
+                            print("1 to open Mathematics Plot Library data")
+                            print("2 to open Urwid data")
+                            print("3 to open the Zen of Python data")
+                            print("4 to open Command Prompt data")
+                            x = int(input("\n"))
+                            if x == 1:
+                                print(f"__Bibtex__: {__bibtex__}")
+                                print(f"Bivar Colormaps: {bivar_colormaps}")
+                                print(f"Color Sequences: {color_sequences}")
+                                print(f"Colormaps: {colormaps}")
+                                print(f"Default Params: {defaultParams}")
+                                print(f"Multivar Colormaps: {multivar_colormaps}")
+                                print(f"RcParams: {rcParams}")
+                                print(f"RcParams Default: {rcParamsDefault}")
+                                print(f"RcParams Orig: {rcParamsOrig}")
+                            elif x == 2:
+                                print(f"Activate: {ACTIVATE}")
+                                print(f"Any: {ANY}")
+                                print(f"Black: {BLACK}")
+                                print(f"Bottom: {BOTTOM}")
+                                print(f"Box: {BOX}")
+                                print(f"Brown: {BROWN}")
+                                print(f"Center: {CENTER}")
+                                print(f"Clip: {CLIP}")
+                                print(f"Cursor Down: {CURSOR_DOWN}")
+                                print(f"Cursor Left: {CURSOR_LEFT}")
+                                print(f"Cursor Max Left: {CURSOR_MAX_LEFT}")
+                                print(f"Cursor Max Right: {CURSOR_MAX_RIGHT}")
+                                print(f"Cursor Page Down: {CURSOR_PAGE_DOWN}")
+                                print(f"Cursor Page Up: {CURSOR_PAGE_UP}")
+                                print(f"Cursor Right: {CURSOR_RIGHT}")
+                                print(f"Cursor Up: {CURSOR_UP}")
+                                print(f"Dark Blue: {DARK_BLUE}")
+                                print(f"Dark Cyan: {DARK_CYAN}")
+                                print(f"Dark Gray: {DARK_GRAY}")
+                                print(f"Dark Green: {DARK_GREEN}")
+                                print(f"Dark Magenta: {DARK_MAGENTA}")
+                                print(f"Dark Red: {DARK_RED}")
+                                print(f"Default: {DEFAULT}")
+                                print(f"Ellipsis: {ELLIPSIS}")
+                                print(f"Fixed: {FIXED}")
+                                print(f"Flow: {FLOW}")
+                                print(f"Given: {GIVEN}")
+                                print(f"Left: {LEFT}")
+                                print(f"Light Blue: {LIGHT_BLUE}")
+                                print(f"Light Cyan: {LIGHT_CYAN}")
+                                print(f"Light Gray: {LIGHT_GRAY}")
+                                print(f"Light Green: {LIGHT_GREEN}")
+                                print(f"Light Magenta: {LIGHT_MAGENTA}")
+                                print(f"Light Red: {LIGHT_RED}")
+                                print(f"Middle: {MIDDLE}")
+                                print(f"Pack: {PACK}")
+                                print(f"Redraw Screen: {REDRAW_SCREEN}")
+                                print(f"Relative: {RELATIVE}")
+                                print(f"Relative 100: {RELATIVE_100}")
+                                print(f"Right: {RIGHT}")
+                                print(f"Space: {SPACE}")
+                                print(f"Top: {TOP}")
+                                print(f"Update Palette Entry: {UPDATE_PALETTE_ENTRY}")
+                                print(f"Version: {VERSION}")
+                                print(f"Weight: {WEIGHT}")
+                                print(f"White: {WHITE}")
+                                print(f"Yellow: {YELLOW}")
+                                print(f"__Annotations__: {__annotations__}")
+                                print(f"__Version Tuple__: {__version_tuple__}")
+                                print(f"Command Map: {command_map}")
+                                print(f"Default Layout: {default_layout}")
+                                print(f"Detected Encoding: {detected_encoding}")
+                            elif x == 3:
+                                print(f"C: {c}")
+                                print(f"D: {d}")
+                                print(f"I: {i}")
+                                print(f"S: {s}")
+                            elif x == 4:
+                                for i in echo:
+                                    print(i)
+                                    system(i)
                     elif x == 3:
                         x = int(input("How many entries? "))
                         print("Day 1")
@@ -3240,6 +3339,7 @@ x.loop(
                 print("2 to get documentation-based Python tutorial")
                 print("3 to open documentation shell")
                 print("4 to search in Python libraries")
+                print("5 to get random documentation")
                 x = int(input("\n"))
                 if x == 1:
                     print("1 to open Python documentation")
@@ -3590,6 +3690,9 @@ x.loop(
                             print("Vol. III - Calendar")
                             print("Vol. IV - Sub-Process")
                             print("Vol. V - Web Browser")
+                            print("Vol. VI - Random")
+                            print("Vol. VII - Math")
+                            print("Vol. VIII - Statistics")
                             x = int(input())
                             if x == 1:
                                 print("Vol. I - Main")
@@ -3675,6 +3778,10 @@ x.loop(
                                         help("random.gauss")
                                     elif x == 2:
                                         help("random.normalvariate")
+                            elif x == 7:
+                                help("math")
+                            elif x == 8:
+                                help("statistics")
                     elif x == 6:
                         print("Vol. I - Batch")
                         print("Vol. II - Pip Package Installing")
@@ -3811,6 +3918,39 @@ x.loop(
                         help(f"symbols {word}")
                     elif x == 2:
                         help(f"topics {word}")
+                elif x == 5:
+                    print("1 to get list of code stuff")
+                    print("2 to get random documentation")
+                    print("3 to get documentation of the day")
+                    x = int(input("\n"))
+                    if x == 1:
+                        print("1 to open for Python")
+                        print("2 to open for Batch")
+                        x = int(input("\n"))
+                        if x == 1:
+                            for i in docs:
+                                print(i)
+                            print(docs)
+                        elif x == 2:
+                            for i in batch:
+                                print(i)
+                            print(batch)
+                    elif x == 2:
+                        print("1 to open for Python")
+                        print("2 to open for Batch")
+                        x = int(input("\n"))
+                        if x == 1:
+                            help(choice(docs))
+                        elif x == 2:
+                            help(choice(batch))
+                    elif x == 3:
+                        print("1 to open for Python")
+                        print("2 to open for Batch")
+                        x = int(input("\n"))
+                        if x == 1:
+                            help(docs[datetime.now().year * datetime.now().month * datetime.now().day * datetime.now().hour * datetime.now().minute * datetime.now().second % len(docs)])
+                        elif x == 2:
+                            help(batch[datetime.now().year * datetime.now().month * datetime.now().day * datetime.now().hour * datetime.now().minute * datetime.now().second % len(batch)])
             elif x == 2:
                 web("https://docs.python.org/")
         elif x == 3:
@@ -3822,10 +3962,9 @@ x.loop(
             print("TUI: Froggy_OS")
             print(f"OS: {name.title()}")
             print(f"Platform: {platform.title()}")
-            print("Ran On: Pycharm")
-            print("Ran In: Python 3.8.5")
             print(f"Current Working Directory: {getcwd()}")
             print(f"User: {getcwd().split("\\")[2]}")
+            system("systeminfo")
         elif x == 5:
             print("1 to change the current working directory")
             print("2 to create new directory")
@@ -4062,7 +4201,7 @@ x.loop(
             elif x == 9:
                 print(agam)
         elif x == 10:
-            import this
+            print("The Zen of Python, by Tim Peters\n\nBeautiful is better than ugly.\nExplicit is better than implicit.\nSimple is better than complex.\nComplex is better than complicated.\nFlat is better than nested.\nSparse is better than dense.\nReadability counts.\nSpecial cases aren't special enough to break the rules.\nAlthough practicality beats purity.\nErrors should never pass silently.\nUnless explicitly silenced.\nIn the face of ambiguity, refuse the temptation to guess.\nThere should be one-- and preferably only one --obvious way to do it.\nAlthough that way may not be obvious at first unless you're Dutch.\nNow is better than never.\nAlthough never is often better than *right* now.\nIf the implementation is hard to explain, it's a bad idea.\nIf the implementation is easy to explain, it may be a good idea.\nNamespaces are one honking great idea -- let's do more of those!")
         elif x == 11:
             print("1 to select text to print manually")
             print("2 to select text to print from files")
