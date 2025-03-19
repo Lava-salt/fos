@@ -29,7 +29,7 @@
                 FOS, also known as Froggy OS is a TUI made in Python. <br/>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
                 To download FOS, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
-                The current FOS version is 1.55.5 <br/>
+                The current FOS version is 1.59.5 <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
@@ -66,6 +66,19 @@
             </ul>
         </article>
         <aside>
+            <h2>Froggy OS Ranks</h2>
+            <h4>FOS Ranks are the ranks that @Lava-Salt can give you in the discussions.</h4>
+            <p>
+                1. Admin (Owner) - Only @Lava-Salt can have it, which means the supreme editor of FOS. <br/>
+                2. Half-Admin - People who can post the owner direct code which then he can edit to code (unless too ridiculous) because of having a very big relationship with the owner. <br/>
+                3. Quarter-Admin - People who can post the owner ideas which then he can edit to code (unless too ridiculous) because of having a mildly big relationship with the owner. <br/>
+                4. Moderator - People who have the permission to send owner code ideas, and have right to ask owner to change people's ranks. <br/>
+                5. Member - People who can post code ideas to owner (which'll be taken more seriously than beginners) and chat about FOS. <br/>
+                6. Beginner - People who are new to FOS discussions, and can be promoted to members if they post code ideas that are liked by the owner. <br/>
+                7. Warned - People who get demoted to this from members are people who disobey discussion rules.<br/>
+                8. Banned - People who can't even post comments due to disobeying rules so much. <br/>
+
+            </p>
             <h1 style="color:darkslateblue">Updates</h1>
             <h2>FOS 1.0.0</h2>
             <p>
@@ -218,10 +231,12 @@
                 5. Conway's Game of Life closed for maintenance <br/>
                 Bugs: <br/>
                 1. Conway's Game of Life closed for maintenance <br/>
+                2. Executes Batch but its name is BASH <br/>
+                3. Incorrect "modules spam" documentation <br/>
             </p>
             <h2>FOS 1.50.5</h2>
             <p>
-                Mathematical Update <br/>
+                Technical Update <br/>
                 Additions: <br/>
                 1. Updated the Python shell added in 1.41.0 <br/>
                 2. Added Python shell to the "OS Shell" part <br/>
@@ -241,6 +256,17 @@
                 3. Utility to search words like a search engine <br/>
                 4. Computer can gain self-awareness now <br/>
                 5. Added the ability to exit FOS (suicide the OS) <br/>
+                Bugs: <br/>
+                None <br/>
+            </p>
+            <h2>FOS 1.59.5</h2>
+            <p>
+                Documentational Update <br/>
+                Additions: <br/>
+                1. New modules' (and Batch) data added to data bank <br/>
+                2. Random Python and Batch documentation <br/>
+                3. New gates added to LGS <br/>
+                4. Batch data added to "operating system data" in code/OS archives <br/>
                 Bugs: <br/>
                 None <br/>
             </p>
