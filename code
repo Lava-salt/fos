@@ -1173,7 +1173,7 @@ It also has a pointer.
                 elif 51 <= i <= 60:
                     print(memory[pointer])
                 elif 61 <= i <= 70:
-                    try: memory[pointer] = ord(input()[0]
+                    try: memory[pointer] = ord(input()[0])
                     except Exception as e: pass
                 elif 71 <= i <= 80:
                     try: memory[pointer] = int(input())
