@@ -501,10 +501,10 @@ if x == 1:
                             print(e)
             elif x == 2:
                 del x, code, pointer
-                print(getcwd)
+                print(getcwd())
                 print(f"--mode=client --host={randint(100, 999)}.{randint(0, 9)}.{randint(0, 9)}.{randint(0, 9)} --port={randint(10000, 99999)}")
                 print("import sys; print('Python %s on %s' % (sys.version, sys.platform))")
-                print(f"sys.path.extend(['{getcwd}'])")
+                print(f"sys.path.extend(['{getcwd()}'])")
                 print("PyDev console: starting.")
                 print(f"Python 3.8.5 (tags/v3.8.5, Jul 20 2020, 23:11:29) [MSC v.1941 64 bit (AMD64)] on {platform}")
                 shell()
@@ -875,21 +875,7 @@ elif x == 2:
                     if e != None:
                         print(e)
         elif x == 2:
-            del x, code, pointer
-            print("Windows PowerShell")
-            print("Copyright (C) Microsoft Corporation. All rights reserved.\n")
-            print("Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows\n")
-            try:
-                system(input(f"(.venv) PS {getcwd}> "))
-            except Exception as e:
-                if e != None:
-                    print(e)
-            while True:
-                try:
-                    system(input(f"(.venv) PS> "))
-                except Exception as e:
-                    if e != None:
-                        print(e)
+            system("cmd")
     elif x == 3:
         del x, code, pointer
         f = open(input("File name: "), "r")
@@ -1052,6 +1038,8 @@ elif x == 6:
     print("1 to open +-<>.,[]")
     print("2 to open HQ9+")
     print("3 to open AlphaLang")
+    print("4 to open PowerShell")
+    print("5 to open WMI information shell")
     x = int(input("\n"))
     if x == 1:
         print("+-<>.,[] Syntax for this IDE:")
@@ -1201,6 +1189,325 @@ It also has a pointer.
                             elif 81 <= l[code] <= 90:
                                 close_loops -= 1
                 code += 1
+    elif x == 4:
+        print("""
+TOPIC
+    Windows PowerShell Help System
+
+SHORT DESCRIPTION
+    Displays help about Windows PowerShell cmdlets and concepts.
+
+LONG DESCRIPTION
+    Windows PowerShell Help describes Windows PowerShell cmdlets,
+    functions, scripts, and modules, and explains concepts, including
+    the elements of the Windows PowerShell language.
+
+    Windows PowerShell does not include help files, but you can read the
+    help topics online, or use the Update-Help cmdlet to download help files
+    to your computer and then use the Get-Help cmdlet to display the help
+    topics at the command line.
+
+    You can also use the Update-Help cmdlet to download updated help files
+    as they are released so that your local help content is never obsolete.
+
+    Without help files, Get-Help displays auto-generated help for cmdlets,
+    functions, and scripts.
+
+
+  ONLINE HELP
+    You can find help for Windows PowerShell online in the TechNet Library
+    beginning at http://go.microsoft.com/fwlink/?LinkID=108518.
+
+    To open online help for any cmdlet or function, type:
+
+        Get-Help <cmdlet-name> -Online
+
+  UPDATE-HELP
+    To download and install help files on your computer:
+
+       1. Start Windows PowerShell with the "Run as administrator" option.
+       2. Type:
+
+          Update-Help
+
+    After the help files are installed, you can use the Get-Help cmdlet to
+    display the help topics. You can also use the Update-Help cmdlet to
+    download updated help files so that your local help files are always
+    up-to-date.
+
+    For more information about the Update-Help cmdlet, type:
+
+       Get-Help Update-Help -Online
+
+    or go to: http://go.microsoft.com/fwlink/?LinkID=210614
+
+
+  GET-HELP
+    The Get-Help cmdlet displays help at the command line from content in
+    help files on your computer. Without help files, Get-Help displays basic
+    help about cmdlets and functions. You can also use Get-Help to display
+    online help for cmdlets and functions.
+
+    To get help for a cmdlet, type:
+
+        Get-Help <cmdlet-name>
+
+    To get online help, type:
+
+        Get-Help <cmdlet-name> -Online
+
+    The titles of conceptual topics begin with "About_".
+    To get help for a concept or language element, type:
+
+        Get-Help About_<topic-name>
+
+    To search for a word or phrase in all help files, type:
+
+        Get-Help <search-term>
+
+    For more information about the Get-Help cmdlet, type:
+
+        Get-Help Get-Help -Online
+
+    or go to: http://go.microsoft.com/fwlink/?LinkID=113316
+
+
+  EXAMPLES:
+      Save-Help              : Download help files from the Internet and saves
+                               them on a file share.
+      Update-Help            : Downloads and installs help files from the
+                               Internet or a file share.
+      Get-Help Get-Process   : Displays help about the Get-Process cmdlet.
+      Get-Help Get-Process -Online
+                             : Opens online help for the Get-Process cmdlet.
+      Help Get-Process       : Displays help about Get-Process one page at a time.
+      Get-Process -?         : Displays help about the Get-Process cmdlet.
+      Get-Help About_Modules : Displays help about Windows PowerShell modules.
+      Get-Help remoting      : Searches the help topics for the word "remoting."
+
+  SEE ALSO:
+      about_Updatable_Help
+      Get-Help
+      Save-Help
+      Update-Help
+For more information on a specific command, type HELP command-name
+ASSOC          Displays or modifies file extension associations.
+ATTRIB         Displays or changes file attributes.
+BREAK          Sets or clears extended CTRL+C checking.
+BCDEDIT        Sets properties in boot database to control boot loading.
+CACLS          Displays or modifies access control lists (ACLs) of files.
+CALL           Calls one batch program from another.
+CD             Displays the name of or changes the current directory.
+CHCP           Displays or sets the active code page number.
+CHDIR          Displays the name of or changes the current directory.
+CHKDSK         Checks a disk and displays a status report.
+CHKNTFS        Displays or modifies the checking of disk at boot time.
+CLS            Clears the screen.
+CMD            Starts a new instance of the Windows command interpreter.
+COLOR          Sets the default console foreground and background colors.
+COMP           Compares the contents of two files or sets of files.
+COMPACT        Displays or alters the compression of files on NTFS partitions.
+CONVERT        Converts FAT volumes to NTFS.  You cannot convert the
+               current drive.
+COPY           Copies one or more files to another location.
+DATE           Displays or sets the date.
+DEL            Deletes one or more files.
+DIR            Displays a list of files and subdirectories in a directory.
+DISKPART       Displays or configures Disk Partition properties.
+DOSKEY         Edits command lines, recalls Windows commands, and 
+               creates macros.
+DRIVERQUERY    Displays current device driver status and properties.
+ECHO           Displays messages, or turns command echoing on or off.
+ENDLOCAL       Ends localization of environment changes in a batch file.
+ERASE          Deletes one or more files.
+EXIT           Quits the CMD.EXE program (command interpreter).
+FC             Compares two files or sets of files, and displays the 
+               differences between them.
+FIND           Searches for a text string in a file or files.
+FINDSTR        Searches for strings in files.
+FOR            Runs a specified command for each file in a set of files.
+FORMAT         Formats a disk for use with Windows.
+FSUTIL         Displays or configures the file system properties.
+FTYPE          Displays or modifies file types used in file extension 
+               associations.
+GOTO           Directs the Windows command interpreter to a labeled line in 
+               a batch program.
+GPRESULT       Displays Group Policy information for machine or user.
+HELP           Provides Help information for Windows commands.
+ICACLS         Display, modify, backup, or restore ACLs for files and 
+               directories.
+IF             Performs conditional processing in batch programs.
+LABEL          Creates, changes, or deletes the volume label of a disk.
+MD             Creates a directory.
+MKDIR          Creates a directory.
+MKLINK         Creates Symbolic Links and Hard Links
+MODE           Configures a system device.
+MORE           Displays output one screen at a time.
+MOVE           Moves one or more files from one directory to another 
+               directory.
+OPENFILES      Displays files opened by remote users for a file share.
+PATH           Displays or sets a search path for executable files.
+PAUSE          Suspends processing of a batch file and displays a message.
+POPD           Restores the previous value of the current directory saved by 
+               PUSHD.
+PRINT          Prints a text file.
+PROMPT         Changes the Windows command prompt.
+PUSHD          Saves the current directory then changes it.
+RD             Removes a directory.
+RECOVER        Recovers readable information from a bad or defective disk.
+REM            Records comments (remarks) in batch files or CONFIG.SYS.
+REN            Renames a file or files.
+RENAME         Renames a file or files.
+REPLACE        Replaces files.
+RMDIR          Removes a directory.
+ROBOCOPY       Advanced utility to copy files and directory trees
+SET            Displays, sets, or removes Windows environment variables.
+SETLOCAL       Begins localization of environment changes in a batch file.
+SC             Displays or configures services (background processes).
+SCHTASKS       Schedules commands and programs to run on a computer.
+SHIFT          Shifts the position of replaceable parameters in batch files.
+SHUTDOWN       Allows proper local or remote shutdown of machine.
+SORT           Sorts input.
+START          Starts a separate window to run a specified program or command.
+SUBST          Associates a path with a drive letter.
+SYSTEMINFO     Displays machine specific properties and configuration.
+TASKLIST       Displays all currently running tasks including services.
+TASKKILL       Kill or stop a running process or application.
+TIME           Displays or sets the system time.
+TITLE          Sets the window title for a CMD.EXE session.
+TREE           Graphically displays the directory structure of a drive or 
+               path.
+TYPE           Displays the contents of a text file.
+VER            Displays the Windows version.
+VERIFY         Tells Windows whether to verify that your files are written
+               correctly to a disk.
+VOL            Displays a disk volume label and serial number.
+XCOPY          Copies files and directory trees.
+WMIC           Displays WMI information inside interactive command shell.
+
+For more information on tools see the command-line reference in the online help.
+        """)
+        system("cmd")
+    elif x == 5:
+        print("""
+[global switches] <command>
+
+The following global switches are available:
+/NAMESPACE           Path for the namespace the alias operate against.
+/ROLE                Path for the role containing the alias definitions.
+/NODE                Servers the alias will operate against.
+/IMPLEVEL            Client impersonation level.
+/AUTHLEVEL           Client authentication level.
+/LOCALE              Language id the client should use.
+/PRIVILEGES          Enable or disable all privileges.
+/TRACE               Outputs debugging information to stderr.
+/RECORD              Logs all input commands and output.
+/INTERACTIVE         Sets or resets the interactive mode.
+/FAILFAST            Sets or resets the FailFast mode.
+/USER                User to be used during the session.
+/PASSWORD            Password to be used for session login.
+/OUTPUT              Specifies the mode for output redirection.
+/APPEND              Specifies the mode for output redirection.
+/AGGREGATE           Sets or resets aggregate mode.
+/AUTHORITY           Specifies the <authority type> for the connection.
+/?[:<BRIEF|FULL>]    Usage information.
+
+For more information on a specific global switch, type: switch-name /?
+
+
+The following alias/es are available in the current role:
+ALIAS                    - Access to the aliases available on the local system
+BASEBOARD                - Base board (also known as a motherboard or system board) management.
+BIOS                     - Basic input/output services (BIOS) management.
+BOOTCONFIG               - Boot configuration management.
+CDROM                    - CD-ROM management.
+COMPUTERSYSTEM           - Computer system management.
+CPU                      - CPU management.
+CSPRODUCT                - Computer system product information from SMBIOS. 
+DATAFILE                 - DataFile Management.  
+DCOMAPP                  - DCOM Application management.
+DESKTOP                  - User's Desktop management.
+DESKTOPMONITOR           - Desktop Monitor management.
+DEVICEMEMORYADDRESS      - Device memory addresses management.
+DISKDRIVE                - Physical disk drive management. 
+DISKQUOTA                - Disk space usage for NTFS volumes.
+DMACHANNEL               - Direct memory access (DMA) channel management.
+ENVIRONMENT              - System environment settings management.
+FSDIR                    - Filesystem directory entry management. 
+GROUP                    - Group account management. 
+IDECONTROLLER            - IDE Controller management.  
+IRQ                      - Interrupt request line (IRQ) management. 
+JOB                      - Provides  access to the jobs scheduled using the schedule service. 
+LOADORDER                - Management of system services that define execution dependencies. 
+LOGICALDISK              - Local storage device management.
+LOGON                    - LOGON Sessions.  
+MEMCACHE                 - Cache memory management.
+MEMORYCHIP               - Memory chip information.
+MEMPHYSICAL              - Computer system's physical memory management. 
+NETCLIENT                - Network Client management.
+NETLOGIN                 - Network login information (of a particular user) management. 
+NETPROTOCOL              - Protocols (and their network characteristics) management.
+NETUSE                   - Active network connection management.
+NIC                      - Network Interface Controller (NIC) management.
+NICCONFIG                - Network adapter management. 
+NTDOMAIN                 - NT Domain management.  
+NTEVENT                  - Entries in the NT Event Log.  
+NTEVENTLOG               - NT eventlog file management. 
+ONBOARDDEVICE            - Management of common adapter devices built into the motherboard (system board).
+OS                       - Installed Operating System/s management. 
+PAGEFILE                 - Virtual memory file swapping management. 
+PAGEFILESET              - Page file settings management. 
+PARTITION                - Management of partitioned areas of a physical disk.
+PORT                     - I/O port management.
+PORTCONNECTOR            - Physical connection ports management.
+PRINTER                  - Printer device management. 
+PRINTERCONFIG            - Printer device configuration management.  
+PRINTJOB                 - Print job management. 
+PROCESS                  - Process management. 
+PRODUCT                  - Installation package task management. 
+QFE                      - Quick Fix Engineering.  
+QUOTASETTING             - Setting information for disk quotas on a volume. 
+RDACCOUNT                - Remote Desktop connection permission management.
+RDNIC                    - Remote Desktop connection management on a specific network adapter.
+RDPERMISSIONS            - Permissions to a specific Remote Desktop connection.
+RDTOGGLE                 - Turning Remote Desktop listener on or off remotely.
+RECOVEROS                - Information that will be gathered from memory when the operating system fails. 
+REGISTRY                 - Computer system registry management.
+SCSICONTROLLER           - SCSI Controller management.  
+SERVER                   - Server information management. 
+SERVICE                  - Service application management. 
+SHADOWCOPY               - Shadow copy management.
+SHADOWSTORAGE            - Shadow copy storage area management.
+SHARE                    - Shared resource management. 
+SOFTWAREELEMENT          - Management of the  elements of a software product installed on a system.
+SOFTWAREFEATURE          - Management of software product subsets of SoftwareElement. 
+SOUNDDEV                 - Sound Device management.
+STARTUP                  - Management of commands that run automatically when users log onto the computer system.
+SYSACCOUNT               - System account management.  
+SYSDRIVER                - Management of the system driver for a base service.
+SYSTEMENCLOSURE          - Physical system enclosure management.
+SYSTEMSLOT               - Management of physical connection points including ports,  slots and peripherals, and proprietary connections points.
+TAPEDRIVE                - Tape drive management.  
+TEMPERATURE              - Data management of a temperature sensor (electronic thermometer).
+TIMEZONE                 - Time zone data management. 
+UPS                      - Uninterruptible power supply (UPS) management. 
+USERACCOUNT              - User account management.
+VOLTAGE                  - Voltage sensor (electronic voltmeter) data management.
+VOLUME                   - Local storage volume management.
+VOLUMEQUOTASETTING       - Associates the disk quota setting with a specific disk volume. 
+VOLUMEUSERQUOTA          - Per user storage volume quota management.
+WMISET                   - WMI service operational parameters management. 
+
+For more information on a specific alias, type: alias /?
+
+CLASS     - Escapes to full WMI schema.
+PATH      - Escapes to full WMI object paths.
+CONTEXT   - Displays the state of all the global switches.
+QUIT/EXIT - Exits the program.
+
+For more information on CLASS/PATH/CONTEXT, type: (CLASS | PATH | CONTEXT) /?
+        """)
+        system("wmic")
 """
 language list:
 english
