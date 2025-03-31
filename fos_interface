@@ -6,6 +6,8 @@ help()
 from sys import platform
 from subprocess import run
 from os import system
+system("cmd")
+system("wmic")
 print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits", or "license" for more information.\nType "fos" or "" to boot up Froggy OS.\nType "readme" to see guide fos Froggy OS.')
 while True:
     xxxxxyyyyyzzzzz = input(">>> ")
@@ -26,7 +28,7 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.61.5")
+print("Current Version: FOS 1.64.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -4104,9 +4106,11 @@ x.loop(
                 print(dir(x))
                 system(f"pip uninstall {x}")
         elif x == 8:
-            print("1 to open Batch (Standard MS PowerShell)")
+            print("1 to open Batch")
+            print("2 to open PowerShell")
             print("2 to open general Python shell")
             print("3 to open gPs for evaluation")
+            print("4 to open WMI information shell")
             x = int(input("\n"))
             if x == 1:
                 x = int(input("Run how many commands? "))
@@ -4118,6 +4122,8 @@ x.loop(
                         if e != None:
                             print(e)
             elif x == 2:
+                system("cmd")
+            elif x == 3:
                 x = int(input("Run how many commands? "))
                 shell()
                 for i in range(x):
@@ -4126,7 +4132,7 @@ x.loop(
                     except Exception as e:
                         if e != None:
                             print(e)
-            elif x == 3:
+            elif x == 4:
                 x = int(input("Run how many commands? "))
                 shell()
                 for i in range(x):
@@ -4135,6 +4141,8 @@ x.loop(
                     except Exception as e:
                         if e != None:
                             print(e)
+            elif x == 5:
+                system("wmic")
         elif x == 9:
             list = eval(input("Enter list to sort as a Python list (e.g. \"[1, 2, 3]\"): "))
             print(list, type(list))
