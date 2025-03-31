@@ -5,3 +5,5 @@ Its goal is to teach people that don't know Python how to use it, and include al
 Has some bugs, will be fixed later with updates! Start installing it to your PC by reading "read_me_plz" file.
 
 Go check out the discussion: "https://github.com/Lava-salt/fos/discussions"
+
+The website for Froggy OS is: "https://lava-salt.github.io/froggy_os.github.io/"
