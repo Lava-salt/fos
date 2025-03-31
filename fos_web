@@ -29,7 +29,7 @@
                 FOS, also known as Froggy OS is a TUI made in Python. <br/>
                 The creator is the GitHub user "Lava-Salt", known as Can Koyuncu. <br/>
                 To download FOS, go to <a href="https://github.com/Lava-salt/fos.git">this website</a> to download FOS. <br/>
-                The current FOS version is 1.60.5 <br/>
+                The current FOS version is 1.64.0 <br/>
                 Go <a href="https://github.com/Lava-salt/fos/discussions/">here</a> to contact me safely.
             </p>
         </nav>
@@ -268,14 +268,17 @@
                 3. New gates added to LGS <br/>
                 4. Batch data added to "operating system data" in code/OS archives <br/>
                 Bugs: <br/>
-                None <br/>
+                FOS can't boot up in new computers because PIP modules "matplotlib" and "urwid" not pre-installed <br/>
             </p>
-            <h2>FOS 1.61.5</h2>
+            <h2>FOS 1.64.0</h2>
             <p>
                 AlphaLang Update <br/>
                 Additions: <br/>
                 1. AlphaLang shell added <br/>
-                2. Another thing I forgot <br/>
+                2. Added Linus Torwalds to programming hall of fame <br/>
+                3. Added WMI information shell <br/>
+                4. Batch shell improved <br/>
+                5. Fixed PIP module bug <br/>
                 Bugs: <br/>
                 None <br/>
             </p>
