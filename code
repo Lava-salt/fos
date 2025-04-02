@@ -184,14 +184,6 @@ def hq(y):
             p = stack[-1]
             del stack[-1]
             system(p)
-        elif x == "@":
-            hq(y[list1 + 1 : len(y)])
-        elif x == "€":
-            for i in range(2):
-                hq(y[list1 + 1 : len(y)])
-        elif x == "é":
-            while True:
-                hq(y[list1 + 1 : len(y)])
         elif x == "0":
             num = bin(num)
         elif x == "2":
@@ -220,7 +212,15 @@ def hq(y):
             stack.append(chr(num))
         elif x == ";":
             stack[-1] = stack[-1] + chr(num)
-    list1 += 1
+        list1 += 1
+        """elif x == "@":
+                    hq(y[list1 : len(y) + 1])
+                elif x == "€":
+                    for i in range(2):
+                        hq(y[list1 : len(y) + 1])
+                elif x == "é":
+                    while True:
+                        hq(y[list1 : len(y) + 1])"""
 
 # body (code)
 
@@ -1098,15 +1098,17 @@ P Get input from user and push string to stack
 < Pop a value from the stack evaluate it in Python
 ½ Pop a value from the stack and execute it in Batch
 \ Get input from user and turn accumulator to its Unicode value
-@ Repeat code after this 2 times.
-€ Repeat code after this 3 times.
-é Repeat code after this infinitely.
 0 Turns accumulator to binary
-2 Prints 2 and 3 timetable (used for looping and multiplying/dividing in HQ9+)
+2 Prints 2 and 3 timetable
 G LGBTQ+ approved HQ9+ H
 : Push accumulator's Unicode value to stack
 ; Append accumulator's Unicode value to stack's top value
         """)
+        """
+        @ Repeat code after this 2 times.
+        € Repeat code after this 3 times.
+        é Repeat code after this infinitely.
+        """
         while True:
             x = input(">>> ")
             hq(x)
@@ -1127,8 +1129,8 @@ It also has a pointer.
 51 - 60  Output the value of the cell at the pointer
 61 - 70	 Input a character and store it in the cell at the pointer
 71 - 80  Input a number and store it in the cell at the pointer
-81 - 90	 Jump past the matching ] if the cell at the pointer is 0
-91 - 100 Jump back to the matching [ if the cell at the pointer is nonzero
+81 - 90	 Jump past the matching 91-100 if the cell at the pointer is 0
+91 - 100 Jump back to the matching 81-90 if the cell at the pointer isn't 0
         """)
         dict = {chr(i + 96): i for i in range(1, 27)}
         while True:
