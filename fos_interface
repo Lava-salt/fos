@@ -28,7 +28,7 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.64.0")
+print("Current Version: FOS 1.66.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -171,6 +171,7 @@ xoxguide = {"A" : "⬜", "X" : "❌", "O" : "⭕"}
 ns = ["N", "S"]
 we = ["W", "E"]
 marks = [".", "?", "!", "!?"]
+dots = ["", "", "", ",", ";", ":"]
 people = ["A child", "A son", "A daughter", "A boy", "A girl", "A teen", "An adult", "A man", "A father", "A woman", "A mother", "An elder", "A grandfather", "A grandmother", "A comrade"]
 sins = ["is being too sexual", "is over-eating", "is arrogant", "is lazy", "is too angry", "is greedy", "is jealous", "is defending Capitalism", "is defending Fascism", "is a Bourgeois", "is critisizing the government", "is stealing", "is critisizing"]
 tf = [True, False]
@@ -898,6 +899,7 @@ x.loop(
                     print("5 to open universe simulator")
                     print("6 to make OS self-aware")
                     print("7 to suicide OS")
+                    print("8 to open OUIJA board")
                     x = int(input("\n"))
                     if x == 1:
                         print("Companies have stocks.")
@@ -1046,9 +1048,10 @@ x.loop(
                                     x = input("\n")
                                 input("You: ")
                                 list = []
-                                for i in range(randint(5, 10)):
-                                    list.append(choice(ohno))
-                                input(f"Him: {" ".join(list).capitalize()}{choice(marks)}")
+                                for i in range(randint(0, randint(0, 9))):
+                                    list.append(f"{choice(ohno)}{choice(dots)}")
+                                list.append(f"{choice(ohno)}")
+                                print(f"Him: {" ".join(list).capitalize()}{choice(marks)}")
                             elif x == 2:
                                 print(f"{choice(people)} {choice(sins)}!\n")
                                 print("1 to forgive")
@@ -1372,6 +1375,107 @@ x.loop(
                         quit()
                     elif x == 7:
                         quit()
+                    elif x == 8:
+                        log = []
+                        while True:
+                            print("1 to ask question")
+                            print("2 to see log")
+                            print("3 to quit")
+                            print("4 to see rules")
+                            x = int(input("\n"))
+                            if x == 1:
+                                y = input("You: ")
+                                log.append(f"You: {y}")
+                                print("1 to get word answer")
+                                print("2 to get number answer")
+                                print("3 to get y/n answer")
+                                print("4 to get random answer")
+                                x = int(input("\n"))
+                                if randint(1, 10) == 1:
+                                    o = "OUIJA: Goodbye."
+                                else:
+                                    if x == 1:
+                                        list = []
+                                        for i in range(randint(0, randint(0, 9))):
+                                            list.append(f"{choice(ohno)}{choice(dots)}")
+                                        list.append(f"{choice(ohno)}")
+                                        o = f"OUIJA: {" ".join(list).capitalize()}{choice(marks)}"
+                                    elif x == 2:
+                                            if randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 1)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 2)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 3)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 4)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 5)}"
+                                    elif x == 3:
+                                        if randint(1, 2) == 1:
+                                            o = "OUIJA: Yes."
+                                        else:
+                                            o = "OUIJA: No."
+                                    elif x == 4:
+                                        if randint(1, 3) == 1:
+                                            for i in range(randint(0, 9)):
+                                                list.append(f"{choice(ohno)}{choice(marks)}")
+                                            list.append(f"{choice(ohno)}")
+                                            o = f"OUIJA: {" ".join(list).capitalize()}{choice(marks)}"
+                                        elif randint(1, 2) == 1:
+                                            if randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 1)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 2)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 3)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 4)}"
+                                            elif randint(1, 2) == 1:
+                                                o = f"OUIJA: {randint(0, 10 ** 5)}"
+                                        else:
+                                            if randint(1, 2) == 1:
+                                                o = "OUIJA: Yes."
+                                            else:
+                                                o = "OUIJA: No."
+                                print(o)
+                                log.append(o)
+                            elif x == 2:
+                                print("1 to print log")
+                                print("2 to add log to a file")
+                                x = int(input("\n"))
+                                if x == 1:
+                                    for i in log:
+                                        print(i)
+                                elif x == 2:
+                                    x = input("File name: ")
+                                    with open(x, "w") as f:
+                                        f.write(log[0])
+                                        f.close()
+                                    logs = log.copy()
+                                    del logs[0]
+                                    with open(x, "w") as f:
+                                        for i in logs:
+                                            f.write(f"\n{i}")
+                                        f.close()
+                            elif x == 3:
+                                break
+                            elif x == 4:
+                                print("An OUIJA board is a board where you can use it to communicate with souls. It has an alphabet")
+                                print("and it has a stone with a soul to move. When the soul moves it, you note the place where the")
+                                print("the soul moved the stone to. With this, the soul can create words/sentences. It looks like:")
+                                print("""
+/----OUIJA----\\
+|YES        NO|
+|ABCDEFGHIJKLM|
+|NOPQRSTUVWXYZ|
+|abcdefghijklm|
+|nopqrstuvwxyz|
+| 1234567890  |
+|   GOODBYE   |
+\-------------/
+(*) <- Stone (It's located on the board)
+                                     """)
             elif x == 6:
                 user = input("Enter username: ")
                 print("1 to read chat messages")
@@ -2965,14 +3069,14 @@ x.loop(
                                     system("tree \\")
                     elif x == 3:
                         x = int(input("How many entries? "))
-                        print("Day 1")
+                        print("Day #1")
                         print(f"Weather: {selectedw}")
-                        print(f"Temprature: {temp}")
+                        print(f"Temprature: {temp} °C")
                         for i in range(x - 1):
                             if randint(1, 2) == 1:
                                 selectedw = choice(weather)
                             temp = temp + randint(-2, 2)
-                            print(f"Day {i + 2}")
+                            print(f"Day #{i + 2}")
                             print(f"Weather: {selectedw}")
                             print(f"Temprature: {temp} °C")
                     elif x == 4:
@@ -3956,11 +4060,19 @@ x.loop(
                     elif x == 2:
                         print("1 to open for Python")
                         print("2 to open for Batch")
+                        print("3 to open for all")
                         x = int(input("\n"))
+                        print("Now, a random documentation will be opened.")
+                        print("Maybe, you could create a project from this!")
                         if x == 1:
                             help(choice(docs))
                         elif x == 2:
-                            help(choice(batch))
+                            system(f"help {choice(batch)}")
+                        elif x == 3:
+                            if randint(1, len(docs) + len(batch)) <= len(docs):
+                                help(choice(docs))
+                            else:
+                                system(f"help {choice(batch)}")
                     elif x == 3:
                         print("1 to open for Python")
                         print("2 to open for Batch")
@@ -4277,7 +4389,7 @@ x.loop(
                     n1 = input("Uninstall which Pip package? (pip uninstall OOO) ")
                     system(f"pip uninstall {n1}")
         elif x == 13:
-            print("1. George Bool")
+            print("1. George Boole")
             print("Created Boolean logic (0 and 1, False and True, off and on e.t.c.), the basics for computer.")
             print("2. Countess Ada Lovelace")
             print("Math enthusiast, also created the first basic programming language, and close friend of Charles Babbage.")
