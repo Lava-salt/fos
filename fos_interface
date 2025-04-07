@@ -28,7 +28,7 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.66.0")
+print("Current Version: FOS 1.67.0")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -1464,8 +1464,8 @@ x.loop(
                                 print("An OUIJA board is a board where you can use it to communicate with souls. It has an alphabet")
                                 print("and it has a stone with a soul to move. When the soul moves it, you note the place where the")
                                 print("the soul moved the stone to. With this, the soul can create words/sentences. It looks like:")
-                                print("""
-/----OUIJA----\\
+                                print(r"""
+/----OUIJA----\
 |YES        NO|
 |ABCDEFGHIJKLM|
 |NOPQRSTUVWXYZ|
