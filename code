@@ -5,6 +5,7 @@ from sys import platform
 from subprocess import run
 from random import randint
 from codecs import encode
+from tkinter.constants import FALSE
 
 # head (other variables' defining)
 
@@ -221,6 +222,36 @@ def hq(y):
                 elif x == "é":
                     while True:
                         hq(y[list1 : len(y) + 1])"""
+def df(code):
+    st = False
+    stn = "t"
+    stf = "iiiiiiiiii"
+    x = 0
+    for j in range(len(code)):
+        i = code[j]
+        if st:
+            stn, stf = "", ""
+            if code[j - 1] == "H" or i == " ": pass
+            elif i == "H": stn = code[j + 1]
+            elif i == "S": st = False
+            else: stf = stf + i
+        else:
+            if i == stn: df(stf)
+            elif i == "i": x += 1
+            elif i == "d": x -= 1
+            elif i == "s": x *= x
+            elif i == "o": print(x)
+            elif i == "ö": print(x, end = "")
+            elif i == "h": return 1
+            elif i == "I": st = True
+            elif i == "D": x = 0
+            elif i == "O": print(chr(x))
+            elif i == "Ö": print(chr(x), end = "")
+            elif i == "x": quit()
+            elif i == "?": print(stn)
+            elif i == "!": print(stf)
+            else: pass
+    return 0
 
 # body (code)
 
@@ -1040,6 +1071,7 @@ elif x == 6:
     print("3 to open AlphaLang")
     print("4 to open PowerShell")
     print("5 to open WMI information shell")
+    print("6 to open DeadFish")
     x = int(input("\n"))
     if x == 1:
         print("+-<>.,[] Syntax for this IDE:")
@@ -1087,7 +1119,7 @@ X Redefines the accumulator to its cube.
 & The / operation but int instead of float
 A Print the accumulator
 F Prints FizzBuzz up to 100.
-- Deferences a null pointer if preceded by an F.
+- Dereferences a null pointer if preceded by an F.
 $ Push the accumulator to the stack
 # Pop a value from the stack and print it
 ^ Pop a value from the stack and print its ASCII value
@@ -1510,6 +1542,43 @@ QUIT/EXIT - Exits the program.
 For more information on CLASS/PATH/CONTEXT, type: (CLASS | PATH | CONTEXT) /?
         """)
         system("wmic")
+    elif x == 6:
+        print("DeadFish Syntax for this IDE:")
+        print("""
+i Increment the accumulator by 1
+d Decrement the accumulator by 1
+s Multiply the accumulator by itself
+o Display the accumulator as integer
+ö Display the accumulator as integer without newline
+h Halt
+x Return to FOS main menu
+I Begin statement def
+D Set accumulator to 0
+S End statement def
+O Display accumulator as Unicode character
+Ö Display accumulator as Unicode character without newline
+H Define statement name
+? Print statement name
+! Print statement function
+Statement definitions:
+    I Hv ii S vvv o h
+    
+    Here, a statement's defined with I.
+    Its name is selected "v" using the H operator.
+    Its role is "ii", meaning it increments the accumulator by 2.
+    Its definition is finished with S.
+    It's used 3 times as "vvv".
+    So when printed with o, it'll output "6" (3*2).
+    Then, program's halted with "h".
+WARNING: Statements can't be nested in this IDE.
+        """)
+        while True:
+            code = input(">>> ")
+            if df(code) == 1:
+                print("Exit code: 1\nProgram was manually halted by user.")
+            else:
+                print("Exit code: 0\nProgram compiled successfully.")
+
 """
 language list:
 english
