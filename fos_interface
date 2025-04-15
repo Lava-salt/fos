@@ -28,7 +28,7 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.67.0")
+print("Current Version: FOS 1.69.5")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
 print("GitHub User List of Fame in Making of FOS:")
@@ -2846,6 +2846,7 @@ x.loop(
                     print("3 to open weather simulator")
                     print("4 to change the wordlist (used in word scramble e.t.c.)")
                     print("5 to open basic programs")
+                    print("6 to open race simulator")
                     x = int(input("\n"))
                     if x == 1:
                         print("1 to open word bingo")
@@ -3111,6 +3112,7 @@ x.loop(
                         print("9 to print powers of 2")
                         print("10 to open FizzBuzz")
                         print("11 to open 99 Bottles of Beer")
+                        print("12 to open more complicated programs")
                         x = int(input("\n"))
                         if x == 1:
                             print("Hello, World!")
@@ -3187,6 +3189,131 @@ x.loop(
                                 print(f"{i} bottles of beer!")
                                 print("Take one down, pass it around")
                                 print(f"{i - 1} bottles of beer on the wall!")
+                        elif x == 12:
+                            print("1 to open speed by gallons management")
+                            print("2 to open credit card limit management")
+                            print("3 to open interest charge management")
+                            print("4 to open salary management")
+                            print("5 to open number guessing")
+                            x = int(input("\n"))
+                            if x == 1:
+                                avr = []
+                                print("Please write \"q\" to the \"gallons used\" part to quit.")
+                                while True:
+                                    x = input("Enter gallons used: ")
+                                    if x.lower() == "q": break
+                                    else: x = float(x)
+                                    y = float(input("Enter km's driven: "))
+                                    z = y / x
+                                    print(f"Km/g for this truck is {z}.")
+                                    avr.append(z)
+                                avr = sum(avr) / len(avr)
+                                print(f"Average km/g is {avr}.")
+                            elif x == 2:
+                                print("Please write \"q\" to \"account number\" to quit.")
+                                while True:
+                                    x = input("Account number: ")
+                                    if x.lower() == "q": break
+                                    y = float(input("Beginning balance: "))
+                                    z = float(input("Total charges: "))
+                                    a = float(input("Total credits: "))
+                                    b = float(input("Credit limit: "))
+                                    c = y + z - a
+                                    print(f"Balance: ${c}")
+                                    if c > b:
+                                        print("Credit limit exceeded.")
+                                    else:
+                                        print("Credit limit didn't exceed.")
+                            elif x == 3:
+                                print("Please write \"q\" to the \"loan principal\" part to quit.")
+                                while True:
+                                    x = input("Enter loan principal: ")
+                                    if x.lower() == "q": break
+                                    else: x = float(x)
+                                    y = float(input("Enter interest rate: "))
+                                    z = float(input("Enter term of the loan (days): "))
+                                    a = x * y * z / 365
+                                    print(f"The interest charge is {a}.")
+                            elif x == 4:
+                                avr = []
+                                print("Please write \"q\" to the \"hours worked\" part to quit.")
+                                while True:
+                                    x = input("Enter hours worked: ")
+                                    if x.lower() == "q": break
+                                    else: x = float(x)
+                                    y = float(input("Enter hourly rate: "))
+                                    z = x / y
+                                    print(f"Salary is ${z}.")
+                                    avr.append(z)
+                                avr = sum(avr) / len(avr)
+                                print(f"Average salary is ${avr}.")
+                            elif x == 5:
+                                print("Please enter the number range.")
+                                a = int(input("Minimum Number: "))
+                                b = int(input("Maximum Number: "))
+                                while True:
+                                    x = randint(a, b)
+                                    print("Number selected")
+                                    y = ""
+                                    z = 1
+                                    while y != x:
+                                        y = int(input("Guess the number: "))
+                                        if y == x:
+                                            x = input(f"You guessed correctly!\nTry again? (y/n) ")
+                                            if not("y" in x.lower()): break
+                                        else:
+                                            z += 1
+                                            if y < x:
+                                                print("The number is too low.")
+                                            else:
+                                                print("The number is too high.")
+                    elif x == 6:
+                        print("Welcome to the race of tortoise and hare!")
+                        print("Each start at the 1st metre of the 70 m race.")
+                        input("Shall the race begin? ")
+                        i = float(input("And the interval between each move? "))
+                        t = 1
+                        h = 1
+                        while True:
+                            print(f"Tortoise: {t} m")
+                            print(f"Hare: {h} m")
+                            if randint(1, 100) <= 50:
+                                print("The tortoise did a fast plod!")
+                                t += 3
+                            elif randint(1, 50) <= 20:
+                                print("The tortoise did a slip!")
+                                t -= 6
+                            else:
+                                print("The tortoise did a slow plod!")
+                                t += 1
+                            if randint(1, 100) <= 20:
+                                print("The hare did a sleep!")
+                            elif randint(1, 80) <= 20:
+                                print("The hare did a big hop!")
+                                h += 9
+                            elif randint(1, 60) <= 10:
+                                print("The hare did a big slip!")
+                                h -= 12
+                            elif randint(1, 50) <= 30:
+                                print("The hare did a small hop!")
+                                h += 1
+                            else:
+                                print("The hare did a small slip!")
+                                h -= 2
+                            if t < 0:
+                                t = 0
+                                print("The tortoise is still at the start!")
+                            elif t >= 70:
+                                print("The tortoise won!!!")
+                                break
+                            if h < 0:
+                                print("The hare is still at the start!")
+                                h = 0
+                            elif h >= 70:
+                                print("The hare won!")
+                                break
+                            sleep(i)
+                            print()
         elif x == 2:
             print("1 to open calculator")
             print("2 to open gallery")
