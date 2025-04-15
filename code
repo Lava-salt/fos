@@ -5,7 +5,7 @@ from sys import platform
 from subprocess import run
 from random import randint
 from codecs import encode
-from tkinter.constants import FALSE
+from tkinter.constants import FALSE # i didn't import this, how is this even here and what is it used for
 
 # head (other variables' defining)
 
@@ -1578,7 +1578,110 @@ WARNING: Statements can't be nested in this IDE.
                 print("Exit code: 1\nProgram was manually halted by user.")
             else:
                 print("Exit code: 0\nProgram compiled successfully.")
-
+    elif x == 7:
+        print("SML is \"SimpleTron Machine Language\", an Assembly dialect I found in a \"Deitel C C++ Java\" book.")
+        print("""
+Given code:
+READ 10 = Add input to a specific memory location.
+WRITE 10 = Print a specific memory location as number.
+WRITECHR 10 = Print a specific memory location as Unicode value.
+LOAD 10 = Set accumulator to a specific memory location.
+STORE 10 = Set a specific memory location to accumulator.
+ADD 10 = Add a specific memory location's number to accumulator.
+SUBTRACT 10 = Subtract a specific memory location's number from accumulator.
+MULTIPLY 10 = Multiply a specific memory location's number with accumulator.
+DIVIDE 10 = Divide a specific memory location's number into accumulator.
+MOD 10 = Modulo a specific memory location's number with accumulator.
+EXP 10 = Exponent a specific memory location's number with accumulator.
+BRANCH 10 = Branch to a line.
+BRANCHNEG 10 = Branch to a line if accumulator is negative.
+BRANCHZERO 10 = Branch to a line if accumulator is zero.
+INC 10 = Increment a specific memory location.
+DEC 10 = Decrement a specific memory location.
+SQR 10 = Multiply a specific memory location by itself.
+CUBE 10 = Multiply a specific memory location by itself 2 times.
+RESET 10 = Set a specific memory location to 0.
+INPUT = Get input.
+HALT = Halt program.
+Debug:
+RUN = Run given codes.
+NEW = Clear given codes.
+LIST = List given codes.
+SAVE = Get save code for given code.
+LOAD = Load save code for given code.
+        """)
+        code = []
+        while True:
+            x = input(">>> ")
+            x = x.lower()
+            if x == "new":
+                code = []
+            elif x == "list":
+                for i in code:
+                    print(i)
+            elif x == "save":
+                print(code)
+            elif x == "load":
+                code = input("Save code: ")
+            elif x != "run":
+                code.append(x)
+            else:
+                pointer = 0
+                acc = 0
+                inp = 0
+                memory = []
+                for i in range(1000):
+                    memory.append(0)
+                while True:
+                    full = code[pointer]
+                    flist = full.split(" ")
+                    cmd = flist[0]
+                    if cmd == "halt":
+                        break
+                    elif cmd == "input":
+                        inp = int(input())
+                    else:
+                        num = int(flist[1])
+                        if cmd == "read":
+                            memory[num] = inp
+                        elif cmd == "write":
+                            print(memory[num])
+                        elif cmd == "writechr":
+                            print(chr(memory[num]), end = "")
+                        elif cmd == "load":
+                            acc = memory[num]
+                        elif cmd == "store":
+                            memory[num] = acc
+                        elif cmd == "add":
+                            acc += memory[num]
+                        elif cmd == "subtract":
+                            acc -= memory[num]
+                        elif cmd == "multiply":
+                            acc *= memory[num]
+                        elif cmd == "divide":
+                            acc /= memory[num]
+                        elif cmd == "mod":
+                            acc %= memory[num]
+                        elif cmd == "exp":
+                            acc **= memory[num]
+                        elif cmd == "branch":
+                            pointer = num
+                        elif cmd == "branchneg":
+                            if "-" in str(acc): pointer = num
+                        elif cmd == "branchzero":
+                            if acc == 0: pointer = num
+                        elif cmd == "inc":
+                            memory[num] += 1
+                        elif cmd == "dec":
+                            memory[num] -= 1
+                        elif cmd == "sqr":
+                            memory[num] **= 2
+                        elif cmd == "cube":
+                            memory[num] **= 3
+                        elif cmd == "reset":
+                            memory[num] = 0
+                        else:
+                            break
 """
 language list:
 english
