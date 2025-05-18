@@ -7,9 +7,9 @@ Go to the URL "https://www.jetbrains.com/pycharm/download/" and install the JetB
 Make a new project named "Froggy_OS".
 Go to "https://github.com/Lava-salt/fos.git/" and access FOS files.
 Make a file named "readme.txt" and paste this readme.txt text there.
-Make a Python file named "fos_sourcecode.py" and paste the text in the "fos_sourcecode" file.
-Make a Python file named "fos_interface.py" and paste the text in the "fos_interface" file.
-Make a Python file named "code.py" and paste the text in the "code" file.
+Make a Python file named "fos_sourcecode.py" and paste the text in the "fos_sourcecode.py" file.
+Make a Python file named "fos_interface.py" and paste the text in the "fos_interface.py" file.
+Make a Python file named "code.py" and paste the text in the "code.py" file.
 Make an empty file named "chat.txt".
 Make "test.py", "file.txt" files for debug.
 Go to "fos_interface.py".
