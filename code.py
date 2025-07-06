@@ -5,7 +5,7 @@ from sys import platform
 from subprocess import run
 from random import randint
 from codecs import encode
-from tkinter.constants import FALSE # i didn't import this, how is this even here and what is it used for
+from tkinter.constants import FALSE  # i didn't import this, how is this even here and what is it used for
 
 # head (other variables' defining)
 
@@ -90,7 +90,8 @@ def bf(code, input_data):
     for i in output:
         print(i, end="")
 def shell():
-    print(f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits" or "license" for more information.')
+    print(
+        f'Python 3.8.5 (default, Jul 20 2020, 23:11:29) [GCC 9.3.0] on {platform}\nType "help", "copyright", "credits" or "license" for more information.')
 def hq(y):
     list = []
     for i in range(len(y)):
@@ -160,11 +161,11 @@ def hq(y):
         elif x == "#":
             p = stack[-1]
             del stack[-1]
-            print(p, end = "")
+            print(p, end="")
         elif x == "^":
             p = stack[-1]
             del stack[-1]
-            print(chr(p), end = "")
+            print(chr(p), end="")
         elif x == "=":
             print()
         elif x == "/":
@@ -231,33 +232,52 @@ def df(code):
         i = code[j]
         if st:
             stn, stf = "", ""
-            if code[j - 1] == "H" or i == " ": pass
-            elif i == "H": stn = code[j + 1]
-            elif i == "S": st = False
-            else: stf = stf + i
+            if code[j - 1] == "H" or i == " ":
+                pass
+            elif i == "H":
+                stn = code[j + 1]
+            elif i == "S":
+                st = False
+            else:
+                stf = stf + i
         else:
-            if i == stn: df(stf)
-            elif i == "i": x += 1
-            elif i == "d": x -= 1
-            elif i == "s": x *= x
-            elif i == "o": print(x)
-            elif i == "ö": print(x, end = "")
-            elif i == "h": return 1
-            elif i == "I": st = True
-            elif i == "D": x = 0
-            elif i == "O": print(chr(x))
-            elif i == "Ö": print(chr(x), end = "")
-            elif i == "x": quit()
-            elif i == "?": print(stn)
-            elif i == "!": print(stf)
-            else: pass
+            if i == stn:
+                df(stf)
+            elif i == "i":
+                x += 1
+            elif i == "d":
+                x -= 1
+            elif i == "s":
+                x *= x
+            elif i == "o":
+                print(x)
+            elif i == "ö":
+                print(x, end="")
+            elif i == "h":
+                return 1
+            elif i == "I":
+                st = True
+            elif i == "D":
+                x = 0
+            elif i == "O":
+                print(chr(x))
+            elif i == "Ö":
+                print(chr(x), end="")
+            elif i == "x":
+                quit()
+            elif i == "?":
+                print(stn)
+            elif i == "!":
+                print(stf)
+            else:
+                pass
     return 0
 
 # body (code)
 
 print("1 to run Python code")
 print("2 to run Batch code")
-print("3 to run +-<>.,[] code")
+print("3 to run Brainf**k code")
 print("4 to run any code")
 print("5 to open documentation shell")
 print("6 to open esoteric programming languages")
@@ -284,14 +304,17 @@ if x == 1:
                 print("For example, like \"10 print('executed on line 10')\". There's also some extra functions. ")
                 print("\"goto(int)\" is used for making the executing line change to the given integer. ")
                 print("For example, \"10 x = 0 20 print(x) 30 x += 1 40 goto 2\" code counts forever. ")
-                print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
-                print("Use the \"bf(code, input_data)\" function to execute +-<>.,[] code. ")
-                print("Use the \"hq(code)\" function to execute HQ9+ code (but with 31 commands!)")
+                print(
+                    "\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
+                print("Use the \"bf(code, input_data)\" function to execute Brainf**k code. ")
+                print("Use the \"hq(code)\" function to execute HQ9+ code (but with 31 commands!) and \"df(code)\" to execute DeadFish (with more commands).")
                 print("Use \"new\" syntax to clean your code.")
                 print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
-                print("You can execute files. For example, writing \"python3 file.txt\" will execute \"file.txt\" in Python 3.")
+                print(
+                    "You can execute files. For example, writing \"python3 file.txt\" will execute \"file.txt\" in Python 3.")
                 print("You can also do other things like \"python3 -c print(\"hi\")\" to print \"hi\".")
-                print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
+                print(
+                    "DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
                 print("Sorry but these are highly necessary for the code to run. ")
                 input("Example program: ")
                 print("10 print('Number Sum Finder')")
@@ -323,21 +346,21 @@ if x == 1:
                         try:
                             del pul
                         except NameError:
-                            print("", end = "")
+                            print("", end="")
                         try:
                             del tul
                         except NameError:
-                            print("", end = "")
-                        print("", end = "")
+                            print("", end="")
+                        print("", end="")
                     else:
                         try:
                             del pul
                         except NameError:
-                            print("", end = "")
+                            print("", end="")
                         try:
                             del tul
                         except NameError:
-                            print("", end = "")
+                            print("", end="")
                         if code[-1] == "run":
                             del code[-1]
                             pointer = 0
@@ -533,7 +556,8 @@ if x == 1:
             elif x == 2:
                 del x, code, pointer
                 print(getcwd())
-                print(f"--mode=client --host={randint(100, 999)}.{randint(0, 9)}.{randint(0, 9)}.{randint(0, 9)} --port={randint(10000, 99999)}")
+                print(
+                    f"--mode=client --host={randint(100, 999)}.{randint(0, 9)}.{randint(0, 9)}.{randint(0, 9)} --port={randint(10000, 99999)}")
                 print("import sys; print('Python %s on %s' % (sys.version, sys.platform))")
                 print(f"sys.path.extend(['{getcwd()}'])")
                 print("PyDev console: starting.")
@@ -668,13 +692,16 @@ elif x == 2:
             print("You can run enhanced Batch programs, like running AppleSoft BASIC in Apple ][. ")
             print("Write normal syntax, but start with a number that's the line number of the code line. ")
             print("For example, like \"10 echo \"executed on line 10\"\". There's also some extra functions. ")
-            print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
+            print(
+                "\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
             print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
             print("Use \"new\" syntax to clean your code.")
             print("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
-            print("You can execute files. For example, writing \"python3 file.txt\" will execute \"file.txt\" in Python 3.")
+            print(
+                "You can execute files. For example, writing \"python3 file.txt\" will execute \"file.txt\" in Python 3.")
             print("You can also do other things like \"python3 -c print(\"hi\")\" to print \"hi\".")
-            print("DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
+            print(
+                "DO NOT use the \"kur\", \"gawk\", \"code\" and \"pointer\" as variables, lists, tuples, dicts e.t.c. as this could break the code. ")
             input("Sorry but these are highly necessary for the code to run. ")
             shell()
             del x
@@ -918,10 +945,12 @@ elif x == 3:
     print("3 to execute from files")
     x = int(input("\n"))
     if x == 1:
-        print("You can run enhanced +-<>.,[] programs, like running AppleSoft BASIC in Apple ][. ")
+        print("You can run enhanced Brainf**k programs, like running AppleSoft BASIC in Apple ][. ")
         print("Write normal syntax, but start with a number that's the line number of the code line. ")
-        print("For example, like \"10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++.-------------------.--.++++++++++++++++++.-.---------------.-.--------------------------------------------------------------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-.------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.---.+++++.---------.---------------------------------------------------------------------.+++++++++++++++++.-.\".\nThere's also some extra functions. ")
-        print("\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
+        print(
+            "For example, like \"10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++.-------------------.--.++++++++++++++++++.-.---------------.-.--------------------------------------------------------------------.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-.------------------------------------------------------------------------------.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.---.+++++.---------.---------------------------------------------------------------------.+++++++++++++++++.-.\".\nThere's also some extra functions. ")
+        print(
+            "\"listcode\" command lists the entire code, and \"run\" runs the code in the lines from smallest to biggest. ")
         input("You can have a save code for your code and load it with \"save\" and \"load\" keywords. ")
         print("Use \"new\" syntax to clean your code.")
         shell()
@@ -1026,7 +1055,8 @@ elif x == 4:
     print("PostgreSQL -> \"psql\"")
     print("MySQL -> \"mysql\"")
     input("SQLite -> \"sqlite3\" ")
-    print("Write the langs' list between \"quotation marks\", and all between [square braces] separated by, commas (like Python lists). ")
+    print(
+        "Write the langs' list between \"quotation marks\", and all between [square braces] separated by, commas (like Python lists). ")
     print("E.g. write \"[\"perl\", \"-e\"]\" to make program write inline Perl -e code. ")
     print("Use \"[\"perl\", \"-c\"]\" this \"-c\" syntax to make the program run a code instead of a file. ")
     print("Then, give the file name to run, e.g. \"[\"python\", \"-c\", \"print('hello')\"]\"")
@@ -1066,7 +1096,7 @@ elif x == 5:
             x = input(">>> ")
             system(f"help {x}")
 elif x == 6:
-    print("1 to open +-<>.,[]")
+    print("1 to open Brainf**k")
     print("2 to open HQ9+")
     print("3 to open AlphaLang")
     print("4 to open PowerShell")
@@ -1074,7 +1104,7 @@ elif x == 6:
     print("6 to open DeadFish")
     x = int(input("\n"))
     if x == 1:
-        print("+-<>.,[] Syntax for this IDE:")
+        print("Brainf**k Syntax for this IDE:")
         print("""
 + Increment the value of the current cell
 - Decrement the value of the current cell
@@ -1094,7 +1124,7 @@ $ Divide the current cell by 2 (integer division)
 ~ Move the pointer to the last nonzero cell
 ( Push the current cell’s value onto a stack
 ) Pop the last value from the stack into the current cell
-        """)
+""")
         while True:
             x = input("code >>>     ")
             y = input("input data > ")
@@ -1135,7 +1165,7 @@ P Get input from user and push string to stack
 G LGBTQ+ approved HQ9+ H
 : Push accumulator's Unicode value to stack
 ; Append accumulator's Unicode value to stack's top value
-        """)
+""")
         """
         @ Repeat code after this 2 times.
         € Repeat code after this 3 times.
@@ -1163,7 +1193,7 @@ It also has a pointer.
 71 - 80  Input a number and store it in the cell at the pointer
 81 - 90	 Jump past the matching 91-100 if the cell at the pointer is 0
 91 - 100 Jump back to the matching 81-90 if the cell at the pointer isn't 0
-        """)
+""")
         dict = {chr(i + 96): i for i in range(1, 27)}
         while True:
             x = input(">>> ")
@@ -1195,11 +1225,15 @@ It also has a pointer.
                 elif 51 <= i <= 60:
                     print(memory[pointer])
                 elif 61 <= i <= 70:
-                    try: memory[pointer] = ord(input()[0])
-                    except Exception as e: pass
+                    try:
+                        memory[pointer] = ord(input()[0])
+                    except Exception as e:
+                        pass
                 elif 71 <= i <= 80:
-                    try: memory[pointer] = int(input())
-                    except Exception as e: pass
+                    try:
+                        memory[pointer] = int(input())
+                    except Exception as e:
+                        pass
                 elif 81 <= i <= 90:
                     if memory[pointer] == 0:
                         open_loops = 1
@@ -1420,7 +1454,7 @@ XCOPY          Copies files and directory trees.
 WMIC           Displays WMI information inside interactive command shell.
 
 For more information on tools see the command-line reference in the online help.
-        """)
+""")
         system("cmd")
     elif x == 5:
         print("""
@@ -1540,7 +1574,7 @@ CONTEXT   - Displays the state of all the global switches.
 QUIT/EXIT - Exits the program.
 
 For more information on CLASS/PATH/CONTEXT, type: (CLASS | PATH | CONTEXT) /?
-        """)
+""")
         system("wmic")
     elif x == 6:
         print("DeadFish Syntax for this IDE:")
@@ -1562,7 +1596,7 @@ H Define statement name
 ! Print statement function
 Statement definitions:
     I Hv ii S vvv o h
-    
+
     Here, a statement's defined with I.
     Its name is selected "v" using the H operator.
     Its role is "ii", meaning it increments the accumulator by 2.
@@ -1571,117 +1605,13 @@ Statement definitions:
     So when printed with o, it'll output "6" (3*2).
     Then, program's halted with "h".
 WARNING: Statements can't be nested in this IDE.
-        """)
+""")
         while True:
             code = input(">>> ")
             if df(code) == 1:
                 print("Exit code: 1\nProgram was manually halted by user.")
             else:
                 print("Exit code: 0\nProgram compiled successfully.")
-    elif x == 7:
-        print("SML is \"SimpleTron Machine Language\", an Assembly dialect I found in a \"Deitel C C++ Java\" book.")
-        print("""
-Given code:
-READ 10 = Add input to a specific memory location.
-WRITE 10 = Print a specific memory location as number.
-WRITECHR 10 = Print a specific memory location as Unicode value.
-LOAD 10 = Set accumulator to a specific memory location.
-STORE 10 = Set a specific memory location to accumulator.
-ADD 10 = Add a specific memory location's number to accumulator.
-SUBTRACT 10 = Subtract a specific memory location's number from accumulator.
-MULTIPLY 10 = Multiply a specific memory location's number with accumulator.
-DIVIDE 10 = Divide a specific memory location's number into accumulator.
-MOD 10 = Modulo a specific memory location's number with accumulator.
-EXP 10 = Exponent a specific memory location's number with accumulator.
-BRANCH 10 = Branch to a line.
-BRANCHNEG 10 = Branch to a line if accumulator is negative.
-BRANCHZERO 10 = Branch to a line if accumulator is zero.
-INC 10 = Increment a specific memory location.
-DEC 10 = Decrement a specific memory location.
-SQR 10 = Multiply a specific memory location by itself.
-CUBE 10 = Multiply a specific memory location by itself 2 times.
-RESET 10 = Set a specific memory location to 0.
-INPUT = Get input.
-HALT = Halt program.
-Debug:
-RUN = Run given codes.
-NEW = Clear given codes.
-LIST = List given codes.
-SAVE = Get save code for given code.
-LOAD = Load save code for given code.
-        """)
-        code = []
-        while True:
-            x = input(">>> ")
-            x = x.lower()
-            if x == "new":
-                code = []
-            elif x == "list":
-                for i in code:
-                    print(i)
-            elif x == "save":
-                print(code)
-            elif x == "load":
-                code = input("Save code: ")
-            elif x != "run":
-                code.append(x)
-            else:
-                pointer = 0
-                acc = 0
-                inp = 0
-                memory = []
-                for i in range(1000):
-                    memory.append(0)
-                while True:
-                    full = code[pointer]
-                    flist = full.split(" ")
-                    cmd = flist[0]
-                    if cmd == "halt":
-                        break
-                    elif cmd == "input":
-                        inp = int(input())
-                    else:
-                        num = int(flist[1])
-                        if cmd == "read":
-                            memory[num] = inp
-                        elif cmd == "write":
-                            print(memory[num])
-                        elif cmd == "writechr":
-                            print(chr(memory[num]), end = "")
-                        elif cmd == "load":
-                            acc = memory[num]
-                        elif cmd == "store":
-                            memory[num] = acc
-                        elif cmd == "add":
-                            acc += memory[num]
-                        elif cmd == "subtract":
-                            acc -= memory[num]
-                        elif cmd == "multiply":
-                            acc *= memory[num]
-                        elif cmd == "divide":
-                            acc /= memory[num]
-                        elif cmd == "mod":
-                            acc %= memory[num]
-                        elif cmd == "exp":
-                            acc **= memory[num]
-                        elif cmd == "branch":
-                            pointer = num
-                        elif cmd == "branchneg":
-                            if "-" in str(acc): pointer = num
-                        elif cmd == "branchzero":
-                            if acc == 0: pointer = num
-                        elif cmd == "inc":
-                            memory[num] += 1
-                        elif cmd == "dec":
-                            memory[num] -= 1
-                        elif cmd == "sqr":
-                            memory[num] **= 2
-                        elif cmd == "cube":
-                            memory[num] **= 3
-                        elif cmd == "reset":
-                            memory[num] = 0
-                        else:
-                            break
 """
 language list:
 english
