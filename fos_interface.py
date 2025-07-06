@@ -29,9 +29,10 @@ while True:
                     exec(xxxxxyyyyyzzzzz)
                 except Exception as e:
                     system(xxxxxyyyyyzzzzz)
-print("Current Version: FOS 1.71.0")
+print("Current Version: FOS 1.71.0 -- The Update of Great Farewell")
 print("Froggy OS, TUI made by Can Koyuncu, nickname: @Lava-Salt, visit \"https://github.com/Lava-salt/fos.git/\"")
 print("To contact me, go to \"https://github.com/Lava-salt/fos/discussions/\"")
+print("Check out my other works: \"https://github.com/Lava-salt/side_projects.git\"")
 print("GitHub User List of Fame in Making of FOS:")
 print("@Lava-salt (Administrator)")
 
